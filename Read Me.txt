@@ -1,0 +1,16 @@
+Coruscation uses a customized version of Sparkle. Clone the Sparkle repository to a directory next to Coruscation/, and change the files as noted below.
+
+• ConfigFramework.xcconfig: Add at the end (to support building GC app via Xcode subproject reference).
+GCC_ENABLE_OBJC_GC = supported
+
+• SUAppcastItem.m: After line 132 (NSString *newVersion = [enclosure objectForKey:@"sparkle:version"];), add to support apps that use older versions of Sparkle with different appcast keys.
+if (newVersion == nil)
+	newVersion = [dict objectForKey:@"version"];
+
+• SUBasicUpdateDriver.m, At the end of the method -appcast:failedToLoadWithError:, so the delegate is notified of errors.
+[self didNotFindUpdate];
+
+• SUUpdater.m: Comment out the if block at line 74 that checks for securely-delivered updates. Apps built with older Sparkle will likely fail this test, and the alerts are annoying.
+//if (![[[self feedURL] scheme] isEqualToString:@"https"] && ![host publicDSAKey])
+//	NSRunAlertPanel(@"Insecure update error!", @"For security reasons, you need to distribute your appcast over SSL or sign your updates. See Sparkle's documentation for more information.", @"OK", nil, nil);
+
