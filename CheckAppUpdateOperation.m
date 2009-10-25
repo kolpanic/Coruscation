@@ -24,25 +24,30 @@
 		[self performSelectorOnMainThread:@selector(start)withObject:nil waitUntilDone:NO];
 		return;
 	}
-	self.updater = [SUUpdater updaterForBundle:[NSBundle bundleWithURL:self.url]];
-	if (self.updater) {
-		[self willChangeValueForKey:@"isExecuting"];
-		[self willChangeValueForKey:@"isFinished"];
-		_isExecuting = YES;
-		_isFinished = NO;
-		[self didChangeValueForKey:@"isExecuting"];
-		[self didChangeValueForKey:@"isFinished"];
-		
-		[self.updater setDelegate:self];
-		[self.updater setAutomaticallyChecksForUpdates:NO];
-		[self.updater setAutomaticallyDownloadsUpdates:NO];
-		[self.updater checkForUpdateInformation];
-		
-		self.timeOut = [NSTimer scheduledTimerWithTimeInterval:[[NSUserDefaults standardUserDefaults] doubleForKey:@"UpdateCheckTimeOutInterval"]
-														target:self selector:@selector(timeOut:) userInfo:nil repeats:NO];
-	} else {
+	if ([[ NSFileManager defaultManager] fileExistsAtPath:[self.url path]]) {
+		NSBundle *bundle = [NSBundle bundleWithURL:self.url];
+		self.updater = [SUUpdater updaterForBundle:bundle];
+		if (self.updater) {
+			[self willChangeValueForKey:@"isExecuting"];
+			[self willChangeValueForKey:@"isFinished"];
+			_isExecuting = YES;
+			_isFinished = NO;
+			[self didChangeValueForKey:@"isExecuting"];
+			[self didChangeValueForKey:@"isFinished"];
+			
+			[self.updater setDelegate:self];
+			[self.updater setAutomaticallyChecksForUpdates:NO];
+			[self.updater setAutomaticallyDownloadsUpdates:NO];
+			[self.updater checkForUpdateInformation];
+			
+			self.timeOut = [NSTimer scheduledTimerWithTimeInterval:[[NSUserDefaults standardUserDefaults] doubleForKey:@"UpdateCheckTimeOutInterval"]
+															target:self selector:@selector(timeOut:) userInfo:nil repeats:NO];
+		}
+	} 
+	if (!_isExecuting){
 		[self finish];
 	}
+	
 }
 
 - (void) finish {
@@ -56,13 +61,12 @@
 }
 
 - (void)timeOut:(NSTimer*)t {
-	NSLog(@"Timed out: %@", self);
+	NSLog(@"%@ - timed out", self);
 	[self finish];
 }
 
 - (NSString *) description {
-	return [NSString stringWithFormat:@"CheckAppUpdateOperation for %@ - %@",
-			[[NSFileManager defaultManager] displayNameAtPath:[self.url path]], [self.updater feedURL]];
+	return [NSString stringWithFormat:@"%@ for %@ SUFeedURL: %@", [self className], [self.url path], [self.updater feedURL]];
 }
 
 #pragma mark -
