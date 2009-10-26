@@ -40,18 +40,19 @@
 			[self.updater setAutomaticallyDownloadsUpdates:NO];
 			[self.updater checkForUpdateInformation];
 			
-			self.timeOut = [NSTimer scheduledTimerWithTimeInterval:[[NSUserDefaults standardUserDefaults] doubleForKey:@"UpdateCheckTimeOutInterval"]
-															target:self selector:@selector(timeOut:) userInfo:nil repeats:NO];
+			self.timeOutTimer = [NSTimer scheduledTimerWithTimeInterval:[[NSUserDefaults standardUserDefaults] doubleForKey:@"UpdateCheckTimeOutInterval"]
+																 target:self selector:@selector(timedOut:)
+															   userInfo:nil
+																repeats:NO];
 		}
-	} 
-	if (!_isExecuting){
-		[self finish];
 	}
+	if (!_isExecuting)
+		[self finish];
 	
 }
 
 - (void) finish {
-	[self.timeOut invalidate];
+	[self.timeOutTimer invalidate];
 	[self willChangeValueForKey:@"isExecuting"];
 	[self willChangeValueForKey:@"isFinished"];
 	_isExecuting = NO;
@@ -60,7 +61,7 @@
 	[self didChangeValueForKey:@"isFinished"];
 }
 
-- (void)timeOut:(NSTimer*)t {
+- (void)timedOut:(NSTimer*) t {
 	NSLog(@"%@ - timed out", self);
 	[self finish];
 }
@@ -73,11 +74,12 @@
 #pragma mark Sparkle Delegate
 
 - (void) updater:(SUUpdater *) updater didFindValidUpdate:(SUAppcastItem *) updateItem {
-	[[NSApp delegate] performSelectorOnMainThread:@selector(addSparkleBundleWithUserInfo:)
-									   withObject:[NSDictionary dictionaryWithObjectsAndKeys:self.url, @"url",
-												   [updateItem displayVersionString], @"availableUpdateVersion",
-												   nil]
-									waitUntilDone:NO];
+	if ([[NSApp delegate] respondsToSelector:@selector(addSparkleBundleWithUserInfo:)])
+		[[NSApp delegate] performSelectorOnMainThread:@selector(addSparkleBundleWithUserInfo:)
+										   withObject:[NSDictionary dictionaryWithObjectsAndKeys:self.url, @"url",
+													   [updateItem displayVersionString], @"availableUpdateVersion",
+													   nil]
+										waitUntilDone:NO];
 	[self finish];
 }
 
@@ -89,6 +91,6 @@
 	return NO;
 }
 
-@synthesize url = _url, isExecuting = _isExecuting, isFinished = _isFinished, updater = _updater, timeOut = _timeOut;
+@synthesize url = _url, isExecuting = _isExecuting, isFinished = _isFinished, updater = _updater, timeOutTimer = _timeOut;
 
 @end

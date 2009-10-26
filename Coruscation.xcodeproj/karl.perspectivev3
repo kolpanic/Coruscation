@@ -283,11 +283,14 @@
 			<array>
 				<string>XCToolbarPerspectiveControl</string>
 				<string>NSToolbarSeparatorItem</string>
-				<string>active-combo-popup</string>
 				<string>action</string>
+				<string>active-combo-popup</string>
+				<string>NSToolbarSpaceItem</string>
 				<string>build</string>
 				<string>build-and-go</string>
+				<string>go</string>
 				<string>clean</string>
+				<string>NSToolbarFlexibleSpaceItem</string>
 			</array>
 			<key>ControllerClassBaseName</key>
 			<string></string>
@@ -391,7 +394,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>CB3742AB106A5CEF00AED801</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>CheckAppUpdateOperation.m</string>
+								<string>CoruscationDelegate.m</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -399,15 +402,14 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>CB3742AC106A5CEF00AED801</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>CheckAppUpdateOperation.m</string>
+										<string>CoruscationDelegate.m</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>CB9FB9B01094CD0400BE2305</string>
+										<string>CBD3CA1F1095FF3B001A8758</string>
 										<key>history</key>
 										<array>
-											<string>CB8B70711091125C00CBFAD4</string>
-											<string>CB9FB9AE1094CCDE00BE2305</string>
+											<string>CB825EB41095FF1C0054B78D</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -530,11 +532,11 @@
 			</array>
 			<key>TableOfContents</key>
 			<array>
-				<string>CB9FB9861094CB9600BE2305</string>
+				<string>CBD3CA191095FF3B001A8758</string>
 				<string>1CA23ED40692098700951B8B</string>
-				<string>CB9FB9871094CB9600BE2305</string>
+				<string>CBD3CA1A1095FF3B001A8758</string>
 				<string>CB3742AB106A5CEF00AED801</string>
-				<string>CB9FB9881094CB9600BE2305</string>
+				<string>CBD3CA1B1095FF3B001A8758</string>
 				<string>1CA23EDF0692099D00951B8B</string>
 				<string>1CA23EE00692099D00951B8B</string>
 				<string>1CA23EE10692099D00951B8B</string>
@@ -549,9 +551,9 @@
 			<key>ChosenToolbarItems</key>
 			<array>
 				<string>XCToolbarPerspectiveControl</string>
-				<string>NSToolbarSpaceItem</string>
-				<string>active-executable-popup</string>
-				<string>NSToolbarSpaceItem</string>
+				<string>active-combo-popup</string>
+				<string>NSToolbarSeparatorItem</string>
+				<string>build</string>
 				<string>build-and-go</string>
 				<string>go</string>
 				<string>NSToolbarFlexibleSpaceItem</string>
@@ -683,13 +685,13 @@
 			</array>
 			<key>TableOfContents</key>
 			<array>
-				<string>CB9FB9891094CB9600BE2305</string>
+				<string>CB825EA21095FEDF0054B78D</string>
 				<string>1CCC7628064C1048000F2A68</string>
 				<string>1CCC7629064C1048000F2A68</string>
-				<string>CB9FB98A1094CB9600BE2305</string>
-				<string>CB9FB98B1094CB9600BE2305</string>
-				<string>CB9FB98C1094CB9600BE2305</string>
-				<string>CB9FB98D1094CB9600BE2305</string>
+				<string>CB825EA31095FEDF0054B78D</string>
+				<string>CB825EA41095FEDF0054B78D</string>
+				<string>CB825EA51095FEDF0054B78D</string>
+				<string>CB825EA61095FEDF0054B78D</string>
 				<string>CB3742AB106A5CEF00AED801</string>
 			</array>
 			<key>ToolbarConfigUserDefaultsMinorVersion</key>
@@ -707,7 +709,7 @@
 	<key>StatusbarIsVisible</key>
 	<true/>
 	<key>TimeStamp</key>
-	<real>278187268.46219599</real>
+	<real>278265659.588099</real>
 	<key>ToolbarConfigUserDefaultsMinorVersion</key>
 	<string>2</string>
 	<key>ToolbarDisplayMode</key>
@@ -724,9 +726,7 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>CB9FB98F1094CB9600BE2305</string>
-		<string>CB9FB9901094CB9600BE2305</string>
-		<string>/Users/karl/Projects/Coruscation/Coruscation/Coruscation.xcodeproj</string>
+		<string>/Users/karl/Projects/Coruscation/coruscation/Coruscation.xcodeproj</string>
 	</array>
 	<key>WindowString</key>
 	<string>151 95 1613 1035 0 0 1920 1178 </string>
@@ -1567,7 +1567,7 @@
 			<key>TableOfContents</key>
 			<array>
 				<string>CBA15A5A10892831002EC526</string>
-				<string>CB53B278108FBE8B004EAFF2</string>
+				<string>CB825EA71095FEDF0054B78D</string>
 				<string>CBA15A5910892831002EC526</string>
 			</array>
 			<key>WindowString</key>

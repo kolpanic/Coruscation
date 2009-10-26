@@ -1,10 +1,7 @@
-#import <Cocoa/Cocoa.h>
+#import <Foundation/Foundation.h>
 
 @interface FindSparkleAppsOperation : NSOperation {
 @private
-	NSOperationQueue *_operationQueue;
 }
-
-@property (retain) NSOperationQueue *operationQueue;
 
 @end

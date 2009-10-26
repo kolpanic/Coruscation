@@ -1,6 +1,7 @@
 #import "CoruscationDelegate.h"
 #import "SparkleBundle.h"
 #import "FindSparkleAppsOperation.h"
+#import "CheckAppUpdateOperation.h"
 
 @implementation CoruscationDelegate
 
@@ -87,6 +88,10 @@
 #pragma mark -
 #pragma mark Convenience
 
+- (void) checkAppUpdateForBundleURL:(NSURL *)url {
+	[self.operationQueue addOperation:[[CheckAppUpdateOperation alloc] initWithBundleURL:url]];
+}
+
 - (void) addSparkleBundleWithUserInfo:(NSDictionary *) userInfo {
 	NSURL *url = [userInfo objectForKey:@"url"];
 	NSManagedObjectContext *moc = [self managedObjectContext];
@@ -108,7 +113,6 @@
 		return;
 	[self.managedObjectContext reset];
 	FindSparkleAppsOperation *op = [FindSparkleAppsOperation new];
-	op.operationQueue = self.operationQueue;
 	[self.operationQueue addOperation:op];
 }
 

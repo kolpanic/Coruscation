@@ -1,5 +1,4 @@
 #import "FindSparkleAppsOperation.h"
-#import "CheckAppUpdateOperation.h"
 
 extern void _LSCopyAllApplicationURLs(NSArray**); // private API
 
@@ -12,15 +11,13 @@ extern void _LSCopyAllApplicationURLs(NSArray**); // private API
 		for (NSURL *bundleURL in bundleURLs) {
 			NSBundle *bundle = [NSBundle bundleWithURL:bundleURL];
 			NSString *suFeedURL = [[bundle infoDictionary] objectForKey:@"SUFeedURL"];
-			if (suFeedURL) {
-				[self.operationQueue performSelectorOnMainThread:@selector(addOperation:)
-													  withObject:[[CheckAppUpdateOperation alloc] initWithBundleURL:bundleURL]
-												   waitUntilDone:NO];
+			if (suFeedURL && [[NSApp delegate] respondsToSelector:@selector(checkAppUpdateForBundleURL:)]) {
+				[[NSApp delegate] performSelectorOnMainThread:@selector(checkAppUpdateForBundleURL:)
+												   withObject:bundleURL
+												waitUntilDone:NO];
 			}
 		}
 	}
 }
-
-@synthesize operationQueue = _operationQueue;
 
 @end

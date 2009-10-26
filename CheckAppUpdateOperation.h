@@ -17,6 +17,6 @@
 @property (assign) BOOL isExecuting;
 @property (assign) BOOL isFinished;
 @property (retain) SUUpdater *updater;
-@property (retain) NSTimer *timeOut;
+@property (retain) NSTimer *timeOutTimer;
 
 @end
