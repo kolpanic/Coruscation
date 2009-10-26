@@ -16,7 +16,7 @@
 
 - (void) applicationDidFinishLaunching:(NSNotification *) aNotification {
 	self.sorter = [NSArray arrayWithObject:[[NSSortDescriptor alloc] initWithKey:@"displayName" ascending:YES]];
-	[self reload:nil];
+	[self refresh:nil];
 }
 
 - (BOOL) applicationOpenUntitledFile:(NSApplication *) theApplication {
@@ -108,7 +108,7 @@
 	NSLog(@"%@", [self.operationQueue operations]);
 }
 
-- (IBAction) reload:(id) sender {
+- (IBAction) refresh:(id) sender {
 	if ([self.operationQueue operationCount] > 0)
 		return;
 	[self.managedObjectContext reset];

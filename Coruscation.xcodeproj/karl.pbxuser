@@ -113,12 +113,12 @@
 					PBXFileDataSource_Warnings_ColumnID,
 				);
 			};
-			PBXPerProjectTemplateStateSaveDate = 278265652;
-			PBXWorkspaceStateSaveDate = 278265652;
+			PBXPerProjectTemplateStateSaveDate = 278266895;
+			PBXWorkspaceStateSaveDate = 278266895;
 		};
 		perUserProjectItems = {
-			CB825EB41095FF1C0054B78D /* PBXTextBookmark */ = CB825EB41095FF1C0054B78D /* PBXTextBookmark */;
-			CBD3CA1F1095FF3B001A8758 /* PBXTextBookmark */ = CBD3CA1F1095FF3B001A8758 /* PBXTextBookmark */;
+			CB686C2810960485002CE2BF /* PBXTextBookmark */ = CB686C2810960485002CE2BF /* PBXTextBookmark */;
+			CB686C2910960485002CE2BF /* PBXTextBookmark */ = CB686C2910960485002CE2BF /* PBXTextBookmark */;
 		};
 		sourceControlManager = CB32A9101088C65D00343471 /* Source Control */;
 		userBuildSettings = {
@@ -314,8 +314,8 @@
 	77C8280C06725ACE000B614F /* CoruscationDelegate.m */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {1208, 2508}}";
-			sepNavSelRange = "{4369, 0}";
-			sepNavVisRange = "{2713, 1656}";
+			sepNavSelRange = "{2977, 0}";
+			sepNavVisRange = "{2577, 1697}";
 		};
 	};
 	8D1107260486CEB800E47090 /* Coruscation */ = {
@@ -396,6 +396,26 @@
 			sepNavVisRange = "{0, 1170}";
 		};
 	};
+	CB686C2810960485002CE2BF /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 77C8280C06725ACE000B614F /* CoruscationDelegate.m */;
+		name = "CoruscationDelegate.m: 92";
+		rLen = 0;
+		rLoc = 2977;
+		rType = 0;
+		vrLen = 1697;
+		vrLoc = 2577;
+	};
+	CB686C2910960485002CE2BF /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 77C8280C06725ACE000B614F /* CoruscationDelegate.m */;
+		name = "CoruscationDelegate.m: 92";
+		rLen = 0;
+		rLoc = 2977;
+		rType = 0;
+		vrLen = 1697;
+		vrLoc = 2577;
+	};
 	CB7094B8108B951A0008D104 /* FindSparkleAppsOperation.h */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {1208, 972}}";
@@ -409,16 +429,6 @@
 			sepNavSelRange = "{700, 0}";
 			sepNavVisRange = "{0, 708}";
 		};
-	};
-	CB825EB41095FF1C0054B78D /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 77C8280C06725ACE000B614F /* CoruscationDelegate.m */;
-		name = "CoruscationDelegate.m: 83";
-		rLen = 0;
-		rLoc = 2746;
-		rType = 0;
-		vrLen = 1724;
-		vrLoc = 2641;
 	};
 	CBA648D5108EB22000667F15 /* Credits.html */ = {
 		uiCtxt = {
@@ -441,16 +451,6 @@
 			sepNavSelRange = "{1585, 0}";
 			sepNavVisRange = "{1379, 1400}";
 		};
-	};
-	CBD3CA1F1095FF3B001A8758 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 77C8280C06725ACE000B614F /* CoruscationDelegate.m */;
-		name = "CoruscationDelegate.m: 131";
-		rLen = 0;
-		rLoc = 4369;
-		rType = 0;
-		vrLen = 1656;
-		vrLoc = 2713;
 	};
 	CBF233B6108D629600D2A5FF /* CollectionItemView.h */ = {
 		uiCtxt = {

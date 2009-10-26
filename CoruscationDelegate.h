@@ -11,7 +11,7 @@
 }
 
 - (IBAction) log:(id) sender;
-- (IBAction) reload:(id) sender;
+- (IBAction) refresh:(id) sender;
 - (IBAction) openSelected:(id) sender;
 
 @property (nonatomic, retain, readonly) NSPersistentStoreCoordinator *persistentStoreCoordinator;
