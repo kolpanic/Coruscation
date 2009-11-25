@@ -38,6 +38,8 @@
 			[self.updater setDelegate:self];
 			[self.updater setAutomaticallyChecksForUpdates:NO];
 			[self.updater setAutomaticallyDownloadsUpdates:NO];
+			if ([[[self.updater feedURL] pathExtension] isEqualToString:@"php"])
+				[self.updater setSendsSystemProfile:YES];
 			[self.updater checkForUpdateInformation];
 			
 			self.timeOutTimer = [NSTimer scheduledTimerWithTimeInterval:[[NSUserDefaults standardUserDefaults] doubleForKey:@"UpdateCheckTimeOutInterval"]
