@@ -1,5 +1,6 @@
 #import "CoruscationDelegate.h"
 #import "SparkleBundle.h"
+#import "Sparkle/SUUpdater.h"
 #import "FindSparkleAppsOperation.h"
 #import "CheckAppUpdateOperation.h"
 
@@ -110,10 +111,6 @@
 #pragma mark -
 #pragma mark IB Actions
 
-- (IBAction) log:(id)sender {
-	NSLog(@"%@", [self.operationQueue operations]);
-}
-
 - (IBAction) refresh:(id)sender {
 	if ([self.operationQueue operationCount] > 0)
 		return;
@@ -123,11 +120,23 @@
 }
 
 - (IBAction) openSelected:(id)sender {
+	NSURL *bundleURL = [[NSBundle mainBundle] bundleURL];
 	for (SparkleBundle *sparkleBundle in [self.updateItems selectedObjects]) {
-		[[NSWorkspace sharedWorkspace] launchApplicationAtURL:[sparkleBundle.bundle bundleURL]
-													  options:NSWorkspaceLaunchWithoutActivation
-												configuration:nil
-														error:nil];
+		NSURL *updateURL = [sparkleBundle.bundle bundleURL];
+		if ([updateURL isEqual:bundleURL])
+			[[SUUpdater sharedUpdater] checkForUpdates:nil];
+		else
+			[[NSWorkspace sharedWorkspace] launchApplicationAtURL:updateURL
+														  options:NSWorkspaceLaunchWithoutActivation
+													configuration:nil
+															error:nil];
+	}
+}
+
+- (IBAction) revealSelected:(id)sender {
+	for (SparkleBundle *sparkleBundle in [self.updateItems selectedObjects]) {
+		NSString *path = [[sparkleBundle.bundle bundleURL] path];
+		[[NSWorkspace sharedWorkspace] selectFile:path inFileViewerRootedAtPath:@""];
 	}
 }
 

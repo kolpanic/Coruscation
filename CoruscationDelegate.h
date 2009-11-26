@@ -11,9 +11,9 @@
 	NSArray *_sorter;
 }
 
-- (IBAction) log:(id)sender;
 - (IBAction) refresh:(id)sender;
 - (IBAction) openSelected:(id)sender;
+- (IBAction) revealSelected:(id)sender;
 
 @property (retain) IBOutlet NSCollectionView *collectionView;
 @property (nonatomic, retain, readonly) NSPersistentStoreCoordinator *persistentStoreCoordinator;

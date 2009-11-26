@@ -28,5 +28,7 @@
 	<string>Coruscation-MainMenu</string>
 	<key>NSPrincipalClass</key>
 	<string>NSApplication</string>
+	<key>SUFeedURL</key>
+	<string>https://bitbucket.org/kolpanic/coruscation/downloads/appcast.xml</string>
 </dict>
 </plist>
