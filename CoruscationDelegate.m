@@ -14,18 +14,24 @@
 	return self;
 }
 
-- (void) applicationDidFinishLaunching:(NSNotification *) aNotification {
+- (void) applicationDidFinishLaunching:(NSNotification *)aNotification {
 	self.sorter = [NSArray arrayWithObject:[[NSSortDescriptor alloc] initWithKey:@"displayName" ascending:YES]];
 	[self refresh:nil];
 }
 
-- (BOOL) applicationOpenUntitledFile:(NSApplication *) theApplication {
+- (BOOL) applicationOpenUntitledFile:(NSApplication *)theApplication {
 	[self showWindow:nil];
 	return YES;
 }
 
+- (void) awakeFromNib {
+	self.collectionView.maxNumberOfColumns = 1;
+	self.collectionView.minItemSize = NSMakeSize(0.0, 68.0);
+	self.collectionView.maxItemSize = NSMakeSize(10000.0, 68.0);
+}
+
 + (void) initialize {
-	if (self == [CoruscationDelegate class]) {		
+	if (self == [CoruscationDelegate class]) {
 		NSDictionary *defaults = [NSDictionary dictionaryWithObjectsAndKeys:
 								  [NSNumber numberWithDouble:10.0], @"UpdateCheckTimeOutInterval",
 								  nil];
@@ -81,7 +87,7 @@
 	return _managedObjectContext;
 }
 
-- (NSUndoManager *) windowWillReturnUndoManager:(NSWindow *) window {
+- (NSUndoManager *) windowWillReturnUndoManager:(NSWindow *)window {
 	return [self.managedObjectContext undoManager];
 }
 
@@ -92,7 +98,7 @@
 	[self.operationQueue addOperation:[[CheckAppUpdateOperation alloc] initWithBundleURL:url]];
 }
 
-- (void) addSparkleBundleWithUserInfo:(NSDictionary *) userInfo {
+- (void) addSparkleBundleWithUserInfo:(NSDictionary *)userInfo {
 	NSURL *url = [userInfo objectForKey:@"url"];
 	NSManagedObjectContext *moc = [self managedObjectContext];
 	SparkleBundle *sparkleBundle = [NSEntityDescription insertNewObjectForEntityForName:@"SparkleBundle" inManagedObjectContext:moc];
@@ -104,11 +110,11 @@
 #pragma mark -
 #pragma mark IB Actions
 
-- (IBAction) log:(id) sender {
+- (IBAction) log:(id)sender {
 	NSLog(@"%@", [self.operationQueue operations]);
 }
 
-- (IBAction) refresh:(id) sender {
+- (IBAction) refresh:(id)sender {
 	if ([self.operationQueue operationCount] > 0)
 		return;
 	[self.managedObjectContext reset];
@@ -116,7 +122,7 @@
 	[self.operationQueue addOperation:op];
 }
 
-- (IBAction) openSelected:(id) sender {
+- (IBAction) openSelected:(id)sender {
 	for (SparkleBundle *sparkleBundle in [self.updateItems selectedObjects]) {
 		[[NSWorkspace sharedWorkspace] launchApplicationAtURL:[sparkleBundle.bundle bundleURL]
 													  options:NSWorkspaceLaunchWithoutActivation
@@ -126,6 +132,6 @@
 }
 
 @dynamic persistentStoreCoordinator, managedObjectModel, managedObjectContext;
-@synthesize updateItems = _updateItems, operationQueue = _operationQueue, sorter = _sorter;
+@synthesize collectionView = _collectionView, updateItems = _updateItems, operationQueue = _operationQueue, sorter = _sorter;
 
 @end

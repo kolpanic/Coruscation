@@ -2,6 +2,7 @@
 
 @interface CoruscationDelegate : NSWindowController {
 @private
+	NSCollectionView *_collectionView;
 	NSPersistentStoreCoordinator *_persistentStoreCoordinator;
 	NSManagedObjectModel *_managedObjectModel;
 	NSManagedObjectContext *_managedObjectContext;
@@ -10,10 +11,11 @@
 	NSArray *_sorter;
 }
 
-- (IBAction) log:(id) sender;
-- (IBAction) refresh:(id) sender;
-- (IBAction) openSelected:(id) sender;
+- (IBAction) log:(id)sender;
+- (IBAction) refresh:(id)sender;
+- (IBAction) openSelected:(id)sender;
 
+@property (retain) IBOutlet NSCollectionView *collectionView;
 @property (nonatomic, retain, readonly) NSPersistentStoreCoordinator *persistentStoreCoordinator;
 @property (nonatomic, retain, readonly) NSManagedObjectModel *managedObjectModel;
 @property (nonatomic, retain, readonly) NSManagedObjectContext *managedObjectContext;
