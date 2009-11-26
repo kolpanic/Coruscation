@@ -10,7 +10,11 @@ if (newVersion == nil)
 • SUBasicUpdateDriver.m, At the end of the method -appcast:failedToLoadWithError:, so the delegate is notified of errors.
 [self didNotFindUpdate];
 
-• SUUpdater.m: Comment out the if block at line 74 that checks for securely-delivered updates. Apps built with older Sparkle will likely fail this test, and the alerts are annoying.
+• SUUpdater.m: Comment out the if block at line 74 that checks for securely-delivered updates. Apps built with older Sparkle will likely fail this test, the alerts are annoying. Also comment out lines 342 & 343 that limit profile sending to weekly.
+74:
 //if (![[[self feedURL] scheme] isEqualToString:@"https"] && ![host publicDSAKey])
 //	NSRunAlertPanel(@"Insecure update error!", @"For security reasons, you need to distribute your appcast over SSL or sign your updates. See Sparkle's documentation for more information.", @"OK", nil, nil);
 
+342:
+//	const NSTimeInterval oneWeek = 60 * 60 * 24 * 7;
+//	sendingSystemProfile &= (-[lastSubmitDate timeIntervalSinceNow] >= oneWeek);

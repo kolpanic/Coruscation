@@ -8,7 +8,7 @@
 		};
 	};
 	29B97313FDCFA39411CA2CEA /* Project object */ = {
-		activeBuildConfigurationName = Release;
+		activeBuildConfigurationName = Debug;
 		activeExecutable = CB32A9031088C63F00343471 /* Coruscation */;
 		activeTarget = 8D1107260486CEB800E47090 /* Coruscation */;
 		addToTargets = (
@@ -113,13 +113,13 @@
 					PBXFileDataSource_Warnings_ColumnID,
 				);
 			};
-			PBXPerProjectTemplateStateSaveDate = 280874734;
-			PBXWorkspaceStateSaveDate = 280874734;
+			PBXPerProjectTemplateStateSaveDate = 280945398;
+			PBXWorkspaceStateSaveDate = 280945398;
 		};
 		perUserProjectItems = {
+			CB56405210BEE3B900697678 /* PBXTextBookmark */ = CB56405210BEE3B900697678 /* PBXTextBookmark */;
+			CB56405B10BEE3DD00697678 /* PBXTextBookmark */ = CB56405B10BEE3DD00697678 /* PBXTextBookmark */;
 			CBF8F1D110BDCFA4001E1EAD /* PBXTextBookmark */ = CBF8F1D110BDCFA4001E1EAD /* PBXTextBookmark */;
-			CBF8F20F10BDD0FF001E1EAD /* PBXTextBookmark */ = CBF8F20F10BDD0FF001E1EAD /* PBXTextBookmark */;
-			CBF8F21010BDD0FF001E1EAD /* PBXTextBookmark */ = CBF8F21010BDD0FF001E1EAD /* PBXTextBookmark */;
 		};
 		sourceControlManager = CB32A9101088C65D00343471 /* Source Control */;
 		userBuildSettings = {
@@ -393,9 +393,29 @@
 	CB53B270108FBE78004EAFF2 /* Read Me.txt */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {1208, 972}}";
-			sepNavSelRange = "{1169, 0}";
-			sepNavVisRange = "{0, 1170}";
+			sepNavSelRange = "{1245, 0}";
+			sepNavVisRange = "{0, 1378}";
 		};
+	};
+	CB56405210BEE3B900697678 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CBB7FC57108D2575003E062A /* CheckAppUpdateOperation.m */;
+		name = "CheckAppUpdateOperation.m: 37";
+		rLen = 0;
+		rLoc = 914;
+		rType = 0;
+		vrLen = 454;
+		vrLoc = 774;
+	};
+	CB56405B10BEE3DD00697678 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CBB7FC57108D2575003E062A /* CheckAppUpdateOperation.m */;
+		name = "CheckAppUpdateOperation.m: 15";
+		rLen = 0;
+		rLoc = 279;
+		rType = 0;
+		vrLen = 1520;
+		vrLoc = 0;
 	};
 	CB7094B8108B951A0008D104 /* FindSparkleAppsOperation.h */ = {
 		uiCtxt = {
@@ -428,8 +448,8 @@
 	};
 	CBB7FC57108D2575003E062A /* CheckAppUpdateOperation.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1208, 1995}}";
-			sepNavSelRange = "{936, 0}";
+			sepNavIntBoundsRect = "{{0, 0}, {1208, 1976}}";
+			sepNavSelRange = "{279, 0}";
 			sepNavVisRange = "{0, 1520}";
 		};
 	};
@@ -456,25 +476,5 @@
 		rType = 0;
 		vrLen = 1697;
 		vrLoc = 2577;
-	};
-	CBF8F20F10BDD0FF001E1EAD /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = CBB7FC57108D2575003E062A /* CheckAppUpdateOperation.m */;
-		name = "CheckAppUpdateOperation.m: 38";
-		rLen = 0;
-		rLoc = 936;
-		rType = 0;
-		vrLen = 1520;
-		vrLoc = 0;
-	};
-	CBF8F21010BDD0FF001E1EAD /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = CBB7FC57108D2575003E062A /* CheckAppUpdateOperation.m */;
-		name = "CheckAppUpdateOperation.m: 38";
-		rLen = 0;
-		rLoc = 936;
-		rType = 0;
-		vrLen = 1520;
-		vrLoc = 0;
 	};
 }
