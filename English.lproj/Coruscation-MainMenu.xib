@@ -354,18 +354,18 @@
 									<reference key="NSOnImage" ref="893455832"/>
 									<reference key="NSMixedImage" ref="424226900"/>
 								</object>
-								<object class="NSMenuItem" id="1005751409">
+								<object class="NSMenuItem" id="125017931">
 									<reference key="NSMenu" ref="960517776"/>
-									<string key="NSTitle">Refresh</string>
+									<string key="NSTitle">Reveal in Finder</string>
 									<string key="NSKeyEquiv">r</string>
 									<int key="NSKeyEquivModMask">1048576</int>
 									<int key="NSMnemonicLoc">2147483647</int>
 									<reference key="NSOnImage" ref="893455832"/>
 									<reference key="NSMixedImage" ref="424226900"/>
 								</object>
-								<object class="NSMenuItem" id="125017931">
+								<object class="NSMenuItem" id="1005751409">
 									<reference key="NSMenu" ref="960517776"/>
-									<string key="NSTitle">Reveal in Finder</string>
+									<string key="NSTitle">Refresh</string>
 									<string key="NSKeyEquiv">r</string>
 									<int key="NSKeyEquivModMask">1572864</int>
 									<int key="NSMnemonicLoc">2147483647</int>
@@ -1176,6 +1176,22 @@
 					</object>
 					<int key="connectionID">791</int>
 				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">enabled: selectedObjects.@count</string>
+						<reference key="source" ref="125017931"/>
+						<reference key="destination" ref="32395910"/>
+						<object class="NSNibBindingConnector" key="connector">
+							<reference key="NSSource" ref="125017931"/>
+							<reference key="NSDestination" ref="32395910"/>
+							<string key="NSLabel">enabled: selectedObjects.@count</string>
+							<string key="NSBinding">enabled</string>
+							<string key="NSKeyPath">selectedObjects.@count</string>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">793</int>
+				</object>
 			</object>
 			<object class="IBMutableOrderedSet" key="objectRecords">
 				<object class="NSArray" key="orderedObjects">
@@ -1853,7 +1869,7 @@
 				</object>
 			</object>
 			<nil key="sourceID"/>
-			<int key="maxID">791</int>
+			<int key="maxID">793</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<object class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -1877,14 +1893,12 @@
 						<bool key="EncodedWithXMLCoder">YES</bool>
 						<object class="NSArray" key="dict.sortedKeys">
 							<bool key="EncodedWithXMLCoder">YES</bool>
-							<string>log:</string>
 							<string>openSelected:</string>
 							<string>refresh:</string>
 							<string>revealSelected:</string>
 						</object>
 						<object class="NSMutableArray" key="dict.values">
 							<bool key="EncodedWithXMLCoder">YES</bool>
-							<string>id</string>
 							<string>id</string>
 							<string>id</string>
 							<string>id</string>
