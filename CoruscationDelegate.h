@@ -11,6 +11,7 @@
 	NSArray *_sorter;
 }
 
+- (IBAction) go:(id)sender;
 - (IBAction) refresh:(id)sender;
 - (IBAction) openSelected:(id)sender;
 - (IBAction) revealSelected:(id)sender;

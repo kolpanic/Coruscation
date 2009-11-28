@@ -99,6 +99,8 @@
 		CBB7FC57108D2575003E062A /* CheckAppUpdateOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CheckAppUpdateOperation.m; sourceTree = "<group>"; };
 		CBF233B6108D629600D2A5FF /* CollectionItemView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectionItemView.h; sourceTree = "<group>"; };
 		CBF233B7108D629600D2A5FF /* CollectionItemView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectionItemView.m; sourceTree = "<group>"; };
+		CBFE71AB10C17BE5007DF3BB /* appcast.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = appcast.xml; sourceTree = "<group>"; };
+		CBFE71AC10C17BE5007DF3BB /* relnotes.html */ = {isa = PBXFileReference; explicitFileType = text.html; fileEncoding = 4; path = relnotes.html; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -141,6 +143,8 @@
 			isa = PBXGroup;
 			children = (
 				CB53B270108FBE78004EAFF2 /* Read Me.txt */,
+				CBFE71AC10C17BE5007DF3BB /* relnotes.html */,
+				CBFE71AB10C17BE5007DF3BB /* appcast.xml */,
 				7756732906782D8800D1FEB8 /* Models */,
 				080E96DDFE201D6D7F000001 /* Classes */,
 				29B97315FDCFA39411CA2CEA /* Other Sources */,
@@ -377,7 +381,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_ENABLE_OBJC_GC = required;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
@@ -393,7 +397,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_ENABLE_OBJC_GC = required;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;

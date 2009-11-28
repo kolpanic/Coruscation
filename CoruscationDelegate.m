@@ -111,6 +111,25 @@
 #pragma mark -
 #pragma mark IB Actions
 
+- (IBAction) go:(id)sender {
+	if ([[sender className] isEqualToString:@"NSSegmentedControl"]) {
+		NSSegmentedControl *control = sender;
+		switch ([control selectedSegment]) {
+			case 0:
+				[self openSelected:sender];
+				break;
+			case 1:
+				[self revealSelected:sender];
+				break;
+			case 2:
+				[self refresh:sender];
+				break;
+			default:
+				break;
+		}
+	}
+}
+
 - (IBAction) refresh:(id)sender {
 	if ([self.operationQueue operationCount] > 0)
 		return;
