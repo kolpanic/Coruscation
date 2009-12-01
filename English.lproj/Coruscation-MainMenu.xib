@@ -12,8 +12,8 @@
 		</object>
 		<object class="NSMutableArray" key="IBDocument.EditedObjectIDs">
 			<bool key="EncodedWithXMLCoder">YES</bool>
-			<integer value="29"/>
 			<integer value="2"/>
+			<integer value="29"/>
 		</object>
 		<object class="NSArray" key="IBDocument.PluginDependencies">
 			<bool key="EncodedWithXMLCoder">YES</bool>
@@ -187,7 +187,7 @@
 							<reference key="NSSuperview" ref="823886803"/>
 							<bool key="NSEnabled">YES</bool>
 							<object class="NSSegmentedCell" key="NSCell" id="170332673">
-								<int key="NSCellFlags">67239424</int>
+								<int key="NSCellFlags">-2080244224</int>
 								<int key="NSCellFlags2">131072</int>
 								<reference key="NSSupport" ref="26"/>
 								<reference key="NSControlView" ref="504117047"/>
@@ -207,7 +207,7 @@
 										<double key="NSSegmentItemWidth">32</double>
 										<object class="NSCustomResource" key="NSSegmentItemImage">
 											<string key="NSClassName">NSImage</string>
-											<string key="NSResourceName">NSRevealFreestandingTemplate</string>
+											<string key="NSResourceName">RevealTemplate</string>
 										</object>
 										<string key="NSSegmentItemLabel"/>
 										<string key="NSSegmentItemTooltip">Reveal in Finder</string>
@@ -218,14 +218,14 @@
 										<double key="NSSegmentItemWidth">32</double>
 										<object class="NSCustomResource" key="NSSegmentItemImage">
 											<string key="NSClassName">NSImage</string>
-											<string key="NSResourceName">NSRefreshFreestandingTemplate</string>
+											<string key="NSResourceName">NSRefreshTemplate</string>
 										</object>
 										<string key="NSSegmentItemTooltip">Refresh</string>
 										<int key="NSSegmentItemTag">2</int>
 										<int key="NSSegmentItemImageScaling">0</int>
 									</object>
 								</object>
-								<int key="NSSelectedSegment">1</int>
+								<int key="NSSelectedSegment">2</int>
 								<int key="NSTrackingMode">2</int>
 								<int key="NSSegmentStyle">4</int>
 							</object>
@@ -1924,7 +1924,7 @@
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
-					<integer value="0"/>
+					<integer value="1"/>
 					<string>{{707, 940}, {199, 93}}</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<integer value="1"/>
