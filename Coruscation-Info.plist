@@ -12,6 +12,10 @@
 	<string>com.voodooergonomics.${PRODUCT_NAME:rfc1034identifier}</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
+	<key>CFBundleHelpBookFolder</key>
+	<string>Coruscation Help</string>
+	<key>CFBundleHelpBookName</key>
+	<string>Coruscation Help</string>
 	<key>CFBundleName</key>
 	<string>${PRODUCT_NAME}</string>
 	<key>CFBundlePackageType</key>

@@ -13,7 +13,7 @@
 		<object class="NSMutableArray" key="IBDocument.EditedObjectIDs">
 			<bool key="EncodedWithXMLCoder">YES</bool>
 			<integer value="2"/>
-			<integer value="29"/>
+			<integer value="81"/>
 		</object>
 		<object class="NSArray" key="IBDocument.PluginDependencies">
 			<bool key="EncodedWithXMLCoder">YES</bool>
@@ -144,12 +144,12 @@
 						</object>
 						<object class="NSProgressIndicator" id="1071071088">
 							<reference key="NSNextResponder" ref="823886803"/>
-							<int key="NSvFlags">1313</int>
+							<int key="NSvFlags">1325</int>
 							<object class="NSPSMatrix" key="NSDrawMatrix"/>
-							<string key="NSFrame">{{343, 12}, {16, 16}}</string>
+							<string key="NSFrame">{{177, 153}, {32, 32}}</string>
 							<reference key="NSSuperview" ref="823886803"/>
 							<bool key="NSViewCanDrawConcurrently">YES</bool>
-							<int key="NSpiFlags">28938</int>
+							<int key="NSpiFlags">28682</int>
 							<double key="NSMaxValue">100</double>
 						</object>
 						<object class="NSTextField" id="11130461">
@@ -1294,9 +1294,9 @@
 						<object class="NSMutableArray" key="children">
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<reference ref="713813365"/>
-							<reference ref="1071071088"/>
 							<reference ref="504117047"/>
 							<reference ref="11130461"/>
+							<reference ref="1071071088"/>
 						</object>
 						<reference key="parent" ref="483958638"/>
 					</object>

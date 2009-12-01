@@ -1,0 +1,146 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+	<head>
+		<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+		<title>Mojotones Help</title>
+		<meta name="AppleTitle" content="Mojotones Help" />
+		<meta name="AppleIcon" content="Mojotones Help/gfx/iconSmall.png" />
+		<link href="sty/topic.css" type="text/css" rel="stylesheet" media="all" />
+	</head>
+	<body>
+		<div id="mainbox">
+			<div id="caticon">
+				<img src="gfx/icon.png" alt="Mojotones icon" />
+			</div>
+			<div id="pagetitle">
+				<h1>Mojotones</h1>
+				<p><a href="http://voodooergonomics.com/">http://voodooergonomics.com/</a></p>
+			</div>
+			<table class="dots" width="100%" border="0" cellspacing="0" cellpadding="0" summary="Two column table with heading">
+				<tr>
+					<td class="blue" colspan="2">
+						<h3> Use your tunes as your tones</h3>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top"><img src="gfx/player.png" alt="Player" /></td>
+					<td valign="top">
+						<p>Find the track you want to use in the list, then click the play button to show the player. Drag the left and right sliders at the bottom to pick the segment of the track you want to use.
+						</p>
+						<p>If the track is not in your library, choose Open Other... from under the file menu and navigate through the open panel to find your desired audio file. It will then appear in the Other playlist.
+						</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top"><img src="gfx/controlmenu.png" alt="Control Menu" /></td>
+					<td valign="top">
+						<p> For pinpoint control over the range, use the Nudge items under the Control menu. If you want to start over, and just have the entire track selected, the Select All item under the Edit menu restores the selection (unless the search field has focus, in which case its entire text is selected).
+						</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top"><img src="gfx/manualadjustment.png" alt="Control Menu" /></td>
+					<td valign="top">
+						<p>To set an exact range duration, choose the Manually Modify Range item under the Control menu, then enter a duration and choose which end to move and click OK. The range slider will be adjusted to match the duration you enter.
+						</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top"><img src="gfx/sendbutton.png" alt="Send Button" /></td>
+					<td valign="top">
+						<p>Once you have the the segment set up to your liking, choose one of the items under the File menu:</p>
+						<ul>
+							<li>The Send Ringtone via Bluetooth item lets you initiate a file transfer to your phone. If you haven&apos;t already pre&ndash;chosen a device in General Preferences, you&apos;ll have to choose a device each time. You may have to pair your phone with your Mac first. Consult your phone&apos;s documentation to find out how to accept the file, play the track or use it as a ringtone.
+							</li>
+							<li>The Save Ringtone As... item lets you save the track to a local file. After you&apos;ve connected your phone via a cable, or removed its memory card and put it into a media reader, you can save the ringtone directly to the right place on the card. Alternately, you can save the ringtone to your hard disk, then drag it over to the memory card in the Finder. Consult your phone&apos;s documentation to determine the appropriate place to save ringtones.
+							</li>
+							<li>The Add iPhone Ringtone item adds the selection to the Ringtones section of iTunes. After you next sync, the ringtone will appear as a custom ringtone in the iPhone&apos;s Sounds settings. iPhone ringtones are limited to 40 seconds in length. (This option requires an iPhone with firmware 1.1.2 and iTunes 7.5.)
+							</li>
+						</ul>
+						<p>The Send button near lower&ndash;right corner of the main window will trigger one of these actions depending on the option you set in General Preferences. If you hold down the option key when clicking this button, the pre&nadsh;chosen destination settings are ignored.
+						</p>
+					</td>
+				</tr>
+			</table>
+			<br />
+			<table class="dots" width="100%" border="0" cellspacing="0" cellpadding="0" summary="Two column table with heading">
+				<tr>
+					<td class="blue" colspan="2">
+						<h3>Preferences</h3>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top"><img src="gfx/generalprefs.png" alt="General Preferences" /></td>
+					<td valign="top">
+						<h2>General</h2>
+						<p>Choose an export format supported by your phone. AAC and MP3 produce much smaller files &mdash; they&apos;ll transfer more quickly and your phone will be able to hold more of them. WAV and MP3 may be compatible with more devices. For information on where to get a QuickTime MP3 encoder, click <a href="http://voodooergonomics.com/mojotones/mp3info/">here</a>.
+						</p>
+						<p>If you have the whole track selected &mdash; so the left and right sliders are at the extremes of the range &mdash; you can choose to ignore the chosen encoding option and just send the track as&ndash;is. This is useful if the track is already in a format your phone supports.
+						</p>
+						<p>Your phone may be able to be tricked into using ringtones even if your telephone company has disabled third&ndash;party ringtones by naming the ringtone file with an extension that the phone can use (e.g., mid, for MIDI files). First, choose or type a format that your phone can play (even if it can't be set as a ringtone), then enable the custom extension option. (Note that this option is ignored for iPhone rigntones.)
+						</p>
+						<p>You can choose which of the export actions is triggered by the button on the main Mojotones window, corresponding to the items under the File menu.
+						</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top"><img src="gfx/destinationsprefs.png" alt="Destinations Preferences" /></td>
+					<td valign="top">
+						<h2>Destinations</h2>
+						<p>Instead of picking a Bluetooth phone or destination folder every time you click the send button, you can preset your choices here.
+						</p>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top"><img src="gfx/advancedprefs.png" alt="Advanced Preferences" /></td>
+					<td valign="top">
+						<h2>Advanced</h2>
+						<p>For finer control using the Nudge menus, decrease this amount. The default nudge amount is 0.1% of the selected range. This means that, the smaller the range, the finer the control.
+						</p>
+					</td>
+				</tr>
+			</table>
+			<br />
+			<table class="dots" width="100%" border="0" cellspacing="0" cellpadding="0" summary="Two column table with heading">
+				<tr>
+					<td class="blue" colspan="2">
+						<h3>Other Features</h3>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top">
+						<p>Mojotones scans and loads your library when it launches. If you want to reload your library without relaunching Mojotones &mdash; for example, if you&apos;ve added new tracks to iTunes &mdash; you can choose the Reload Library item under the File menu. Note that you have to quit iTunes for the changes to be recognized.
+						</p>
+						<p>When you launch Mojotones, you may be prompted to install <a href="http://growl.info/about.php">Growl</a>. Growl is an open&ndash;source framework for providing system&ndash;wide notifications. Mojotones uses Growl to notify you when your library has been loaded, and when your ringtone has been created. This is useful on slower systems. If you wish to disable these notifications, you can configure it by opening System Preferences and choosing the Growl pane.
+						</p>
+					</td>
+				</tr>
+			</table>
+			<br />
+			<table class="dots" width="100%" border="0" cellspacing="0" cellpadding="0" summary="Two column table with heading">
+				<tr>
+					<td class="blue" colspan="2">
+						<h3>Requirements and Limitations</h3>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top">
+						<ul>
+							<li>A  Mac running Mac OS X 10.4.9 and iTunes 7.0 or greater.</li>
+							<li>A mobile phone capable of playing AAC, MP3 or WAV ringtones. Consult your phone&apos;s documentation for details. (You may have to get your phone unlocked to enable this feature, <strong>though this will almost certainly violate your warranty and/or possibly your phone service contract</strong>. It's not recommended.)
+							</li>
+							<li>To send ringtones by Bluetooth, both your Mac and your phone must be Bluetooth&ndash;equipped. To save ringtones, your phone&apos;s memory must be mountable on your Mac (e.g., by a USB media reader).
+							</li>
+							<li>For iPhone ringtones, iPhone firwmare 1.1.2 and iTunes 7.5.</li>
+						</ul>
+						<p>Information on MP3 support is available <a href="http://voodooergonomics.com/mojotones/mp3info/">here</a>.
+						</p>
+						<p>Note that Mojotones will not let you send protected tracks (e.g., Purchases) to your phone. When one is selected, the Send button and menus are disabled.
+						</p>
+					</td>
+				</tr>
+			</table>
+			<br />
+		</div>
+	</body>
+</html>

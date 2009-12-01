@@ -21,6 +21,7 @@
 		CBA648A3108EB12A00667F15 /* Sparkle.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = CB7094C9108B95DE0008D104 /* Sparkle.framework */; };
 		CBA648D6108EB22000667F15 /* Credits.html in Resources */ = {isa = PBXBuildFile; fileRef = CBA648D5108EB22000667F15 /* Credits.html */; };
 		CBB7E3AC10C49C4500094536 /* RevealTemplate.pdf in Resources */ = {isa = PBXBuildFile; fileRef = CBB7E3AB10C49C4500094536 /* RevealTemplate.pdf */; };
+		CBB7E44A10C4A2C100094536 /* Coruscation Help in Resources */ = {isa = PBXBuildFile; fileRef = CBB7E44910C4A2C100094536 /* Coruscation Help */; };
 		CBB7FC58108D2575003E062A /* CheckAppUpdateOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = CBB7FC57108D2575003E062A /* CheckAppUpdateOperation.m */; };
 		CBF233B8108D629600D2A5FF /* CollectionItemView.m in Sources */ = {isa = PBXBuildFile; fileRef = CBF233B7108D629600D2A5FF /* CollectionItemView.m */; };
 /* End PBXBuildFile section */
@@ -97,6 +98,7 @@
 		CB7094C1108B95DE0008D104 /* Sparkle.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Sparkle.xcodeproj; path = ../Sparkle/Sparkle.xcodeproj; sourceTree = SOURCE_ROOT; };
 		CBA648D5108EB22000667F15 /* Credits.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = Credits.html; sourceTree = "<group>"; };
 		CBB7E3AB10C49C4500094536 /* RevealTemplate.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = RevealTemplate.pdf; sourceTree = "<group>"; };
+		CBB7E42D10C4A21C00094536 /* English */ = {isa = PBXFileReference; lastKnownFileType = folder; name = English; path = "English.lproj/Coruscation Help"; sourceTree = "<group>"; };
 		CBB7FC56108D2575003E062A /* CheckAppUpdateOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CheckAppUpdateOperation.h; sourceTree = "<group>"; };
 		CBB7FC57108D2575003E062A /* CheckAppUpdateOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CheckAppUpdateOperation.m; sourceTree = "<group>"; };
 		CBF233B6108D629600D2A5FF /* CollectionItemView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectionItemView.h; sourceTree = "<group>"; };
@@ -175,6 +177,7 @@
 				089C165CFE840E0CC02AAC07 /* InfoPlist.strings */,
 				CB23E88D1088FA23001C5740 /* Sparkle.icns */,
 				CBB7E3AB10C49C4500094536 /* RevealTemplate.pdf */,
+				CBB7E44910C4A2C100094536 /* Coruscation Help */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -297,6 +300,7 @@
 				CBA648D6108EB22000667F15 /* Credits.html in Resources */,
 				CB53B271108FBE78004EAFF2 /* Read Me.txt in Resources */,
 				CBB7E3AC10C49C4500094536 /* RevealTemplate.pdf in Resources */,
+				CBB7E44A10C4A2C100094536 /* Coruscation Help in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -342,6 +346,14 @@
 				2F7446980DB6B7EA00F9684A /* English */,
 			);
 			name = "Coruscation-MainMenu.xib";
+			sourceTree = "<group>";
+		};
+		CBB7E44910C4A2C100094536 /* Coruscation Help */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CBB7E42D10C4A21C00094536 /* English */,
+			);
+			name = "Coruscation Help";
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
