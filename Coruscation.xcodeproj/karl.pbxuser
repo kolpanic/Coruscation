@@ -113,12 +113,12 @@
 					PBXFileDataSource_Warnings_ColumnID,
 				);
 			};
-			PBXPerProjectTemplateStateSaveDate = 281320958;
-			PBXWorkspaceStateSaveDate = 281320958;
+			PBXPerProjectTemplateStateSaveDate = 281393465;
+			PBXWorkspaceStateSaveDate = 281393465;
 		};
 		perUserProjectItems = {
-			CBB7E45910C4A32D00094536 /* PBXTextBookmark */ = CBB7E45910C4A32D00094536 /* PBXTextBookmark */;
-			CBB7E45A10C4A32D00094536 /* PBXTextBookmark */ = CBB7E45A10C4A32D00094536 /* PBXTextBookmark */;
+			CB9E9CB110C5B93400B4CAE5 /* PBXTextBookmark */ = CB9E9CB110C5B93400B4CAE5 /* PBXTextBookmark */;
+			CB9E9CC510C5B93B00B4CAE5 /* PBXTextBookmark */ = CB9E9CC510C5B93B00B4CAE5 /* PBXTextBookmark */;
 		};
 		sourceControlManager = CB32A9101088C65D00343471 /* Source Control */;
 		userBuildSettings = {
@@ -313,9 +313,9 @@
 	};
 	77C8280C06725ACE000B614F /* CoruscationDelegate.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1552, 3306}}";
-			sepNavSelRange = "{4428, 0}";
-			sepNavVisRange = "{4216, 467}";
+			sepNavIntBoundsRect = "{{0, 0}, {1208, 3097}}";
+			sepNavSelRange = "{3874, 0}";
+			sepNavVisRange = "{3767, 1581}";
 		};
 	};
 	8D1107260486CEB800E47090 /* Coruscation */ = {
@@ -410,6 +410,26 @@
 			sepNavVisRange = "{0, 708}";
 		};
 	};
+	CB9E9CB110C5B93400B4CAE5 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 77C8280C06725ACE000B614F /* CoruscationDelegate.m */;
+		name = "CoruscationDelegate.m: 123";
+		rLen = 0;
+		rLoc = 4052;
+		rType = 0;
+		vrLen = 1581;
+		vrLoc = 3767;
+	};
+	CB9E9CC510C5B93B00B4CAE5 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 77C8280C06725ACE000B614F /* CoruscationDelegate.m */;
+		name = "CoruscationDelegate.m: 116";
+		rLen = 0;
+		rLoc = 3874;
+		rType = 0;
+		vrLen = 1581;
+		vrLoc = 3767;
+	};
 	CBA648D5108EB22000667F15 /* Credits.html */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {1208, 2888}}";
@@ -417,26 +437,6 @@
 			sepNavVisRange = "{0, 2500}";
 			sepNavWindowFrame = "{{82, 615}, {750, 558}}";
 		};
-	};
-	CBB7E45910C4A32D00094536 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 77C8280C06725ACE000B614F /* CoruscationDelegate.m */;
-		name = "CoruscationDelegate.m: 142";
-		rLen = 0;
-		rLoc = 4428;
-		rType = 0;
-		vrLen = 1581;
-		vrLoc = 3767;
-	};
-	CBB7E45A10C4A32D00094536 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 77C8280C06725ACE000B614F /* CoruscationDelegate.m */;
-		name = "CoruscationDelegate.m: 122";
-		rLen = 0;
-		rLoc = 4014;
-		rType = 0;
-		vrLen = 1581;
-		vrLoc = 3767;
 	};
 	CBB7FC56108D2575003E062A /* CheckAppUpdateOperation.h */ = {
 		uiCtxt = {

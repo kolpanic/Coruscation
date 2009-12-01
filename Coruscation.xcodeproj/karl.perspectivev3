@@ -283,11 +283,15 @@
 			<array>
 				<string>XCToolbarPerspectiveControl</string>
 				<string>NSToolbarSeparatorItem</string>
-				<string>active-combo-popup</string>
 				<string>action</string>
+				<string>active-combo-popup</string>
+				<string>NSToolbarSpaceItem</string>
 				<string>build</string>
 				<string>build-and-go</string>
+				<string>go</string>
+				<string>clean-target</string>
 				<string>clean</string>
+				<string>NSToolbarFlexibleSpaceItem</string>
 			</array>
 			<key>ControllerClassBaseName</key>
 			<string></string>
@@ -347,7 +351,8 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>2</integer>
+									<integer>10</integer>
+									<integer>8</integer>
 									<integer>0</integer>
 								</array>
 							</array>
@@ -403,10 +408,10 @@
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>CBB7E45A10C4A32D00094536</string>
+										<string>CB9E9CC510C5B93B00B4CAE5</string>
 										<key>history</key>
 										<array>
-											<string>CBB7E45910C4A32D00094536</string>
+											<string>CB9E9CB110C5B93400B4CAE5</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -529,11 +534,11 @@
 			</array>
 			<key>TableOfContents</key>
 			<array>
-				<string>CBB7E3EE10C49E0B00094536</string>
+				<string>CB9E9CC610C5B93B00B4CAE5</string>
 				<string>1CA23ED40692098700951B8B</string>
-				<string>CBB7E3EF10C49E0B00094536</string>
+				<string>CB9E9CC710C5B93B00B4CAE5</string>
 				<string>CB3742AB106A5CEF00AED801</string>
-				<string>CBB7E3F010C49E0B00094536</string>
+				<string>CB9E9CC810C5B93B00B4CAE5</string>
 				<string>1CA23EDF0692099D00951B8B</string>
 				<string>1CA23EE00692099D00951B8B</string>
 				<string>1CA23EE10692099D00951B8B</string>
@@ -706,7 +711,7 @@
 	<key>StatusbarIsVisible</key>
 	<true/>
 	<key>TimeStamp</key>
-	<real>281322285.66682303</real>
+	<real>281393467.23803598</real>
 	<key>ToolbarConfigUserDefaultsMinorVersion</key>
 	<string>2</string>
 	<key>ToolbarDisplayMode</key>
@@ -723,8 +728,6 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>CBB7E3FE10C49E0F00094536</string>
-		<string>CBB7E3FF10C49E0F00094536</string>
 		<string>/Users/karl/Projects/Coruscation/coruscation/Coruscation.xcodeproj</string>
 	</array>
 	<key>WindowString</key>

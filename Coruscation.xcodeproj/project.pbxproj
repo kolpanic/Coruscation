@@ -15,7 +15,6 @@
 		8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
 		CB23E88E1088FA23001C5740 /* Sparkle.icns in Resources */ = {isa = PBXBuildFile; fileRef = CB23E88D1088FA23001C5740 /* Sparkle.icns */; };
 		CB32A9751088CA7300343471 /* SparkleBundle.m in Sources */ = {isa = PBXBuildFile; fileRef = CB32A9741088CA7300343471 /* SparkleBundle.m */; };
-		CB53B271108FBE78004EAFF2 /* Read Me.txt in Resources */ = {isa = PBXBuildFile; fileRef = CB53B270108FBE78004EAFF2 /* Read Me.txt */; };
 		CB7094BA108B951A0008D104 /* FindSparkleAppsOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = CB7094B9108B951A0008D104 /* FindSparkleAppsOperation.m */; };
 		CB709522108B98190008D104 /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB7094C9108B95DE0008D104 /* Sparkle.framework */; };
 		CBA648A3108EB12A00667F15 /* Sparkle.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = CB7094C9108B95DE0008D104 /* Sparkle.framework */; };
@@ -298,7 +297,6 @@
 				2F7446990DB6B7EA00F9684A /* Coruscation-MainMenu.xib in Resources */,
 				CB23E88E1088FA23001C5740 /* Sparkle.icns in Resources */,
 				CBA648D6108EB22000667F15 /* Credits.html in Resources */,
-				CB53B271108FBE78004EAFF2 /* Read Me.txt in Resources */,
 				CBB7E3AC10C49C4500094536 /* RevealTemplate.pdf in Resources */,
 				CBB7E44A10C4A2C100094536 /* Coruscation Help in Resources */,
 			);
@@ -397,7 +395,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 5;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_ENABLE_OBJC_GC = required;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
@@ -413,7 +411,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 5;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_ENABLE_OBJC_GC = required;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
