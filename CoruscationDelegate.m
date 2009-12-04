@@ -3,6 +3,7 @@
 #import "Sparkle/SUUpdater.h"
 #import "FindSparkleAppsOperation.h"
 #import "CheckAppUpdateOperation.h"
+#import "UpdateCountTransformer.h"
 
 @implementation CoruscationDelegate
 
@@ -37,6 +38,7 @@
 								  [NSNumber numberWithDouble:10.0], @"UpdateCheckTimeOutInterval",
 								  nil];
 		[[NSUserDefaults standardUserDefaults] registerDefaults:defaults];
+		[NSValueTransformer setValueTransformer:[UpdateCountTransformer new] forName:@"UpdateCountTransformer"];
 	}
 	[super initialize];
 }
