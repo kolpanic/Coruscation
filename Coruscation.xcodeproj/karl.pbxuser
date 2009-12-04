@@ -113,12 +113,12 @@
 					PBXFileDataSource_Warnings_ColumnID,
 				);
 			};
-			PBXPerProjectTemplateStateSaveDate = 281638985;
-			PBXWorkspaceStateSaveDate = 281638985;
+			PBXPerProjectTemplateStateSaveDate = 281643829;
+			PBXWorkspaceStateSaveDate = 281643829;
 		};
 		perUserProjectItems = {
-			CBF3A61C10C9785E004EDC7F /* PBXTextBookmark */ = CBF3A61C10C9785E004EDC7F /* PBXTextBookmark */;
-			CBF3A62410C9788A004EDC7F /* PBXTextBookmark */ = CBF3A62410C9788A004EDC7F /* PBXTextBookmark */;
+			CBDB635210C98BCF00C1B932 /* PBXTextBookmark */ = CBDB635210C98BCF00C1B932 /* PBXTextBookmark */;
+			CBDB635310C98BCF00C1B932 /* PBXTextBookmark */ = CBDB635310C98BCF00C1B932 /* PBXTextBookmark */;
 		};
 		sourceControlManager = CB32A9101088C65D00343471 /* Source Control */;
 		userBuildSettings = {
@@ -421,8 +421,8 @@
 	CB7094B9108B951A0008D104 /* FindSparkleAppsOperation.m */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {1208, 972}}";
-			sepNavSelRange = "{700, 0}";
-			sepNavVisRange = "{0, 708}";
+			sepNavSelRange = "{82, 0}";
+			sepNavVisRange = "{0, 738}";
 		};
 	};
 	CBA28A2710C9751F005BCEC1 /* License.txt */ = {
@@ -449,10 +449,30 @@
 	};
 	CBB7FC57108D2575003E062A /* CheckAppUpdateOperation.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1552, 1881}}";
-			sepNavSelRange = "{279, 0}";
-			sepNavVisRange = "{139, 184}";
+			sepNavIntBoundsRect = "{{0, 0}, {1208, 1995}}";
+			sepNavSelRange = "{1166, 0}";
+			sepNavVisRange = "{103, 1544}";
 		};
+	};
+	CBDB635210C98BCF00C1B932 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 77C8280C06725ACE000B614F /* CoruscationDelegate.m */;
+		name = "CoruscationDelegate.m: 18";
+		rLen = 0;
+		rLoc = 369;
+		rType = 0;
+		vrLen = 1539;
+		vrLoc = 0;
+	};
+	CBDB635310C98BCF00C1B932 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 77C8280C06725ACE000B614F /* CoruscationDelegate.m */;
+		name = "CoruscationDelegate.m: 18";
+		rLen = 0;
+		rLoc = 369;
+		rType = 0;
+		vrLen = 1539;
+		vrLoc = 0;
 	};
 	CBF233B6108D629600D2A5FF /* CollectionItemView.h */ = {
 		uiCtxt = {
@@ -467,26 +487,6 @@
 			sepNavSelRange = "{0, 0}";
 			sepNavVisRange = "{0, 675}";
 		};
-	};
-	CBF3A61C10C9785E004EDC7F /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 77C8280C06725ACE000B614F /* CoruscationDelegate.m */;
-		name = "CoruscationDelegate.m: 18";
-		rLen = 0;
-		rLoc = 369;
-		rType = 0;
-		vrLen = 1539;
-		vrLoc = 0;
-	};
-	CBF3A62410C9788A004EDC7F /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 77C8280C06725ACE000B614F /* CoruscationDelegate.m */;
-		name = "CoruscationDelegate.m: 18";
-		rLen = 0;
-		rLoc = 369;
-		rType = 0;
-		vrLen = 1539;
-		vrLoc = 0;
 	};
 	CBFE71AB10C17BE5007DF3BB /* appcast.xml */ = {
 		uiCtxt = {

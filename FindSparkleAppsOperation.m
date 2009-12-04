@@ -1,6 +1,7 @@
 #import "FindSparkleAppsOperation.h"
 
-extern void _LSCopyAllApplicationURLs(NSArray**); // private API
+// this is a private LaunchServices function
+extern void _LSCopyAllApplicationURLs(NSArray**);
 
 @implementation FindSparkleAppsOperation
 
