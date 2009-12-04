@@ -113,11 +113,11 @@
 					PBXFileDataSource_Warnings_ColumnID,
 				);
 			};
-			PBXPerProjectTemplateStateSaveDate = 281393465;
-			PBXWorkspaceStateSaveDate = 281393465;
+			PBXPerProjectTemplateStateSaveDate = 281582898;
+			PBXWorkspaceStateSaveDate = 281582898;
 		};
 		perUserProjectItems = {
-			CB9E9CB110C5B93400B4CAE5 /* PBXTextBookmark */ = CB9E9CB110C5B93400B4CAE5 /* PBXTextBookmark */;
+			CB5F375110C89D47008FB459 /* PBXTextBookmark */ = CB5F375110C89D47008FB459 /* PBXTextBookmark */;
 			CB9E9CC510C5B93B00B4CAE5 /* PBXTextBookmark */ = CB9E9CC510C5B93B00B4CAE5 /* PBXTextBookmark */;
 		};
 		sourceControlManager = CB32A9101088C65D00343471 /* Source Control */;
@@ -396,6 +396,16 @@
 			sepNavVisRange = "{0, 1378}";
 		};
 	};
+	CB5F375110C89D47008FB459 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 77C8280C06725ACE000B614F /* CoruscationDelegate.m */;
+		name = "CoruscationDelegate.m: 116";
+		rLen = 0;
+		rLoc = 3874;
+		rType = 0;
+		vrLen = 1581;
+		vrLoc = 3767;
+	};
 	CB7094B8108B951A0008D104 /* FindSparkleAppsOperation.h */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {1208, 972}}";
@@ -409,16 +419,6 @@
 			sepNavSelRange = "{700, 0}";
 			sepNavVisRange = "{0, 708}";
 		};
-	};
-	CB9E9CB110C5B93400B4CAE5 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 77C8280C06725ACE000B614F /* CoruscationDelegate.m */;
-		name = "CoruscationDelegate.m: 123";
-		rLen = 0;
-		rLoc = 4052;
-		rType = 0;
-		vrLen = 1581;
-		vrLoc = 3767;
 	};
 	CB9E9CC510C5B93B00B4CAE5 /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
