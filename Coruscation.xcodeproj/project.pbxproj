@@ -24,6 +24,7 @@
 		CBB7E44A10C4A2C100094536 /* Coruscation Help in Resources */ = {isa = PBXBuildFile; fileRef = CBB7E44910C4A2C100094536 /* Coruscation Help */; };
 		CBB7FC58108D2575003E062A /* CheckAppUpdateOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = CBB7FC57108D2575003E062A /* CheckAppUpdateOperation.m */; };
 		CBF233B8108D629600D2A5FF /* CollectionItemView.m in Sources */ = {isa = PBXBuildFile; fileRef = CBF233B7108D629600D2A5FF /* CollectionItemView.m */; };
+		CBF3A61910C9784A004EDC7F /* License.txt in Resources */ = {isa = PBXBuildFile; fileRef = CBA28A2710C9751F005BCEC1 /* License.txt */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -306,6 +307,7 @@
 				CBA648D6108EB22000667F15 /* Credits.html in Resources */,
 				CBB7E3AC10C49C4500094536 /* RevealTemplate.pdf in Resources */,
 				CBB7E44A10C4A2C100094536 /* Coruscation Help in Resources */,
+				CBF3A61910C9784A004EDC7F /* License.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

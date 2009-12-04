@@ -304,6 +304,8 @@
 			<key>Layout</key>
 			<array>
 				<dict>
+					<key>BecomeActive</key>
+					<true/>
 					<key>ContentConfiguration</key>
 					<dict>
 						<key>PBXBottomSmartGroupGIDs</key>
@@ -349,7 +351,8 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>2</integer>
+									<integer>8</integer>
+									<integer>6</integer>
 									<integer>0</integer>
 								</array>
 							</array>
@@ -386,8 +389,6 @@
 					<key>Dock</key>
 					<array>
 						<dict>
-							<key>BecomeActive</key>
-							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
@@ -405,10 +406,10 @@
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>CBA28A3E10C9753A005BCEC1</string>
+										<string>CBF3A62410C9788A004EDC7F</string>
 										<key>history</key>
 										<array>
-											<string>CBA28A3D10C97538005BCEC1</string>
+											<string>CBF3A61C10C9785E004EDC7F</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -531,11 +532,11 @@
 			</array>
 			<key>TableOfContents</key>
 			<array>
-				<string>CBA28A3210C9752A005BCEC1</string>
+				<string>CBF3A61E10C9785E004EDC7F</string>
 				<string>1CA23ED40692098700951B8B</string>
-				<string>CBA28A3310C9752A005BCEC1</string>
+				<string>CBF3A61F10C9785E004EDC7F</string>
 				<string>CB3742AB106A5CEF00AED801</string>
-				<string>CBA28A3410C9752A005BCEC1</string>
+				<string>CBF3A62010C9785E004EDC7F</string>
 				<string>1CA23EDF0692099D00951B8B</string>
 				<string>1CA23EE00692099D00951B8B</string>
 				<string>1CA23EE10692099D00951B8B</string>
@@ -712,7 +713,7 @@
 	<key>StatusbarIsVisible</key>
 	<true/>
 	<key>TimeStamp</key>
-	<real>281638202.99739403</real>
+	<real>281639050.420591</real>
 	<key>ToolbarConfigUserDefaultsMinorVersion</key>
 	<string>2</string>
 	<key>ToolbarDisplayMode</key>
@@ -729,8 +730,6 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>CBA28A3B10C9752A005BCEC1</string>
-		<string>CBA28A3C10C9752A005BCEC1</string>
 		<string>/Users/karl/Projects/Coruscation/coruscation/Coruscation.xcodeproj</string>
 	</array>
 	<key>WindowString</key>
