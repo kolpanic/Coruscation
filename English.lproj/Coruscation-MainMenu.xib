@@ -51,7 +51,7 @@
 				<object class="NSMutableString" key="NSViewClass">
 					<characters key="NS.bytes">View</characters>
 				</object>
-				<string key="NSWindowContentMaxSize">{1.79769e+308, 1.79769e+308}</string>
+				<string key="NSWindowContentMaxSize">{3.40282e+38, 3.40282e+38}</string>
 				<string key="NSWindowContentMinSize">{379, 302}</string>
 				<object class="NSView" key="NSWindowView" id="823886803">
 					<reference key="NSNextResponder"/>
@@ -85,7 +85,7 @@
 													<string key="NSColorName">controlBackgroundColor</string>
 													<object class="NSColor" key="NSColor" id="530740438">
 														<int key="NSColorSpace">3</int>
-														<bytes key="NSWhite">MC42NjY2NjY2NjY3AA</bytes>
+														<bytes key="NSWhite">MC42NjY2NjY2ODY1AA</bytes>
 													</object>
 												</object>
 												<object class="NSColor">
@@ -144,12 +144,12 @@
 						</object>
 						<object class="NSProgressIndicator" id="1071071088">
 							<reference key="NSNextResponder" ref="823886803"/>
-							<int key="NSvFlags">1325</int>
+							<int key="NSvFlags">1313</int>
 							<object class="NSPSMatrix" key="NSDrawMatrix"/>
-							<string key="NSFrame">{{177, 153}, {32, 32}}</string>
+							<string key="NSFrame">{{350, 11}, {16, 16}}</string>
 							<reference key="NSSuperview" ref="823886803"/>
 							<bool key="NSViewCanDrawConcurrently">YES</bool>
-							<int key="NSpiFlags">28682</int>
+							<int key="NSpiFlags">28938</int>
 							<double key="NSMaxValue">100</double>
 						</object>
 						<object class="NSTextField" id="11130461">
@@ -236,7 +236,7 @@
 				</object>
 				<string key="NSScreenRect">{{0, 0}, {1920, 1178}}</string>
 				<string key="NSMinSize">{379, 324}</string>
-				<string key="NSMaxSize">{1.79769e+308, 1.79769e+308}</string>
+				<string key="NSMaxSize">{3.40282e+38, 3.40282e+38}</string>
 				<string key="NSFrameAutosaveName">MainWindow</string>
 			</object>
 			<object class="NSMenu" id="1055885701">

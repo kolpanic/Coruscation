@@ -98,6 +98,7 @@
 		CB7094B8108B951A0008D104 /* FindSparkleAppsOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FindSparkleAppsOperation.h; sourceTree = "<group>"; };
 		CB7094B9108B951A0008D104 /* FindSparkleAppsOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FindSparkleAppsOperation.m; sourceTree = "<group>"; };
 		CB7094C1108B95DE0008D104 /* Sparkle.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Sparkle.xcodeproj; path = ../Sparkle/Sparkle.xcodeproj; sourceTree = SOURCE_ROOT; };
+		CBA28A2710C9751F005BCEC1 /* License.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = License.txt; sourceTree = "<group>"; };
 		CBA648D5108EB22000667F15 /* Credits.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = Credits.html; sourceTree = "<group>"; };
 		CBB7E3AB10C49C4500094536 /* RevealTemplate.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = RevealTemplate.pdf; sourceTree = "<group>"; };
 		CBB7E42D10C4A21C00094536 /* English */ = {isa = PBXFileReference; lastKnownFileType = folder; name = English; path = "English.lproj/Coruscation Help"; sourceTree = "<group>"; };
@@ -151,6 +152,7 @@
 			isa = PBXGroup;
 			children = (
 				CB53B270108FBE78004EAFF2 /* Read Me.txt */,
+				CBA28A2710C9751F005BCEC1 /* License.txt */,
 				CBFE71AC10C17BE5007DF3BB /* relnotes.html */,
 				CBFE71AB10C17BE5007DF3BB /* appcast.xml */,
 				7756732906782D8800D1FEB8 /* Models */,
