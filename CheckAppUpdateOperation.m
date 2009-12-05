@@ -6,7 +6,7 @@
 #pragma mark -
 #pragma mark Setup
 
-- (id) initWithBundleURL:(NSURL *) url {
+- (id) initWithBundleURL:(NSURL *)url {
 	if ([super init]) {
 		_url = [url copy];
 		_isExecuting = NO;
@@ -57,7 +57,9 @@
 }
 
 - (void) finish {
+	self.updater.delegate = nil;
 	[self.timeOutTimer invalidate];
+	
 	[self willChangeValueForKey:@"isExecuting"];
 	[self willChangeValueForKey:@"isFinished"];
 	_isExecuting = NO;
@@ -66,7 +68,7 @@
 	[self didChangeValueForKey:@"isFinished"];
 }
 
-- (void)timedOut:(NSTimer*) t {
+- (void) timedOut:(NSTimer *)t {
 	NSLog(@"%@ - timed out", self);
 	[self finish];
 }
@@ -78,7 +80,7 @@
 #pragma mark -
 #pragma mark Sparkle Delegate
 
-- (void) updater:(SUUpdater *) updater didFindValidUpdate:(SUAppcastItem *) updateItem {
+- (void) updater:(SUUpdater *)updater didFindValidUpdate:(SUAppcastItem *)updateItem {
 	if ([[NSApp delegate] respondsToSelector:@selector(addSparkleBundleWithUserInfo:)])
 		[[NSApp delegate] performSelectorOnMainThread:@selector(addSparkleBundleWithUserInfo:)
 										   withObject:[NSDictionary dictionaryWithObjectsAndKeys:self.url, @"url",
@@ -88,11 +90,11 @@
 	[self finish];
 }
 
-- (void) updaterDidNotFindUpdate:(SUUpdater *) update {
+- (void) updaterDidNotFindUpdate:(SUUpdater *)update {
 	[self finish];
 }
 
-- (BOOL) updaterShouldPromptForPermissionToCheckForUpdates:(SUUpdater *) bundle {
+- (BOOL) updaterShouldPromptForPermissionToCheckForUpdates:(SUUpdater *)bundle {
 	return NO;
 }
 
