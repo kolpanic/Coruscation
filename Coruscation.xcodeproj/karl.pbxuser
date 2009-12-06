@@ -113,12 +113,12 @@
 					PBXFileDataSource_Warnings_ColumnID,
 				);
 			};
-			PBXPerProjectTemplateStateSaveDate = 281757888;
-			PBXWorkspaceStateSaveDate = 281757888;
+			PBXPerProjectTemplateStateSaveDate = 281802916;
+			PBXWorkspaceStateSaveDate = 281802916;
 		};
 		perUserProjectItems = {
-			CBBBDDB510CB496800DDC283 /* PBXTextBookmark */ = CBBBDDB510CB496800DDC283 /* PBXTextBookmark */;
-			CBBBDDB610CB496800DDC283 /* PBXTextBookmark */ = CBBBDDB610CB496800DDC283 /* PBXTextBookmark */;
+			CBBF153D10CBF8D100D86AF3 /* PBXTextBookmark */ = CBBF153D10CBF8D100D86AF3 /* PBXTextBookmark */;
+			CBBF153E10CBF8D100D86AF3 /* PBXTextBookmark */ = CBBF153E10CBF8D100D86AF3 /* PBXTextBookmark */;
 		};
 		sourceControlManager = CB32A9101088C65D00343471 /* Source Control */;
 		userBuildSettings = {
@@ -313,9 +313,9 @@
 	};
 	77C8280C06725ACE000B614F /* CoruscationDelegate.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1208, 3287}}";
+			sepNavIntBoundsRect = "{{0, 0}, {1552, 3287}}";
 			sepNavSelRange = "{233, 0}";
-			sepNavVisRange = "{0, 1539}";
+			sepNavVisRange = "{0, 269}";
 		};
 	};
 	8D1107260486CEB800E47090 /* Coruscation */ = {
@@ -454,25 +454,43 @@
 			sepNavVisRange = "{459, 1610}";
 		};
 	};
-	CBBBDDB510CB496800DDC283 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 77C8280C06725ACE000B614F /* CoruscationDelegate.m */;
-		name = "CoruscationDelegate.m: 18";
-		rLen = 0;
-		rLoc = 369;
-		rType = 0;
-		vrLen = 1539;
-		vrLoc = 0;
+	CBBF152C10CBF8C300D86AF3 /* CoruscationDelegate.m */ = {
+		isa = PBXFileReference;
+		lastKnownFileType = sourcecode.c.objc;
+		name = CoruscationDelegate.m;
+		path = /Users/karl/Projects/Coruscation/coruscation/CoruscationDelegate.m;
+		sourceTree = "<absolute>";
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1552, 3268}}";
+			sepNavSelRange = "{233, 0}";
+			sepNavVisRange = "{0, 269}";
+		};
 	};
-	CBBBDDB610CB496800DDC283 /* PBXTextBookmark */ = {
+	CBBF153D10CBF8D100D86AF3 /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
-		fRef = 77C8280C06725ACE000B614F /* CoruscationDelegate.m */;
+		fRef = CBBF152C10CBF8C300D86AF3 /* CoruscationDelegate.m */;
 		name = "CoruscationDelegate.m: 9";
 		rLen = 0;
 		rLoc = 233;
 		rType = 0;
 		vrLen = 1539;
 		vrLoc = 0;
+	};
+	CBBF153E10CBF8D100D86AF3 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CBBF153F10CBF8D100D86AF3 /* CoruscationDelegate.m */;
+		name = "CoruscationDelegate.m: 9";
+		rLen = 0;
+		rLoc = 233;
+		rType = 0;
+		vrLen = 1539;
+		vrLoc = 0;
+	};
+	CBBF153F10CBF8D100D86AF3 /* CoruscationDelegate.m */ = {
+		isa = PBXFileReference;
+		name = CoruscationDelegate.m;
+		path = /Users/karl/Projects/Coruscation/coruscation/CoruscationDelegate.m;
+		sourceTree = "<absolute>";
 	};
 	CBF233B6108D629600D2A5FF /* CollectionItemView.h */ = {
 		uiCtxt = {
@@ -491,15 +509,15 @@
 	CBFE71AB10C17BE5007DF3BB /* appcast.xml */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {1208, 972}}";
-			sepNavSelRange = "{456, 0}";
+			sepNavSelRange = "{831, 0}";
 			sepNavVisRange = "{0, 831}";
 		};
 	};
 	CBFE71AC10C17BE5007DF3BB /* relnotes.html */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1208, 972}}";
+			sepNavIntBoundsRect = "{{0, 0}, {1552, 893}}";
 			sepNavSelRange = "{904, 0}";
-			sepNavVisRange = "{0, 1329}";
+			sepNavVisRange = "{719, 322}";
 		};
 	};
 }
