@@ -57,7 +57,6 @@
 }
 
 - (void) finish {
-	self.updater.delegate = nil;
 	[self.timeOutTimer invalidate];
 	
 	[self willChangeValueForKey:@"isExecuting"];

@@ -18,3 +18,8 @@ if (newVersion == nil)
 342:
 //	const NSTimeInterval oneWeek = 60 * 60 * 24 * 7;
 //	sendingSystemProfile &= (-[lastSubmitDate timeIntervalSinceNow] >= oneWeek);
+
+
+SUUpdater.h: make the reference to the delegate weak so the CheckUpdateAppOperation objects can be garbage collected
+21:
+	IBOutlet id __weak delegate;
