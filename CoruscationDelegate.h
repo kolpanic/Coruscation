@@ -9,6 +9,7 @@
 	NSArrayController *_updateItems;
 	NSOperationQueue *_operationQueue;
 	NSArray *_sorter;
+	NSUInteger _count;
 }
 
 - (IBAction) go:(id)sender;
@@ -23,5 +24,6 @@
 @property (retain) IBOutlet NSArrayController *updateItems;
 @property (retain) NSOperationQueue *operationQueue;
 @property (retain) NSArray *sorter;
+@property (assign) NSUInteger count;
 
 @end

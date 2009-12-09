@@ -107,7 +107,8 @@
 	SparkleBundle *sparkleBundle = [NSEntityDescription insertNewObjectForEntityForName:@"SparkleBundle" inManagedObjectContext:moc];
 	sparkleBundle.bundlePath = [url path];
 	sparkleBundle.availableUpdateVersion = [userInfo objectForKey:@"availableUpdateVersion"];
-	[moc save:nil];
+	if ([moc save:nil])
+		[[NSApplication sharedApplication] dockTile].badgeLabel = [NSString stringWithFormat:@"%u", ++self.count];
 }
 
 #pragma mark -
@@ -162,6 +163,6 @@
 }
 
 @dynamic persistentStoreCoordinator, managedObjectModel, managedObjectContext;
-@synthesize collectionView = _collectionView, updateItems = _updateItems, operationQueue = _operationQueue, sorter = _sorter;
+@synthesize collectionView = _collectionView, updateItems = _updateItems, operationQueue = _operationQueue, sorter = _sorter, count = _count;
 
 @end
