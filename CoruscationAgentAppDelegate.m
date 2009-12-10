@@ -5,7 +5,7 @@
 
 // TODO: use this agent...
 // - add prefs UI in the main app to control scheduled update checks - never, weekly or monthly
-// - install & load plist in ~/Library/LaunchAgents/ based on user prefs
+// - (un)install & (un)load plist in ~/Library/LaunchAgents/ based on user prefs
 
 @implementation CoruscationAgentAppDelegate
 
@@ -53,6 +53,7 @@
 }
 
 - (void) addSparkleBundleWithUserInfo:(NSDictionary *)userInfo {
+	[self.operationQueue cancelAllOperations];
 	[[NSWorkspace sharedWorkspace] launchApplication:@"Coruscation"];
 	[NSApp terminate:nil];
 }
