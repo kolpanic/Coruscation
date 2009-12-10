@@ -4,7 +4,6 @@
 #import "CheckAppUpdateOperation.h"
 
 // TODO: use this agent...
-// - build it into the main app's bundle as a dependent target
 // - add prefs UI in the main app to control scheduled update checks - never, weekly or monthly
 // - install & load plist in ~/Library/LaunchAgents/ based on user prefs
 
@@ -52,8 +51,7 @@
 }
 
 - (void) addSparkleBundleWithUserInfo:(NSDictionary *)userInfo {
-	// TODO: launch the main app to show the available updates and terminate this
-	NSLog(@"Terminating - found an update: %@", userInfo);
+	[[NSWorkspace sharedWorkspace] launchApplication:@"Coruscation"];
 	[NSApp terminate:nil];
 }
 

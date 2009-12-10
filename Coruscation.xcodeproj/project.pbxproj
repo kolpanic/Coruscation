@@ -30,6 +30,7 @@
 		CBB7E3AC10C49C4500094536 /* RevealTemplate.pdf in Resources */ = {isa = PBXBuildFile; fileRef = CBB7E3AB10C49C4500094536 /* RevealTemplate.pdf */; };
 		CBB7E44A10C4A2C100094536 /* Coruscation Help in Resources */ = {isa = PBXBuildFile; fileRef = CBB7E44910C4A2C100094536 /* Coruscation Help */; };
 		CBB7FC58108D2575003E062A /* CheckAppUpdateOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = CBB7FC57108D2575003E062A /* CheckAppUpdateOperation.m */; };
+		CBCA61FE10D1A07D003D9E3F /* CoruscationAgent.app in Copy Executables */ = {isa = PBXBuildFile; fileRef = CB05D5E410D1892A00AECB32 /* CoruscationAgent.app */; };
 		CBF233B8108D629600D2A5FF /* CollectionItemView.m in Sources */ = {isa = PBXBuildFile; fileRef = CBF233B7108D629600D2A5FF /* CollectionItemView.m */; };
 		CBF3A61910C9784A004EDC7F /* License.txt in Resources */ = {isa = PBXBuildFile; fileRef = CBA28A2710C9751F005BCEC1 /* License.txt */; };
 /* End PBXBuildFile section */
@@ -39,7 +40,7 @@
 			isa = PBXContainerItemProxy;
 			containerPortal = CB7094C1108B95DE0008D104 /* Sparkle.xcodeproj */;
 			proxyType = 1;
-			remoteGlobalIDString = 8DC2EF4F0486A6940098B216 /* Sparkle */;
+			remoteGlobalIDString = 8DC2EF4F0486A6940098B216;
 			remoteInfo = Sparkle;
 		};
 		CB7094C8108B95DE0008D104 /* PBXContainerItemProxy */ = {
@@ -77,6 +78,13 @@
 			remoteGlobalIDString = 8DC2EF4F0486A6940098B216;
 			remoteInfo = Sparkle;
 		};
+		CBCA61F910D1A02F003D9E3F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 29B97313FDCFA39411CA2CEA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CB05D5E310D1892A00AECB32 /* CoruscationAgent */;
+			remoteInfo = CoruscationAgent;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -100,6 +108,17 @@
 				CBA648A3108EB12A00667F15 /* Sparkle.framework in Copy Frameworks */,
 			);
 			name = "Copy Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CBCA61FD10D1A05B003D9E3F /* Copy Executables */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 6;
+			files = (
+				CBCA61FE10D1A07D003D9E3F /* CoruscationAgent.app in Copy Executables */,
+			);
+			name = "Copy Executables";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
@@ -317,11 +336,13 @@
 				8D11072C0486CEB800E47090 /* Sources */,
 				8D11072E0486CEB800E47090 /* Frameworks */,
 				CB7094DE108B96110008D104 /* Copy Frameworks */,
+				CBCA61FD10D1A05B003D9E3F /* Copy Executables */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 				CB7094D1108B95E80008D104 /* PBXTargetDependency */,
+				CBCA61FA10D1A02F003D9E3F /* PBXTargetDependency */,
 			);
 			name = Coruscation;
 			productInstallPath = "$(HOME)/Applications";
@@ -467,6 +488,11 @@
 			isa = PBXTargetDependency;
 			name = Sparkle;
 			targetProxy = CB7094D0108B95E80008D104 /* PBXContainerItemProxy */;
+		};
+		CBCA61FA10D1A02F003D9E3F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CB05D5E310D1892A00AECB32 /* CoruscationAgent */;
+			targetProxy = CBCA61F910D1A02F003D9E3F /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
