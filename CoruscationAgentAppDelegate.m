@@ -43,6 +43,7 @@
 
 - (void) applicationDidFinishLaunching:(NSNotification *)aNotification {
 	FindSparkleAppsOperation *op = [FindSparkleAppsOperation new];
+	[self.operationQueue setMaxConcurrentOperationCount:1];
 	[self.operationQueue addOperation:op];
 }
 
