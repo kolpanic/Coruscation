@@ -13,6 +13,13 @@
 		8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C165CFE840E0CC02AAC07 /* InfoPlist.strings */; };
 		8D11072D0486CEB800E47090 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; settings = {ATTRIBUTES = (); }; };
 		8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
+		CB05D5FD10D1898C00AECB32 /* CoruscationAgentAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CB05D5FA10D1898C00AECB32 /* CoruscationAgentAppDelegate.m */; };
+		CB05D5FE10D1898C00AECB32 /* CoruscationAgentMain.m in Sources */ = {isa = PBXBuildFile; fileRef = CB05D5FB10D1898C00AECB32 /* CoruscationAgentMain.m */; };
+		CB05D5FF10D1898C00AECB32 /* CoruscationAgentMainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB05D5FC10D1898C00AECB32 /* CoruscationAgentMainMenu.xib */; };
+		CB05D62110D18A2F00AECB32 /* FindSparkleAppsOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = CB7094B9108B951A0008D104 /* FindSparkleAppsOperation.m */; };
+		CB05D62210D18A3100AECB32 /* CheckAppUpdateOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = CBB7FC57108D2575003E062A /* CheckAppUpdateOperation.m */; };
+		CB05D62810D18A7600AECB32 /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB7094C9108B95DE0008D104 /* Sparkle.framework */; };
+		CB05D62910D18A7B00AECB32 /* Sparkle.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = CB7094C9108B95DE0008D104 /* Sparkle.framework */; };
 		CB23E88E1088FA23001C5740 /* Sparkle.icns in Resources */ = {isa = PBXBuildFile; fileRef = CB23E88D1088FA23001C5740 /* Sparkle.icns */; };
 		CB32A9751088CA7300343471 /* SparkleBundle.m in Sources */ = {isa = PBXBuildFile; fileRef = CB32A9741088CA7300343471 /* SparkleBundle.m */; };
 		CB5F37B310C8A128008FB459 /* UpdateCountTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = CB5F37B210C8A128008FB459 /* UpdateCountTransformer.m */; };
@@ -28,6 +35,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		CB05D61410D189F200AECB32 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CB7094C1108B95DE0008D104 /* Sparkle.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 8DC2EF4F0486A6940098B216 /* Sparkle */;
+			remoteInfo = Sparkle;
+		};
 		CB7094C8108B95DE0008D104 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = CB7094C1108B95DE0008D104 /* Sparkle.xcodeproj */;
@@ -66,6 +80,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		CB05D62010D18A1400AECB32 /* Copy Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				CB05D62910D18A7B00AECB32 /* Sparkle.framework in Copy Frameworks */,
+			);
+			name = "Copy Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		CB7094DE108B96110008D104 /* Copy Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -90,6 +115,13 @@
 		77C8280C06725ACE000B614F /* CoruscationDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoruscationDelegate.m; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* Coruscation-Info.plist */ = {isa = PBXFileReference; explicitFileType = text.plist.xml; fileEncoding = 4; path = "Coruscation-Info.plist"; sourceTree = "<group>"; };
 		8D1107320486CEB800E47090 /* Coruscation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Coruscation.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		CB05D5E410D1892A00AECB32 /* CoruscationAgent.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoruscationAgent.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		CB05D5E610D1892A00AECB32 /* CoruscationAgent-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CoruscationAgent-Info.plist"; sourceTree = "<group>"; };
+		CB05D5F810D1897600AECB32 /* CoruscationAgent_Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CoruscationAgent_Prefix.pch; sourceTree = "<group>"; };
+		CB05D5F910D1898C00AECB32 /* CoruscationAgentAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoruscationAgentAppDelegate.h; sourceTree = "<group>"; };
+		CB05D5FA10D1898C00AECB32 /* CoruscationAgentAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoruscationAgentAppDelegate.m; sourceTree = "<group>"; };
+		CB05D5FB10D1898C00AECB32 /* CoruscationAgentMain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoruscationAgentMain.m; sourceTree = "<group>"; };
+		CB05D5FC10D1898C00AECB32 /* CoruscationAgentMainMenu.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CoruscationAgentMainMenu.xib; sourceTree = "<group>"; };
 		CB23E88D1088FA23001C5740 /* Sparkle.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = Sparkle.icns; sourceTree = "<group>"; };
 		CB32A9731088CA7300343471 /* SparkleBundle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SparkleBundle.h; sourceTree = "<group>"; };
 		CB32A9741088CA7300343471 /* SparkleBundle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SparkleBundle.m; sourceTree = "<group>"; };
@@ -121,6 +153,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		CB05D5E210D1892A00AECB32 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CB05D62810D18A7600AECB32 /* Sparkle.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -145,6 +185,7 @@
 			isa = PBXGroup;
 			children = (
 				8D1107320486CEB800E47090 /* Coruscation.app */,
+				CB05D5E410D1892A00AECB32 /* CoruscationAgent.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -152,14 +193,12 @@
 		29B97314FDCFA39411CA2CEA /* Spark */ = {
 			isa = PBXGroup;
 			children = (
-				CB53B270108FBE78004EAFF2 /* Read Me.txt */,
 				CBA28A2710C9751F005BCEC1 /* License.txt */,
+				CB53B270108FBE78004EAFF2 /* Read Me.txt */,
 				CBFE71AC10C17BE5007DF3BB /* relnotes.html */,
 				CBFE71AB10C17BE5007DF3BB /* appcast.xml */,
-				7756732906782D8800D1FEB8 /* Models */,
-				080E96DDFE201D6D7F000001 /* Classes */,
-				29B97315FDCFA39411CA2CEA /* Other Sources */,
-				29B97317FDCFA39411CA2CEA /* Resources */,
+				CB05DB9A10D18E0F00AECB32 /* Coruscation */,
+				CB05D60010D1899300AECB32 /* CoruscationAgent */,
 				29B97323FDCFA39411CA2CEA /* Frameworks */,
 				19C28FACFE9D520D11CA2CBB /* Products */,
 			);
@@ -208,6 +247,54 @@
 			name = Models;
 			sourceTree = "<group>";
 		};
+		CB05D60010D1899300AECB32 /* CoruscationAgent */ = {
+			isa = PBXGroup;
+			children = (
+				CB05DB9B10D18E3700AECB32 /* Classes */,
+				CB05DB9D10D18E4400AECB32 /* Other Sources */,
+				CB05DB9C10D18E3C00AECB32 /* Resources */,
+			);
+			name = CoruscationAgent;
+			sourceTree = "<group>";
+		};
+		CB05DB9A10D18E0F00AECB32 /* Coruscation */ = {
+			isa = PBXGroup;
+			children = (
+				7756732906782D8800D1FEB8 /* Models */,
+				080E96DDFE201D6D7F000001 /* Classes */,
+				29B97315FDCFA39411CA2CEA /* Other Sources */,
+				29B97317FDCFA39411CA2CEA /* Resources */,
+			);
+			name = Coruscation;
+			sourceTree = "<group>";
+		};
+		CB05DB9B10D18E3700AECB32 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				CB05D5F910D1898C00AECB32 /* CoruscationAgentAppDelegate.h */,
+				CB05D5FA10D1898C00AECB32 /* CoruscationAgentAppDelegate.m */,
+			);
+			name = Classes;
+			sourceTree = "<group>";
+		};
+		CB05DB9C10D18E3C00AECB32 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				CB05D5FC10D1898C00AECB32 /* CoruscationAgentMainMenu.xib */,
+				CB05D5E610D1892A00AECB32 /* CoruscationAgent-Info.plist */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		CB05DB9D10D18E4400AECB32 /* Other Sources */ = {
+			isa = PBXGroup;
+			children = (
+				CB05D5F810D1897600AECB32 /* CoruscationAgent_Prefix.pch */,
+				CB05D5FB10D1898C00AECB32 /* CoruscationAgentMain.m */,
+			);
+			name = "Other Sources";
+			sourceTree = "<group>";
+		};
 		CB7094C2108B95DE0008D104 /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -242,6 +329,25 @@
 			productReference = 8D1107320486CEB800E47090 /* Coruscation.app */;
 			productType = "com.apple.product-type.application";
 		};
+		CB05D5E310D1892A00AECB32 /* CoruscationAgent */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CB05D5E910D1892B00AECB32 /* Build configuration list for PBXNativeTarget "CoruscationAgent" */;
+			buildPhases = (
+				CB05D5E010D1892A00AECB32 /* Resources */,
+				CB05D5E110D1892A00AECB32 /* Sources */,
+				CB05D5E210D1892A00AECB32 /* Frameworks */,
+				CB05D62010D18A1400AECB32 /* Copy Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CB05D61510D189F200AECB32 /* PBXTargetDependency */,
+			);
+			name = CoruscationAgent;
+			productName = CoruscationAgent;
+			productReference = CB05D5E410D1892A00AECB32 /* CoruscationAgent.app */;
+			productType = "com.apple.product-type.application";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -261,6 +367,7 @@
 			projectRoot = "";
 			targets = (
 				8D1107260486CEB800E47090 /* Coruscation */,
+				CB05D5E310D1892A00AECB32 /* CoruscationAgent */,
 			);
 		};
 /* End PBXProject section */
@@ -311,6 +418,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		CB05D5E010D1892A00AECB32 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CB05D5FF10D1898C00AECB32 /* CoruscationAgentMainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -329,9 +444,25 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		CB05D5E110D1892A00AECB32 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CB05D5FD10D1898C00AECB32 /* CoruscationAgentAppDelegate.m in Sources */,
+				CB05D5FE10D1898C00AECB32 /* CoruscationAgentMain.m in Sources */,
+				CB05D62110D18A2F00AECB32 /* FindSparkleAppsOperation.m in Sources */,
+				CB05D62210D18A3100AECB32 /* CheckAppUpdateOperation.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		CB05D61510D189F200AECB32 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Sparkle;
+			targetProxy = CB05D61410D189F200AECB32 /* PBXContainerItemProxy */;
+		};
 		CB7094D1108B95E80008D104 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = Sparkle;
@@ -432,6 +563,54 @@
 			};
 			name = Release;
 		};
+		CB05D5E710D1892B00AECB32 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_MODEL_TUNING = G5;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = CoruscationAgent_Prefix.pch;
+				INFOPLIST_FILE = "CoruscationAgent-Info.plist";
+				INSTALL_PATH = "$(HOME)/Applications";
+				OTHER_LDFLAGS = (
+					"-framework",
+					Foundation,
+					"-framework",
+					AppKit,
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = CoruscationAgent;
+			};
+			name = Debug;
+		};
+		CB05D5E810D1892B00AECB32 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				GCC_MODEL_TUNING = G5;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = CoruscationAgent_Prefix.pch;
+				INFOPLIST_FILE = "CoruscationAgent-Info.plist";
+				INSTALL_PATH = "$(HOME)/Applications";
+				OTHER_LDFLAGS = (
+					"-framework",
+					Foundation,
+					"-framework",
+					AppKit,
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = CoruscationAgent;
+				ZERO_LINK = NO;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -449,6 +628,15 @@
 			buildConfigurations = (
 				26FC0A890875C7B200E6366F /* Debug */,
 				26FC0A8A0875C7B200E6366F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CB05D5E910D1892B00AECB32 /* Build configuration list for PBXNativeTarget "CoruscationAgent" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CB05D5E710D1892B00AECB32 /* Debug */,
+				CB05D5E810D1892B00AECB32 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
