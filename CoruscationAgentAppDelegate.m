@@ -42,8 +42,9 @@
 }
 
 - (void) applicationDidFinishLaunching:(NSNotification *)aNotification {
-	FindSparkleAppsOperation *op = [FindSparkleAppsOperation new];
 	[self.operationQueue setMaxConcurrentOperationCount:1];
+
+	FindSparkleAppsOperation *op = [FindSparkleAppsOperation new];
 	[self.operationQueue addOperation:op];
 }
 
