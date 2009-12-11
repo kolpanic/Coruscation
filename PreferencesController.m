@@ -3,31 +3,34 @@
 @implementation PreferencesController
 
 - (IBAction) configureAutomaticUpdates:(id)sender {
+	NSDateComponents *components = [[NSCalendar currentCalendar] components:NSWeekdayCalendarUnit | NSDayCalendarUnit fromDate:[NSDate date]];
 	NSString *intervalKey = nil;
-	NSInteger tag = [sender tag];
-	switch (tag) {
+	NSNumber *intervalValue = nil;
+	switch ([sender tag]) {
 		case 1:
-			// weekly (every Monday)
+			// weekly, on the same day as today
 			intervalKey = @"Weekday";
+			intervalValue = [NSNumber numberWithInt:([components weekday] - 1)];
 			break;
 		case 2:
-			// monthly (first of every month)
+			// monthly, on the same date as today
 			intervalKey = @"Day";
+			intervalValue = [NSNumber numberWithInt:MIN(28, [components day])];
 			break;
 		default:
 			// never
 			intervalKey = nil;
+			intervalValue = nil;
 			break;
 	}
 	if ([self.fileManager fileExistsAtPath:self.plistPath]) {
 		[[NSTask launchedTaskWithLaunchPath:@"/bin/launchctl" arguments:[NSArray arrayWithObjects:@"unload", @"-w", self.plistPath,  nil]] waitUntilExit];
 		[self.fileManager removeItemAtPath:self.plistPath error:nil];
 	}		
-	if (intervalKey != nil) {
+	if (intervalKey != nil && intervalValue != nil) {
 		NSMutableDictionary *plist = [NSMutableDictionary dictionary];
 		[plist setObject:self.identifier forKey:@"Label"];
-		[plist setObject:[NSDictionary dictionaryWithObject:[NSNumber numberWithUnsignedInteger:1] forKey:intervalKey]
-				  forKey:@"StartCalendarInterval"];
+		[plist setObject:[NSDictionary dictionaryWithObject:intervalValue forKey:intervalKey] forKey:@"StartCalendarInterval"];
 		[plist setObject:[NSNumber numberWithBool:NO] forKey:@"RunAtLoad"];
 		[plist setObject:[NSArray arrayWithObjects:@"/usr/bin/open", self.agentApp, nil] forKey:@"ProgramArguments"];
 		[plist writeToFile:self.plistPath atomically:YES];
