@@ -27,7 +27,6 @@
 		CB709522108B98190008D104 /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB7094C9108B95DE0008D104 /* Sparkle.framework */; };
 		CBA648A3108EB12A00667F15 /* Sparkle.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = CB7094C9108B95DE0008D104 /* Sparkle.framework */; };
 		CBA648D6108EB22000667F15 /* Credits.html in Resources */ = {isa = PBXBuildFile; fileRef = CBA648D5108EB22000667F15 /* Credits.html */; };
-		CBB611ED10D1C484003BC3D3 /* PreferencesController.m in Sources */ = {isa = PBXBuildFile; fileRef = CBB611EC10D1C484003BC3D3 /* PreferencesController.m */; };
 		CBB611FF10D1C4FD003BC3D3 /* Preferences.xib in Resources */ = {isa = PBXBuildFile; fileRef = CBB611FD10D1C4FD003BC3D3 /* Preferences.xib */; };
 		CBB6122010D1C622003BC3D3 /* PreferencesController.m in Sources */ = {isa = PBXBuildFile; fileRef = CBB611EC10D1C484003BC3D3 /* PreferencesController.m */; };
 		CBB7E3AC10C49C4500094536 /* RevealTemplate.pdf in Resources */ = {isa = PBXBuildFile; fileRef = CBB7E3AB10C49C4500094536 /* RevealTemplate.pdf */; };
@@ -484,7 +483,6 @@
 				CB05D5FE10D1898C00AECB32 /* CoruscationAgentMain.m in Sources */,
 				CB05D62110D18A2F00AECB32 /* FindSparkleAppsOperation.m in Sources */,
 				CB05D62210D18A3100AECB32 /* CheckAppUpdateOperation.m in Sources */,
-				CBB611ED10D1C484003BC3D3 /* PreferencesController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
