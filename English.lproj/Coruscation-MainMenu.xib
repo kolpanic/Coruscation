@@ -12,7 +12,7 @@
 		</object>
 		<object class="NSMutableArray" key="IBDocument.EditedObjectIDs">
 			<bool key="EncodedWithXMLCoder">YES</bool>
-			<integer value="81"/>
+			<integer value="57"/>
 			<integer value="2"/>
 		</object>
 		<object class="NSArray" key="IBDocument.PluginDependencies">
@@ -51,7 +51,7 @@
 				<object class="NSMutableString" key="NSViewClass">
 					<characters key="NS.bytes">View</characters>
 				</object>
-				<string key="NSWindowContentMaxSize">{3.40282e+38, 3.40282e+38}</string>
+				<string key="NSWindowContentMaxSize">{1.79769e+308, 1.79769e+308}</string>
 				<string key="NSWindowContentMinSize">{379, 302}</string>
 				<object class="NSView" key="NSWindowView" id="823886803">
 					<reference key="NSNextResponder"/>
@@ -85,7 +85,7 @@
 													<string key="NSColorName">controlBackgroundColor</string>
 													<object class="NSColor" key="NSColor" id="530740438">
 														<int key="NSColorSpace">3</int>
-														<bytes key="NSWhite">MC42NjY2NjY2ODY1AA</bytes>
+														<bytes key="NSWhite">MC42NjY2NjY2NjY3AA</bytes>
 													</object>
 												</object>
 												<object class="NSColor">
@@ -236,7 +236,7 @@
 				</object>
 				<string key="NSScreenRect">{{0, 0}, {1920, 1178}}</string>
 				<string key="NSMinSize">{379, 324}</string>
-				<string key="NSMaxSize">{3.40282e+38, 3.40282e+38}</string>
+				<string key="NSMaxSize">{1.79769e+308, 1.79769e+308}</string>
 				<string key="NSFrameAutosaveName">MainWindow</string>
 			</object>
 			<object class="NSMenu" id="1055885701">
@@ -270,6 +270,14 @@
 									<reference key="NSOnImage" ref="893455832"/>
 									<reference key="NSMixedImage" ref="424226900"/>
 								</object>
+								<object class="NSMenuItem" id="124073989">
+									<reference key="NSMenu" ref="123765298"/>
+									<string key="NSTitle">Check Coruscation for Updates…</string>
+									<string key="NSKeyEquiv"/>
+									<int key="NSMnemonicLoc">2147483647</int>
+									<reference key="NSOnImage" ref="893455832"/>
+									<reference key="NSMixedImage" ref="424226900"/>
+								</object>
 								<object class="NSMenuItem" id="791044830">
 									<reference key="NSMenu" ref="123765298"/>
 									<bool key="NSIsDisabled">YES</bool>
@@ -281,10 +289,11 @@
 									<reference key="NSOnImage" ref="893455832"/>
 									<reference key="NSMixedImage" ref="424226900"/>
 								</object>
-								<object class="NSMenuItem" id="124073989">
+								<object class="NSMenuItem" id="861022685">
 									<reference key="NSMenu" ref="123765298"/>
-									<string key="NSTitle">Check Coruscation for Updates…</string>
-									<string key="NSKeyEquiv"/>
+									<string key="NSTitle">Preferences...</string>
+									<string key="NSKeyEquiv">,</string>
+									<int key="NSKeyEquivModMask">1048576</int>
 									<int key="NSMnemonicLoc">2147483647</int>
 									<reference key="NSOnImage" ref="893455832"/>
 									<reference key="NSMixedImage" ref="424226900"/>
@@ -754,6 +763,9 @@
 			</object>
 			<object class="NSCustomObject" id="146212921">
 				<string key="NSClassName">SUUpdater</string>
+			</object>
+			<object class="NSCustomObject" id="381716200">
+				<string key="NSClassName">PreferencesController</string>
 			</object>
 		</object>
 		<object class="IBObjectContainer" key="IBDocument.Objects">
@@ -1253,6 +1265,14 @@
 					</object>
 					<int key="connectionID">802</int>
 				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBActionConnection" key="connection">
+						<string key="label">showWindow:</string>
+						<reference key="source" ref="381716200"/>
+						<reference key="destination" ref="861022685"/>
+					</object>
+					<int key="connectionID">805</int>
+				</object>
 			</object>
 			<object class="IBMutableOrderedSet" key="objectRecords">
 				<object class="NSArray" key="orderedObjects">
@@ -1332,7 +1352,6 @@
 						<object class="NSMutableArray" key="children">
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<reference ref="743093781"/>
-							<reference ref="124073989"/>
 							<reference ref="515282677"/>
 							<reference ref="780549861"/>
 							<reference ref="349823970"/>
@@ -1342,6 +1361,8 @@
 							<reference ref="901869444"/>
 							<reference ref="163840636"/>
 							<reference ref="791044830"/>
+							<reference ref="861022685"/>
+							<reference ref="124073989"/>
 						</object>
 						<reference key="parent" ref="376192112"/>
 					</object>
@@ -1707,6 +1728,16 @@
 						<reference key="object" ref="170332673"/>
 						<reference key="parent" ref="504117047"/>
 					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">803</int>
+						<reference key="object" ref="381716200"/>
+						<reference key="parent" ref="0"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">804</int>
+						<reference key="object" ref="861022685"/>
+						<reference key="parent" ref="123765298"/>
+					</object>
 				</object>
 			</object>
 			<object class="NSMutableDictionary" key="flattenedProperties">
@@ -1815,6 +1846,7 @@
 					<string>794.IBPluginDependency</string>
 					<string>795.IBPluginDependency</string>
 					<string>795.IBSegmentedControlInspectorSelectedSegmentMetadataKey</string>
+					<string>804.IBPluginDependency</string>
 					<string>81.IBEditorWindowLastContentRect</string>
 					<string>81.IBPluginDependency</string>
 					<string>81.ImportedFromIB2</string>
@@ -1886,7 +1918,7 @@
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<integer value="1"/>
-					<string>{{195, 912}, {315, 183}}</string>
+					<string>{{602, 830}, {315, 203}}</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<integer value="1"/>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
@@ -1928,6 +1960,7 @@
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<integer value="1"/>
+					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>{{707, 940}, {199, 93}}</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<integer value="1"/>
@@ -1951,7 +1984,7 @@
 				</object>
 			</object>
 			<nil key="sourceID"/>
-			<int key="maxID">802</int>
+			<int key="maxID">805</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<object class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -2020,6 +2053,18 @@
 					<object class="IBClassDescriptionSource" key="sourceIdentifier">
 						<string key="majorKey">IBUserSource</string>
 						<string key="minorKey"/>
+					</object>
+				</object>
+				<object class="IBPartialClassDescription">
+					<string key="className">PreferencesController</string>
+					<string key="superclassName">NSWindowController</string>
+					<object class="NSMutableDictionary" key="actions">
+						<string key="NS.key.0">installAgent:</string>
+						<string key="NS.object.0">id</string>
+					</object>
+					<object class="IBClassDescriptionSource" key="sourceIdentifier">
+						<string key="majorKey">IBProjectSource</string>
+						<string key="minorKey">PreferencesController.h</string>
 					</object>
 				</object>
 			</object>

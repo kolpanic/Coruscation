@@ -3,10 +3,6 @@
 #import "FindSparkleAppsOperation.h"
 #import "CheckAppUpdateOperation.h"
 
-// TODO: use this agent...
-// - add prefs UI in the main app to control scheduled update checks - never, weekly or monthly
-// - (un)install & (un)load plist in ~/Library/LaunchAgents/ based on user prefs
-
 @implementation CoruscationAgentAppDelegate
 
 + (void) initialize {
