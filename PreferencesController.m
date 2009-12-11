@@ -1,5 +1,7 @@
 #import "PreferencesController.h"
 
+NSString *const launchctl = @"/bin/launchctl";
+
 @implementation PreferencesController
 
 - (IBAction) configureAutomaticUpdates:(id)sender {
@@ -23,10 +25,10 @@
 			intervalValue = nil;
 			break;
 	}
-	if ([self.fileManager fileExistsAtPath:self.plistPath]) {
-		[[NSTask launchedTaskWithLaunchPath:@"/bin/launchctl" arguments:[NSArray arrayWithObjects:@"unload", @"-w", self.plistPath,  nil]] waitUntilExit];
+	if ([self launchInfo]) {
+		[[NSTask launchedTaskWithLaunchPath:launchctl arguments:[NSArray arrayWithObjects:@"unload", @"-w", self.identifier,  nil]] waitUntilExit];
 		[self.fileManager removeItemAtPath:self.plistPath error:nil];
-	}		
+	}
 	if (intervalKey != nil && intervalValue != nil) {
 		NSMutableDictionary *plist = [NSMutableDictionary dictionary];
 		[plist setObject:self.identifier forKey:@"Label"];
@@ -35,8 +37,27 @@
 		[plist setObject:[NSArray arrayWithObjects:@"/usr/bin/open", self.agentApp, nil] forKey:@"ProgramArguments"];
 		[plist writeToFile:self.plistPath atomically:YES];
 		
-		[NSTask launchedTaskWithLaunchPath:@"/bin/launchctl" arguments:[NSArray arrayWithObjects:@"load", @"-w", self.plistPath,  nil]];
+		[NSTask launchedTaskWithLaunchPath:launchctl arguments:[NSArray arrayWithObjects:@"load", @"-w", self.plistPath,  nil]];
 	}
+}
+
+- (NSDictionary *) launchInfo {
+	NSPipe *outPipe = [NSPipe new];
+	NSTask *task = [NSTask new];
+	task.launchPath = launchctl;
+	task.arguments = [NSArray arrayWithObjects:@"list", @"-x", self.identifier,  nil];
+	task.standardOutput = outPipe;
+	task.standardError = outPipe;
+	[task launch];
+	NSDictionary *launchInfo = nil;
+	NSData *data = [[outPipe fileHandleForReading] readDataToEndOfFile];
+	if (data) {
+		NSString *launchInfoPlist = [NSTemporaryDirectory() stringByAppendingPathComponent:@"launchInfo.plist"];
+		[data writeToFile:launchInfoPlist atomically:YES];
+		launchInfo = [NSDictionary dictionaryWithContentsOfFile:launchInfoPlist];
+		[self.fileManager removeItemAtPath:launchInfoPlist error:nil];
+	}
+	return launchInfo;
 }
 
 - (id) init {
@@ -48,22 +69,30 @@
 		NSString *libraryFolder = [searchPaths objectAtIndex:0];
 		_plistPath = [[[libraryFolder stringByAppendingPathComponent:@"LaunchAgents"] stringByAppendingPathComponent:_identifier] stringByAppendingPathExtension:@"plist"];
 		
-		if ([_fileManager fileExistsAtPath:_plistPath]) {
-			NSDictionary *plist = [NSDictionary dictionaryWithContentsOfFile:_plistPath];
-			NSString *intervalKey = [[[plist objectForKey:@"StartCalendarInterval"] allKeys] objectAtIndex:0];
-			if ([intervalKey isEqualToString:@"Weekday"])
-				_selectedAutomaticUpdatesTag = 1;
-			else if ([intervalKey isEqualToString:@"Day"])
-				_selectedAutomaticUpdatesTag = 2;
-			else
-				_selectedAutomaticUpdatesTag = 0;
-		} else
+		BOOL plistExists = [_fileManager fileExistsAtPath:_plistPath];
+		NSDictionary *launchInfo = [self launchInfo];
+		if (!launchInfo) {
 			_selectedAutomaticUpdatesTag = 0;
+			if (plistExists)
+				[_fileManager removeItemAtPath:_plistPath error:nil];
+		} else {
+			if (plistExists) {
+				NSDictionary *plist = [NSDictionary dictionaryWithContentsOfFile:_plistPath];
+				NSString *intervalKey = [[[plist objectForKey:@"StartCalendarInterval"] allKeys] objectAtIndex:0];
+				if ([intervalKey isEqualToString:@"Weekday"])
+					_selectedAutomaticUpdatesTag = 1;
+				else if ([intervalKey isEqualToString:@"Day"])
+					_selectedAutomaticUpdatesTag = 2;
+				else
+					_selectedAutomaticUpdatesTag = 0;
+			} else
+				_selectedAutomaticUpdatesTag = 0;
+		}
 	}
 	return self;
 }
 
-- (void) awakeFromNib {	
+- (void) awakeFromNib {
 	[self showPrefsPaneForItem:nil];
 	self.window.toolbar.selectedItemIdentifier = [[self.window.toolbar.items objectAtIndex:0] itemIdentifier];
 }

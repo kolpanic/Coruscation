@@ -12,6 +12,7 @@
 
 - (IBAction) configureAutomaticUpdates:(id)sender;
 - (IBAction) showPrefsPaneForItem:(id) sender;
+- (NSDictionary *) launchInfo;
 
 @property (retain) IBOutlet NSView *generalView;
 @property (retain) NSFileManager *fileManager;
