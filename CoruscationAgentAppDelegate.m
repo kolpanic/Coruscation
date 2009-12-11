@@ -27,7 +27,6 @@
 	if ([keyPath isEqualToString:@"operations"]) {
 		if ([self.operationQueue operationCount] < 1) {
 			[NSApp terminate:nil];
-			NSLog(@"Terminating - all operations finished with no updates found");
 		}
 	}
 }
@@ -38,8 +37,6 @@
 }
 
 - (void) applicationDidFinishLaunching:(NSNotification *)aNotification {
-	[self.operationQueue setMaxConcurrentOperationCount:1];
-
 	FindSparkleAppsOperation *op = [FindSparkleAppsOperation new];
 	[self.operationQueue addOperation:op];
 }
