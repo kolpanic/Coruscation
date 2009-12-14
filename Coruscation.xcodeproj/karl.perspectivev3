@@ -410,10 +410,11 @@
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>CB59E34410D2EED7004BDD72</string>
+										<string>CB693CBD10D6D8A100BC86C3</string>
 										<key>history</key>
 										<array>
-											<string>CB59E33C10D2EE71004BDD72</string>
+											<string>CB693CB510D6D87100BC86C3</string>
+											<string>CB693CBC10D6D89100BC86C3</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -468,7 +469,7 @@
 									<key>GeometryConfiguration</key>
 									<dict>
 										<key>Frame</key>
-										<string>{{10, 27}, {1269, -27}}</string>
+										<string>{{0, 0}, {614, 336}}</string>
 									</dict>
 									<key>Module</key>
 									<string>PBXProjectFindModule</string>
@@ -536,11 +537,11 @@
 			</array>
 			<key>TableOfContents</key>
 			<array>
-				<string>CB59DD5310D2E69E004BDD72</string>
+				<string>CB693C5C10D6D5E600BC86C3</string>
 				<string>1CA23ED40692098700951B8B</string>
-				<string>CB59DD5410D2E69E004BDD72</string>
+				<string>CB693C5D10D6D5E600BC86C3</string>
 				<string>CB3742AB106A5CEF00AED801</string>
-				<string>CB59DD5510D2E69E004BDD72</string>
+				<string>CB693C5E10D6D5E600BC86C3</string>
 				<string>1CA23EDF0692099D00951B8B</string>
 				<string>1CA23EE00692099D00951B8B</string>
 				<string>1CA23EE10692099D00951B8B</string>
@@ -693,13 +694,13 @@
 			</array>
 			<key>TableOfContents</key>
 			<array>
-				<string>CB59DD6110D2E725004BDD72</string>
+				<string>CB693C7110D6D73900BC86C3</string>
 				<string>1CCC7628064C1048000F2A68</string>
 				<string>1CCC7629064C1048000F2A68</string>
-				<string>CB59DD6210D2E725004BDD72</string>
-				<string>CB59DD6310D2E725004BDD72</string>
-				<string>CB59DD6410D2E725004BDD72</string>
-				<string>CB59DD6510D2E725004BDD72</string>
+				<string>CB693C7210D6D73900BC86C3</string>
+				<string>CB693C7310D6D73900BC86C3</string>
+				<string>CB693C7410D6D73900BC86C3</string>
+				<string>CB693C7510D6D73900BC86C3</string>
 				<string>CB3742AB106A5CEF00AED801</string>
 			</array>
 			<key>ToolbarConfigUserDefaultsMinorVersion</key>
@@ -717,7 +718,7 @@
 	<key>StatusbarIsVisible</key>
 	<true/>
 	<key>TimeStamp</key>
-	<real>282259159.833552</real>
+	<real>282515617.47153401</real>
 	<key>ToolbarConfigUserDefaultsMinorVersion</key>
 	<string>2</string>
 	<key>ToolbarDisplayMode</key>
@@ -734,8 +735,8 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>CB59DD6710D2E725004BDD72</string>
-		<string>CB59DD6810D2E725004BDD72</string>
+		<string>CB693C7710D6D73900BC86C3</string>
+		<string>CB693C7810D6D73900BC86C3</string>
 		<string>/Users/karl/Projects/Coruscation/coruscation/Coruscation.xcodeproj</string>
 	</array>
 	<key>WindowString</key>

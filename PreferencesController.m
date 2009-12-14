@@ -26,7 +26,7 @@ NSString *const launchctl = @"/bin/launchctl";
 			break;
 	}
 	if ([self launchInfo]) {
-		[[NSTask launchedTaskWithLaunchPath:launchctl arguments:[NSArray arrayWithObjects:@"unload", @"-w", self.identifier,  nil]] waitUntilExit];
+		[[NSTask launchedTaskWithLaunchPath:launchctl arguments:[NSArray arrayWithObjects:@"unload", @"-w", self.plistPath,  nil]] waitUntilExit];
 		[self.fileManager removeItemAtPath:self.plistPath error:nil];
 	}
 	if (intervalKey != nil && intervalValue != nil) {
@@ -52,10 +52,12 @@ NSString *const launchctl = @"/bin/launchctl";
 	NSDictionary *launchInfo = nil;
 	NSData *data = [[outPipe fileHandleForReading] readDataToEndOfFile];
 	if (data) {
-		NSString *launchInfoPlist = [NSTemporaryDirectory() stringByAppendingPathComponent:@"launchInfo.plist"];
-		[data writeToFile:launchInfoPlist atomically:YES];
-		launchInfo = [NSDictionary dictionaryWithContentsOfFile:launchInfoPlist];
-		[self.fileManager removeItemAtPath:launchInfoPlist error:nil];
+		CFPropertyListRef dict =  CFPropertyListCreateFromXMLData(kCFAllocatorDefault, (CFDataRef)data, kCFPropertyListImmutable, NULL);
+		if (dict != NULL) {
+			if ([(id)dict isKindOfClass:[NSDictionary class]])
+				launchInfo = (NSDictionary *)dict;
+			CFRelease(dict);
+		}
 	}
 	return launchInfo;
 }
