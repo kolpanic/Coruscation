@@ -4,6 +4,8 @@ NSString *const launchctl = @"/bin/launchctl";
 
 @implementation PreferencesController
 
+// TODO: use Service Management framework to manage the launch agent
+
 - (IBAction) configureAutomaticUpdates:(id)sender {
 	NSDateComponents *components = [[NSCalendar currentCalendar] components:NSWeekdayCalendarUnit | NSDayCalendarUnit fromDate:[NSDate date]];
 	NSString *intervalKey = nil;
