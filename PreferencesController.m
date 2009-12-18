@@ -1,85 +1,59 @@
 #import "PreferencesController.h"
-
-NSString *const launchctl = @"/bin/launchctl";
+#import <ServiceManagement/ServiceManagement.h>
 
 @implementation PreferencesController
 
-// TODO: use Service Management framework to manage the launch agent
-
 - (IBAction) configureAutomaticUpdates:(id)sender {
-	NSDateComponents *components = [[NSCalendar currentCalendar] components:NSWeekdayCalendarUnit | NSDayCalendarUnit fromDate:[NSDate date]];
-	NSString *intervalKey = nil;
-	NSNumber *intervalValue = nil;
-	switch ([sender tag]) {
-		case 1:
-			// weekly, on the same day as today
-			intervalKey = @"Weekday";
-			intervalValue = [NSNumber numberWithInt:([components weekday] - 1)];
-			break;
-		case 2:
-			// monthly, on the same date as today
-			intervalKey = @"Day";
-			intervalValue = [NSNumber numberWithInt:MIN(28, [components day])];
-			break;
-		default:
-			// never
-			intervalKey = nil;
-			intervalValue = nil;
-			break;
+	NSDictionary *intervalDict = nil;
+	NSInteger tag = [sender tag];
+	if (tag == 1 || tag == 2) {
+		NSDateComponents *components = [[NSCalendar currentCalendar] components:NSWeekdayCalendarUnit | NSDayCalendarUnit fromDate:[NSDate date]];
+		if (tag == 1)
+			intervalDict = [NSDictionary dictionaryWithObject:[NSNumber numberWithInt:([components weekday] - 1)]
+													   forKey:@"Weekday"]; // weekly, on the same day as today
+		else if (tag == 2)
+			intervalDict = [NSDictionary dictionaryWithObject:[NSNumber numberWithInt:MIN(28, [components day])]
+													   forKey:@"Day"]; // monthly, on the same date as today
 	}
-	if ([self launchInfo]) {
-		[[NSTask launchedTaskWithLaunchPath:launchctl arguments:[NSArray arrayWithObjects:@"unload", @"-w", self.plistPath,  nil]] waitUntilExit];
+	CFDictionaryRef launchInfo = SMJobCopyDictionary(kSMDomainUserLaunchd, (CFStringRef)self.agentIdentifier);
+	if (launchInfo != NULL) {
+		CFRelease(launchInfo);
+		CFErrorRef *error = NULL;
+		if (!SMJobRemove(kSMDomainUserLaunchd, (CFStringRef)self.agentIdentifier, NULL, YES, error))
+			NSLog(@"Error in SMJobRemove: %@", (NSError *)error);
+		if (error != NULL)
+			CFRelease(error);
 		[self.fileManager removeItemAtPath:self.plistPath error:nil];
 	}
-	if (intervalKey != nil && intervalValue != nil) {
+	if (intervalDict != nil) {
 		NSMutableDictionary *plist = [NSMutableDictionary dictionary];
-		[plist setObject:self.identifier forKey:@"Label"];
-		[plist setObject:[NSDictionary dictionaryWithObject:intervalValue forKey:intervalKey] forKey:@"StartCalendarInterval"];
+		[plist setObject:self.agentIdentifier forKey:@"Label"];
+		[plist setObject:intervalDict forKey:@"StartCalendarInterval"];
 		[plist setObject:[NSNumber numberWithBool:NO] forKey:@"RunAtLoad"];
 		[plist setObject:[NSArray arrayWithObjects:@"/usr/bin/open", self.agentApp, nil] forKey:@"ProgramArguments"];
 		[plist writeToFile:self.plistPath atomically:YES];
 		
-		[NSTask launchedTaskWithLaunchPath:launchctl arguments:[NSArray arrayWithObjects:@"load", @"-w", self.plistPath,  nil]];
+		CFErrorRef *error = NULL;
+		if (!SMJobSubmit(kSMDomainUserLaunchd, (CFDictionaryRef)plist, NULL, error))
+			NSLog(@"Error in SMJobSubmit: %@", (NSError *)error);
+		if (error != NULL)
+			CFRelease(error);
 	}
-}
-
-- (NSDictionary *) launchInfo {
-	NSPipe *outPipe = [NSPipe new];
-	NSTask *task = [NSTask new];
-	task.launchPath = launchctl;
-	task.arguments = [NSArray arrayWithObjects:@"list", @"-x", self.identifier,  nil];
-	task.standardOutput = outPipe;
-	task.standardError = outPipe;
-	[task launch];
-	NSDictionary *launchInfo = nil;
-	NSData *data = [[outPipe fileHandleForReading] readDataToEndOfFile];
-	if (data) {
-		CFPropertyListRef dict =  CFPropertyListCreateFromXMLData(kCFAllocatorDefault, (CFDataRef)data, kCFPropertyListImmutable, NULL);
-		if (dict != NULL) {
-			if ([(id)dict isKindOfClass:[NSDictionary class]])
-				launchInfo = (NSDictionary *)dict;
-			CFRelease(dict);
-		}
-	}
-	return launchInfo;
 }
 
 - (id) init {
 	if (self = [super initWithWindowNibName:@"Preferences"]) {
 		_fileManager = [NSFileManager defaultManager];
 		_agentApp = [[NSBundle mainBundle] pathForAuxiliaryExecutable:@"CoruscationAgent.app"];
-		_identifier = [[NSBundle bundleWithPath:_agentApp] bundleIdentifier];
+		_agentIdentifier = [[NSBundle bundleWithPath:_agentApp] bundleIdentifier];
 		NSArray *searchPaths = NSSearchPathForDirectoriesInDomains(NSLibraryDirectory, NSUserDomainMask, YES);
 		NSString *libraryFolder = [searchPaths objectAtIndex:0];
-		_plistPath = [[[libraryFolder stringByAppendingPathComponent:@"LaunchAgents"] stringByAppendingPathComponent:_identifier] stringByAppendingPathExtension:@"plist"];
+		_plistPath = [[[libraryFolder stringByAppendingPathComponent:@"LaunchAgents"] stringByAppendingPathComponent:_agentIdentifier] stringByAppendingPathExtension:@"plist"];
 		
 		BOOL plistExists = [_fileManager fileExistsAtPath:_plistPath];
-		NSDictionary *launchInfo = [self launchInfo];
-		if (!launchInfo) {
-			_selectedAutomaticUpdatesTag = 0;
-			if (plistExists)
-				[_fileManager removeItemAtPath:_plistPath error:nil];
-		} else {
+		CFDictionaryRef launchInfo = SMJobCopyDictionary(kSMDomainUserLaunchd, (CFStringRef)_agentIdentifier);
+		if (launchInfo != NULL) {
+			CFRelease(launchInfo);
 			if (plistExists) {
 				NSDictionary *plist = [NSDictionary dictionaryWithContentsOfFile:_plistPath];
 				NSString *intervalKey = [[[plist objectForKey:@"StartCalendarInterval"] allKeys] objectAtIndex:0];
@@ -91,6 +65,10 @@ NSString *const launchctl = @"/bin/launchctl";
 					_selectedAutomaticUpdatesTag = 0;
 			} else
 				_selectedAutomaticUpdatesTag = 0;
+		} else {
+			_selectedAutomaticUpdatesTag = 0;
+			if (plistExists)
+				[_fileManager removeItemAtPath:_plistPath error:nil];
 		}
 	}
 	return self;
@@ -136,7 +114,7 @@ NSString *const launchctl = @"/bin/launchctl";
 @synthesize generalView = _generalView;
 @synthesize fileManager = _fileManager;
 @synthesize agentApp = _agentApp;
-@synthesize identifier = _identifier;
+@synthesize agentIdentifier = _agentIdentifier;
 @synthesize plistPath = _plistPath;
 @synthesize selectedAutomaticUpdatesTag = _selectedAutomaticUpdatesTag;
 

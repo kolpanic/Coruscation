@@ -5,19 +5,18 @@
 	NSView *_generalView;
 	NSFileManager *_fileManager;
 	NSString *_agentApp;
-	NSString *_identifier;
+	NSString *_agentIdentifier;
 	NSString *_plistPath;
 	NSUInteger _selectedAutomaticUpdatesTag;
 }
 
 - (IBAction) configureAutomaticUpdates:(id)sender;
 - (IBAction) showPrefsPaneForItem:(id) sender;
-- (NSDictionary *) launchInfo;
 
 @property (retain) IBOutlet NSView *generalView;
 @property (retain) NSFileManager *fileManager;
 @property (copy) NSString *agentApp;
-@property (copy) NSString *identifier;
+@property (copy) NSString *agentIdentifier;
 @property (copy) NSString *plistPath;
 @property (assign) NSUInteger selectedAutomaticUpdatesTag;
 

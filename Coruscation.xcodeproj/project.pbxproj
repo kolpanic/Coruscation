@@ -22,6 +22,7 @@
 		CB05D62910D18A7B00AECB32 /* Sparkle.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = CB7094C9108B95DE0008D104 /* Sparkle.framework */; };
 		CB23E88E1088FA23001C5740 /* Sparkle.icns in Resources */ = {isa = PBXBuildFile; fileRef = CB23E88D1088FA23001C5740 /* Sparkle.icns */; };
 		CB32A9751088CA7300343471 /* SparkleBundle.m in Sources */ = {isa = PBXBuildFile; fileRef = CB32A9741088CA7300343471 /* SparkleBundle.m */; };
+		CB34956210DBC795001E7640 /* ServiceManagement.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB34956110DBC795001E7640 /* ServiceManagement.framework */; };
 		CB5F37B310C8A128008FB459 /* UpdateCountTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = CB5F37B210C8A128008FB459 /* UpdateCountTransformer.m */; };
 		CB7094BA108B951A0008D104 /* FindSparkleAppsOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = CB7094B9108B951A0008D104 /* FindSparkleAppsOperation.m */; };
 		CB709522108B98190008D104 /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB7094C9108B95DE0008D104 /* Sparkle.framework */; };
@@ -146,6 +147,7 @@
 		CB23E88D1088FA23001C5740 /* Sparkle.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = Sparkle.icns; sourceTree = "<group>"; };
 		CB32A9731088CA7300343471 /* SparkleBundle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SparkleBundle.h; sourceTree = "<group>"; };
 		CB32A9741088CA7300343471 /* SparkleBundle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SparkleBundle.m; sourceTree = "<group>"; };
+		CB34956110DBC795001E7640 /* ServiceManagement.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ServiceManagement.framework; path = System/Library/Frameworks/ServiceManagement.framework; sourceTree = SDKROOT; };
 		CB53B270108FBE78004EAFF2 /* Read Me.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Read Me.txt"; sourceTree = "<group>"; };
 		CB5F37B110C8A128008FB459 /* UpdateCountTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UpdateCountTransformer.h; sourceTree = "<group>"; };
 		CB5F37B210C8A128008FB459 /* UpdateCountTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UpdateCountTransformer.m; sourceTree = "<group>"; };
@@ -174,6 +176,7 @@
 			files = (
 				8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */,
 				CB709522108B98190008D104 /* Sparkle.framework in Frameworks */,
+				CB34956210DBC795001E7640 /* ServiceManagement.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -259,6 +262,7 @@
 			isa = PBXGroup;
 			children = (
 				1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */,
+				CB34956110DBC795001E7640 /* ServiceManagement.framework */,
 				CB7094C1108B95DE0008D104 /* Sparkle.xcodeproj */,
 			);
 			name = Frameworks;
