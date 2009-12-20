@@ -114,12 +114,12 @@
 					PBXFileDataSource_Warnings_ColumnID,
 				);
 			};
-			PBXPerProjectTemplateStateSaveDate = 283019080;
-			PBXWorkspaceStateSaveDate = 283019080;
+			PBXPerProjectTemplateStateSaveDate = 283040276;
+			PBXWorkspaceStateSaveDate = 283040276;
 		};
 		perUserProjectItems = {
-			CBC1A25E10DE873B006BFDAB /* PBXTextBookmark */ = CBC1A25E10DE873B006BFDAB /* PBXTextBookmark */;
 			CBCDD9EE10DE874C00B6A0DE /* PBXTextBookmark */ = CBCDD9EE10DE874C00B6A0DE /* PBXTextBookmark */;
+			CBDF068F10DEDA2F00622F65 /* PBXTextBookmark */ = CBDF068F10DEDA2F00622F65 /* PBXTextBookmark */;
 		};
 		sourceControlManager = CB32A9101088C65D00343471 /* Source Control */;
 		userBuildSettings = {
@@ -146,7 +146,7 @@
 			sepNavVisRange = "{0, 51}";
 		};
 	};
-	770B37EC0679A11B001EADE2 /* Spark_DataModel.xcdatamodel */ = {
+	770B37EC0679A11B001EADE2 /* Coruscation_DataModel.xcdatamodel */ = {
 		uiCtxt = {
 			"Xdesign Model Editor Bookmark Key" = {
 				UIContextForDetailArea = {
@@ -540,9 +540,9 @@
 			sepNavVisRange = "{1606, 1399}";
 		};
 	};
-	CBC1A25E10DE873B006BFDAB /* PBXTextBookmark */ = {
+	CBCDD9EE10DE874C00B6A0DE /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
-		fRef = CBC1A25F10DE873B006BFDAB /* PreferencesController.m */;
+		fRef = CBB611EC10D1C484003BC3D3 /* PreferencesController.m */;
 		name = "PreferencesController.m: 1";
 		rLen = 0;
 		rLoc = 0;
@@ -550,19 +550,7 @@
 		vrLen = 2292;
 		vrLoc = 0;
 	};
-	CBC1A25F10DE873B006BFDAB /* PreferencesController.m */ = {
-		isa = PBXFileReference;
-		lastKnownFileType = sourcecode.c.objc;
-		name = PreferencesController.m;
-		path = /Users/karl/Projects/Coruscation/coruscation/PreferencesController.m;
-		sourceTree = "<absolute>";
-		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1208, 2204}}";
-			sepNavSelRange = "{0, 0}";
-			sepNavVisRange = "{0, 2292}";
-		};
-	};
-	CBCDD9EE10DE874C00B6A0DE /* PBXTextBookmark */ = {
+	CBDF068F10DEDA2F00622F65 /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
 		fRef = CBB611EC10D1C484003BC3D3 /* PreferencesController.m */;
 		name = "PreferencesController.m: 1";

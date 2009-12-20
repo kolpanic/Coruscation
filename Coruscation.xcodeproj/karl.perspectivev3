@@ -300,6 +300,8 @@
 			<key>Layout</key>
 			<array>
 				<dict>
+					<key>BecomeActive</key>
+					<true/>
 					<key>ContentConfiguration</key>
 					<dict>
 						<key>PBXBottomSmartGroupGIDs</key>
@@ -349,8 +351,8 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>19</integer>
-									<integer>7</integer>
+									<integer>25</integer>
+									<integer>21</integer>
 									<integer>5</integer>
 									<integer>0</integer>
 								</array>
@@ -388,8 +390,6 @@
 					<key>Dock</key>
 					<array>
 						<dict>
-							<key>BecomeActive</key>
-							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
@@ -407,10 +407,10 @@
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>CBCDD9EE10DE874C00B6A0DE</string>
+										<string>CBDF068F10DEDA2F00622F65</string>
 										<key>history</key>
 										<array>
-											<string>CBC1A25E10DE873B006BFDAB</string>
+											<string>CBCDD9EE10DE874C00B6A0DE</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -533,11 +533,11 @@
 			</array>
 			<key>TableOfContents</key>
 			<array>
-				<string>CBCDD9E810DE874C00B6A0DE</string>
+				<string>CBDF068910DEDA1700622F65</string>
 				<string>1CA23ED40692098700951B8B</string>
-				<string>CBCDD9E910DE874C00B6A0DE</string>
+				<string>CBDF068A10DEDA1700622F65</string>
 				<string>CB3742AB106A5CEF00AED801</string>
-				<string>CBCDD9EA10DE874C00B6A0DE</string>
+				<string>CBDF068B10DEDA1700622F65</string>
 				<string>1CA23EDF0692099D00951B8B</string>
 				<string>1CA23EE00692099D00951B8B</string>
 				<string>1CA23EE10692099D00951B8B</string>
@@ -710,7 +710,7 @@
 	<key>StatusbarIsVisible</key>
 	<true/>
 	<key>TimeStamp</key>
-	<real>283019084.27597898</real>
+	<real>283040303.04551202</real>
 	<key>ToolbarConfigUserDefaultsMinorVersion</key>
 	<string>2</string>
 	<key>ToolbarDisplayMode</key>

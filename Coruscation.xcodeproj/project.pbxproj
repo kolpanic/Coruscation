@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2F7446990DB6B7EA00F9684A /* Coruscation-MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2F7446970DB6B7EA00F9684A /* Coruscation-MainMenu.xib */; };
-		770B37ED0679A11B001EADE2 /* Spark_DataModel.xcdatamodel in Sources */ = {isa = PBXBuildFile; fileRef = 770B37EC0679A11B001EADE2 /* Spark_DataModel.xcdatamodel */; };
+		770B37ED0679A11B001EADE2 /* Coruscation_DataModel.xcdatamodel in Sources */ = {isa = PBXBuildFile; fileRef = 770B37EC0679A11B001EADE2 /* Coruscation_DataModel.xcdatamodel */; };
 		77C8280E06725ACE000B614F /* CoruscationDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 77C8280C06725ACE000B614F /* CoruscationDelegate.m */; };
 		8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C165CFE840E0CC02AAC07 /* InfoPlist.strings */; };
 		8D11072D0486CEB800E47090 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; settings = {ATTRIBUTES = (); }; };
@@ -132,7 +132,7 @@
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		2F7446980DB6B7EA00F9684A /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = "English.lproj/Coruscation-MainMenu.xib"; sourceTree = "<group>"; };
 		32CA4F630368D1EE00C91783 /* Coruscation_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Coruscation_Prefix.pch; sourceTree = "<group>"; };
-		770B37EC0679A11B001EADE2 /* Spark_DataModel.xcdatamodel */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = wrapper.xcdatamodel; path = Spark_DataModel.xcdatamodel; sourceTree = "<group>"; };
+		770B37EC0679A11B001EADE2 /* Coruscation_DataModel.xcdatamodel */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = wrapper.xcdatamodel; path = Coruscation_DataModel.xcdatamodel; sourceTree = "<group>"; };
 		77C8280B06725ACE000B614F /* CoruscationDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoruscationDelegate.h; sourceTree = "<group>"; };
 		77C8280C06725ACE000B614F /* CoruscationDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoruscationDelegate.m; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* Coruscation-Info.plist */ = {isa = PBXFileReference; explicitFileType = text.plist.xml; fileEncoding = 4; path = "Coruscation-Info.plist"; sourceTree = "<group>"; };
@@ -271,7 +271,7 @@
 		7756732906782D8800D1FEB8 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				770B37EC0679A11B001EADE2 /* Spark_DataModel.xcdatamodel */,
+				770B37EC0679A11B001EADE2 /* Coruscation_DataModel.xcdatamodel */,
 				CB32A9731088CA7300343471 /* SparkleBundle.h */,
 				CB32A9741088CA7300343471 /* SparkleBundle.m */,
 			);
@@ -469,7 +469,7 @@
 			files = (
 				8D11072D0486CEB800E47090 /* main.m in Sources */,
 				77C8280E06725ACE000B614F /* CoruscationDelegate.m in Sources */,
-				770B37ED0679A11B001EADE2 /* Spark_DataModel.xcdatamodel in Sources */,
+				770B37ED0679A11B001EADE2 /* Coruscation_DataModel.xcdatamodel in Sources */,
 				CB32A9751088CA7300343471 /* SparkleBundle.m in Sources */,
 				CB7094BA108B951A0008D104 /* FindSparkleAppsOperation.m in Sources */,
 				CBB7FC58108D2575003E062A /* CheckAppUpdateOperation.m in Sources */,
