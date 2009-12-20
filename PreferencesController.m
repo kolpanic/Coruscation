@@ -1,20 +1,12 @@
 #import "PreferencesController.h"
 #import <ServiceManagement/ServiceManagement.h>
 
+const NSInteger weeklyStartInterval = 604800;
+const NSInteger monthlyStartInterval = 2592000;
+
 @implementation PreferencesController
 
 - (IBAction) configureAutomaticUpdates:(id)sender {
-	NSDictionary *intervalDict = nil;
-	NSInteger tag = [sender tag];
-	if (tag == 1 || tag == 2) {
-		NSDateComponents *components = [[NSCalendar currentCalendar] components:NSWeekdayCalendarUnit | NSDayCalendarUnit fromDate:[NSDate date]];
-		if (tag == 1)
-			intervalDict = [NSDictionary dictionaryWithObject:[NSNumber numberWithInt:([components weekday] - 1)]
-													   forKey:@"Weekday"];                                                                    // weekly, on the same day as today
-		else if (tag == 2)
-			intervalDict = [NSDictionary dictionaryWithObject:[NSNumber numberWithInt:MIN(28, [components day])]
-													   forKey:@"Day"];                                                                    // monthly, on the same date as today
-	}
 	CFDictionaryRef launchInfo = SMJobCopyDictionary(kSMDomainUserLaunchd, (CFStringRef)self.agentIdentifier);
 	if (launchInfo != NULL) {
 		CFRelease(launchInfo);
@@ -25,12 +17,19 @@
 			CFRelease(error);
 		[self.fileManager removeItemAtPath:self.plistPath error:nil];
 	}
-	if (intervalDict != nil) {
+	
+	NSInteger startInterval = 0;
+	NSInteger tag = [sender tag];
+	if (tag == 1)
+		startInterval = weeklyStartInterval;
+	else if (tag == 2)
+		startInterval = monthlyStartInterval;
+	if (startInterval > 0) {
 		NSMutableDictionary *plist = [NSMutableDictionary dictionary];
 		[plist setObject:self.agentIdentifier forKey:@"Label"];
-		[plist setObject:intervalDict forKey:@"StartCalendarInterval"];
+		[plist setObject:[NSNumber numberWithInteger:startInterval] forKey:@"StartInterval"];
 		[plist setObject:[NSNumber numberWithBool:NO] forKey:@"RunAtLoad"];
-		[plist setObject:[NSArray arrayWithObjects:@"/usr/bin/open", self.agentApp, nil] forKey:@"ProgramArguments"];
+		[plist setObject:self.agentExecutable forKey:@"Program"];
 		[plist writeToFile:self.plistPath atomically:YES];
 		
 		CFErrorRef *error = NULL;
@@ -39,14 +38,14 @@
 		if (error != NULL)
 			CFRelease(error);
 	}
-	[self updateScheduleDescriptionForIntervalDict:intervalDict];
 }
 
 - (id) init {
 	if (self = [super initWithWindowNibName:@"Preferences"]) {
 		_fileManager = [NSFileManager defaultManager];
-		_agentApp = [[NSBundle mainBundle] pathForAuxiliaryExecutable:@"CoruscationAgent.app"];
-		_agentIdentifier = [[NSBundle bundleWithPath:_agentApp] bundleIdentifier];
+		NSString *agentAppBundle = [[NSBundle mainBundle] pathForAuxiliaryExecutable:@"CoruscationAgent.app"];
+		_agentExecutable = [[[agentAppBundle stringByAppendingPathComponent:@"Contents"] stringByAppendingPathComponent:@"MacOS"] stringByAppendingPathComponent:@"CoruscationAgent"];
+		_agentIdentifier = [[NSBundle bundleWithPath:agentAppBundle] bundleIdentifier];
 		NSArray *searchPaths = NSSearchPathForDirectoriesInDomains(NSLibraryDirectory, NSUserDomainMask, YES);
 		NSString *libraryFolder = [searchPaths objectAtIndex:0];
 		_plistPath = [[[libraryFolder stringByAppendingPathComponent:@"LaunchAgents"] stringByAppendingPathComponent:_agentIdentifier] stringByAppendingPathExtension:@"plist"];
@@ -57,83 +56,22 @@
 			CFRelease(launchInfo);
 			if (plistExists) {
 				NSDictionary *plist = [NSDictionary dictionaryWithContentsOfFile:_plistPath];
-				NSDictionary *intervalDict = [plist objectForKey:@"StartCalendarInterval"];
-				NSString *intervalKey = [[intervalDict allKeys] objectAtIndex:0];
-				if ([intervalKey isEqualToString:@"Weekday"])
+				NSInteger startInterval = [[plist objectForKey:@"StartInterval"] integerValue];
+				if (startInterval == weeklyStartInterval)
 					_selectedAutomaticUpdatesTag = 1;
-				else if ([intervalKey isEqualToString:@"Day"])
+				else if (startInterval == monthlyStartInterval)
 					_selectedAutomaticUpdatesTag = 2;
 				else
 					_selectedAutomaticUpdatesTag = 0;
-				[self updateScheduleDescriptionForIntervalDict:intervalDict];
-			} else {
+			} else
 				_selectedAutomaticUpdatesTag = 0;
-				[self updateScheduleDescriptionForIntervalDict:nil];
-			}
 		} else {
 			_selectedAutomaticUpdatesTag = 0;
 			if (plistExists)
 				[_fileManager removeItemAtPath:_plistPath error:nil];
-			[self updateScheduleDescriptionForIntervalDict:nil];
 		}
 	}
 	return self;
-}
-
-- (void) updateScheduleDescriptionForIntervalDict:(NSDictionary *)dict {
-	self.scheduleDescription = NSLocalizedString(@"Manually", @"schedule description");
-	if (dict) {
-		NSString *intervalKey = [[dict allKeys] objectAtIndex:0];
-		NSNumber *intervalValue = [dict objectForKey:intervalKey];
-		if ([intervalKey isEqualToString:@"Day"]) {
-			NSUInteger remainder = [intervalValue unsignedIntegerValue] % 10;
-			NSString *suffix = nil;
-			switch (remainder) {
-				case 1:
-					suffix = NSLocalizedString(@"st", @"ordinal suffix");
-					break;
-				case 2:
-					suffix = NSLocalizedString(@"nd", @"ordinal suffix");
-					break;
-				case 3:
-					suffix = NSLocalizedString(@"rd", @"ordinal suffix");
-					break;
-				default:
-					suffix = NSLocalizedString(@"th", @"ordinal suffix");
-					break;
-			}
-			self.scheduleDescription = [NSString stringWithFormat:NSLocalizedString(@"Every month on the %@%@", @"schedule description"), intervalValue, suffix];
-		} else if ([intervalKey isEqualToString:@"Weekday"]) {
-			NSString *day = nil;
-			switch ([intervalValue unsignedIntegerValue] + 1) {
-				case 1:
-					day = NSLocalizedString(@"Sunday", @"day of week");
-					break;
-				case 2:
-					day = NSLocalizedString(@"Monday", @"day of week");
-					break;
-				case 3:
-					day = NSLocalizedString(@"Tuesday", @"day of week");
-					break;
-				case 4:
-					day = NSLocalizedString(@"Wednesday", @"day of week");
-					break;
-				case 5:
-					day = NSLocalizedString(@"Thursday", @"day of week");
-					break;
-				case 6:
-					day = NSLocalizedString(@"Friday", @"day of week");
-					break;
-				case 7:
-					day = NSLocalizedString(@"Saturday", @"day of week");
-					break;
-				default:
-					day = nil;
-					break;
-			}
-			self.scheduleDescription = [NSString stringWithFormat:NSLocalizedString(@"Every week on %@", @"schedule description"), day];
-		}
-	}
 }
 
 - (void) awakeFromNib {
@@ -175,7 +113,7 @@
 
 @synthesize generalView = _generalView;
 @synthesize fileManager = _fileManager;
-@synthesize agentApp = _agentApp;
+@synthesize agentExecutable = _agentExecutable;
 @synthesize agentIdentifier = _agentIdentifier;
 @synthesize plistPath = _plistPath;
 @synthesize selectedAutomaticUpdatesTag = _selectedAutomaticUpdatesTag;

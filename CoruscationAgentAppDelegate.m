@@ -24,20 +24,30 @@
 }
 
 - (void) observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
-	if ([keyPath isEqualToString:@"operations"]) {
-		if ([self.operationQueue operationCount] < 1) {
+	if ([keyPath isEqualToString:@"operations"])
+		if ([self.operationQueue operationCount] < 1)
 			[NSApp terminate:nil];
-		}
-	}
 }
 
 - (void) finalize {
 	[_operationQueue removeObserver:self forKeyPath:@"operations"];
 	[super finalize];
 }
+- (BOOL) coruscationAlreadyRunning {
+	BOOL coruscationAlreadyRunning = NO;
+	for (NSRunningApplication *app in [[NSWorkspace sharedWorkspace] runningApplications]) {
+		if ([[[[[app bundleURL] path] lastPathComponent] stringByDeletingPathExtension] isEqualToString:@"Coruscation"]) {
+			coruscationAlreadyRunning = YES;
+			break;
+		}
+	}
+	return coruscationAlreadyRunning;
+}
 
 - (void) applicationDidFinishLaunching:(NSNotification *)aNotification {
-	FindSparkleAppsOperation *op = [FindSparkleAppsOperation new];
+	if ([self coruscationAlreadyRunning])
+		[NSApp terminate:nil];
+		FindSparkleAppsOperation * op = [FindSparkleAppsOperation new];
 	[self.operationQueue addOperation:op];
 }
 
@@ -47,7 +57,8 @@
 
 - (void) addSparkleBundleWithUserInfo:(NSDictionary *)userInfo {
 	[self.operationQueue cancelAllOperations];
-	[[NSWorkspace sharedWorkspace] launchApplication:@"Coruscation"];
+	if (![self coruscationAlreadyRunning])
+		[[NSWorkspace sharedWorkspace] launchApplication:@"Coruscation"];
 	[NSApp terminate:nil];
 }
 

@@ -11,7 +11,7 @@
 }
 
 - (id) transformedValue:(id)value {
-	NSUInteger v = [value unsignedIntegerValue];	
+	NSUInteger v = [value unsignedIntegerValue];
 	NSString *transformedValue = nil;
 	switch (v) {
 		case 0:
