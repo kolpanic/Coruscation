@@ -25,8 +25,10 @@
 
 - (void) observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
 	if ([keyPath isEqualToString:@"operations"])
-		if ([self.operationQueue operationCount] < 1)
+		if ([self.operationQueue operationCount] < 1) {
+			NSLog(@"No updates found, terminating.");
 			[NSApp terminate:nil];
+		}
 }
 
 - (void) finalize {
@@ -47,7 +49,8 @@
 - (void) applicationDidFinishLaunching:(NSNotification *)aNotification {
 	if ([self coruscationAlreadyRunning])
 		[NSApp terminate:nil];
-		FindSparkleAppsOperation * op = [FindSparkleAppsOperation new];
+	NSLog(@"Checking for updates...");
+	FindSparkleAppsOperation *op = [FindSparkleAppsOperation new];
 	[self.operationQueue addOperation:op];
 }
 
@@ -57,8 +60,10 @@
 
 - (void) addSparkleBundleWithUserInfo:(NSDictionary *)userInfo {
 	[self.operationQueue cancelAllOperations];
-	if (![self coruscationAlreadyRunning])
+	if (![self coruscationAlreadyRunning]) {
+		NSLog(@"Launching Coruscation...");
 		[[NSWorkspace sharedWorkspace] launchApplication:@"Coruscation"];
+	}
 	[NSApp terminate:nil];
 }
 
