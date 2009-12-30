@@ -47,6 +47,7 @@
 }
 
 - (void) applicationDidFinishLaunching:(NSNotification *)aNotification {
+	[[NSUserDefaults standardUserDefaults] setObject:[NSDate date] forKey:@"LastRunDate"];
 	if ([self coruscationAlreadyRunning])
 		[NSApp terminate:nil];
 	NSLog(@"Checking for updates...");
