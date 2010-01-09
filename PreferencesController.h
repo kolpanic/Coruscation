@@ -12,6 +12,7 @@
 }
 
 - (IBAction) configureAutomaticUpdates:(id)sender;
+- (void) updateScheduleDescriptionForIntervalDict:(NSDictionary *)dict;
 - (IBAction) showPrefsPaneForItem:(id)sender;
 
 @property (retain) IBOutlet NSView *generalView;
