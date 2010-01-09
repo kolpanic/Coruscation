@@ -114,12 +114,12 @@
 					PBXFileDataSource_Warnings_ColumnID,
 				);
 			};
-			PBXPerProjectTemplateStateSaveDate = 284748508;
-			PBXWorkspaceStateSaveDate = 284748508;
+			PBXPerProjectTemplateStateSaveDate = 284748999;
+			PBXWorkspaceStateSaveDate = 284748999;
 		};
 		perUserProjectItems = {
-			CB419FB210F8EBB200BD2829 /* PBXTextBookmark */ = CB419FB210F8EBB200BD2829 /* PBXTextBookmark */;
-			CB419FB510F8EBD200BD2829 /* PBXTextBookmark */ = CB419FB510F8EBD200BD2829 /* PBXTextBookmark */;
+			CB51EFBC10F8EEF400EBDE0F /* PBXTextBookmark */ = CB51EFBC10F8EEF400EBDE0F /* PBXTextBookmark */;
+			CB51EFC510F8EF6100EBDE0F /* PBXTextBookmark */ = CB51EFC510F8EF6100EBDE0F /* PBXTextBookmark */;
 		};
 		sourceControlManager = CB32A9101088C65D00343471 /* Source Control */;
 		userBuildSettings = {
@@ -454,25 +454,25 @@
 			sepNavVisRange = "{783, 280}";
 		};
 	};
-	CB419FB210F8EBB200BD2829 /* PBXTextBookmark */ = {
+	CB51EFBC10F8EEF400EBDE0F /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
 		fRef = CBB611EC10D1C484003BC3D3 /* PreferencesController.m */;
-		name = "PreferencesController.m: 28";
+		name = "PreferencesController.m: 115";
 		rLen = 0;
-		rLoc = 1203;
+		rLoc = 4967;
 		rType = 0;
-		vrLen = 2553;
-		vrLoc = 121;
+		vrLen = 371;
+		vrLoc = 4016;
 	};
-	CB419FB510F8EBD200BD2829 /* PBXTextBookmark */ = {
+	CB51EFC510F8EF6100EBDE0F /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
 		fRef = CBB611EC10D1C484003BC3D3 /* PreferencesController.m */;
-		name = "PreferencesController.m: 28";
+		name = "PreferencesController.m: 143";
 		rLen = 0;
-		rLoc = 1203;
+		rLoc = 5756;
 		rType = 0;
-		vrLen = 2553;
-		vrLoc = 121;
+		vrLen = 1478;
+		vrLoc = 4473;
 	};
 	CB53B270108FBE78004EAFF2 /* Read Me.txt */ = {
 		uiCtxt = {
@@ -534,9 +534,9 @@
 	};
 	CBB611EC10D1C484003BC3D3 /* PreferencesController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1552, 3287}}";
-			sepNavSelRange = "{1203, 0}";
-			sepNavVisRange = "{1088, 517}";
+			sepNavIntBoundsRect = "{{0, 0}, {1208, 3762}}";
+			sepNavSelRange = "{5756, 0}";
+			sepNavVisRange = "{4473, 1478}";
 		};
 	};
 	CBB611FE10D1C4FD003BC3D3 /* English */ = {

@@ -7,13 +7,21 @@
 	NSDictionary *intervalDict = nil;
 	NSInteger tag = [sender tag];
 	if (tag == 1 || tag == 2) {
-		NSDateComponents *components = [[NSCalendar currentCalendar] components:NSWeekdayCalendarUnit | NSDayCalendarUnit fromDate:[NSDate date]];
-		if (tag == 1)
-			intervalDict = [NSDictionary dictionaryWithObject:[NSNumber numberWithInt:([components weekday] - 1)]
-													   forKey:@"Weekday"];
-		else if (tag == 2)
-			intervalDict = [NSDictionary dictionaryWithObject:[NSNumber numberWithInt:MIN(28, [components day])]
-													   forKey:@"Day"];
+		NSDateComponents *components = [[NSCalendar currentCalendar] components:NSWeekdayCalendarUnit | NSDayCalendarUnit | NSHourCalendarUnit | NSMinuteCalendarUnit
+																	   fromDate:[NSDate date]];
+		if (tag == 1) {
+			intervalDict = [NSDictionary dictionaryWithObjectsAndKeys:
+							[NSNumber numberWithInt:([components weekday] - 1)], @"Weekday",
+							[NSNumber numberWithInt:[components hour]], @"Hour",
+							[NSNumber numberWithInt:[components minute]], @"Minute",
+							nil];
+		} else if (tag == 2) {
+			intervalDict = [NSDictionary dictionaryWithObjectsAndKeys:
+							[NSNumber numberWithInt:MIN(28, [components day])], @"Day",
+							[NSNumber numberWithInt:[components hour]], @"Hour",
+							[NSNumber numberWithInt:[components minute]], @"Minute",
+							nil];
+		}
 	}
 	CFDictionaryRef launchInfo = SMJobCopyDictionary(kSMDomainUserLaunchd, (CFStringRef)self.agentIdentifier);
 	if (launchInfo != NULL) {
@@ -59,10 +67,11 @@
 			if (plistExists) {
 				NSDictionary *plist = [NSDictionary dictionaryWithContentsOfFile:_plistPath];
 				NSDictionary *intervalDict = [plist objectForKey:@"StartCalendarInterval"];
-				NSString *intervalKey = [[intervalDict allKeys] objectAtIndex:0];
-				if ([intervalKey isEqualToString:@"Weekday"])
+				NSNumber *weekday = [intervalDict objectForKey:@"Weekday"];
+				NSNumber *day = [intervalDict objectForKey:@"Day"];
+				if (weekday != nil)
 					_selectedAutomaticUpdatesTag = 1;
-				else if ([intervalKey isEqualToString:@"Day"])
+				else if (day != nil)
 					_selectedAutomaticUpdatesTag = 2;
 				else
 					_selectedAutomaticUpdatesTag = 0;
@@ -84,10 +93,10 @@
 - (void) updateScheduleDescriptionForIntervalDict:(NSDictionary *)dict {
 	self.scheduleDescription = NSLocalizedString(@"Manually", @"schedule description");
 	if (dict) {
-		NSString *intervalKey = [[dict allKeys] objectAtIndex:0];
-		NSNumber *intervalValue = [dict objectForKey:intervalKey];
-		if ([intervalKey isEqualToString:@"Day"]) {
-			NSUInteger remainder = [intervalValue unsignedIntegerValue] % 10;
+		NSNumber *weekday = [dict objectForKey:@"Weekday"];
+		NSNumber *day = [dict objectForKey:@"Day"];
+		if (day != nil) {
+			NSUInteger remainder = [day unsignedIntegerValue] % 10;
 			NSString *suffix = nil;
 			switch (remainder) {
 				case 1:
@@ -103,36 +112,37 @@
 					suffix = NSLocalizedString(@"th", @"ordinal suffix");
 					break;
 			}
-			self.scheduleDescription = [NSString stringWithFormat:NSLocalizedString(@"Every month on the %@%@", @"schedule description"), intervalValue, suffix];
-		} else if ([intervalKey isEqualToString:@"Weekday"]) {
-			NSString *day = nil;
-			switch ([intervalValue unsignedIntegerValue] + 1) {
+			self.scheduleDescription = [NSString stringWithFormat:NSLocalizedString(@"Every month on the %@%@", @"schedule description"), day, suffix];
+		} else if (weekday != nil) {
+			NSString *dayString = nil;
+			switch ([weekday unsignedIntegerValue] + 1) {
 				case 1:
-					day = NSLocalizedString(@"Sunday", @"day of week");
+					dayString = NSLocalizedString(@"Sunday", @"day of week");
 					break;
 				case 2:
-					day = NSLocalizedString(@"Monday", @"day of week");
+					dayString = NSLocalizedString(@"Monday", @"day of week");
 					break;
 				case 3:
-					day = NSLocalizedString(@"Tuesday", @"day of week");
+					dayString = NSLocalizedString(@"Tuesday", @"day of week");
 					break;
 				case 4:
-					day = NSLocalizedString(@"Wednesday", @"day of week");
+					dayString = NSLocalizedString(@"Wednesday", @"day of week");
 					break;
 				case 5:
-					day = NSLocalizedString(@"Thursday", @"day of week");
+					dayString = NSLocalizedString(@"Thursday", @"day of week");
 					break;
 				case 6:
-					day = NSLocalizedString(@"Friday", @"day of week");
+					dayString = NSLocalizedString(@"Friday", @"day of week");
 					break;
 				case 7:
-					day = NSLocalizedString(@"Saturday", @"day of week");
+					dayString = NSLocalizedString(@"Saturday", @"day of week");
 					break;
 				default:
-					day = nil;
+					dayString = nil;
 					break;
 			}
-			self.scheduleDescription = [NSString stringWithFormat:NSLocalizedString(@"Every week on %@", @"schedule description"), day];
+			if (dayString != nil)
+				self.scheduleDescription = [NSString stringWithFormat:NSLocalizedString(@"Every week on %@", @"schedule description"), dayString];
 		}
 	}
 }
