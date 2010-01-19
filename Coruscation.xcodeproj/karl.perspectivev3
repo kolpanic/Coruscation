@@ -404,12 +404,10 @@
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>CB841ED510F8F0D800BF1B2C</string>
+										<string>CB188DC21106767900AC506F</string>
 										<key>history</key>
 										<array>
-											<string>CB841EC610F8F06B00BF1B2C</string>
-											<string>CB841ED210F8F0B700BF1B2C</string>
-											<string>CB841EAB10F8F06200BF1B2C</string>
+											<string>CB188DC01106767700AC506F</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -532,11 +530,11 @@
 			</array>
 			<key>TableOfContents</key>
 			<array>
-				<string>CB841ECA10F8F06B00BF1B2C</string>
+				<string>CB188DB21106766E00AC506F</string>
 				<string>1CA23ED40692098700951B8B</string>
-				<string>CB841ECB10F8F06B00BF1B2C</string>
+				<string>CB188DB31106766E00AC506F</string>
 				<string>CB3742AB106A5CEF00AED801</string>
-				<string>CB841ECC10F8F06B00BF1B2C</string>
+				<string>CB188DB41106766E00AC506F</string>
 				<string>1CA23EDF0692099D00951B8B</string>
 				<string>1CA23EE00692099D00951B8B</string>
 				<string>1CA23EE10692099D00951B8B</string>
@@ -685,13 +683,13 @@
 			</array>
 			<key>TableOfContents</key>
 			<array>
-				<string>CB51EF8010F8ED7000EBDE0F</string>
+				<string>CB188DB51106766E00AC506F</string>
 				<string>1CCC7628064C1048000F2A68</string>
 				<string>1CCC7629064C1048000F2A68</string>
-				<string>CB51EF8110F8ED7000EBDE0F</string>
-				<string>CB51EF8210F8ED7000EBDE0F</string>
-				<string>CB51EF8310F8ED7000EBDE0F</string>
-				<string>CB51EF8410F8ED7000EBDE0F</string>
+				<string>CB188DB61106766E00AC506F</string>
+				<string>CB188DB71106766E00AC506F</string>
+				<string>CB188DB81106766E00AC506F</string>
+				<string>CB188DB91106766E00AC506F</string>
 				<string>CB3742AB106A5CEF00AED801</string>
 			</array>
 			<key>ToolbarConfigUserDefaultsMinorVersion</key>
@@ -709,7 +707,7 @@
 	<key>StatusbarIsVisible</key>
 	<true/>
 	<key>TimeStamp</key>
-	<real>284750040.86389899</real>
+	<real>285636217.98155302</real>
 	<key>ToolbarConfigUserDefaultsMinorVersion</key>
 	<string>2</string>
 	<key>ToolbarDisplayMode</key>
@@ -726,7 +724,9 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>/Users/karl/Projects/Coruscation/Coruscation/Coruscation.xcodeproj</string>
+		<string>CB188DBB1106766E00AC506F</string>
+		<string>CB188DBC1106766E00AC506F</string>
+		<string>/Users/karl/Projects/Coruscation/coruscation/Coruscation.xcodeproj</string>
 	</array>
 	<key>WindowString</key>
 	<string>77 127 1613 1035 0 0 1920 1178 </string>
