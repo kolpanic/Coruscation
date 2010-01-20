@@ -78,8 +78,9 @@
 		_agentExecutable = [[[agentAppBundle stringByAppendingPathComponent:@"Contents"] stringByAppendingPathComponent:@"MacOS"] stringByAppendingPathComponent:@"CoruscationAgent"];
 		_agentIdentifier = [[NSBundle bundleWithPath:agentAppBundle] bundleIdentifier];
 		NSArray *searchPaths = NSSearchPathForDirectoriesInDomains(NSLibraryDirectory, NSUserDomainMask, YES);
-		NSString *libraryFolder = [searchPaths objectAtIndex:0];
-		_plistPath = [[[libraryFolder stringByAppendingPathComponent:@"LaunchAgents"] stringByAppendingPathComponent:_agentIdentifier] stringByAppendingPathExtension:@"plist"];
+		NSString *agentsFolder = [[searchPaths objectAtIndex:0] stringByAppendingPathComponent:@"LaunchAgents"];
+		[_fileManager createDirectoryAtPath:agentsFolder withIntermediateDirectories:YES attributes:nil error:nil];
+		_plistPath = [[agentsFolder stringByAppendingPathComponent:_agentIdentifier] stringByAppendingPathExtension:@"plist"];
 
 		BOOL plistExists = [_fileManager fileExistsAtPath:_plistPath];
 		CFDictionaryRef launchInfo = SMJobCopyDictionary(kSMDomainUserLaunchd, (CFStringRef)_agentIdentifier);
