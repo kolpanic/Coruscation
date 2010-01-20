@@ -26,28 +26,49 @@
 	CFDictionaryRef launchInfo = SMJobCopyDictionary(kSMDomainUserLaunchd, (CFStringRef)self.agentIdentifier);
 	if (launchInfo != NULL) {
 		CFRelease(launchInfo);
-		CFErrorRef *error = NULL;
-		if (!SMJobRemove(kSMDomainUserLaunchd, (CFStringRef)self.agentIdentifier, NULL, YES, error))
-			NSLog(@"Error in SMJobRemove: %@", (NSError *)error);
-		if (error != NULL)
-			CFRelease(error);
+		CFErrorRef *outError = NULL;
+		if (!SMJobRemove(kSMDomainUserLaunchd, (CFStringRef)self.agentIdentifier, NULL, YES, outError))
+			NSLog(@"Error in SMJobRemove: %@", (NSError *)outError);
+		if (outError != NULL)
+			CFRelease(outError);
 		[self.fileManager removeItemAtPath:self.plistPath error:nil];
 	}
+	NSString *errorMessage = nil;
 	if (intervalDict != nil) {
 		NSMutableDictionary *plist = [NSMutableDictionary dictionary];
 		[plist setObject:self.agentIdentifier forKey:@"Label"];
 		[plist setObject:intervalDict forKey:@"StartCalendarInterval"];
 		[plist setObject:[NSNumber numberWithBool:NO] forKey:@"RunAtLoad"];
 		[plist setObject:self.agentExecutable forKey:@"Program"];
-		[plist writeToFile:self.plistPath atomically:YES];
 
-		CFErrorRef *error = NULL;
-		if (!SMJobSubmit(kSMDomainUserLaunchd, (CFDictionaryRef)plist, NULL, error))
-			NSLog(@"Error in SMJobSubmit: %@", (NSError *)error);
-		if (error != NULL)
-			CFRelease(error);
+		CFErrorRef *outError = NULL;
+		if (SMJobSubmit(kSMDomainUserLaunchd, (CFDictionaryRef)plist, NULL, outError))
+			[plist writeToFile:self.plistPath atomically:YES];
+		else {
+			NSError *nserr = (NSError *)outError;
+			NSLog(@"Error in SMJobSubmit: %@", nserr);
+			self.selectedAutomaticUpdatesTag = 0;
+			[self.intervalPopUpButton selectItemWithTag:0];
+			intervalDict = nil;
+			if (nserr == nil)
+				errorMessage = @"no more info";
+			else
+				errorMessage = [nserr localizedDescription];
+		}
+		if (outError != NULL)
+			CFRelease(outError);
 	}
 	[self updateScheduleDescriptionForIntervalDict:intervalDict];
+
+	if (errorMessage) {
+		NSString *informativeText = [NSString stringWithFormat:NSLocalizedString(@"An error occurred when attempting to configure scheduled update checks (%@).", @"message informative text"), errorMessage];
+		NSAlert *alert = [NSAlert alertWithMessageText:NSLocalizedString(@"Scheduling Error", @"message text")
+										 defaultButton:nil
+									   alternateButton:nil
+										   otherButton:nil
+							 informativeTextWithFormat:informativeText];
+		[alert beginSheetModalForWindow:self.window modalDelegate:nil didEndSelector:nil contextInfo:nil];
+	}
 }
 
 - (id) init {
@@ -191,5 +212,6 @@
 @synthesize plistPath = _plistPath;
 @synthesize selectedAutomaticUpdatesTag = _selectedAutomaticUpdatesTag;
 @synthesize scheduleDescription = _scheduleDescription;
+@synthesize intervalPopUpButton = _intervalPopUpButton;
 
 @end

@@ -9,6 +9,7 @@
 	NSString *_plistPath;
 	NSUInteger _selectedAutomaticUpdatesTag;
 	NSString *_scheduleDescription;
+	NSPopUpButton *_intervalPopUpButton;
 }
 
 - (IBAction) configureAutomaticUpdates:(id)sender;
@@ -22,5 +23,6 @@
 @property (copy) NSString *plistPath;
 @property (assign) NSUInteger selectedAutomaticUpdatesTag;
 @property (copy) NSString *scheduleDescription;
+@property (retain) IBOutlet NSPopUpButton *intervalPopUpButton;
 
 @end

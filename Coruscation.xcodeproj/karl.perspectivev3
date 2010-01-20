@@ -283,11 +283,15 @@
 			<array>
 				<string>XCToolbarPerspectiveControl</string>
 				<string>NSToolbarSeparatorItem</string>
-				<string>active-combo-popup</string>
 				<string>action</string>
+				<string>active-combo-popup</string>
+				<string>NSToolbarSpaceItem</string>
 				<string>build</string>
 				<string>build-and-go</string>
+				<string>go</string>
+				<string>clean-target</string>
 				<string>clean</string>
+				<string>NSToolbarFlexibleSpaceItem</string>
 			</array>
 			<key>ControllerClassBaseName</key>
 			<string></string>
@@ -348,7 +352,9 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>4</integer>
+									<integer>19</integer>
+									<integer>7</integer>
+									<integer>5</integer>
 									<integer>0</integer>
 								</array>
 							</array>
@@ -404,10 +410,10 @@
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>CB188DC21106767900AC506F</string>
+										<string>CBABA4B211074B1F0026CC0A</string>
 										<key>history</key>
 										<array>
-											<string>CB188DC01106767700AC506F</string>
+											<string>CBABA4B011074B1F0026CC0A</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -447,8 +453,6 @@
 									<dict>
 										<key>Frame</key>
 										<string>{{10, 27}, {1269, -27}}</string>
-										<key>RubberWindowFrame</key>
-										<string>77 127 1613 1035 0 0 1920 1178 </string>
 									</dict>
 									<key>Module</key>
 									<string>XCDetailModule</string>
@@ -502,7 +506,9 @@
 									<key>GeometryConfiguration</key>
 									<dict>
 										<key>Frame</key>
-										<string>{{0, 0}, {568, 405}}</string>
+										<string>{{10, 27}, {1269, -27}}</string>
+										<key>RubberWindowFrame</key>
+										<string>77 127 1613 1035 0 0 1920 1178 </string>
 									</dict>
 									<key>Module</key>
 									<string>PBXBuildResultsModule</string>
@@ -530,11 +536,11 @@
 			</array>
 			<key>TableOfContents</key>
 			<array>
-				<string>CB188DB21106766E00AC506F</string>
+				<string>CBABA448110746E50026CC0A</string>
 				<string>1CA23ED40692098700951B8B</string>
-				<string>CB188DB31106766E00AC506F</string>
+				<string>CBABA449110746E50026CC0A</string>
 				<string>CB3742AB106A5CEF00AED801</string>
-				<string>CB188DB41106766E00AC506F</string>
+				<string>CBABA44A110746E50026CC0A</string>
 				<string>1CA23EDF0692099D00951B8B</string>
 				<string>1CA23EE00692099D00951B8B</string>
 				<string>1CA23EE10692099D00951B8B</string>
@@ -549,11 +555,15 @@
 			<key>ChosenToolbarItems</key>
 			<array>
 				<string>XCToolbarPerspectiveControl</string>
+				<string>NSToolbarSeparatorItem</string>
+				<string>action</string>
+				<string>active-combo-popup</string>
 				<string>NSToolbarSpaceItem</string>
-				<string>active-executable-popup</string>
-				<string>NSToolbarSpaceItem</string>
+				<string>build</string>
 				<string>build-and-go</string>
 				<string>go</string>
+				<string>clean-target</string>
+				<string>clean</string>
 				<string>NSToolbarFlexibleSpaceItem</string>
 				<string>debugger-fix-and-continue</string>
 				<string>debugger-restart-executable</string>
@@ -683,13 +693,13 @@
 			</array>
 			<key>TableOfContents</key>
 			<array>
-				<string>CB188DB51106766E00AC506F</string>
+				<string>CBABA44B110746E50026CC0A</string>
 				<string>1CCC7628064C1048000F2A68</string>
 				<string>1CCC7629064C1048000F2A68</string>
-				<string>CB188DB61106766E00AC506F</string>
-				<string>CB188DB71106766E00AC506F</string>
-				<string>CB188DB81106766E00AC506F</string>
-				<string>CB188DB91106766E00AC506F</string>
+				<string>CBABA44C110746E50026CC0A</string>
+				<string>CBABA44D110746E50026CC0A</string>
+				<string>CBABA44E110746E50026CC0A</string>
+				<string>CBABA44F110746E50026CC0A</string>
 				<string>CB3742AB106A5CEF00AED801</string>
 			</array>
 			<key>ToolbarConfigUserDefaultsMinorVersion</key>
@@ -707,7 +717,7 @@
 	<key>StatusbarIsVisible</key>
 	<true/>
 	<key>TimeStamp</key>
-	<real>285636217.98155302</real>
+	<real>285690655.12812698</real>
 	<key>ToolbarConfigUserDefaultsMinorVersion</key>
 	<string>2</string>
 	<key>ToolbarDisplayMode</key>
@@ -724,8 +734,8 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>CB188DBB1106766E00AC506F</string>
-		<string>CB188DBC1106766E00AC506F</string>
+		<string>CBABA451110746E50026CC0A</string>
+		<string>CBABA452110746E50026CC0A</string>
 		<string>/Users/karl/Projects/Coruscation/coruscation/Coruscation.xcodeproj</string>
 	</array>
 	<key>WindowString</key>
