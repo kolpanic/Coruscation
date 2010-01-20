@@ -12,7 +12,7 @@
 
 - (id) init {
 	if (self = [super init])
-		_operationQueue = [NSOperationQueue new];
+		i_operationQueue = [NSOperationQueue new];
 	return self;
 }
 
@@ -46,13 +46,13 @@
 #pragma mark Core Data
 
 - (NSManagedObjectModel *) managedObjectModel {
-	if (!_managedObjectModel)
-		_managedObjectModel = [[NSManagedObjectModel mergedModelFromBundles:nil] retain];
-	return _managedObjectModel;
+	if (!i_managedObjectModel)
+		i_managedObjectModel = [[NSManagedObjectModel mergedModelFromBundles:nil] retain];
+	return i_managedObjectModel;
 }
 
 - (NSPersistentStoreCoordinator *) persistentStoreCoordinator {
-	if (!_persistentStoreCoordinator) {
+	if (!i_persistentStoreCoordinator) {
 		NSManagedObjectModel *mom = self.managedObjectModel;
 		if (!mom) {
 			NSAssert(NO, @"Managed object model is nil");
@@ -60,21 +60,21 @@
 			return nil;
 		}
 		NSError *error;
-		_persistentStoreCoordinator = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:mom];
-		if (![_persistentStoreCoordinator addPersistentStoreWithType:NSInMemoryStoreType
+		i_persistentStoreCoordinator = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:mom];
+		if (![i_persistentStoreCoordinator addPersistentStoreWithType:NSInMemoryStoreType
 													   configuration:nil
 																 URL:nil
 															 options:nil
 															   error:&error]) {
 			[[NSApplication sharedApplication] presentError:error];
-			_persistentStoreCoordinator = nil;
+			i_persistentStoreCoordinator = nil;
 		}
 	}
-	return _persistentStoreCoordinator;
+	return i_persistentStoreCoordinator;
 }
 
 - (NSManagedObjectContext *) managedObjectContext {
-	if (!_managedObjectContext) {
+	if (!i_managedObjectContext) {
 		NSPersistentStoreCoordinator *coordinator = self.persistentStoreCoordinator;
 		if (!coordinator) {
 			NSMutableDictionary *dict = [NSMutableDictionary dictionary];
@@ -84,10 +84,10 @@
 			[[NSApplication sharedApplication] presentError:error];
 			return nil;
 		}
-		_managedObjectContext = [[NSManagedObjectContext alloc] init];
-		[_managedObjectContext setPersistentStoreCoordinator:coordinator];
+		i_managedObjectContext = [[NSManagedObjectContext alloc] init];
+		[i_managedObjectContext setPersistentStoreCoordinator:coordinator];
 	}
-	return _managedObjectContext;
+	return i_managedObjectContext;
 }
 
 - (NSUndoManager *) windowWillReturnUndoManager:(NSWindow *)window {
@@ -163,6 +163,6 @@
 }
 
 @dynamic persistentStoreCoordinator, managedObjectModel, managedObjectContext;
-@synthesize collectionView = _collectionView, updateItems = _updateItems, operationQueue = _operationQueue, sorter = _sorter, count = _count;
+@synthesize collectionView = i_collectionView, updateItems = i_updateItems, operationQueue = i_operationQueue, sorter = i_sorter, count = i_count;
 
 @end

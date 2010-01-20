@@ -19,6 +19,6 @@
 			[self.delegate performSelector:@selector(openSelected:)withObject:self];
 }
 
-@synthesize delegate = _delegate;
+@synthesize delegate = i_delegate;
 
 @end

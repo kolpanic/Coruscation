@@ -3,11 +3,11 @@
 
 @interface CheckAppUpdateOperation : NSOperation {
 @private
-	NSURL *_url;
-	BOOL _isExecuting;
-	BOOL _isFinished;
-	SUUpdater *_updater;
-	NSTimer *_timeOut;
+	NSURL *i_url;
+	BOOL i_isExecuting;
+	BOOL i_isFinished;
+	SUUpdater *i_updater;
+	NSTimer *i_timeOut;
 }
 
 - (id) initWithBundleURL:(NSURL *) url;

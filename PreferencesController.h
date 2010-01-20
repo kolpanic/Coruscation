@@ -2,14 +2,14 @@
 
 @interface PreferencesController : NSWindowController {
 @private
-	NSView *_generalView;
-	NSFileManager *_fileManager;
-	NSString *_agentExecutable;
-	NSString *_agentIdentifier;
-	NSString *_plistPath;
-	NSUInteger _selectedAutomaticUpdatesTag;
-	NSString *_scheduleDescription;
-	NSPopUpButton *_intervalPopUpButton;
+	NSView *i_generalView;
+	NSFileManager *i_fileManager;
+	NSString *i_agentExecutable;
+	NSString *i_agentIdentifier;
+	NSString *i_plistPath;
+	NSUInteger i_selectedAutomaticUpdatesTag;
+	NSString *i_scheduleDescription;
+	NSPopUpButton *i_intervalPopUpButton;
 }
 
 - (IBAction) configureAutomaticUpdates:(id)sender;

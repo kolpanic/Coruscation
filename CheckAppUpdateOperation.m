@@ -8,9 +8,9 @@
 
 - (id) initWithBundleURL:(NSURL *)url {
 	if ([super init]) {
-		_url = [url copy];
-		_isExecuting = NO;
-		_isFinished = NO;
+		i_url = [url copy];
+		i_isExecuting = NO;
+		i_isFinished = NO;
 	}
 	return self;
 }
@@ -30,39 +30,39 @@
 		if (self.updater) {
 			[self willChangeValueForKey:@"isExecuting"];
 			[self willChangeValueForKey:@"isFinished"];
-			_isExecuting = YES;
-			_isFinished = NO;
+			i_isExecuting = YES;
+			i_isFinished = NO;
 			[self didChangeValueForKey:@"isExecuting"];
 			[self didChangeValueForKey:@"isFinished"];
-			
+
 			[self.updater setDelegate:self];
 			[self.updater setAutomaticallyChecksForUpdates:NO];
 			[self.updater setAutomaticallyDownloadsUpdates:NO];
-			
+
 			// some appcasts (e.g. Coda) require this to return data, but I know of no better way to enable it
 			if ([[[self.updater feedURL] pathExtension] isEqualToString:@"php"])
 				[self.updater setSendsSystemProfile:YES];
-			
+
 			[self.updater checkForUpdateInformation];
-			
+
 			self.timeOutTimer = [NSTimer scheduledTimerWithTimeInterval:[[NSUserDefaults standardUserDefaults] doubleForKey:@"UpdateCheckTimeOutInterval"]
 																 target:self selector:@selector(timedOut:)
 															   userInfo:nil
 																repeats:NO];
 		}
 	}
-	if (!_isExecuting)
+	if (!i_isExecuting)
 		[self finish];
-	
+
 }
 
 - (void) finish {
 	[self.timeOutTimer invalidate];
-	
+
 	[self willChangeValueForKey:@"isExecuting"];
 	[self willChangeValueForKey:@"isFinished"];
-	_isExecuting = NO;
-	_isFinished = YES;
+	i_isExecuting = NO;
+	i_isFinished = YES;
 	[self didChangeValueForKey:@"isExecuting"];
 	[self didChangeValueForKey:@"isFinished"];
 }
@@ -97,6 +97,6 @@
 	return NO;
 }
 
-@synthesize url = _url, isExecuting = _isExecuting, isFinished = _isFinished, updater = _updater, timeOutTimer = _timeOut;
+@synthesize url = i_url, isExecuting = i_isExecuting, isFinished = i_isFinished, updater = i_updater, timeOutTimer = i_timeOut;
 
 @end

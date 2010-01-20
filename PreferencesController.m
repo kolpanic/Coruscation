@@ -73,39 +73,39 @@
 
 - (id) init {
 	if (self = [super initWithWindowNibName:@"Preferences"]) {
-		_fileManager = [NSFileManager defaultManager];
+		i_fileManager = [NSFileManager defaultManager];
 		NSString *agentAppBundle = [[NSBundle mainBundle] pathForAuxiliaryExecutable:@"CoruscationAgent.app"];
-		_agentExecutable = [[[agentAppBundle stringByAppendingPathComponent:@"Contents"] stringByAppendingPathComponent:@"MacOS"] stringByAppendingPathComponent:@"CoruscationAgent"];
-		_agentIdentifier = [[NSBundle bundleWithPath:agentAppBundle] bundleIdentifier];
+		i_agentExecutable = [[[agentAppBundle stringByAppendingPathComponent:@"Contents"] stringByAppendingPathComponent:@"MacOS"] stringByAppendingPathComponent:@"CoruscationAgent"];
+		i_agentIdentifier = [[NSBundle bundleWithPath:agentAppBundle] bundleIdentifier];
 		NSArray *searchPaths = NSSearchPathForDirectoriesInDomains(NSLibraryDirectory, NSUserDomainMask, YES);
 		NSString *agentsFolder = [[searchPaths objectAtIndex:0] stringByAppendingPathComponent:@"LaunchAgents"];
-		[_fileManager createDirectoryAtPath:agentsFolder withIntermediateDirectories:YES attributes:nil error:nil];
-		_plistPath = [[agentsFolder stringByAppendingPathComponent:_agentIdentifier] stringByAppendingPathExtension:@"plist"];
+		[i_fileManager createDirectoryAtPath:agentsFolder withIntermediateDirectories:YES attributes:nil error:nil];
+		i_plistPath = [[agentsFolder stringByAppendingPathComponent:i_agentIdentifier] stringByAppendingPathExtension:@"plist"];
 
-		BOOL plistExists = [_fileManager fileExistsAtPath:_plistPath];
-		CFDictionaryRef launchInfo = SMJobCopyDictionary(kSMDomainUserLaunchd, (CFStringRef)_agentIdentifier);
+		BOOL plistExists = [i_fileManager fileExistsAtPath:i_plistPath];
+		CFDictionaryRef launchInfo = SMJobCopyDictionary(kSMDomainUserLaunchd, (CFStringRef)i_agentIdentifier);
 		if (launchInfo != NULL) {
 			CFRelease(launchInfo);
 			if (plistExists) {
-				NSDictionary *plist = [NSDictionary dictionaryWithContentsOfFile:_plistPath];
+				NSDictionary *plist = [NSDictionary dictionaryWithContentsOfFile:i_plistPath];
 				NSDictionary *intervalDict = [plist objectForKey:@"StartCalendarInterval"];
 				NSNumber *weekday = [intervalDict objectForKey:@"Weekday"];
 				NSNumber *day = [intervalDict objectForKey:@"Day"];
 				if (weekday != nil)
-					_selectedAutomaticUpdatesTag = 1;
+					i_selectedAutomaticUpdatesTag = 1;
 				else if (day != nil)
-					_selectedAutomaticUpdatesTag = 2;
+					i_selectedAutomaticUpdatesTag = 2;
 				else
-					_selectedAutomaticUpdatesTag = 0;
+					i_selectedAutomaticUpdatesTag = 0;
 				[self updateScheduleDescriptionForIntervalDict:intervalDict];
 			} else {
-				_selectedAutomaticUpdatesTag = 0;
+				i_selectedAutomaticUpdatesTag = 0;
 				[self updateScheduleDescriptionForIntervalDict:nil];
 			}
 		} else {
-			_selectedAutomaticUpdatesTag = 0;
+			i_selectedAutomaticUpdatesTag = 0;
 			if (plistExists)
-				[_fileManager removeItemAtPath:_plistPath error:nil];
+				[i_fileManager removeItemAtPath:i_plistPath error:nil];
 			[self updateScheduleDescriptionForIntervalDict:nil];
 		}
 	}
@@ -206,13 +206,13 @@
 	}
 }
 
-@synthesize generalView = _generalView;
-@synthesize fileManager = _fileManager;
-@synthesize agentExecutable = _agentExecutable;
-@synthesize agentIdentifier = _agentIdentifier;
-@synthesize plistPath = _plistPath;
-@synthesize selectedAutomaticUpdatesTag = _selectedAutomaticUpdatesTag;
-@synthesize scheduleDescription = _scheduleDescription;
-@synthesize intervalPopUpButton = _intervalPopUpButton;
+@synthesize generalView = i_generalView;
+@synthesize fileManager = i_fileManager;
+@synthesize agentExecutable = i_agentExecutable;
+@synthesize agentIdentifier = i_agentIdentifier;
+@synthesize plistPath = i_plistPath;
+@synthesize selectedAutomaticUpdatesTag = i_selectedAutomaticUpdatesTag;
+@synthesize scheduleDescription = i_scheduleDescription;
+@synthesize intervalPopUpButton = i_intervalPopUpButton;
 
 @end

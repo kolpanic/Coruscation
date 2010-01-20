@@ -2,7 +2,7 @@
 
 @interface CollectionItemView : NSView {
 @private
-	id _delegate;
+	id i_delegate;
 }
 
 @property (retain) IBOutlet id delegate;

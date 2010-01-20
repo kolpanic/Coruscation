@@ -17,8 +17,8 @@
 
 - (id) init {
 	if (self = [super init]) {
-		_operationQueue = [NSOperationQueue new];
-		[_operationQueue addObserver:self forKeyPath:@"operations" options:NSKeyValueObservingOptionNew context:nil];
+		i_operationQueue = [NSOperationQueue new];
+		[i_operationQueue addObserver:self forKeyPath:@"operations" options:NSKeyValueObservingOptionNew context:nil];
 	}
 	return self;
 }
@@ -32,7 +32,7 @@
 }
 
 - (void) finalize {
-	[_operationQueue removeObserver:self forKeyPath:@"operations"];
+	[i_operationQueue removeObserver:self forKeyPath:@"operations"];
 	[super finalize];
 }
 - (BOOL) coruscationAlreadyRunning {
@@ -68,6 +68,6 @@
 	[NSApp terminate:nil];
 }
 
-@synthesize operationQueue = _operationQueue;
+@synthesize operationQueue = i_operationQueue;
 
 @end

@@ -2,14 +2,14 @@
 
 @interface CoruscationDelegate : NSWindowController {
 @private
-	NSCollectionView *_collectionView;
-	NSPersistentStoreCoordinator *_persistentStoreCoordinator;
-	NSManagedObjectModel *_managedObjectModel;
-	NSManagedObjectContext *_managedObjectContext;
-	NSArrayController *_updateItems;
-	NSOperationQueue *_operationQueue;
-	NSArray *_sorter;
-	NSUInteger _count;
+	NSCollectionView *i_collectionView;
+	NSPersistentStoreCoordinator *i_persistentStoreCoordinator;
+	NSManagedObjectModel *i_managedObjectModel;
+	NSManagedObjectContext *i_managedObjectContext;
+	NSArrayController *i_updateItems;
+	NSOperationQueue *i_operationQueue;
+	NSArray *i_sorter;
+	NSUInteger i_count;
 }
 
 - (IBAction) go:(id)sender;

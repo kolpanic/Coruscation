@@ -2,7 +2,7 @@
 
 @interface CoruscationAgentAppDelegate : NSObject <NSApplicationDelegate> {
 @private
-	NSOperationQueue *_operationQueue;
+	NSOperationQueue *i_operationQueue;
 }
 
 @property (retain) NSOperationQueue *operationQueue;
