@@ -1,5 +1,6 @@
 #import "PreferencesController.h"
 #import <ServiceManagement/ServiceManagement.h>
+#import "asl.h"
 
 @implementation PreferencesController
 
@@ -33,7 +34,8 @@
 			CFRelease(outError);
 		[self.fileManager removeItemAtPath:self.plistPath error:nil];
 	}
-	NSString *errorMessage = nil;
+
+	BOOL errorOccurred = NO;
 	if (intervalDict != nil) {
 		NSMutableDictionary *plist = [NSMutableDictionary dictionary];
 		[plist setObject:self.agentIdentifier forKey:@"Label"];
@@ -41,33 +43,49 @@
 		[plist setObject:[NSNumber numberWithBool:NO] forKey:@"RunAtLoad"];
 		[plist setObject:self.agentExecutable forKey:@"Program"];
 
+		;
 		CFErrorRef *outError = NULL;
 		if (SMJobSubmit(kSMDomainUserLaunchd, (CFDictionaryRef)plist, NULL, outError))
 			[plist writeToFile:self.plistPath atomically:YES];
 		else {
-			NSError *nserr = (NSError *)outError;
-			NSLog(@"Error in SMJobSubmit: %@", nserr);
+			errorOccurred = YES;
+			if (outError != NULL) {
+				NSLog(@"Error in SMJobSubmit: %@", (NSError *)outError);
+				CFRelease(outError);
+			} else
+				NSLog(@"Error in SMJobSubmit without details. Check /var/db/launchd.db/com.apple.launchd.peruser.NNN/overrides.plist for CoruscationAgent set to disabled.");
 			self.selectedAutomaticUpdatesTag = 0;
 			[self.intervalPopUpButton selectItemWithTag:0];
 			intervalDict = nil;
-			if (nserr == nil)
-				errorMessage = @"no more info";
-			else
-				errorMessage = [nserr localizedDescription];
 		}
-		if (outError != NULL)
-			CFRelease(outError);
 	}
 	[self updateScheduleDescriptionForIntervalDict:intervalDict];
 
-	if (errorMessage) {
-		NSString *informativeText = [NSString stringWithFormat:NSLocalizedString(@"An error occurred when attempting to configure scheduled update checks (%@).", @"message informative text"), errorMessage];
+	if (errorOccurred) {
+		NSString *informativeText = NSLocalizedString(@"An error occurred when attempting to configure scheduled update checks.", @"message informative text");
 		NSAlert *alert = [NSAlert alertWithMessageText:NSLocalizedString(@"Scheduling Error", @"message text")
 										 defaultButton:nil
-									   alternateButton:nil
+									   alternateButton:NSLocalizedString(@"View Log…", @"button title")
 										   otherButton:nil
 							 informativeTextWithFormat:informativeText];
-		[alert beginSheetModalForWindow:self.window modalDelegate:nil didEndSelector:nil contextInfo:nil];
+		[alert beginSheetModalForWindow:self.window
+						  modalDelegate:self
+						 didEndSelector:@selector(errorAlertDidEnd:returnCode:contextInfo:)
+							contextInfo:nil];
+	}
+}
+
+- (void) errorAlertDidEnd:(NSAlert *)alert returnCode:(NSInteger)returnCode contextInfo:(void *)contextInfo {
+	if (returnCode == NSAlertAlternateReturn) {
+		NSArray *appSupport = NSSearchPathForDirectoriesInDomains(NSApplicationSupportDirectory, NSUserDomainMask, YES);
+		NSString *queryPath = [[[[[appSupport objectAtIndex:0] stringByAppendingPathComponent:@"Console"] stringByAppendingPathComponent:@"ASLQueries"] stringByAppendingPathComponent:@"Coruscation"] stringByAppendingPathExtension:@"aslquery"];
+		NSArray *aslQuery = [NSArray arrayWithObject:[NSDictionary dictionaryWithObjectsAndKeys:
+													  [NSString stringWithUTF8String:ASL_KEY_MSG], @"key",
+													  [NSNumber numberWithInt:ASL_QUERY_OP_EQUAL | ASL_QUERY_OP_PREFIX | ASL_QUERY_OP_SUFFIX], @"op",
+													  @"Coruscation", @"value",
+													  nil]];
+		[aslQuery writeToFile:queryPath atomically:YES];
+		[[NSWorkspace sharedWorkspace] openFile:queryPath withApplication:@"Console"];
 	}
 }
 
