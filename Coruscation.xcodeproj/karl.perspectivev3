@@ -283,15 +283,11 @@
 			<array>
 				<string>XCToolbarPerspectiveControl</string>
 				<string>NSToolbarSeparatorItem</string>
-				<string>action</string>
 				<string>active-combo-popup</string>
-				<string>NSToolbarSpaceItem</string>
+				<string>action</string>
 				<string>build</string>
 				<string>build-and-go</string>
-				<string>go</string>
-				<string>clean-target</string>
 				<string>clean</string>
-				<string>NSToolbarFlexibleSpaceItem</string>
 			</array>
 			<key>ControllerClassBaseName</key>
 			<string></string>
@@ -346,8 +342,6 @@
 								<string>CB05DB9A10D18E0F00AECB32</string>
 								<string>080E96DDFE201D6D7F000001</string>
 								<string>29B97317FDCFA39411CA2CEA</string>
-								<string>CB05D60010D1899300AECB32</string>
-								<string>CB05DB9B10D18E3700AECB32</string>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
@@ -380,7 +374,7 @@
 							<real>22</real>
 						</array>
 						<key>RubberWindowFrame</key>
-						<string>77 98 1701 1064 0 0 1920 1178 </string>
+						<string>76 99 1701 1064 0 0 1920 1178 </string>
 					</dict>
 					<key>Module</key>
 					<string>PBXSmartGroupTreeModule</string>
@@ -410,10 +404,10 @@
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>CB3096051108AC1400F3AF5A</string>
+										<string>CB4D77C7110931C0000EF799</string>
 										<key>history</key>
 										<array>
-											<string>CB3096031108AC0B00F3AF5A</string>
+											<string>CB4D77C6110931C0000EF799</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -429,7 +423,7 @@
 								<key>Frame</key>
 								<string>{{0, 0}, {1357, 1018}}</string>
 								<key>RubberWindowFrame</key>
-								<string>77 98 1701 1064 0 0 1920 1178 </string>
+								<string>76 99 1701 1064 0 0 1920 1178 </string>
 							</dict>
 							<key>Module</key>
 							<string>PBXNavigatorGroup</string>
@@ -453,8 +447,6 @@
 									<dict>
 										<key>Frame</key>
 										<string>{{10, 27}, {1357, -27}}</string>
-										<key>RubberWindowFrame</key>
-										<string>77 98 1701 1064 0 0 1920 1178 </string>
 									</dict>
 									<key>Module</key>
 									<string>XCDetailModule</string>
@@ -470,7 +462,9 @@
 									<key>GeometryConfiguration</key>
 									<dict>
 										<key>Frame</key>
-										<string>{{0, 0}, {614, 336}}</string>
+										<string>{{10, 27}, {1357, -27}}</string>
+										<key>RubberWindowFrame</key>
+										<string>76 99 1701 1064 0 0 1920 1178 </string>
 									</dict>
 									<key>Module</key>
 									<string>PBXProjectFindModule</string>
@@ -508,7 +502,7 @@
 									<key>GeometryConfiguration</key>
 									<dict>
 										<key>Frame</key>
-										<string>{{0, 0}, {568, 405}}</string>
+										<string>{{10, 27}, {1357, -27}}</string>
 									</dict>
 									<key>Module</key>
 									<string>PBXBuildResultsModule</string>
@@ -536,11 +530,11 @@
 			</array>
 			<key>TableOfContents</key>
 			<array>
-				<string>CB3095F81108ABF800F3AF5A</string>
+				<string>CB4D7707110928AF000EF799</string>
 				<string>1CA23ED40692098700951B8B</string>
-				<string>CB3095F91108ABF800F3AF5A</string>
+				<string>CB4D7708110928AF000EF799</string>
 				<string>CB3742AB106A5CEF00AED801</string>
-				<string>CB3095FA1108ABF800F3AF5A</string>
+				<string>CB4D7709110928AF000EF799</string>
 				<string>1CA23EDF0692099D00951B8B</string>
 				<string>1CA23EE00692099D00951B8B</string>
 				<string>1CA23EE10692099D00951B8B</string>
@@ -555,15 +549,11 @@
 			<key>ChosenToolbarItems</key>
 			<array>
 				<string>XCToolbarPerspectiveControl</string>
-				<string>NSToolbarSeparatorItem</string>
-				<string>action</string>
-				<string>active-combo-popup</string>
 				<string>NSToolbarSpaceItem</string>
-				<string>build</string>
+				<string>active-executable-popup</string>
+				<string>NSToolbarSpaceItem</string>
 				<string>build-and-go</string>
 				<string>go</string>
-				<string>clean-target</string>
-				<string>clean</string>
 				<string>NSToolbarFlexibleSpaceItem</string>
 				<string>debugger-fix-and-continue</string>
 				<string>debugger-restart-executable</string>
@@ -693,13 +683,13 @@
 			</array>
 			<key>TableOfContents</key>
 			<array>
-				<string>CB3095FB1108ABF800F3AF5A</string>
+				<string>CB4D770A110928AF000EF799</string>
 				<string>1CCC7628064C1048000F2A68</string>
 				<string>1CCC7629064C1048000F2A68</string>
-				<string>CB3095FC1108ABF800F3AF5A</string>
-				<string>CB3095FD1108ABF800F3AF5A</string>
-				<string>CB3095FE1108ABF800F3AF5A</string>
-				<string>CB3095FF1108ABF800F3AF5A</string>
+				<string>CB4D770B110928AF000EF799</string>
+				<string>CB4D770C110928AF000EF799</string>
+				<string>CB4D770D110928AF000EF799</string>
+				<string>CB4D770E110928AF000EF799</string>
 				<string>CB3742AB106A5CEF00AED801</string>
 			</array>
 			<key>ToolbarConfigUserDefaultsMinorVersion</key>
@@ -717,7 +707,7 @@
 	<key>StatusbarIsVisible</key>
 	<true/>
 	<key>TimeStamp</key>
-	<real>285781012.44665802</real>
+	<real>285815232.40306902</real>
 	<key>ToolbarConfigUserDefaultsMinorVersion</key>
 	<string>2</string>
 	<key>ToolbarDisplayMode</key>
@@ -734,12 +724,13 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>CB3096011108ABF800F3AF5A</string>
-		<string>CB3096021108ABF800F3AF5A</string>
+		<string>CB4D7711110928AF000EF799</string>
+		<string>CB4D7712110928AF000EF799</string>
+		<string>CBA15A5A10892831002EC526</string>
 		<string>/Users/karl/Projects/Coruscation/coruscation/Coruscation.xcodeproj</string>
 	</array>
 	<key>WindowString</key>
-	<string>77 98 1701 1064 0 0 1920 1178 </string>
+	<string>76 99 1701 1064 0 0 1920 1178 </string>
 	<key>WindowToolsV3</key>
 	<array>
 		<dict>
@@ -1577,7 +1568,7 @@
 			<key>TableOfContents</key>
 			<array>
 				<string>CBA15A5A10892831002EC526</string>
-				<string>CB34958310DBC8B0001E7640</string>
+				<string>CB4D770F110928AF000EF799</string>
 				<string>CBA15A5910892831002EC526</string>
 			</array>
 			<key>WindowString</key>

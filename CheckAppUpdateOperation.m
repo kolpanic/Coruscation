@@ -40,7 +40,8 @@
 			[self.updater setAutomaticallyDownloadsUpdates:NO];
 
 			// some appcasts (e.g. Coda) require this to return data, but I know of no better way to enable it
-			if ([[[self.updater feedURL] pathExtension] isEqualToString:@"php"])
+			NSString *ext = [[self.updater feedURL] pathExtension];
+			if ([ext isEqualToString:@"php"])
 				[self.updater setSendsSystemProfile:YES];
 
 			[self.updater checkForUpdateInformation];

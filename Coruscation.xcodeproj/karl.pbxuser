@@ -13,6 +13,7 @@
 		activeTarget = 8D1107260486CEB800E47090 /* Coruscation */;
 		addToTargets = (
 			CB05D5E310D1892A00AECB32 /* CoruscationAgent */,
+			8D1107260486CEB800E47090 /* Coruscation */,
 		);
 		breakpoints = (
 		);
@@ -114,12 +115,12 @@
 					PBXFileDataSource_Warnings_ColumnID,
 				);
 			};
-			PBXPerProjectTemplateStateSaveDate = 285780885;
-			PBXWorkspaceStateSaveDate = 285780885;
+			PBXPerProjectTemplateStateSaveDate = 285812492;
+			PBXWorkspaceStateSaveDate = 285812492;
 		};
 		perUserProjectItems = {
-			CB3096031108AC0B00F3AF5A /* PBXTextBookmark */ = CB3096031108AC0B00F3AF5A /* PBXTextBookmark */;
-			CB3096051108AC1400F3AF5A /* PBXTextBookmark */ = CB3096051108AC1400F3AF5A /* PBXTextBookmark */;
+			CB4D77C6110931C0000EF799 /* PBXTextBookmark */ = CB4D77C6110931C0000EF799 /* PBXTextBookmark */;
+			CB4D77C7110931C0000EF799 /* PBXTextBookmark */ = CB4D77C7110931C0000EF799 /* PBXTextBookmark */;
 		};
 		sourceControlManager = CB32A9101088C65D00343471 /* Source Control */;
 		userBuildSettings = {
@@ -172,7 +173,7 @@
 					chosenTableWidths = (
 						103.000000,
 						22.000000,
-						124.080078,
+						143.080078,
 					);
 				};
 				UIContextForLayoutManager = {
@@ -182,8 +183,8 @@
 						_percentageOfCollapsedView = 0;
 						isCollapsed = yes;
 						sizes = (
-							"{{0, 0}, {827, 220}}",
-							"{{832, 0}, {435, 220}}",
+							"{{0, 0}, {885, 218}}",
+							"{{890, 0}, {465, 218}}",
 						);
 					};
 					diagramSplitGeometry = {
@@ -192,8 +193,8 @@
 						_percentageOfCollapsedView = 0;
 						isCollapsed = yes;
 						sizes = (
-							"{{0, 0}, {1267, 220}}",
-							"{{0, 225}, {1267, 747}}",
+							"{{0, 0}, {1355, 220}}",
+							"{{0, 225}, {1355, 776}}",
 						);
 					};
 					tableSplitGeometry = {
@@ -202,8 +203,8 @@
 						_percentageOfCollapsedView = 0;
 						isCollapsed = yes;
 						sizes = (
-							"{{0, 0}, {274, 220}}",
-							"{{279, 0}, {548, 220}}",
+							"{{0, 0}, {293, 218}}",
+							"{{298, 0}, {587, 218}}",
 						);
 					};
 				};
@@ -292,7 +293,7 @@
 					chosenTableWidthsPT = (
 						128.000000,
 						108.110840,
-						285.570801,
+						324.570801,
 					);
 					chosenTableWidthsRT = (
 						128.000000,
@@ -300,7 +301,7 @@
 					);
 				};
 				"xdesign model browser state key - shown/hidden" = 1;
-				"xdesign model diagram view visible rect key" = "{{-302, -150}, {1252, 732}}";
+				"xdesign model diagram view visible rect key" = "{{-346, -165}, {1340, 761}}";
 			};
 			sepNavWindowFrame = "{{82, 615}, {750, 558}}";
 		};
@@ -314,9 +315,9 @@
 	};
 	77C8280C06725ACE000B614F /* CoruscationDelegate.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1208, 3192}}";
-			sepNavSelRange = "{3095, 21}";
-			sepNavVisRange = "{1511, 1918}";
+			sepNavIntBoundsRect = "{{0, 0}, {1296, 3325}}";
+			sepNavSelRange = "{1059, 0}";
+			sepNavVisRange = "{447, 1846}";
 		};
 	};
 	8D1107260486CEB800E47090 /* Coruscation */ = {
@@ -394,26 +395,6 @@
 			sepNavVisRange = "{0, 117}";
 		};
 	};
-	CB3096031108AC0B00F3AF5A /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = CBB611EC10D1C484003BC3D3 /* PreferencesController.m */;
-		name = "PreferencesController.m: 59";
-		rLen = 0;
-		rLoc = 2518;
-		rType = 0;
-		vrLen = 509;
-		vrLoc = 2391;
-	};
-	CB3096051108AC1400F3AF5A /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = CBB611EC10D1C484003BC3D3 /* PreferencesController.m */;
-		name = "PreferencesController.m: 58";
-		rLen = 0;
-		rLoc = 2450;
-		rType = 0;
-		vrLen = 2419;
-		vrLoc = 1920;
-	};
 	CB32A9031088C63F00343471 /* Coruscation */ = {
 		isa = PBXExecutable;
 		activeArgIndices = (
@@ -469,10 +450,45 @@
 	};
 	CB32A9741088CA7300343471 /* SparkleBundle.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1552, 608}}";
-			sepNavSelRange = "{978, 0}";
-			sepNavVisRange = "{783, 280}";
+			sepNavIntBoundsRect = "{{0, 0}, {1640, 722}}";
+			sepNavSelRange = "{998, 0}";
+			sepNavVisRange = "{796, 263}";
 		};
+	};
+	CB4D772E11092ABC000EF799 /* NSFileManager+CoruscationAdditions.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1296, 1001}}";
+			sepNavSelRange = "{74, 0}";
+			sepNavVisRange = "{0, 128}";
+		};
+	};
+	CB4D772F11092ABC000EF799 /* NSFileManager+CoruscationAdditions.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1296, 1001}}";
+			sepNavSelRange = "{179, 0}";
+			sepNavVisRange = "{0, 423}";
+			sepNavWindowFrame = "{{82, 615}, {750, 558}}";
+		};
+	};
+	CB4D77C6110931C0000EF799 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CBB611EC10D1C484003BC3D3 /* PreferencesController.m */;
+		name = "PreferencesController.m: 92";
+		rLen = 0;
+		rLoc = 4228;
+		rType = 0;
+		vrLen = 2921;
+		vrLoc = 2404;
+	};
+	CB4D77C7110931C0000EF799 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CBB611EC10D1C484003BC3D3 /* PreferencesController.m */;
+		name = "PreferencesController.m: 70";
+		rLen = 0;
+		rLoc = 3011;
+		rType = 0;
+		vrLen = 2921;
+		vrLoc = 2404;
 	};
 	CB53B270108FBE78004EAFF2 /* Read Me.txt */ = {
 		uiCtxt = {
@@ -496,18 +512,18 @@
 			sepNavWindowFrame = "{{82, 615}, {750, 558}}";
 		};
 	};
-	CB7094B8108B951A0008D104 /* FindSparkleAppsOperation.h */ = {
+	CB7094B8108B951A0008D104 /* FindSparkleBundlesOperation.h */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {1208, 972}}";
 			sepNavSelRange = "{103, 0}";
 			sepNavVisRange = "{0, 103}";
 		};
 	};
-	CB7094B9108B951A0008D104 /* FindSparkleAppsOperation.m */ = {
+	CB7094B9108B951A0008D104 /* FindSparkleBundlesOperation.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1208, 972}}";
-			sepNavSelRange = "{82, 0}";
-			sepNavVisRange = "{0, 738}";
+			sepNavIntBoundsRect = "{{0, 0}, {1640, 1045}}";
+			sepNavSelRange = "{989, 0}";
+			sepNavVisRange = "{1423, 478}";
 		};
 	};
 	CBA28A2710C9751F005BCEC1 /* License.txt */ = {
@@ -534,9 +550,9 @@
 	};
 	CBB611EC10D1C484003BC3D3 /* PreferencesController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1296, 4370}}";
-			sepNavSelRange = "{2450, 0}";
-			sepNavVisRange = "{1920, 2419}";
+			sepNavIntBoundsRect = "{{0, 0}, {1296, 4142}}";
+			sepNavSelRange = "{3011, 0}";
+			sepNavVisRange = "{2404, 2921}";
 		};
 	};
 	CBB611FE10D1C4FD003BC3D3 /* English */ = {
@@ -555,9 +571,9 @@
 	};
 	CBB7FC57108D2575003E062A /* CheckAppUpdateOperation.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1208, 2014}}";
-			sepNavSelRange = "{2910, 3}";
-			sepNavVisRange = "{1566, 1432}";
+			sepNavIntBoundsRect = "{{0, 0}, {1296, 2109}}";
+			sepNavSelRange = "{1260, 0}";
+			sepNavVisRange = "{461, 1721}";
 		};
 	};
 	CBF233B6108D629600D2A5FF /* CollectionItemView.h */ = {
@@ -577,15 +593,15 @@
 	CBFE71AB10C17BE5007DF3BB /* appcast.xml */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {1296, 1001}}";
-			sepNavSelRange = "{825, 0}";
+			sepNavSelRange = "{161, 3}";
 			sepNavVisRange = "{0, 826}";
 		};
 	};
 	CBFE71AC10C17BE5007DF3BB /* relnotes.html */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1296, 1007}}";
-			sepNavSelRange = "{933, 0}";
-			sepNavVisRange = "{0, 1638}";
+			sepNavIntBoundsRect = "{{0, 0}, {1296, 1045}}";
+			sepNavSelRange = "{805, 0}";
+			sepNavVisRange = "{0, 1763}";
 		};
 	};
 }

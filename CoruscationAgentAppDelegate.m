@@ -1,6 +1,6 @@
 #import "CoruscationAgentAppDelegate.h"
 #import "Sparkle/SUUpdater.h"
-#import "FindSparkleAppsOperation.h"
+#import "FindSparkleBundlesOperation.h"
 #import "CheckAppUpdateOperation.h"
 
 @implementation CoruscationAgentAppDelegate
@@ -51,7 +51,7 @@
 	if ([self coruscationAlreadyRunning])
 		[NSApp terminate:nil];
 	NSLog(@"Checking for updates...");
-	FindSparkleAppsOperation *op = [FindSparkleAppsOperation new];
+	FindSparkleBundlesOperation *op = [FindSparkleBundlesOperation new];
 	[self.operationQueue addOperation:op];
 }
 

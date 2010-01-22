@@ -16,15 +16,17 @@
 		CB05D5FD10D1898C00AECB32 /* CoruscationAgentAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CB05D5FA10D1898C00AECB32 /* CoruscationAgentAppDelegate.m */; };
 		CB05D5FE10D1898C00AECB32 /* CoruscationAgentMain.m in Sources */ = {isa = PBXBuildFile; fileRef = CB05D5FB10D1898C00AECB32 /* CoruscationAgentMain.m */; };
 		CB05D5FF10D1898C00AECB32 /* CoruscationAgentMainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB05D5FC10D1898C00AECB32 /* CoruscationAgentMainMenu.xib */; };
-		CB05D62110D18A2F00AECB32 /* FindSparkleAppsOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = CB7094B9108B951A0008D104 /* FindSparkleAppsOperation.m */; };
+		CB05D62110D18A2F00AECB32 /* FindSparkleBundlesOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = CB7094B9108B951A0008D104 /* FindSparkleBundlesOperation.m */; };
 		CB05D62210D18A3100AECB32 /* CheckAppUpdateOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = CBB7FC57108D2575003E062A /* CheckAppUpdateOperation.m */; };
 		CB05D62810D18A7600AECB32 /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB7094C9108B95DE0008D104 /* Sparkle.framework */; };
 		CB05D62910D18A7B00AECB32 /* Sparkle.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = CB7094C9108B95DE0008D104 /* Sparkle.framework */; };
 		CB23E88E1088FA23001C5740 /* Sparkle.icns in Resources */ = {isa = PBXBuildFile; fileRef = CB23E88D1088FA23001C5740 /* Sparkle.icns */; };
 		CB32A9751088CA7300343471 /* SparkleBundle.m in Sources */ = {isa = PBXBuildFile; fileRef = CB32A9741088CA7300343471 /* SparkleBundle.m */; };
 		CB34956210DBC795001E7640 /* ServiceManagement.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB34956110DBC795001E7640 /* ServiceManagement.framework */; };
+		CB4D773011092ABC000EF799 /* NSFileManager+CoruscationAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = CB4D772F11092ABC000EF799 /* NSFileManager+CoruscationAdditions.m */; };
+		CB4D773111092ABC000EF799 /* NSFileManager+CoruscationAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = CB4D772F11092ABC000EF799 /* NSFileManager+CoruscationAdditions.m */; };
 		CB5F37B310C8A128008FB459 /* UpdateCountTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = CB5F37B210C8A128008FB459 /* UpdateCountTransformer.m */; };
-		CB7094BA108B951A0008D104 /* FindSparkleAppsOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = CB7094B9108B951A0008D104 /* FindSparkleAppsOperation.m */; };
+		CB7094BA108B951A0008D104 /* FindSparkleBundlesOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = CB7094B9108B951A0008D104 /* FindSparkleBundlesOperation.m */; };
 		CB709522108B98190008D104 /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB7094C9108B95DE0008D104 /* Sparkle.framework */; };
 		CBA648A3108EB12A00667F15 /* Sparkle.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = CB7094C9108B95DE0008D104 /* Sparkle.framework */; };
 		CBA648D6108EB22000667F15 /* Credits.html in Resources */ = {isa = PBXBuildFile; fileRef = CBA648D5108EB22000667F15 /* Credits.html */; };
@@ -148,11 +150,13 @@
 		CB32A9731088CA7300343471 /* SparkleBundle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SparkleBundle.h; sourceTree = "<group>"; };
 		CB32A9741088CA7300343471 /* SparkleBundle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SparkleBundle.m; sourceTree = "<group>"; };
 		CB34956110DBC795001E7640 /* ServiceManagement.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ServiceManagement.framework; path = System/Library/Frameworks/ServiceManagement.framework; sourceTree = SDKROOT; };
+		CB4D772E11092ABC000EF799 /* NSFileManager+CoruscationAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSFileManager+CoruscationAdditions.h"; sourceTree = "<group>"; };
+		CB4D772F11092ABC000EF799 /* NSFileManager+CoruscationAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSFileManager+CoruscationAdditions.m"; sourceTree = "<group>"; };
 		CB53B270108FBE78004EAFF2 /* Read Me.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Read Me.txt"; sourceTree = "<group>"; };
 		CB5F37B110C8A128008FB459 /* UpdateCountTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UpdateCountTransformer.h; sourceTree = "<group>"; };
 		CB5F37B210C8A128008FB459 /* UpdateCountTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UpdateCountTransformer.m; sourceTree = "<group>"; };
-		CB7094B8108B951A0008D104 /* FindSparkleAppsOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FindSparkleAppsOperation.h; sourceTree = "<group>"; };
-		CB7094B9108B951A0008D104 /* FindSparkleAppsOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FindSparkleAppsOperation.m; sourceTree = "<group>"; };
+		CB7094B8108B951A0008D104 /* FindSparkleBundlesOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FindSparkleBundlesOperation.h; sourceTree = "<group>"; };
+		CB7094B9108B951A0008D104 /* FindSparkleBundlesOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FindSparkleBundlesOperation.m; sourceTree = "<group>"; };
 		CB7094C1108B95DE0008D104 /* Sparkle.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Sparkle.xcodeproj; path = ../Sparkle/Sparkle.xcodeproj; sourceTree = SOURCE_ROOT; };
 		CBA28A2710C9751F005BCEC1 /* License.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = License.txt; sourceTree = "<group>"; };
 		CBA648D5108EB22000667F15 /* Credits.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = Credits.html; sourceTree = "<group>"; };
@@ -196,8 +200,8 @@
 			children = (
 				77C8280B06725ACE000B614F /* CoruscationDelegate.h */,
 				77C8280C06725ACE000B614F /* CoruscationDelegate.m */,
-				CB7094B8108B951A0008D104 /* FindSparkleAppsOperation.h */,
-				CB7094B9108B951A0008D104 /* FindSparkleAppsOperation.m */,
+				CB7094B8108B951A0008D104 /* FindSparkleBundlesOperation.h */,
+				CB7094B9108B951A0008D104 /* FindSparkleBundlesOperation.m */,
 				CBB7FC56108D2575003E062A /* CheckAppUpdateOperation.h */,
 				CBB7FC57108D2575003E062A /* CheckAppUpdateOperation.m */,
 				CBF233B6108D629600D2A5FF /* CollectionItemView.h */,
@@ -206,6 +210,8 @@
 				CB5F37B210C8A128008FB459 /* UpdateCountTransformer.m */,
 				CBB611EB10D1C484003BC3D3 /* PreferencesController.h */,
 				CBB611EC10D1C484003BC3D3 /* PreferencesController.m */,
+				CB4D772E11092ABC000EF799 /* NSFileManager+CoruscationAdditions.h */,
+				CB4D772F11092ABC000EF799 /* NSFileManager+CoruscationAdditions.m */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -471,11 +477,12 @@
 				77C8280E06725ACE000B614F /* CoruscationDelegate.m in Sources */,
 				770B37ED0679A11B001EADE2 /* Coruscation_DataModel.xcdatamodel in Sources */,
 				CB32A9751088CA7300343471 /* SparkleBundle.m in Sources */,
-				CB7094BA108B951A0008D104 /* FindSparkleAppsOperation.m in Sources */,
+				CB7094BA108B951A0008D104 /* FindSparkleBundlesOperation.m in Sources */,
 				CBB7FC58108D2575003E062A /* CheckAppUpdateOperation.m in Sources */,
 				CBF233B8108D629600D2A5FF /* CollectionItemView.m in Sources */,
 				CB5F37B310C8A128008FB459 /* UpdateCountTransformer.m in Sources */,
 				CBB6122010D1C622003BC3D3 /* PreferencesController.m in Sources */,
+				CB4D773111092ABC000EF799 /* NSFileManager+CoruscationAdditions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -485,8 +492,9 @@
 			files = (
 				CB05D5FD10D1898C00AECB32 /* CoruscationAgentAppDelegate.m in Sources */,
 				CB05D5FE10D1898C00AECB32 /* CoruscationAgentMain.m in Sources */,
-				CB05D62110D18A2F00AECB32 /* FindSparkleAppsOperation.m in Sources */,
+				CB05D62110D18A2F00AECB32 /* FindSparkleBundlesOperation.m in Sources */,
 				CB05D62210D18A3100AECB32 /* CheckAppUpdateOperation.m in Sources */,
+				CB4D773011092ABC000EF799 /* NSFileManager+CoruscationAdditions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

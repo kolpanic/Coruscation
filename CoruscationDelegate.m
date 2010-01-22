@@ -1,7 +1,7 @@
 #import "CoruscationDelegate.h"
 #import "SparkleBundle.h"
 #import "Sparkle/SUUpdater.h"
-#import "FindSparkleAppsOperation.h"
+#import "FindSparkleBundlesOperation.h"
 #import "CheckAppUpdateOperation.h"
 #import "UpdateCountTransformer.h"
 
@@ -137,7 +137,7 @@
 	if ([self.operationQueue operationCount] > 0)
 		return;
 	[self.managedObjectContext reset];
-	FindSparkleAppsOperation *op = [FindSparkleAppsOperation new];
+	FindSparkleBundlesOperation *op = [FindSparkleBundlesOperation new];
 	[self.operationQueue addOperation:op];
 }
 
