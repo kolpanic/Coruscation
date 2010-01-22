@@ -283,11 +283,15 @@
 			<array>
 				<string>XCToolbarPerspectiveControl</string>
 				<string>NSToolbarSeparatorItem</string>
-				<string>active-combo-popup</string>
 				<string>action</string>
+				<string>active-combo-popup</string>
+				<string>NSToolbarSpaceItem</string>
 				<string>build</string>
 				<string>build-and-go</string>
+				<string>go</string>
+				<string>clean-target</string>
 				<string>clean</string>
+				<string>NSToolbarFlexibleSpaceItem</string>
 			</array>
 			<key>ControllerClassBaseName</key>
 			<string></string>
@@ -300,6 +304,8 @@
 			<key>Layout</key>
 			<array>
 				<dict>
+					<key>BecomeActive</key>
+					<true/>
 					<key>ContentConfiguration</key>
 					<dict>
 						<key>PBXBottomSmartGroupGIDs</key>
@@ -385,8 +391,6 @@
 					<key>Dock</key>
 					<array>
 						<dict>
-							<key>BecomeActive</key>
-							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
@@ -404,10 +408,10 @@
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>CB4D77C7110931C0000EF799</string>
+										<string>CBD416491109F04800590995</string>
 										<key>history</key>
 										<array>
-											<string>CB4D77C6110931C0000EF799</string>
+											<string>CBD416481109F04800590995</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -447,6 +451,8 @@
 									<dict>
 										<key>Frame</key>
 										<string>{{10, 27}, {1357, -27}}</string>
+										<key>RubberWindowFrame</key>
+										<string>76 99 1701 1064 0 0 1920 1178 </string>
 									</dict>
 									<key>Module</key>
 									<string>XCDetailModule</string>
@@ -462,9 +468,7 @@
 									<key>GeometryConfiguration</key>
 									<dict>
 										<key>Frame</key>
-										<string>{{10, 27}, {1357, -27}}</string>
-										<key>RubberWindowFrame</key>
-										<string>76 99 1701 1064 0 0 1920 1178 </string>
+										<string>{{0, 0}, {614, 336}}</string>
 									</dict>
 									<key>Module</key>
 									<string>PBXProjectFindModule</string>
@@ -502,7 +506,7 @@
 									<key>GeometryConfiguration</key>
 									<dict>
 										<key>Frame</key>
-										<string>{{10, 27}, {1357, -27}}</string>
+										<string>{{0, 0}, {568, 405}}</string>
 									</dict>
 									<key>Module</key>
 									<string>PBXBuildResultsModule</string>
@@ -530,11 +534,11 @@
 			</array>
 			<key>TableOfContents</key>
 			<array>
-				<string>CB4D7707110928AF000EF799</string>
+				<string>CBD4164A1109F04800590995</string>
 				<string>1CA23ED40692098700951B8B</string>
-				<string>CB4D7708110928AF000EF799</string>
+				<string>CBD4164B1109F04800590995</string>
 				<string>CB3742AB106A5CEF00AED801</string>
-				<string>CB4D7709110928AF000EF799</string>
+				<string>CBD4164C1109F04800590995</string>
 				<string>1CA23EDF0692099D00951B8B</string>
 				<string>1CA23EE00692099D00951B8B</string>
 				<string>1CA23EE10692099D00951B8B</string>
@@ -707,7 +711,7 @@
 	<key>StatusbarIsVisible</key>
 	<true/>
 	<key>TimeStamp</key>
-	<real>285815232.40306902</real>
+	<real>285864008.05378002</real>
 	<key>ToolbarConfigUserDefaultsMinorVersion</key>
 	<string>2</string>
 	<key>ToolbarDisplayMode</key>
@@ -724,10 +728,7 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>CB4D7711110928AF000EF799</string>
-		<string>CB4D7712110928AF000EF799</string>
-		<string>CBA15A5A10892831002EC526</string>
-		<string>/Users/karl/Projects/Coruscation/coruscation/Coruscation.xcodeproj</string>
+		<string>/Users/karl/Desktop/coruscation/Coruscation.xcodeproj</string>
 	</array>
 	<key>WindowString</key>
 	<string>76 99 1701 1064 0 0 1920 1178 </string>
