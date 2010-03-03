@@ -21,7 +21,6 @@
 		CB05D62810D18A7600AECB32 /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB7094C9108B95DE0008D104 /* Sparkle.framework */; };
 		CB05D62910D18A7B00AECB32 /* Sparkle.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = CB7094C9108B95DE0008D104 /* Sparkle.framework */; };
 		CB23E88E1088FA23001C5740 /* Sparkle.icns in Resources */ = {isa = PBXBuildFile; fileRef = CB23E88D1088FA23001C5740 /* Sparkle.icns */; };
-		CB32A9751088CA7300343471 /* SparkleBundle.m in Sources */ = {isa = PBXBuildFile; fileRef = CB32A9741088CA7300343471 /* SparkleBundle.m */; };
 		CB34956210DBC795001E7640 /* ServiceManagement.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB34956110DBC795001E7640 /* ServiceManagement.framework */; };
 		CB4D773011092ABC000EF799 /* NSFileManager+CoruscationAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = CB4D772F11092ABC000EF799 /* NSFileManager+CoruscationAdditions.m */; };
 		CB4D773111092ABC000EF799 /* NSFileManager+CoruscationAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = CB4D772F11092ABC000EF799 /* NSFileManager+CoruscationAdditions.m */; };
@@ -36,6 +35,8 @@
 		CBB7E44A10C4A2C100094536 /* Coruscation Help in Resources */ = {isa = PBXBuildFile; fileRef = CBB7E44910C4A2C100094536 /* Coruscation Help */; };
 		CBB7FC58108D2575003E062A /* CheckAppUpdateOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = CBB7FC57108D2575003E062A /* CheckAppUpdateOperation.m */; };
 		CBCA61FE10D1A07D003D9E3F /* CoruscationAgent.app in Copy Executables */ = {isa = PBXBuildFile; fileRef = CB05D5E410D1892A00AECB32 /* CoruscationAgent.app */; };
+		CBEFAD90113DF27900652711 /* SparkleBundle.m in Sources */ = {isa = PBXBuildFile; fileRef = CBEFAD8F113DF27900652711 /* SparkleBundle.m */; };
+		CBEFAD93113DF27900652711 /* _SparkleBundle.m in Sources */ = {isa = PBXBuildFile; fileRef = CBEFAD92113DF27900652711 /* _SparkleBundle.m */; };
 		CBF233B8108D629600D2A5FF /* CollectionItemView.m in Sources */ = {isa = PBXBuildFile; fileRef = CBF233B7108D629600D2A5FF /* CollectionItemView.m */; };
 		CBF3A61910C9784A004EDC7F /* License.txt in Resources */ = {isa = PBXBuildFile; fileRef = CBA28A2710C9751F005BCEC1 /* License.txt */; };
 /* End PBXBuildFile section */
@@ -134,7 +135,8 @@
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		2F7446980DB6B7EA00F9684A /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = "English.lproj/Coruscation-MainMenu.xib"; sourceTree = "<group>"; };
 		32CA4F630368D1EE00C91783 /* Coruscation_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Coruscation_Prefix.pch; sourceTree = "<group>"; };
-		770B37EC0679A11B001EADE2 /* Coruscation_DataModel.xcdatamodel */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = wrapper.xcdatamodel; path = Coruscation_DataModel.xcdatamodel; sourceTree = "<group>"; };
+		770B37EC0679A11B001EADE2 /* Coruscation_DataModel.xcdatamodel */ = {isa = PBXFileReference; comments = "xmod
+"; fileEncoding = 4; lastKnownFileType = wrapper.xcdatamodel; path = Coruscation_DataModel.xcdatamodel; sourceTree = "<group>"; };
 		77C8280B06725ACE000B614F /* CoruscationDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoruscationDelegate.h; sourceTree = "<group>"; };
 		77C8280C06725ACE000B614F /* CoruscationDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoruscationDelegate.m; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* Coruscation-Info.plist */ = {isa = PBXFileReference; explicitFileType = text.plist.xml; fileEncoding = 4; path = "Coruscation-Info.plist"; sourceTree = "<group>"; };
@@ -147,8 +149,6 @@
 		CB05D5FB10D1898C00AECB32 /* CoruscationAgentMain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoruscationAgentMain.m; sourceTree = "<group>"; };
 		CB05D5FC10D1898C00AECB32 /* CoruscationAgentMainMenu.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CoruscationAgentMainMenu.xib; sourceTree = "<group>"; };
 		CB23E88D1088FA23001C5740 /* Sparkle.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = Sparkle.icns; sourceTree = "<group>"; };
-		CB32A9731088CA7300343471 /* SparkleBundle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SparkleBundle.h; sourceTree = "<group>"; };
-		CB32A9741088CA7300343471 /* SparkleBundle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SparkleBundle.m; sourceTree = "<group>"; };
 		CB34956110DBC795001E7640 /* ServiceManagement.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ServiceManagement.framework; path = System/Library/Frameworks/ServiceManagement.framework; sourceTree = SDKROOT; };
 		CB4D772E11092ABC000EF799 /* NSFileManager+CoruscationAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSFileManager+CoruscationAdditions.h"; sourceTree = "<group>"; };
 		CB4D772F11092ABC000EF799 /* NSFileManager+CoruscationAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSFileManager+CoruscationAdditions.m"; sourceTree = "<group>"; };
@@ -167,6 +167,10 @@
 		CBB7E42D10C4A21C00094536 /* English */ = {isa = PBXFileReference; lastKnownFileType = folder; name = English; path = "English.lproj/Coruscation Help"; sourceTree = "<group>"; };
 		CBB7FC56108D2575003E062A /* CheckAppUpdateOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CheckAppUpdateOperation.h; sourceTree = "<group>"; };
 		CBB7FC57108D2575003E062A /* CheckAppUpdateOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CheckAppUpdateOperation.m; sourceTree = "<group>"; };
+		CBEFAD8F113DF27900652711 /* SparkleBundle.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SparkleBundle.m; sourceTree = "<group>"; };
+		CBEFAD91113DF27900652711 /* SparkleBundle.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SparkleBundle.h; sourceTree = "<group>"; };
+		CBEFAD92113DF27900652711 /* _SparkleBundle.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = _SparkleBundle.m; sourceTree = "<group>"; };
+		CBEFAD94113DF27900652711 /* _SparkleBundle.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = _SparkleBundle.h; sourceTree = "<group>"; };
 		CBF233B6108D629600D2A5FF /* CollectionItemView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectionItemView.h; sourceTree = "<group>"; };
 		CBF233B7108D629600D2A5FF /* CollectionItemView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectionItemView.m; sourceTree = "<group>"; };
 		CBFE71AB10C17BE5007DF3BB /* appcast.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = appcast.xml; sourceTree = "<group>"; };
@@ -278,8 +282,7 @@
 			isa = PBXGroup;
 			children = (
 				770B37EC0679A11B001EADE2 /* Coruscation_DataModel.xcdatamodel */,
-				CB32A9731088CA7300343471 /* SparkleBundle.h */,
-				CB32A9741088CA7300343471 /* SparkleBundle.m */,
+				CBEFAD2F113DEF6C00652711 /* Coruscation_DataModel */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -341,6 +344,17 @@
 				CB7094CF108B95DE0008D104 /* Sparkle Unit Tests.octest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		CBEFAD2F113DEF6C00652711 /* Coruscation_DataModel */ = {
+			isa = PBXGroup;
+			children = (
+				CBEFAD8F113DF27900652711 /* SparkleBundle.m */,
+				CBEFAD91113DF27900652711 /* SparkleBundle.h */,
+				CBEFAD92113DF27900652711 /* _SparkleBundle.m */,
+				CBEFAD94113DF27900652711 /* _SparkleBundle.h */,
+			);
+			path = Coruscation_DataModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -476,13 +490,14 @@
 				8D11072D0486CEB800E47090 /* main.m in Sources */,
 				77C8280E06725ACE000B614F /* CoruscationDelegate.m in Sources */,
 				770B37ED0679A11B001EADE2 /* Coruscation_DataModel.xcdatamodel in Sources */,
-				CB32A9751088CA7300343471 /* SparkleBundle.m in Sources */,
 				CB7094BA108B951A0008D104 /* FindSparkleBundlesOperation.m in Sources */,
 				CBB7FC58108D2575003E062A /* CheckAppUpdateOperation.m in Sources */,
 				CBF233B8108D629600D2A5FF /* CollectionItemView.m in Sources */,
 				CB5F37B310C8A128008FB459 /* UpdateCountTransformer.m in Sources */,
 				CBB6122010D1C622003BC3D3 /* PreferencesController.m in Sources */,
 				CB4D773111092ABC000EF799 /* NSFileManager+CoruscationAdditions.m in Sources */,
+				CBEFAD90113DF27900652711 /* SparkleBundle.m in Sources */,
+				CBEFAD93113DF27900652711 /* _SparkleBundle.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

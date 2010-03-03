@@ -115,12 +115,12 @@
 					PBXFileDataSource_Warnings_ColumnID,
 				);
 			};
-			PBXPerProjectTemplateStateSaveDate = 285863977;
-			PBXWorkspaceStateSaveDate = 285863977;
+			PBXPerProjectTemplateStateSaveDate = 289271649;
+			PBXWorkspaceStateSaveDate = 289271649;
 		};
 		perUserProjectItems = {
-			CBD416481109F04800590995 /* PBXTextBookmark */ = CBD416481109F04800590995 /* PBXTextBookmark */;
-			CBD416491109F04800590995 /* PBXTextBookmark */ = CBD416491109F04800590995 /* PBXTextBookmark */;
+			CBEFADA3113DF2F200652711 /* PBXTextBookmark */ = CBEFADA3113DF2F200652711 /* PBXTextBookmark */;
+			CBEFADA4113DF2F200652711 /* PBXTextBookmark */ = CBEFADA4113DF2F200652711 /* PBXTextBookmark */;
 		};
 		sourceControlManager = CB32A9101088C65D00343471 /* Source Control */;
 		userBuildSettings = {
@@ -152,7 +152,7 @@
 			"Xdesign Model Editor Bookmark Key" = {
 				UIContextForDetailArea = {
 					_indexOfSelectedPane = 0;
-					_indexOfSelectedView = 0;
+					_indexOfSelectedView = 1;
 				};
 				UIContextForEntityArea = {
 					_indexOfSelectedView = 0;
@@ -173,7 +173,7 @@
 					chosenTableWidths = (
 						103.000000,
 						22.000000,
-						143.080078,
+						142.080078,
 					);
 				};
 				UIContextForLayoutManager = {
@@ -183,8 +183,8 @@
 						_percentageOfCollapsedView = 0;
 						isCollapsed = yes;
 						sizes = (
-							"{{0, 0}, {885, 218}}",
-							"{{890, 0}, {465, 218}}",
+							"{{0, 0}, {885, 220}}",
+							"{{890, 0}, {465, 220}}",
 						);
 					};
 					diagramSplitGeometry = {
@@ -203,8 +203,8 @@
 						_percentageOfCollapsedView = 0;
 						isCollapsed = yes;
 						sizes = (
-							"{{0, 0}, {293, 218}}",
-							"{{298, 0}, {587, 218}}",
+							"{{0, 0}, {292, 220}}",
+							"{{297, 0}, {586, 220}}",
 						);
 					};
 				};
@@ -293,7 +293,7 @@
 					chosenTableWidthsPT = (
 						128.000000,
 						108.110840,
-						324.570801,
+						323.570801,
 					);
 					chosenTableWidthsRT = (
 						128.000000,
@@ -308,16 +308,16 @@
 	};
 	77C8280B06725ACE000B614F /* CoruscationDelegate.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1208, 972}}";
-			sepNavSelRange = "{386, 0}";
-			sepNavVisRange = "{0, 1056}";
+			sepNavIntBoundsRect = "{{0, 0}, {1296, 696}}";
+			sepNavSelRange = "{583, 0}";
+			sepNavVisRange = "{0, 1105}";
 		};
 	};
 	77C8280C06725ACE000B614F /* CoruscationDelegate.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1296, 3325}}";
-			sepNavSelRange = "{1059, 0}";
-			sepNavVisRange = "{447, 1846}";
+			sepNavIntBoundsRect = "{{0, 0}, {1640, 3553}}";
+			sepNavSelRange = "{4406, 0}";
+			sepNavVisRange = "{4950, 396}";
 		};
 	};
 	8D1107260486CEB800E47090 /* Coruscation */ = {
@@ -441,20 +441,6 @@
 		isa = PBXCodeSenseManager;
 		indexTemplatePath = "";
 	};
-	CB32A9731088CA7300343471 /* SparkleBundle.h */ = {
-		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1552, 224}}";
-			sepNavSelRange = "{334, 0}";
-			sepNavVisRange = "{0, 339}";
-		};
-	};
-	CB32A9741088CA7300343471 /* SparkleBundle.m */ = {
-		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1640, 722}}";
-			sepNavSelRange = "{998, 0}";
-			sepNavVisRange = "{796, 263}";
-		};
-	};
 	CB4D772E11092ABC000EF799 /* NSFileManager+CoruscationAdditions.h */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {1296, 1001}}";
@@ -532,7 +518,7 @@
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {1296, 4142}}";
 			sepNavSelRange = "{3235, 0}";
-			sepNavVisRange = "{2404, 2921}";
+			sepNavVisRange = "{2404, 1808}";
 		};
 	};
 	CBB611FE10D1C4FD003BC3D3 /* English */ = {
@@ -544,37 +530,44 @@
 	};
 	CBB7FC56108D2575003E062A /* CheckAppUpdateOperation.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1208, 972}}";
+			sepNavIntBoundsRect = "{{0, 0}, {1296, 696}}";
 			sepNavSelRange = "{224, 0}";
 			sepNavVisRange = "{0, 475}";
 		};
 	};
 	CBB7FC57108D2575003E062A /* CheckAppUpdateOperation.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1296, 2109}}";
-			sepNavSelRange = "{1260, 0}";
-			sepNavVisRange = "{461, 1721}";
+			sepNavIntBoundsRect = "{{0, 0}, {1296, 2014}}";
+			sepNavSelRange = "{2370, 28}";
+			sepNavVisRange = "{1500, 1588}";
 		};
 	};
-	CBD416481109F04800590995 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = CBB611EC10D1C484003BC3D3 /* PreferencesController.m */;
-		name = "PreferencesController.m: 77";
-		rLen = 0;
-		rLoc = 3235;
-		rType = 0;
-		vrLen = 2921;
-		vrLoc = 2404;
+	CBEFAD94113DF27900652711 /* _SparkleBundle.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1296, 1001}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRange = "{0, 823}";
+		};
 	};
-	CBD416491109F04800590995 /* PBXTextBookmark */ = {
+	CBEFADA3113DF2F200652711 /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
-		fRef = CBB611EC10D1C484003BC3D3 /* PreferencesController.m */;
-		name = "PreferencesController.m: 77";
+		fRef = 77C8280C06725ACE000B614F /* CoruscationDelegate.m */;
+		name = "CoruscationDelegate.m: 134";
 		rLen = 0;
-		rLoc = 3235;
+		rLoc = 4472;
 		rType = 0;
-		vrLen = 2921;
-		vrLoc = 2404;
+		vrLen = 1643;
+		vrLoc = 4358;
+	};
+	CBEFADA4113DF2F200652711 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 77C8280C06725ACE000B614F /* CoruscationDelegate.m */;
+		name = "CoruscationDelegate.m: 134";
+		rLen = 0;
+		rLoc = 4472;
+		rType = 0;
+		vrLen = 1643;
+		vrLoc = 4358;
 	};
 	CBF233B6108D629600D2A5FF /* CollectionItemView.h */ = {
 		uiCtxt = {
@@ -599,9 +592,9 @@
 	};
 	CBFE71AC10C17BE5007DF3BB /* relnotes.html */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1296, 1045}}";
-			sepNavSelRange = "{809, 0}";
-			sepNavVisRange = "{0, 1763}";
+			sepNavIntBoundsRect = "{{0, 0}, {1296, 1064}}";
+			sepNavSelRange = "{911, 0}";
+			sepNavVisRange = "{190, 1651}";
 		};
 	};
 }

@@ -1,10 +1,6 @@
 #import "SparkleBundle.h"
-#import <Sparkle/Sparkle.h>
 
 @implementation SparkleBundle
-
-#pragma mark -
-#pragma mark Convenience
 
 - (NSString *) displayName {
 	return [[NSFileManager defaultManager] displayNameAtPath:self.bundlePath];
@@ -22,17 +18,15 @@
 }
 
 - (NSImage *) icon {
-	if (!_icon)
-		_icon = [[NSWorkspace sharedWorkspace] iconForFile:self.bundlePath];
-	return _icon;
+	if (!i_icon)
+		i_icon = [[NSWorkspace sharedWorkspace] iconForFile:self.bundlePath];
+	return i_icon;
 }
 
 - (NSBundle *) bundle {
-	if (!_bundle)
-		_bundle = [NSBundle bundleWithPath:self.bundlePath];
-	return _bundle;
+	if (!i_bundle)
+		i_bundle = [NSBundle bundleWithPath:self.bundlePath];
+	return i_bundle;
 }
-
-@dynamic bundle, icon, bundlePath, availableUpdateVersion;
 
 @end

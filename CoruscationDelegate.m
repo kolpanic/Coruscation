@@ -47,7 +47,7 @@
 
 - (NSManagedObjectModel *) managedObjectModel {
 	if (!i_managedObjectModel)
-		i_managedObjectModel = [[NSManagedObjectModel mergedModelFromBundles:nil] retain];
+		i_managedObjectModel = [NSManagedObjectModel mergedModelFromBundles:nil];
 	return i_managedObjectModel;
 }
 
@@ -62,10 +62,10 @@
 		NSError *error;
 		i_persistentStoreCoordinator = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:mom];
 		if (![i_persistentStoreCoordinator addPersistentStoreWithType:NSInMemoryStoreType
-													   configuration:nil
-																 URL:nil
-															 options:nil
-															   error:&error]) {
+														configuration:nil
+																  URL:nil
+															  options:nil
+																error:&error]) {
 			[[NSApplication sharedApplication] presentError:error];
 			i_persistentStoreCoordinator = nil;
 		}
@@ -104,9 +104,10 @@
 - (void) addSparkleBundleWithUserInfo:(NSDictionary *)userInfo {
 	NSURL *url = [userInfo objectForKey:@"url"];
 	NSManagedObjectContext *moc = [self managedObjectContext];
-	SparkleBundle *sparkleBundle = [NSEntityDescription insertNewObjectForEntityForName:@"SparkleBundle" inManagedObjectContext:moc];
+	SparkleBundle *sparkleBundle = [SparkleBundle insertInManagedObjectContext:moc];
 	sparkleBundle.bundlePath = [url path];
 	sparkleBundle.availableUpdateVersion = [userInfo objectForKey:@"availableUpdateVersion"];
+	sparkleBundle.releaseNotesURL = [[userInfo objectForKey:@"releaseNotesURL"] absoluteString];
 	if ([moc save:nil])
 		[[NSApplication sharedApplication] dockTile].badgeLabel = [NSString stringWithFormat:@"%u", ++self.count];
 }
@@ -126,6 +127,9 @@
 				break;
 			case 2:
 				[self refresh:sender];
+				break;
+			case 3:
+				[self releaseNotesForSelected:sender];
 				break;
 			default:
 				break;
@@ -160,6 +164,13 @@
 		NSString *path = [[sparkleBundle.bundle bundleURL] path];
 		[[NSWorkspace sharedWorkspace] selectFile:path inFileViewerRootedAtPath:@""];
 	}
+}
+
+- (IBAction) releaseNotesForSelected:(id)sender {
+	for (SparkleBundle *sparkleBundle in [self.updateItems selectedObjects]) {
+		NSURL *url = [NSURL URLWithString:[sparkleBundle releaseNotesURL]];
+		[[NSWorkspace sharedWorkspace] openURL:url];
+	}	
 }
 
 @dynamic persistentStoreCoordinator, managedObjectModel, managedObjectContext;

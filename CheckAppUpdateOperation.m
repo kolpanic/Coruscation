@@ -85,6 +85,7 @@
 		[[NSApp delegate] performSelectorOnMainThread:@selector(addSparkleBundleWithUserInfo:)
 										   withObject:[NSDictionary dictionaryWithObjectsAndKeys:self.url, @"url",
 													   [updateItem displayVersionString], @"availableUpdateVersion",
+													   [updateItem releaseNotesURL], @"releaseNotesURL",
 													   nil]
 										waitUntilDone:NO];
 	[self finish];

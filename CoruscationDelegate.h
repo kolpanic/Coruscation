@@ -16,6 +16,7 @@
 - (IBAction) refresh:(id)sender;
 - (IBAction) openSelected:(id)sender;
 - (IBAction) revealSelected:(id)sender;
+- (IBAction) releaseNotesForSelected:(id)sender;
 
 @property (retain) IBOutlet NSCollectionView *collectionView;
 @property (nonatomic, retain, readonly) NSPersistentStoreCoordinator *persistentStoreCoordinator;
