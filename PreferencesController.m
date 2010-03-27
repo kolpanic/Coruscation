@@ -40,7 +40,7 @@
 		NSMutableDictionary *plist = [NSMutableDictionary dictionary];
 		[plist setObject:self.agentIdentifier forKey:@"Label"];
 		[plist setObject:intervalDict forKey:@"StartCalendarInterval"];
-		[plist setObject:[NSNumber numberWithBool:NO] forKey:@"RunAtLoad"];
+		[plist setObject:[NSNumber numberWithBool:YES] forKey:@"RunAtLoad"];
 		[plist setObject:self.agentExecutable forKey:@"Program"];
 
 		;

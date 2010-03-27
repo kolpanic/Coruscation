@@ -13,16 +13,18 @@
 	return [NSEntityDescription insertNewObjectForEntityForName:@"SparkleBundle" inManagedObjectContext:moc_];
 }
 
++ (NSString*)entityName {
+	return @"SparkleBundle";
+}
+
++ (NSEntityDescription*)entityInManagedObjectContext:(NSManagedObjectContext*)moc_ {
+	NSParameterAssert(moc_);
+	return [NSEntityDescription entityForName:@"SparkleBundle" inManagedObjectContext:moc_];
+}
+
 - (SparkleBundleID*)objectID {
 	return (SparkleBundleID*)[super objectID];
 }
-
-
-
-
-@dynamic bundlePath;
-
-
 
 
 
@@ -34,7 +36,21 @@
 
 
 
+@dynamic itemDescription;
+
+
+
+
+
+
 @dynamic releaseNotesURL;
+
+
+
+
+
+
+@dynamic bundlePath;
 
 
 

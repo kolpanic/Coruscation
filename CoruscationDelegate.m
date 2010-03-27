@@ -35,8 +35,8 @@
 + (void) initialize {
 	if (self == [CoruscationDelegate class]) {
 		NSDictionary *defaults = [NSDictionary dictionaryWithObjectsAndKeys:
-								  [NSNumber numberWithDouble:10.0], @"UpdateCheckTimeOutInterval",
-								  nil];
+		                          [NSNumber numberWithDouble:10.0], @"UpdateCheckTimeOutInterval",
+		                          nil];
 		[[NSUserDefaults standardUserDefaults] registerDefaults:defaults];
 		[NSValueTransformer setValueTransformer:[UpdateCountTransformer new] forName:@"UpdateCountTransformer"];
 	}
@@ -108,6 +108,7 @@
 	sparkleBundle.bundlePath = [url path];
 	sparkleBundle.availableUpdateVersion = [userInfo objectForKey:@"availableUpdateVersion"];
 	sparkleBundle.releaseNotesURL = [[userInfo objectForKey:@"releaseNotesURL"] absoluteString];
+	sparkleBundle.itemDescription = [userInfo objectForKey:@"itemDescription"];
 	if ([moc save:nil])
 		[[NSApplication sharedApplication] dockTile].badgeLabel = [NSString stringWithFormat:@"%u", ++self.count];
 }
@@ -168,9 +169,15 @@
 
 - (IBAction) releaseNotesForSelected:(id)sender {
 	for (SparkleBundle *sparkleBundle in [self.updateItems selectedObjects]) {
-		NSURL *url = [NSURL URLWithString:[sparkleBundle releaseNotesURL]];
-		[[NSWorkspace sharedWorkspace] openURL:url];
-	}	
+		if (sparkleBundle.releaseNotesURL) {
+			NSURL *url = [NSURL URLWithString:sparkleBundle.releaseNotesURL];
+			[[NSWorkspace sharedWorkspace] openURL:url];
+		} else {
+			NSString *relnotesPath = [NSTemporaryDirectory() stringByAppendingPathComponent:[[sparkleBundle.bundle bundleIdentifier] stringByAppendingPathExtension:@"html"]];
+			[sparkleBundle.itemDescription writeToFile:relnotesPath atomically:YES encoding:NSUTF8StringEncoding error:nil];
+			[[NSWorkspace sharedWorkspace] openFile:relnotesPath];
+		}
+	}
 }
 
 @dynamic persistentStoreCoordinator, managedObjectModel, managedObjectContext;

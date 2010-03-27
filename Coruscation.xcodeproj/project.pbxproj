@@ -29,14 +29,14 @@
 		CB709522108B98190008D104 /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB7094C9108B95DE0008D104 /* Sparkle.framework */; };
 		CBA648A3108EB12A00667F15 /* Sparkle.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = CB7094C9108B95DE0008D104 /* Sparkle.framework */; };
 		CBA648D6108EB22000667F15 /* Credits.html in Resources */ = {isa = PBXBuildFile; fileRef = CBA648D5108EB22000667F15 /* Credits.html */; };
+		CBAD255B115ECF8D0093C261 /* SparkleBundle.m in Sources */ = {isa = PBXBuildFile; fileRef = CBAD255A115ECF8D0093C261 /* SparkleBundle.m */; };
+		CBAD255E115ECF8E0093C261 /* _SparkleBundle.m in Sources */ = {isa = PBXBuildFile; fileRef = CBAD255D115ECF8E0093C261 /* _SparkleBundle.m */; };
 		CBB611FF10D1C4FD003BC3D3 /* Preferences.xib in Resources */ = {isa = PBXBuildFile; fileRef = CBB611FD10D1C4FD003BC3D3 /* Preferences.xib */; };
 		CBB6122010D1C622003BC3D3 /* PreferencesController.m in Sources */ = {isa = PBXBuildFile; fileRef = CBB611EC10D1C484003BC3D3 /* PreferencesController.m */; };
 		CBB7E3AC10C49C4500094536 /* RevealTemplate.pdf in Resources */ = {isa = PBXBuildFile; fileRef = CBB7E3AB10C49C4500094536 /* RevealTemplate.pdf */; };
 		CBB7E44A10C4A2C100094536 /* Coruscation Help in Resources */ = {isa = PBXBuildFile; fileRef = CBB7E44910C4A2C100094536 /* Coruscation Help */; };
 		CBB7FC58108D2575003E062A /* CheckAppUpdateOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = CBB7FC57108D2575003E062A /* CheckAppUpdateOperation.m */; };
 		CBCA61FE10D1A07D003D9E3F /* CoruscationAgent.app in Copy Executables */ = {isa = PBXBuildFile; fileRef = CB05D5E410D1892A00AECB32 /* CoruscationAgent.app */; };
-		CBEFAD90113DF27900652711 /* SparkleBundle.m in Sources */ = {isa = PBXBuildFile; fileRef = CBEFAD8F113DF27900652711 /* SparkleBundle.m */; };
-		CBEFAD93113DF27900652711 /* _SparkleBundle.m in Sources */ = {isa = PBXBuildFile; fileRef = CBEFAD92113DF27900652711 /* _SparkleBundle.m */; };
 		CBF233B8108D629600D2A5FF /* CollectionItemView.m in Sources */ = {isa = PBXBuildFile; fileRef = CBF233B7108D629600D2A5FF /* CollectionItemView.m */; };
 		CBF3A61910C9784A004EDC7F /* License.txt in Resources */ = {isa = PBXBuildFile; fileRef = CBA28A2710C9751F005BCEC1 /* License.txt */; };
 /* End PBXBuildFile section */
@@ -160,6 +160,10 @@
 		CB7094C1108B95DE0008D104 /* Sparkle.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Sparkle.xcodeproj; path = ../Sparkle/Sparkle.xcodeproj; sourceTree = SOURCE_ROOT; };
 		CBA28A2710C9751F005BCEC1 /* License.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = License.txt; sourceTree = "<group>"; };
 		CBA648D5108EB22000667F15 /* Credits.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = Credits.html; sourceTree = "<group>"; };
+		CBAD255A115ECF8D0093C261 /* SparkleBundle.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SparkleBundle.m; sourceTree = "<group>"; };
+		CBAD255C115ECF8D0093C261 /* SparkleBundle.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SparkleBundle.h; sourceTree = "<group>"; };
+		CBAD255D115ECF8E0093C261 /* _SparkleBundle.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = _SparkleBundle.m; sourceTree = "<group>"; };
+		CBAD255F115ECF8E0093C261 /* _SparkleBundle.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = _SparkleBundle.h; sourceTree = "<group>"; };
 		CBB611EB10D1C484003BC3D3 /* PreferencesController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PreferencesController.h; sourceTree = "<group>"; };
 		CBB611EC10D1C484003BC3D3 /* PreferencesController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PreferencesController.m; sourceTree = "<group>"; };
 		CBB611FE10D1C4FD003BC3D3 /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/Preferences.xib; sourceTree = "<group>"; };
@@ -167,10 +171,6 @@
 		CBB7E42D10C4A21C00094536 /* English */ = {isa = PBXFileReference; lastKnownFileType = folder; name = English; path = "English.lproj/Coruscation Help"; sourceTree = "<group>"; };
 		CBB7FC56108D2575003E062A /* CheckAppUpdateOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CheckAppUpdateOperation.h; sourceTree = "<group>"; };
 		CBB7FC57108D2575003E062A /* CheckAppUpdateOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CheckAppUpdateOperation.m; sourceTree = "<group>"; };
-		CBEFAD8F113DF27900652711 /* SparkleBundle.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SparkleBundle.m; sourceTree = "<group>"; };
-		CBEFAD91113DF27900652711 /* SparkleBundle.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SparkleBundle.h; sourceTree = "<group>"; };
-		CBEFAD92113DF27900652711 /* _SparkleBundle.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = _SparkleBundle.m; sourceTree = "<group>"; };
-		CBEFAD94113DF27900652711 /* _SparkleBundle.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = _SparkleBundle.h; sourceTree = "<group>"; };
 		CBF233B6108D629600D2A5FF /* CollectionItemView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectionItemView.h; sourceTree = "<group>"; };
 		CBF233B7108D629600D2A5FF /* CollectionItemView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectionItemView.m; sourceTree = "<group>"; };
 		CBFE71AB10C17BE5007DF3BB /* appcast.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = appcast.xml; sourceTree = "<group>"; };
@@ -349,10 +349,10 @@
 		CBEFAD2F113DEF6C00652711 /* Coruscation_DataModel */ = {
 			isa = PBXGroup;
 			children = (
-				CBEFAD8F113DF27900652711 /* SparkleBundle.m */,
-				CBEFAD91113DF27900652711 /* SparkleBundle.h */,
-				CBEFAD92113DF27900652711 /* _SparkleBundle.m */,
-				CBEFAD94113DF27900652711 /* _SparkleBundle.h */,
+				CBAD255F115ECF8E0093C261 /* _SparkleBundle.h */,
+				CBAD255D115ECF8E0093C261 /* _SparkleBundle.m */,
+				CBAD255C115ECF8D0093C261 /* SparkleBundle.h */,
+				CBAD255A115ECF8D0093C261 /* SparkleBundle.m */,
 			);
 			path = Coruscation_DataModel;
 			sourceTree = "<group>";
@@ -496,8 +496,8 @@
 				CB5F37B310C8A128008FB459 /* UpdateCountTransformer.m in Sources */,
 				CBB6122010D1C622003BC3D3 /* PreferencesController.m in Sources */,
 				CB4D773111092ABC000EF799 /* NSFileManager+CoruscationAdditions.m in Sources */,
-				CBEFAD90113DF27900652711 /* SparkleBundle.m in Sources */,
-				CBEFAD93113DF27900652711 /* _SparkleBundle.m in Sources */,
+				CBAD255B115ECF8D0093C261 /* SparkleBundle.m in Sources */,
+				CBAD255E115ECF8E0093C261 /* _SparkleBundle.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

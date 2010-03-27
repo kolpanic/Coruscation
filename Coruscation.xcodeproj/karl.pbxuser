@@ -115,12 +115,12 @@
 					PBXFileDataSource_Warnings_ColumnID,
 				);
 			};
-			PBXPerProjectTemplateStateSaveDate = 289271649;
-			PBXWorkspaceStateSaveDate = 289271649;
+			PBXPerProjectTemplateStateSaveDate = 291423762;
+			PBXWorkspaceStateSaveDate = 291423762;
 		};
 		perUserProjectItems = {
-			CBEFADA3113DF2F200652711 /* PBXTextBookmark */ = CBEFADA3113DF2F200652711 /* PBXTextBookmark */;
-			CBEFADA4113DF2F200652711 /* PBXTextBookmark */ = CBEFADA4113DF2F200652711 /* PBXTextBookmark */;
+			CBAD2562115ECFCE0093C261 /* PBXTextBookmark */ = CBAD2562115ECFCE0093C261 /* PBXTextBookmark */;
+			CBAD2563115ECFCE0093C261 /* PBXTextBookmark */ = CBAD2563115ECFCE0093C261 /* PBXTextBookmark */;
 		};
 		sourceControlManager = CB32A9101088C65D00343471 /* Source Control */;
 		userBuildSettings = {
@@ -194,7 +194,7 @@
 						isCollapsed = yes;
 						sizes = (
 							"{{0, 0}, {1355, 220}}",
-							"{{0, 225}, {1355, 776}}",
+							"{{0, 225}, {1355, 777}}",
 						);
 					};
 					tableSplitGeometry = {
@@ -203,8 +203,8 @@
 						_percentageOfCollapsedView = 0;
 						isCollapsed = yes;
 						sizes = (
-							"{{0, 0}, {292, 220}}",
-							"{{297, 0}, {586, 220}}",
+							"{{0, 0}, {292, 218}}",
+							"{{297, 0}, {586, 218}}",
 						);
 					};
 				};
@@ -301,7 +301,7 @@
 					);
 				};
 				"xdesign model browser state key - shown/hidden" = 1;
-				"xdesign model diagram view visible rect key" = "{{-346, -165}, {1340, 761}}";
+				"xdesign model diagram view visible rect key" = "{{-346, -165}, {1340, 762}}";
 			};
 			sepNavWindowFrame = "{{82, 615}, {750, 558}}";
 		};
@@ -316,8 +316,8 @@
 	77C8280C06725ACE000B614F /* CoruscationDelegate.m */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {1640, 3553}}";
-			sepNavSelRange = "{4406, 0}";
-			sepNavVisRange = "{4950, 396}";
+			sepNavSelRange = "{6507, 0}";
+			sepNavVisRange = "{5338, 408}";
 		};
 	};
 	8D1107260486CEB800E47090 /* Coruscation */ = {
@@ -383,9 +383,9 @@
 	};
 	CB05D5FA10D1898C00AECB32 /* CoruscationAgentAppDelegate.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1208, 1425}}";
-			sepNavSelRange = "{566, 0}";
-			sepNavVisRange = "{0, 1684}";
+			sepNavIntBoundsRect = "{{0, 0}, {1296, 1786}}";
+			sepNavSelRange = "{2646, 0}";
+			sepNavVisRange = "{1226, 2325}";
 		};
 	};
 	CB05D5FB10D1898C00AECB32 /* CoruscationAgentMain.m */ = {
@@ -507,6 +507,26 @@
 			sepNavWindowFrame = "{{82, 615}, {750, 558}}";
 		};
 	};
+	CBAD2562115ECFCE0093C261 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 77C8280C06725ACE000B614F /* CoruscationDelegate.m */;
+		name = "CoruscationDelegate.m: 154";
+		rLen = 0;
+		rLoc = 5171;
+		rType = 0;
+		vrLen = 1603;
+		vrLoc = 4322;
+	};
+	CBAD2563115ECFCE0093C261 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 77C8280C06725ACE000B614F /* CoruscationDelegate.m */;
+		name = "CoruscationDelegate.m: 136";
+		rLen = 0;
+		rLoc = 4607;
+		rType = 0;
+		vrLen = 1899;
+		vrLoc = 4608;
+	};
 	CBB611EB10D1C484003BC3D3 /* PreferencesController.h */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {1208, 972}}";
@@ -516,9 +536,9 @@
 	};
 	CBB611EC10D1C484003BC3D3 /* PreferencesController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1296, 4142}}";
-			sepNavSelRange = "{3235, 0}";
-			sepNavVisRange = "{2404, 1808}";
+			sepNavIntBoundsRect = "{{0, 0}, {1640, 4332}}";
+			sepNavSelRange = "{5485, 80}";
+			sepNavVisRange = "{5220, 603}";
 		};
 	};
 	CBB611FE10D1C4FD003BC3D3 /* English */ = {
@@ -530,44 +550,17 @@
 	};
 	CBB7FC56108D2575003E062A /* CheckAppUpdateOperation.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1296, 696}}";
+			sepNavIntBoundsRect = "{{0, 0}, {1296, 1002}}";
 			sepNavSelRange = "{224, 0}";
 			sepNavVisRange = "{0, 475}";
 		};
 	};
 	CBB7FC57108D2575003E062A /* CheckAppUpdateOperation.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1296, 2014}}";
-			sepNavSelRange = "{2370, 28}";
-			sepNavVisRange = "{1500, 1588}";
+			sepNavIntBoundsRect = "{{0, 0}, {1296, 2166}}";
+			sepNavSelRange = "{2221, 0}";
+			sepNavVisRange = "{1690, 1796}";
 		};
-	};
-	CBEFAD94113DF27900652711 /* _SparkleBundle.h */ = {
-		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1296, 1001}}";
-			sepNavSelRange = "{0, 0}";
-			sepNavVisRange = "{0, 823}";
-		};
-	};
-	CBEFADA3113DF2F200652711 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 77C8280C06725ACE000B614F /* CoruscationDelegate.m */;
-		name = "CoruscationDelegate.m: 134";
-		rLen = 0;
-		rLoc = 4472;
-		rType = 0;
-		vrLen = 1643;
-		vrLoc = 4358;
-	};
-	CBEFADA4113DF2F200652711 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 77C8280C06725ACE000B614F /* CoruscationDelegate.m */;
-		name = "CoruscationDelegate.m: 134";
-		rLen = 0;
-		rLoc = 4472;
-		rType = 0;
-		vrLen = 1643;
-		vrLoc = 4358;
 	};
 	CBF233B6108D629600D2A5FF /* CollectionItemView.h */ = {
 		uiCtxt = {

@@ -8,8 +8,8 @@
 + (void) initialize {
 	if (self == [CoruscationAgentAppDelegate class]) {
 		NSDictionary *defaults = [NSDictionary dictionaryWithObjectsAndKeys:
-								  [NSNumber numberWithDouble:10.0], @"UpdateCheckTimeOutInterval",
-								  nil];
+		                          [NSNumber numberWithDouble:10.0], @"UpdateCheckTimeOutInterval",
+		                          nil];
 		[[NSUserDefaults standardUserDefaults] registerDefaults:defaults];
 	}
 	[super initialize];
@@ -47,6 +47,25 @@
 }
 
 - (void) applicationDidFinishLaunching:(NSNotification *)aNotification {
+	NSDate *lastRunDate = [[NSUserDefaults standardUserDefaults] objectForKey:@"LastRunDate"];
+	NSTimeInterval intervalSinceLastRun = [[NSDate date] timeIntervalSinceDate:lastRunDate];
+	NSTimeInterval minInterval = 604800;
+	NSString *bundleIdentifier = [[NSBundle mainBundle] bundleIdentifier];
+	NSArray *searchPaths = NSSearchPathForDirectoriesInDomains(NSLibraryDirectory, NSUserDomainMask, YES);
+	NSString *agentsFolder = [[searchPaths objectAtIndex:0] stringByAppendingPathComponent:@"LaunchAgents"];
+	NSString *plistPath = [[agentsFolder stringByAppendingPathComponent:bundleIdentifier] stringByAppendingPathExtension:@"plist"];
+	if ([[NSFileManager defaultManager] fileExistsAtPath:plistPath]) {
+		NSDictionary *plist = [NSDictionary dictionaryWithContentsOfFile:plistPath];
+		NSDictionary *intervalDict = [plist objectForKey:@"StartCalendarInterval"];
+		NSNumber *weekday = [intervalDict objectForKey:@"Weekday"];
+		if (weekday == nil)
+			minInterval = 2592000;
+	}
+	if (intervalSinceLastRun < minInterval) {
+		NSLog(@"Terminating before checking for updates - run before scheduled (e.g. at login)");
+		[NSApp terminate:nil];
+	}
+	
 	[[NSUserDefaults standardUserDefaults] setObject:[NSDate date] forKey:@"LastRunDate"];
 	if ([self coruscationAlreadyRunning])
 		[NSApp terminate:nil];

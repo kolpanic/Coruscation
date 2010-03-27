@@ -21,7 +21,7 @@
 
 - (void) start {
 	if (![NSThread isMainThread]) {
-		[self performSelectorOnMainThread:@selector(start)withObject:nil waitUntilDone:NO];
+		[self performSelectorOnMainThread:@selector(start) withObject:nil waitUntilDone:NO];
 		return;
 	}
 	if ([[ NSFileManager defaultManager] fileExistsAtPath:[self.url path]]) {
@@ -47,9 +47,9 @@
 			[self.updater checkForUpdateInformation];
 
 			self.timeOutTimer = [NSTimer scheduledTimerWithTimeInterval:[[NSUserDefaults standardUserDefaults] doubleForKey:@"UpdateCheckTimeOutInterval"]
-																 target:self selector:@selector(timedOut:)
-															   userInfo:nil
-																repeats:NO];
+			                     target:self selector:@selector(timedOut:)
+			                     userInfo:nil
+			                     repeats:NO];
 		}
 	}
 	if (!i_isExecuting)
@@ -81,14 +81,21 @@
 #pragma mark Sparkle Delegate
 
 - (void) updater:(SUUpdater *)updater didFindValidUpdate:(SUAppcastItem *)updateItem {
-	if ([[NSApp delegate] respondsToSelector:@selector(addSparkleBundleWithUserInfo:)])
-		[[NSApp delegate] performSelectorOnMainThread:@selector(addSparkleBundleWithUserInfo:)
-										   withObject:[NSDictionary dictionaryWithObjectsAndKeys:self.url, @"url",
-													   [updateItem displayVersionString], @"availableUpdateVersion",
-													   [updateItem releaseNotesURL], @"releaseNotesURL",
-													   nil]
-										waitUntilDone:NO];
-	[self finish];
+	if ([[NSApp delegate] respondsToSelector:@selector(addSparkleBundleWithUserInfo:) ]) {
+		NSMutableDictionary *userInfo = [NSMutableDictionary dictionaryWithCapacity:4];
+		[userInfo setObject:self.url forKey:@"url"];
+		NSString *displayVersionString = [updateItem displayVersionString];
+		if (displayVersionString)
+			[userInfo setObject:displayVersionString forKey:@"availableUpdateVersion"];
+		NSURL *releaseNotesURL = [updateItem releaseNotesURL];
+		if (releaseNotesURL)
+			[userInfo setObject:releaseNotesURL forKey:@"releaseNotesURL"];
+		NSString *itemDescription = [updateItem itemDescription];
+		if (itemDescription)
+			[userInfo setObject:itemDescription forKey:@"itemDescription"];
+		[[NSApp delegate] performSelectorOnMainThread:@selector(addSparkleBundleWithUserInfo:) withObject:userInfo waitUntilDone:NO];
+		[self finish];
+	}
 }
 
 - (void) updaterDidNotFindUpdate:(SUUpdater *)update {
