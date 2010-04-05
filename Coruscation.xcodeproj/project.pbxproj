@@ -91,6 +91,13 @@
 			remoteGlobalIDString = CB05D5E310D1892A00AECB32;
 			remoteInfo = CoruscationAgent;
 		};
+		CBE3E79C116A43070051D183 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CB7094C1108B95DE0008D104 /* Sparkle.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 5D06E8D00FD68C7C005AE3F6 /* BinaryDelta */;
+			remoteInfo = BinaryDelta;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -342,6 +349,7 @@
 				CB7094CB108B95DE0008D104 /* Sparkle Test App.app */,
 				CB7094CD108B95DE0008D104 /* relaunch */,
 				CB7094CF108B95DE0008D104 /* Sparkle Unit Tests.octest */,
+				CBE3E79D116A43070051D183 /* BinaryDelta */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -452,6 +460,13 @@
 			fileType = wrapper.cfbundle;
 			path = "Sparkle Unit Tests.octest";
 			remoteRef = CB7094CE108B95DE0008D104 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		CBE3E79D116A43070051D183 /* BinaryDelta */ = {
+			isa = PBXReferenceProxy;
+			fileType = "compiled.mach-o.executable";
+			path = BinaryDelta;
+			remoteRef = CBE3E79C116A43070051D183 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */

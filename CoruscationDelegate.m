@@ -127,9 +127,6 @@
 				[self revealSelected:sender];
 				break;
 			case 2:
-				[self refresh:sender];
-				break;
-			case 3:
 				[self releaseNotesForSelected:sender];
 				break;
 			default:
