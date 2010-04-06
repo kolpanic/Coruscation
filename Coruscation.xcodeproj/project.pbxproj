@@ -95,7 +95,7 @@
 			isa = PBXContainerItemProxy;
 			containerPortal = CB7094C1108B95DE0008D104 /* Sparkle.xcodeproj */;
 			proxyType = 2;
-			remoteGlobalIDString = 5D06E8D00FD68C7C005AE3F6 /* BinaryDelta */;
+			remoteGlobalIDString = 5D06E8D00FD68C7C005AE3F6;
 			remoteInfo = BinaryDelta;
 		};
 /* End PBXContainerItemProxy section */
@@ -622,7 +622,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
-				CURRENT_PROJECT_VERSION = 12;
+				CURRENT_PROJECT_VERSION = 13;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_ENABLE_OBJC_GC = required;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
@@ -638,7 +638,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
-				CURRENT_PROJECT_VERSION = 12;
+				CURRENT_PROJECT_VERSION = 13;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_ENABLE_OBJC_GC = required;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
