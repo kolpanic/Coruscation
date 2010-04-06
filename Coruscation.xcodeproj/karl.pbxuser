@@ -115,12 +115,12 @@
 					PBXFileDataSource_Warnings_ColumnID,
 				);
 			};
-			PBXPerProjectTemplateStateSaveDate = 292257923;
-			PBXWorkspaceStateSaveDate = 292257923;
+			PBXPerProjectTemplateStateSaveDate = 292260913;
+			PBXWorkspaceStateSaveDate = 292260913;
 		};
 		perUserProjectItems = {
-			CB945349116B80920019D7DB /* PBXTextBookmark */ = CB945349116B80920019D7DB /* PBXTextBookmark */;
-			CB94534A116B80930019D7DB /* PBXTextBookmark */ = CB94534A116B80930019D7DB /* PBXTextBookmark */;
+			CB94538E116B8CE40019D7DB /* PBXTextBookmark */ = CB94538E116B8CE40019D7DB /* PBXTextBookmark */;
+			CB94538F116B8CE40019D7DB /* PBXTextBookmark */ = CB94538F116B8CE40019D7DB /* PBXTextBookmark */;
 		};
 		sourceControlManager = CB32A9101088C65D00343471 /* Source Control */;
 		userBuildSettings = {
@@ -315,9 +315,9 @@
 	};
 	77C8280C06725ACE000B614F /* CoruscationDelegate.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1296, 3610}}";
+			sepNavIntBoundsRect = "{{0, 0}, {1640, 3515}}";
 			sepNavSelRange = "{3328, 0}";
-			sepNavVisRange = "{3148, 1660}";
+			sepNavVisRange = "{3267, 362}";
 		};
 	};
 	8D1107260486CEB800E47090 /* Coruscation */ = {
@@ -492,22 +492,22 @@
 			sepNavVisRange = "{1423, 478}";
 		};
 	};
-	CB945349116B80920019D7DB /* PBXTextBookmark */ = {
+	CB94538E116B8CE40019D7DB /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
 		fRef = 77C8280C06725ACE000B614F /* CoruscationDelegate.m */;
-		name = "CoruscationDelegate.m: 100";
+		name = "CoruscationDelegate.m: 97";
 		rLen = 0;
-		rLoc = 3328;
+		rLoc = 3275;
 		rType = 0;
-		vrLen = 362;
-		vrLoc = 3267;
+		vrLen = 1660;
+		vrLoc = 3148;
 	};
-	CB94534A116B80930019D7DB /* PBXTextBookmark */ = {
+	CB94538F116B8CE40019D7DB /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
 		fRef = 77C8280C06725ACE000B614F /* CoruscationDelegate.m */;
-		name = "CoruscationDelegate.m: 100";
+		name = "CoruscationDelegate.m: 104";
 		rLen = 0;
-		rLoc = 3328;
+		rLoc = 3475;
 		rType = 0;
 		vrLen = 1660;
 		vrLoc = 3148;
@@ -586,7 +586,7 @@
 	CBFE71AC10C17BE5007DF3BB /* relnotes.html */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {1296, 1064}}";
-			sepNavSelRange = "{981, 0}";
+			sepNavSelRange = "{809, 0}";
 			sepNavVisRange = "{0, 1913}";
 		};
 	};
