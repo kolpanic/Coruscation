@@ -3,12 +3,12 @@
 	<data>
 		<int key="IBDocument.SystemTarget">1060</int>
 		<string key="IBDocument.SystemVersion">10D573</string>
-		<string key="IBDocument.InterfaceBuilderVersion">740</string>
+		<string key="IBDocument.InterfaceBuilderVersion">762</string>
 		<string key="IBDocument.AppKitVersion">1038.29</string>
 		<string key="IBDocument.HIToolboxVersion">460.00</string>
 		<object class="NSMutableDictionary" key="IBDocument.PluginVersions">
 			<string key="NS.key.0">com.apple.InterfaceBuilder.CocoaPlugin</string>
-			<string key="NS.object.0">740</string>
+			<string key="NS.object.0">762</string>
 		</object>
 		<object class="NSMutableArray" key="IBDocument.EditedObjectIDs">
 			<bool key="EncodedWithXMLCoder">YES</bool>
@@ -129,7 +129,6 @@
 									</object>
 									<string key="NSFrame">{{1, 1}, {386, 263}}</string>
 									<reference key="NSSuperview" ref="713813365"/>
-									<reference key="NSNextKeyView" ref="701135899"/>
 									<reference key="NSDocView" ref="701135899"/>
 									<object class="NSColor" key="NSBGColor" id="625424635">
 										<int key="NSColorSpace">6</int>
@@ -162,7 +161,6 @@
 							</object>
 							<string key="NSFrame">{{-1, 37}, {388, 265}}</string>
 							<reference key="NSSuperview" ref="823886803"/>
-							<reference key="NSNextKeyView" ref="180506337"/>
 							<int key="NSsFlags">561</int>
 							<reference key="NSVScroller" ref="852514775"/>
 							<reference key="NSHScroller" ref="133657282"/>
@@ -181,7 +179,7 @@
 						<object class="NSTextField" id="11130461">
 							<reference key="NSNextResponder" ref="823886803"/>
 							<int key="NSvFlags">293</int>
-							<string key="NSFrame">{{172, 11}, {121, 14}}</string>
+							<string key="NSFrame">{{184, 13}, {121, 14}}</string>
 							<reference key="NSSuperview" ref="823886803"/>
 							<bool key="NSEnabled">YES</bool>
 							<object class="NSTextFieldCell" key="NSCell" id="629577706">
@@ -205,7 +203,7 @@
 						<object class="NSSegmentedControl" id="504117047">
 							<reference key="NSNextResponder" ref="823886803"/>
 							<int key="NSvFlags">292</int>
-							<string key="NSFrame">{{20, 10}, {100, 19}}</string>
+							<string key="NSFrame">{{20, 10}, {128, 19}}</string>
 							<reference key="NSSuperview" ref="823886803"/>
 							<bool key="NSEnabled">YES</bool>
 							<object class="NSSegmentedCell" key="NSCell" id="170332673">
@@ -222,7 +220,7 @@
 											<string key="NSResourceName">NSGoRightTemplate</string>
 										</object>
 										<string key="NSSegmentItemLabel"/>
-										<string key="NSSegmentItemTooltip">Open selected</string>
+										<string key="NSSegmentItemTooltip">Launch selection</string>
 										<int key="NSSegmentItemImageScaling">0</int>
 									</object>
 									<object class="NSSegmentItem">
@@ -232,15 +230,21 @@
 											<string key="NSResourceName">RevealTemplate</string>
 										</object>
 										<string key="NSSegmentItemLabel"/>
-										<string key="NSSegmentItemTooltip">Reveal in Finder</string>
+										<string key="NSSegmentItemTooltip">Reveal selection in Finder</string>
 										<int key="NSSegmentItemTag">1</int>
 										<int key="NSSegmentItemImageScaling">0</int>
 									</object>
 									<object class="NSSegmentItem">
 										<double key="NSSegmentItemWidth">32</double>
 										<string key="NSSegmentItemLabel">@</string>
-										<string key="NSSegmentItemTooltip">Release notes</string>
+										<string key="NSSegmentItemTooltip">Release notes for selection</string>
 										<int key="NSSegmentItemTag">2</int>
+										<int key="NSSegmentItemImageScaling">0</int>
+									</object>
+									<object class="NSSegmentItem">
+										<string key="NSSegmentItemLabel">⬇</string>
+										<string key="NSSegmentItemTooltip">Download update for selection</string>
+										<int key="NSSegmentItemTag">3</int>
 										<int key="NSSegmentItemImageScaling">0</int>
 									</object>
 								</object>
@@ -425,7 +429,7 @@
 								<bool key="EncodedWithXMLCoder">YES</bool>
 								<object class="NSMenuItem" id="638448827">
 									<reference key="NSMenu" ref="960517776"/>
-									<string key="NSTitle">Open Selected</string>
+									<string key="NSTitle">Launch</string>
 									<string key="NSKeyEquiv">o</string>
 									<int key="NSKeyEquivModMask">1048576</int>
 									<int key="NSMnemonicLoc">2147483647</int>
@@ -445,6 +449,15 @@
 									<reference key="NSMenu" ref="960517776"/>
 									<string key="NSTitle">Release Notes</string>
 									<string key="NSKeyEquiv">i</string>
+									<int key="NSKeyEquivModMask">1048576</int>
+									<int key="NSMnemonicLoc">2147483647</int>
+									<reference key="NSOnImage" ref="893455832"/>
+									<reference key="NSMixedImage" ref="424226900"/>
+								</object>
+								<object class="NSMenuItem" id="502814811">
+									<reference key="NSMenu" ref="960517776"/>
+									<string key="NSTitle">Download</string>
+									<string key="NSKeyEquiv">d</string>
 									<int key="NSKeyEquivModMask">1048576</int>
 									<int key="NSMnemonicLoc">2147483647</int>
 									<reference key="NSOnImage" ref="893455832"/>
@@ -1358,6 +1371,30 @@
 					</object>
 					<int key="connectionID">816</int>
 				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBActionConnection" key="connection">
+						<string key="label">downloadUpdateForSelected:</string>
+						<reference key="source" ref="612578685"/>
+						<reference key="destination" ref="502814811"/>
+					</object>
+					<int key="connectionID">818</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">enabled: selectedObjects.@count</string>
+						<reference key="source" ref="502814811"/>
+						<reference key="destination" ref="32395910"/>
+						<object class="NSNibBindingConnector" key="connector">
+							<reference key="NSSource" ref="502814811"/>
+							<reference key="NSDestination" ref="32395910"/>
+							<string key="NSLabel">enabled: selectedObjects.@count</string>
+							<string key="NSBinding">enabled</string>
+							<string key="NSKeyPath">selectedObjects.@count</string>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">821</int>
+				</object>
 			</object>
 			<object class="IBMutableOrderedSet" key="objectRecords">
 				<object class="NSArray" key="orderedObjects">
@@ -1403,9 +1440,9 @@
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<reference ref="713813365"/>
 							<reference ref="1071071088"/>
-							<reference ref="11130461"/>
-							<reference ref="504117047"/>
 							<reference ref="836205286"/>
+							<reference ref="504117047"/>
+							<reference ref="11130461"/>
 						</object>
 						<reference key="parent" ref="483958638"/>
 					</object>
@@ -1537,6 +1574,7 @@
 							<reference ref="125017931"/>
 							<reference ref="220398764"/>
 							<reference ref="147581824"/>
+							<reference ref="502814811"/>
 						</object>
 						<reference key="parent" ref="842783111"/>
 					</object>
@@ -1850,6 +1888,11 @@
 						<reference key="object" ref="10743594"/>
 						<reference key="parent" ref="836205286"/>
 					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">817</int>
+						<reference key="object" ref="502814811"/>
+						<reference key="parent" ref="960517776"/>
+					</object>
 				</object>
 			</object>
 			<object class="NSMutableDictionary" key="flattenedProperties">
@@ -1967,6 +2010,7 @@
 					<string>81.IBPluginDependency</string>
 					<string>81.ImportedFromIB2</string>
 					<string>810.IBPluginDependency</string>
+					<string>817.IBPluginDependency</string>
 					<string>83.IBPluginDependency</string>
 					<string>83.ImportedFromIB2</string>
 				</object>
@@ -2010,7 +2054,7 @@
 					<string>{379, 302}</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<integer value="1"/>
-					<string>{{386, 1002}, {217, 93}}</string>
+					<string>{{793, 940}, {217, 93}}</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<integer value="1"/>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
@@ -2076,7 +2120,7 @@
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
-					<integer value="3"/>
+					<integer value="0"/>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
@@ -2089,9 +2133,10 @@
 						</object>
 					</object>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
-					<string>{{707, 910}, {199, 123}}</string>
+					<string>{{707, 890}, {199, 143}}</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<integer value="1"/>
+					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<integer value="1"/>
@@ -2113,7 +2158,7 @@
 				</object>
 			</object>
 			<nil key="sourceID"/>
-			<int key="maxID">816</int>
+			<int key="maxID">821</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<object class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -2146,6 +2191,7 @@
 						<bool key="EncodedWithXMLCoder">YES</bool>
 						<object class="NSArray" key="dict.sortedKeys">
 							<bool key="EncodedWithXMLCoder">YES</bool>
+							<string>downloadUpdateForSelected:</string>
 							<string>go:</string>
 							<string>openSelected:</string>
 							<string>refresh:</string>
@@ -2154,6 +2200,7 @@
 						</object>
 						<object class="NSMutableArray" key="dict.values">
 							<bool key="EncodedWithXMLCoder">YES</bool>
+							<string>id</string>
 							<string>id</string>
 							<string>id</string>
 							<string>id</string>
@@ -2255,6 +2302,7 @@
 			</object>
 		</object>
 		<int key="IBDocument.localizationMode">0</int>
+		<string key="IBDocument.TargetRuntimeIdentifier">IBCocoaFramework</string>
 		<object class="NSMutableDictionary" key="IBDocument.PluginDeclaredDependencyDefaults">
 			<string key="NS.key.0">com.apple.InterfaceBuilder.CocoaPlugin.macosx</string>
 			<integer value="1060" key="NS.object.0"/>
@@ -2266,5 +2314,26 @@
 		<bool key="IBDocument.PluginDeclaredDependenciesTrackSystemTargetVersion">YES</bool>
 		<string key="IBDocument.LastKnownRelativeProjectPath">../Coruscation.xcodeproj</string>
 		<int key="IBDocument.defaultPropertyAccessControl">3</int>
+		<object class="NSMutableDictionary" key="IBDocument.LastKnownImageSizes">
+			<bool key="EncodedWithXMLCoder">YES</bool>
+			<object class="NSArray" key="dict.sortedKeys">
+				<bool key="EncodedWithXMLCoder">YES</bool>
+				<string>NSApplicationIcon</string>
+				<string>NSGoRightTemplate</string>
+				<string>NSMenuCheckmark</string>
+				<string>NSMenuMixedState</string>
+				<string>NSRefreshTemplate</string>
+				<string>RevealTemplate</string>
+			</object>
+			<object class="NSMutableArray" key="dict.values">
+				<bool key="EncodedWithXMLCoder">YES</bool>
+				<string>{128, 128}</string>
+				<string>{9, 9}</string>
+				<string>{9, 8}</string>
+				<string>{7, 2}</string>
+				<string>{10, 12}</string>
+				<string>{128, 128}</string>
+			</object>
+		</object>
 	</data>
 </archive>

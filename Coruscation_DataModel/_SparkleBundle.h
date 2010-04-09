@@ -16,6 +16,12 @@
 
 
 
+@property (nonatomic, retain) NSString *fileURL;
+
+//- (BOOL)validateFileURL:(id*)value_ error:(NSError**)error_;
+
+
+
 @property (nonatomic, retain) NSString *availableUpdateVersion;
 
 //- (BOOL)validateAvailableUpdateVersion:(id*)value_ error:(NSError**)error_;

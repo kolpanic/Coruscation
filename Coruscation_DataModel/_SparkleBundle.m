@@ -29,6 +29,13 @@
 
 
 
+@dynamic fileURL;
+
+
+
+
+
+
 @dynamic availableUpdateVersion;
 
 

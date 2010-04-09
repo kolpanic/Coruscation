@@ -90,6 +90,9 @@
 		NSURL *releaseNotesURL = [updateItem releaseNotesURL];
 		if (releaseNotesURL)
 			[userInfo setObject:releaseNotesURL forKey:@"releaseNotesURL"];
+		NSURL *fileURL = [updateItem fileURL];
+		if (fileURL)
+			[userInfo setObject:fileURL forKey:@"fileURL"];
 		NSString *itemDescription = [updateItem itemDescription];
 		if (itemDescription)
 			[userInfo setObject:itemDescription forKey:@"itemDescription"];

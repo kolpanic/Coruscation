@@ -108,6 +108,7 @@
 	sparkleBundle.bundlePath = [url path];
 	sparkleBundle.availableUpdateVersion = [userInfo objectForKey:@"availableUpdateVersion"];
 	sparkleBundle.releaseNotesURL = [[userInfo objectForKey:@"releaseNotesURL"] absoluteString];
+	sparkleBundle.fileURL = [[userInfo objectForKey:@"fileURL"] absoluteString];
 	sparkleBundle.itemDescription = [userInfo objectForKey:@"itemDescription"];
 	if ([moc save:nil])
 		[[NSApplication sharedApplication] dockTile].badgeLabel = [NSString stringWithFormat:@"%u", ++self.count];
@@ -128,6 +129,9 @@
 				break;
 			case 2:
 				[self releaseNotesForSelected:sender];
+				break;
+			case 3:
+				[self downloadUpdateForSelected:sender];
 				break;
 			default:
 				break;
@@ -173,6 +177,15 @@
 			NSString *relnotesPath = [NSTemporaryDirectory() stringByAppendingPathComponent:[[sparkleBundle.bundle bundleIdentifier] stringByAppendingPathExtension:@"html"]];
 			[sparkleBundle.itemDescription writeToFile:relnotesPath atomically:YES encoding:NSUTF8StringEncoding error:nil];
 			[[NSWorkspace sharedWorkspace] openFile:relnotesPath];
+		}
+	}
+}
+
+- (IBAction) downloadUpdateForSelected:(id)sender {
+	for (SparkleBundle *sparkleBundle in [self.updateItems selectedObjects]) {
+		if (sparkleBundle.fileURL) {
+			NSURL *url = [NSURL URLWithString:sparkleBundle.fileURL];
+			[[NSWorkspace sharedWorkspace] openURL:url];
 		}
 	}
 }
