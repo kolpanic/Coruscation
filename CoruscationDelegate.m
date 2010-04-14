@@ -143,6 +143,9 @@
 	if ([self.operationQueue operationCount] > 0)
 		return;
 	[self.managedObjectContext reset];
+	self.count = 0;
+	[[NSApplication sharedApplication] dockTile].badgeLabel = nil;
+
 	FindSparkleBundlesOperation *op = [FindSparkleBundlesOperation new];
 	[self.operationQueue addOperation:op];
 }
