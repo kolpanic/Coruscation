@@ -95,6 +95,7 @@
 		NSString *agentAppBundle = [[NSBundle mainBundle] pathForAuxiliaryExecutable:@"CoruscationAgent.app"];
 		i_agentExecutable = [[[agentAppBundle stringByAppendingPathComponent:@"Contents"] stringByAppendingPathComponent:@"MacOS"] stringByAppendingPathComponent:@"CoruscationAgent"];
 		i_agentIdentifier = [[NSBundle bundleWithPath:agentAppBundle] bundleIdentifier];
+		[[NSUserDefaults standardUserDefaults] addSuiteNamed:i_agentIdentifier];
 		NSArray *searchPaths = NSSearchPathForDirectoriesInDomains(NSLibraryDirectory, NSUserDomainMask, YES);
 		NSString *agentsFolder = [[searchPaths objectAtIndex:0] stringByAppendingPathComponent:@"LaunchAgents"];
 		[i_fileManager createDirectoryAtPath:agentsFolder withIntermediateDirectories:YES attributes:nil error:nil];
