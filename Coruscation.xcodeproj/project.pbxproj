@@ -22,8 +22,18 @@
 		CB05D62910D18A7B00AECB32 /* Sparkle.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = CB7094C9108B95DE0008D104 /* Sparkle.framework */; };
 		CB23E88E1088FA23001C5740 /* Sparkle.icns in Resources */ = {isa = PBXBuildFile; fileRef = CB23E88D1088FA23001C5740 /* Sparkle.icns */; };
 		CB34956210DBC795001E7640 /* ServiceManagement.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB34956110DBC795001E7640 /* ServiceManagement.framework */; };
+		CB48133411810F80005A881C /* BtnRevealPressed.pdf in Resources */ = {isa = PBXBuildFile; fileRef = CB48133111810F80005A881C /* BtnRevealPressed.pdf */; };
+		CB48133511810F80005A881C /* BtnRevealRollover.pdf in Resources */ = {isa = PBXBuildFile; fileRef = CB48133211810F80005A881C /* BtnRevealRollover.pdf */; };
+		CB48133611810F80005A881C /* BtnReveal.pdf in Resources */ = {isa = PBXBuildFile; fileRef = CB48133311810F80005A881C /* BtnReveal.pdf */; };
+		CB4813671181113A005A881C /* RolloverButton.m in Sources */ = {isa = PBXBuildFile; fileRef = CB4813661181113A005A881C /* RolloverButton.m */; };
 		CB4D773011092ABC000EF799 /* NSFileManager+CoruscationAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = CB4D772F11092ABC000EF799 /* NSFileManager+CoruscationAdditions.m */; };
 		CB4D773111092ABC000EF799 /* NSFileManager+CoruscationAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = CB4D772F11092ABC000EF799 /* NSFileManager+CoruscationAdditions.m */; };
+		CB5F0D1C11811D7F00172587 /* BtnRelNotesPressed.pdf in Resources */ = {isa = PBXBuildFile; fileRef = CB5F0D1911811D7F00172587 /* BtnRelNotesPressed.pdf */; };
+		CB5F0D1D11811D7F00172587 /* BtnRelNotesRollover.pdf in Resources */ = {isa = PBXBuildFile; fileRef = CB5F0D1A11811D7F00172587 /* BtnRelNotesRollover.pdf */; };
+		CB5F0D1E11811D7F00172587 /* BtnRelNotes.pdf in Resources */ = {isa = PBXBuildFile; fileRef = CB5F0D1B11811D7F00172587 /* BtnRelNotes.pdf */; };
+		CB5F0D2C11811E8900172587 /* BtnDownloadPressed.pdf in Resources */ = {isa = PBXBuildFile; fileRef = CB5F0D2911811E8900172587 /* BtnDownloadPressed.pdf */; };
+		CB5F0D2D11811E8900172587 /* BtnDownloadRollover.pdf in Resources */ = {isa = PBXBuildFile; fileRef = CB5F0D2A11811E8900172587 /* BtnDownloadRollover.pdf */; };
+		CB5F0D2E11811E8900172587 /* BtnDownload.pdf in Resources */ = {isa = PBXBuildFile; fileRef = CB5F0D2B11811E8900172587 /* BtnDownload.pdf */; };
 		CB5F37B310C8A128008FB459 /* UpdateCountTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = CB5F37B210C8A128008FB459 /* UpdateCountTransformer.m */; };
 		CB7094BA108B951A0008D104 /* FindSparkleBundlesOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = CB7094B9108B951A0008D104 /* FindSparkleBundlesOperation.m */; };
 		CB709522108B98190008D104 /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB7094C9108B95DE0008D104 /* Sparkle.framework */; };
@@ -33,11 +43,10 @@
 		CBAC698C116F5E93009C7A27 /* _SparkleBundle.m in Sources */ = {isa = PBXBuildFile; fileRef = CBAC698B116F5E93009C7A27 /* _SparkleBundle.m */; };
 		CBB611FF10D1C4FD003BC3D3 /* Preferences.xib in Resources */ = {isa = PBXBuildFile; fileRef = CBB611FD10D1C4FD003BC3D3 /* Preferences.xib */; };
 		CBB6122010D1C622003BC3D3 /* PreferencesController.m in Sources */ = {isa = PBXBuildFile; fileRef = CBB611EC10D1C484003BC3D3 /* PreferencesController.m */; };
-		CBB7E3AC10C49C4500094536 /* RevealTemplate.pdf in Resources */ = {isa = PBXBuildFile; fileRef = CBB7E3AB10C49C4500094536 /* RevealTemplate.pdf */; };
 		CBB7E44A10C4A2C100094536 /* Coruscation Help in Resources */ = {isa = PBXBuildFile; fileRef = CBB7E44910C4A2C100094536 /* Coruscation Help */; };
 		CBB7FC58108D2575003E062A /* CheckAppUpdateOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = CBB7FC57108D2575003E062A /* CheckAppUpdateOperation.m */; };
 		CBCA61FE10D1A07D003D9E3F /* CoruscationAgent.app in Copy Executables */ = {isa = PBXBuildFile; fileRef = CB05D5E410D1892A00AECB32 /* CoruscationAgent.app */; };
-		CBF233B8108D629600D2A5FF /* CollectionItemView.m in Sources */ = {isa = PBXBuildFile; fileRef = CBF233B7108D629600D2A5FF /* CollectionItemView.m */; };
+		CBF233B8108D629600D2A5FF /* CoruscationCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = CBF233B7108D629600D2A5FF /* CoruscationCollectionView.m */; };
 		CBF3A61910C9784A004EDC7F /* License.txt in Resources */ = {isa = PBXBuildFile; fileRef = CBA28A2710C9751F005BCEC1 /* License.txt */; };
 /* End PBXBuildFile section */
 
@@ -157,9 +166,20 @@
 		CB05D5FC10D1898C00AECB32 /* CoruscationAgentMainMenu.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CoruscationAgentMainMenu.xib; sourceTree = "<group>"; };
 		CB23E88D1088FA23001C5740 /* Sparkle.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = Sparkle.icns; sourceTree = "<group>"; };
 		CB34956110DBC795001E7640 /* ServiceManagement.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ServiceManagement.framework; path = System/Library/Frameworks/ServiceManagement.framework; sourceTree = SDKROOT; };
+		CB48133111810F80005A881C /* BtnRevealPressed.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = BtnRevealPressed.pdf; sourceTree = "<group>"; };
+		CB48133211810F80005A881C /* BtnRevealRollover.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = BtnRevealRollover.pdf; sourceTree = "<group>"; };
+		CB48133311810F80005A881C /* BtnReveal.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = BtnReveal.pdf; sourceTree = "<group>"; };
+		CB4813651181113A005A881C /* RolloverButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RolloverButton.h; sourceTree = "<group>"; };
+		CB4813661181113A005A881C /* RolloverButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RolloverButton.m; sourceTree = "<group>"; };
 		CB4D772E11092ABC000EF799 /* NSFileManager+CoruscationAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSFileManager+CoruscationAdditions.h"; sourceTree = "<group>"; };
 		CB4D772F11092ABC000EF799 /* NSFileManager+CoruscationAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSFileManager+CoruscationAdditions.m"; sourceTree = "<group>"; };
 		CB53B270108FBE78004EAFF2 /* Read Me.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Read Me.txt"; sourceTree = "<group>"; };
+		CB5F0D1911811D7F00172587 /* BtnRelNotesPressed.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = BtnRelNotesPressed.pdf; sourceTree = "<group>"; };
+		CB5F0D1A11811D7F00172587 /* BtnRelNotesRollover.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = BtnRelNotesRollover.pdf; sourceTree = "<group>"; };
+		CB5F0D1B11811D7F00172587 /* BtnRelNotes.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = BtnRelNotes.pdf; sourceTree = "<group>"; };
+		CB5F0D2911811E8900172587 /* BtnDownloadPressed.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = BtnDownloadPressed.pdf; sourceTree = "<group>"; };
+		CB5F0D2A11811E8900172587 /* BtnDownloadRollover.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = BtnDownloadRollover.pdf; sourceTree = "<group>"; };
+		CB5F0D2B11811E8900172587 /* BtnDownload.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = BtnDownload.pdf; sourceTree = "<group>"; };
 		CB5F37B110C8A128008FB459 /* UpdateCountTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UpdateCountTransformer.h; sourceTree = "<group>"; };
 		CB5F37B210C8A128008FB459 /* UpdateCountTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UpdateCountTransformer.m; sourceTree = "<group>"; };
 		CB7094B8108B951A0008D104 /* FindSparkleBundlesOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FindSparkleBundlesOperation.h; sourceTree = "<group>"; };
@@ -174,12 +194,11 @@
 		CBB611EB10D1C484003BC3D3 /* PreferencesController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PreferencesController.h; sourceTree = "<group>"; };
 		CBB611EC10D1C484003BC3D3 /* PreferencesController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PreferencesController.m; sourceTree = "<group>"; };
 		CBB611FE10D1C4FD003BC3D3 /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/Preferences.xib; sourceTree = "<group>"; };
-		CBB7E3AB10C49C4500094536 /* RevealTemplate.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = RevealTemplate.pdf; sourceTree = "<group>"; };
 		CBB7E42D10C4A21C00094536 /* English */ = {isa = PBXFileReference; lastKnownFileType = folder; name = English; path = "English.lproj/Coruscation Help"; sourceTree = "<group>"; };
 		CBB7FC56108D2575003E062A /* CheckAppUpdateOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CheckAppUpdateOperation.h; sourceTree = "<group>"; };
 		CBB7FC57108D2575003E062A /* CheckAppUpdateOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CheckAppUpdateOperation.m; sourceTree = "<group>"; };
-		CBF233B6108D629600D2A5FF /* CollectionItemView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectionItemView.h; sourceTree = "<group>"; };
-		CBF233B7108D629600D2A5FF /* CollectionItemView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectionItemView.m; sourceTree = "<group>"; };
+		CBF233B6108D629600D2A5FF /* CoruscationCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoruscationCollectionView.h; sourceTree = "<group>"; };
+		CBF233B7108D629600D2A5FF /* CoruscationCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoruscationCollectionView.m; sourceTree = "<group>"; };
 		CBFE71AB10C17BE5007DF3BB /* appcast.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = appcast.xml; sourceTree = "<group>"; };
 		CBFE71AC10C17BE5007DF3BB /* relnotes.html */ = {isa = PBXFileReference; explicitFileType = text.html; fileEncoding = 4; path = relnotes.html; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -209,20 +228,22 @@
 		080E96DDFE201D6D7F000001 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				CBB7FC56108D2575003E062A /* CheckAppUpdateOperation.h */,
+				CBB7FC57108D2575003E062A /* CheckAppUpdateOperation.m */,
+				CBF233B6108D629600D2A5FF /* CoruscationCollectionView.h */,
+				CBF233B7108D629600D2A5FF /* CoruscationCollectionView.m */,
 				77C8280B06725ACE000B614F /* CoruscationDelegate.h */,
 				77C8280C06725ACE000B614F /* CoruscationDelegate.m */,
 				CB7094B8108B951A0008D104 /* FindSparkleBundlesOperation.h */,
 				CB7094B9108B951A0008D104 /* FindSparkleBundlesOperation.m */,
-				CBB7FC56108D2575003E062A /* CheckAppUpdateOperation.h */,
-				CBB7FC57108D2575003E062A /* CheckAppUpdateOperation.m */,
-				CBF233B6108D629600D2A5FF /* CollectionItemView.h */,
-				CBF233B7108D629600D2A5FF /* CollectionItemView.m */,
-				CB5F37B110C8A128008FB459 /* UpdateCountTransformer.h */,
-				CB5F37B210C8A128008FB459 /* UpdateCountTransformer.m */,
-				CBB611EB10D1C484003BC3D3 /* PreferencesController.h */,
-				CBB611EC10D1C484003BC3D3 /* PreferencesController.m */,
 				CB4D772E11092ABC000EF799 /* NSFileManager+CoruscationAdditions.h */,
 				CB4D772F11092ABC000EF799 /* NSFileManager+CoruscationAdditions.m */,
+				CBB611EB10D1C484003BC3D3 /* PreferencesController.h */,
+				CBB611EC10D1C484003BC3D3 /* PreferencesController.m */,
+				CB4813651181113A005A881C /* RolloverButton.h */,
+				CB4813661181113A005A881C /* RolloverButton.m */,
+				CB5F37B110C8A128008FB459 /* UpdateCountTransformer.h */,
+				CB5F37B210C8A128008FB459 /* UpdateCountTransformer.m */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -263,13 +284,13 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				CB48133711810F84005A881C /* Button Images */,
 				8D1107310486CEB800E47090 /* Coruscation-Info.plist */,
 				2F7446970DB6B7EA00F9684A /* Coruscation-MainMenu.xib */,
 				CBB611FD10D1C4FD003BC3D3 /* Preferences.xib */,
 				CBA648D5108EB22000667F15 /* Credits.html */,
 				089C165CFE840E0CC02AAC07 /* InfoPlist.strings */,
 				CB23E88D1088FA23001C5740 /* Sparkle.icns */,
-				CBB7E3AB10C49C4500094536 /* RevealTemplate.pdf */,
 				CBB7E44910C4A2C100094536 /* Coruscation Help */,
 			);
 			name = Resources;
@@ -340,6 +361,22 @@
 				CB05D5FB10D1898C00AECB32 /* CoruscationAgentMain.m */,
 			);
 			name = "Other Sources";
+			sourceTree = "<group>";
+		};
+		CB48133711810F84005A881C /* Button Images */ = {
+			isa = PBXGroup;
+			children = (
+				CB5F0D2B11811E8900172587 /* BtnDownload.pdf */,
+				CB5F0D2911811E8900172587 /* BtnDownloadPressed.pdf */,
+				CB5F0D2A11811E8900172587 /* BtnDownloadRollover.pdf */,
+				CB5F0D1B11811D7F00172587 /* BtnRelNotes.pdf */,
+				CB5F0D1911811D7F00172587 /* BtnRelNotesPressed.pdf */,
+				CB5F0D1A11811D7F00172587 /* BtnRelNotesRollover.pdf */,
+				CB48133311810F80005A881C /* BtnReveal.pdf */,
+				CB48133111810F80005A881C /* BtnRevealPressed.pdf */,
+				CB48133211810F80005A881C /* BtnRevealRollover.pdf */,
+			);
+			name = "Button Images";
 			sourceTree = "<group>";
 		};
 		CB7094C2108B95DE0008D104 /* Products */ = {
@@ -480,10 +517,18 @@
 				2F7446990DB6B7EA00F9684A /* Coruscation-MainMenu.xib in Resources */,
 				CB23E88E1088FA23001C5740 /* Sparkle.icns in Resources */,
 				CBA648D6108EB22000667F15 /* Credits.html in Resources */,
-				CBB7E3AC10C49C4500094536 /* RevealTemplate.pdf in Resources */,
 				CBB7E44A10C4A2C100094536 /* Coruscation Help in Resources */,
 				CBF3A61910C9784A004EDC7F /* License.txt in Resources */,
 				CBB611FF10D1C4FD003BC3D3 /* Preferences.xib in Resources */,
+				CB48133411810F80005A881C /* BtnRevealPressed.pdf in Resources */,
+				CB48133511810F80005A881C /* BtnRevealRollover.pdf in Resources */,
+				CB48133611810F80005A881C /* BtnReveal.pdf in Resources */,
+				CB5F0D1C11811D7F00172587 /* BtnRelNotesPressed.pdf in Resources */,
+				CB5F0D1D11811D7F00172587 /* BtnRelNotesRollover.pdf in Resources */,
+				CB5F0D1E11811D7F00172587 /* BtnRelNotes.pdf in Resources */,
+				CB5F0D2C11811E8900172587 /* BtnDownloadPressed.pdf in Resources */,
+				CB5F0D2D11811E8900172587 /* BtnDownloadRollover.pdf in Resources */,
+				CB5F0D2E11811E8900172587 /* BtnDownload.pdf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -507,12 +552,13 @@
 				770B37ED0679A11B001EADE2 /* Coruscation_DataModel.xcdatamodel in Sources */,
 				CB7094BA108B951A0008D104 /* FindSparkleBundlesOperation.m in Sources */,
 				CBB7FC58108D2575003E062A /* CheckAppUpdateOperation.m in Sources */,
-				CBF233B8108D629600D2A5FF /* CollectionItemView.m in Sources */,
+				CBF233B8108D629600D2A5FF /* CoruscationCollectionView.m in Sources */,
 				CB5F37B310C8A128008FB459 /* UpdateCountTransformer.m in Sources */,
 				CBB6122010D1C622003BC3D3 /* PreferencesController.m in Sources */,
 				CB4D773111092ABC000EF799 /* NSFileManager+CoruscationAdditions.m in Sources */,
 				CBAC6989116F5E92009C7A27 /* SparkleBundle.m in Sources */,
 				CBAC698C116F5E93009C7A27 /* _SparkleBundle.m in Sources */,
+				CB4813671181113A005A881C /* RolloverButton.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

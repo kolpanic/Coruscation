@@ -19,6 +19,10 @@
 - (IBAction) releaseNotesForSelected:(id)sender;
 - (IBAction) downloadUpdateForSelected:(id)sender;
 
+- (void) reveal:(id)item;
+- (void) releaseNotes:(id)item;
+- (void) downloadUpdate:(id)item;
+
 @property (retain) IBOutlet NSCollectionView *collectionView;
 @property (nonatomic, retain, readonly) NSPersistentStoreCoordinator *persistentStoreCoordinator;
 @property (nonatomic, retain, readonly) NSManagedObjectModel *managedObjectModel;

@@ -165,27 +165,45 @@
 }
 
 - (IBAction) revealSelected:(id)sender {
-	for (SparkleBundle *sparkleBundle in [self.updateItems selectedObjects]) {
+	for (SparkleBundle *sparkleBundle in [self.updateItems selectedObjects])
+		[self reveal:sparkleBundle];
+}
+
+- (IBAction) releaseNotesForSelected:(id)sender {
+	for (SparkleBundle *sparkleBundle in [self.updateItems selectedObjects])
+		[self releaseNotes:sparkleBundle];
+}
+
+- (IBAction) downloadUpdateForSelected:(id)sender {
+	for (SparkleBundle *sparkleBundle in [self.updateItems selectedObjects])
+		[self downloadUpdate:sparkleBundle];
+}
+
+- (void) reveal:(id)item {
+	if ([item isKindOfClass:[SparkleBundle class]]) {
+		SparkleBundle *sparkleBundle = (SparkleBundle *)item;
 		NSString *path = [[sparkleBundle.bundle bundleURL] path];
 		[[NSWorkspace sharedWorkspace] selectFile:path inFileViewerRootedAtPath:@""];
 	}
 }
 
-- (IBAction) releaseNotesForSelected:(id)sender {
-	for (SparkleBundle *sparkleBundle in [self.updateItems selectedObjects]) {
+- (void) releaseNotes:(id)item {
+	if ([item isKindOfClass:[SparkleBundle class]]) {
+		SparkleBundle *sparkleBundle = (SparkleBundle *)item;
 		if (sparkleBundle.releaseNotesURL) {
 			NSURL *url = [NSURL URLWithString:sparkleBundle.releaseNotesURL];
 			[[NSWorkspace sharedWorkspace] openURL:url];
 		} else {
-			NSString *relnotesPath = [NSTemporaryDirectory() stringByAppendingPathComponent:[[sparkleBundle.bundle bundleIdentifier] stringByAppendingPathExtension:@"html"]];
+			NSString *relnotesPath = [NSTemporaryDirectory () stringByAppendingPathComponent:[[sparkleBundle.bundle bundleIdentifier] stringByAppendingPathExtension:@"html"]];
 			[sparkleBundle.itemDescription writeToFile:relnotesPath atomically:YES encoding:NSUTF8StringEncoding error:nil];
 			[[NSWorkspace sharedWorkspace] openFile:relnotesPath];
 		}
 	}
 }
 
-- (IBAction) downloadUpdateForSelected:(id)sender {
-	for (SparkleBundle *sparkleBundle in [self.updateItems selectedObjects]) {
+- (void) downloadUpdate:(id)item {
+	if ([item isKindOfClass:[SparkleBundle class]]) {
+		SparkleBundle *sparkleBundle = (SparkleBundle *)item;
 		if (sparkleBundle.fileURL) {
 			NSURL *url = [NSURL URLWithString:sparkleBundle.fileURL];
 			[[NSWorkspace sharedWorkspace] openURL:url];
