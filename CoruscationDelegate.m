@@ -117,6 +117,20 @@
 #pragma mark -
 #pragma mark IB Actions
 
+- (IBAction) rebuildLSDB:(id)sender {
+	NSString *key = @"SuppressRebuildAlert";
+	BOOL doRebuild = YES;
+	NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+	if (![defaults boolForKey:key]) {
+		NSAlert *alert = [NSAlert alertWithMessageText:NSLocalizedString(@"Rebuild Launch Services Database", @"message text") defaultButton:NSLocalizedString(@"Yes", @"button text") alternateButton:NSLocalizedString(@"No", @"button text") otherButton:nil informativeTextWithFormat:NSLocalizedString(@"If you've installed and removed many applications recently, Coruscation may show applications repeatedly. Rebuilding your Launch Services database should remedy this. Do you wish to do so?", @"message text")];
+		[alert setShowsSuppressionButton:YES];
+		doRebuild = (NSOKButton == [alert runModal]);
+		[defaults setBool:(NSOnState == [[alert suppressionButton] state]) forKey:key];
+	}
+	if (doRebuild)
+		[NSTask launchedTaskWithLaunchPath:@"/System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister" arguments:[NSArray arrayWithObjects:@"-kill", @"-r", @"-domain", @"local", @"-domain", @"system", @"-domain", @"user", nil]];
+}
+
 - (IBAction) refresh:(id)sender {
 	if ([self.operationQueue operationCount] > 0)
 		return;
