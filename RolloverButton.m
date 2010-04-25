@@ -13,12 +13,14 @@
 
 - (void) mouseEntered:(NSEvent *)event {
 	self.originalImageName = [[self image] name];
-	[self setImage:[NSImage imageNamed:[self.originalImageName stringByAppendingString:@"Rollover"]]];
+	if (self.originalImageName)
+		[self setImage:[NSImage imageNamed:[self.originalImageName stringByAppendingString:@"Rollover"]]];
 	[super mouseEntered:event];
 }
 
 - (void) mouseExited:(NSEvent *)event {
-	[self setImage:[NSImage imageNamed:self.originalImageName]];
+	if (self.originalImageName)
+		[self setImage:[NSImage imageNamed:self.originalImageName]];
 	[super mouseExited:event];
 }
 

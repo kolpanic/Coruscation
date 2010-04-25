@@ -75,7 +75,7 @@
 				PBXFileTableDataSourceColumnSortingKey = PBXFileDataSource_Filename_ColumnID;
 				PBXFileTableDataSourceColumnWidthsKey = (
 					20,
-					10,
+					1118,
 					20,
 					48,
 					43,
@@ -114,12 +114,12 @@
 					PBXFileDataSource_Warnings_ColumnID,
 				);
 			};
-			PBXPerProjectTemplateStateSaveDate = 293746607;
-			PBXWorkspaceStateSaveDate = 293746607;
+			PBXPerProjectTemplateStateSaveDate = 293902927;
+			PBXWorkspaceStateSaveDate = 293902927;
 		};
 		perUserProjectItems = {
-			CB241A5911823C4600EAF4DF /* PBXTextBookmark */ = CB241A5911823C4600EAF4DF /* PBXTextBookmark */;
-			CB241A5A11823C4600EAF4DF /* PBXTextBookmark */ = CB241A5A11823C4600EAF4DF /* PBXTextBookmark */;
+			CBB6CDA111849B5700906F10 /* PBXTextBookmark */ = CBB6CDA111849B5700906F10 /* PBXTextBookmark */;
+			CBB6CDA211849B5700906F10 /* PBXTextBookmark */ = CBB6CDA211849B5700906F10 /* PBXTextBookmark */;
 		};
 		sourceControlManager = CB32A9101088C65D00343471 /* Source Control */;
 		userBuildSettings = {
@@ -314,9 +314,9 @@
 	};
 	77C8280C06725ACE000B614F /* CoruscationDelegate.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1640, 3857}}";
-			sepNavSelRange = "{5064, 0}";
-			sepNavVisRange = "{4144, 481}";
+			sepNavIntBoundsRect = "{{0, 0}, {1296, 4047}}";
+			sepNavSelRange = "{3729, 0}";
+			sepNavVisRange = "{3269, 2489}";
 		};
 	};
 	8D1107260486CEB800E47090 /* Coruscation */ = {
@@ -394,26 +394,6 @@
 			sepNavVisRange = "{0, 117}";
 		};
 	};
-	CB241A5911823C4600EAF4DF /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 77C8280C06725ACE000B614F /* CoruscationDelegate.m */;
-		name = "CoruscationDelegate.m: 121";
-		rLen = 0;
-		rLoc = 4343;
-		rType = 0;
-		vrLen = 2491;
-		vrLoc = 3267;
-	};
-	CB241A5A11823C4600EAF4DF /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 77C8280C06725ACE000B614F /* CoruscationDelegate.m */;
-		name = "CoruscationDelegate.m: 121";
-		rLen = 0;
-		rLoc = 4343;
-		rType = 0;
-		vrLen = 2489;
-		vrLoc = 3269;
-	};
 	CB32A9031088C63F00343471 /* Coruscation */ = {
 		isa = PBXExecutable;
 		activeArgIndices = (
@@ -470,8 +450,8 @@
 	CB4813661181113A005A881C /* RolloverButton.m */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {1296, 1001}}";
-			sepNavSelRange = "{60, 0}";
-			sepNavVisRange = "{0, 914}";
+			sepNavSelRange = "{454, 0}";
+			sepNavVisRange = "{0, 974}";
 		};
 	};
 	CB4D772E11092ABC000EF799 /* NSFileManager+CoruscationAdditions.h */ = {
@@ -561,6 +541,26 @@
 			sepNavVisRect = "{{0, 7361}, {1222, 972}}";
 		};
 	};
+	CBB6CDA111849B5700906F10 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 77C8280C06725ACE000B614F /* CoruscationDelegate.m */;
+		name = "CoruscationDelegate.m: 115";
+		rLen = 0;
+		rLoc = 4222;
+		rType = 0;
+		vrLen = 2489;
+		vrLoc = 3269;
+	};
+	CBB6CDA211849B5700906F10 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 77C8280C06725ACE000B614F /* CoruscationDelegate.m */;
+		name = "CoruscationDelegate.m: 108";
+		rLen = 0;
+		rLoc = 3729;
+		rType = 0;
+		vrLen = 2489;
+		vrLoc = 3269;
+	};
 	CBB7FC56108D2575003E062A /* CheckAppUpdateOperation.h */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {1296, 1002}}";
@@ -592,8 +592,8 @@
 	CBFE71AB10C17BE5007DF3BB /* appcast.xml */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {1296, 1001}}";
-			sepNavSelRange = "{580, 0}";
-			sepNavVisRange = "{0, 831}";
+			sepNavSelRange = "{634, 4}";
+			sepNavVisRange = "{0, 830}";
 		};
 	};
 	CBFE71AC10C17BE5007DF3BB /* relnotes.html */ = {
