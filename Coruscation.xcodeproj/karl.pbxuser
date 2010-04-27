@@ -114,12 +114,12 @@
 					PBXFileDataSource_Warnings_ColumnID,
 				);
 			};
-			PBXPerProjectTemplateStateSaveDate = 293916991;
-			PBXWorkspaceStateSaveDate = 293916991;
+			PBXPerProjectTemplateStateSaveDate = 294071496;
+			PBXWorkspaceStateSaveDate = 294071496;
 		};
 		perUserProjectItems = {
-			CB3A5F3A1184D1EA00DE744D /* PBXTextBookmark */ = CB3A5F3A1184D1EA00DE744D /* PBXTextBookmark */;
-			CB3A5F3B1184D1EA00DE744D /* PBXTextBookmark */ = CB3A5F3B1184D1EA00DE744D /* PBXTextBookmark */;
+			CB8FCB1F11872D21009514B4 /* PBXTextBookmark */ = CB8FCB1F11872D21009514B4 /* PBXTextBookmark */;
+			CB8FCB2011872D21009514B4 /* PBXTextBookmark */ = CB8FCB2011872D21009514B4 /* PBXTextBookmark */;
 		};
 		sourceControlManager = CB32A9101088C65D00343471 /* Source Control */;
 		userBuildSettings = {
@@ -315,7 +315,7 @@
 	77C8280C06725ACE000B614F /* CoruscationDelegate.m */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {1296, 4047}}";
-			sepNavSelRange = "{3572, 0}";
+			sepNavSelRange = "{3585, 0}";
 			sepNavVisRange = "{3269, 2489}";
 		};
 	};
@@ -440,26 +440,6 @@
 		isa = PBXCodeSenseManager;
 		indexTemplatePath = "";
 	};
-	CB3A5F3A1184D1EA00DE744D /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 77C8280C06725ACE000B614F /* CoruscationDelegate.m */;
-		name = "CoruscationDelegate.m: 106";
-		rLen = 0;
-		rLoc = 3571;
-		rType = 0;
-		vrLen = 2489;
-		vrLoc = 3269;
-	};
-	CB3A5F3B1184D1EA00DE744D /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 77C8280C06725ACE000B614F /* CoruscationDelegate.m */;
-		name = "CoruscationDelegate.m: 106";
-		rLen = 0;
-		rLoc = 3572;
-		rType = 0;
-		vrLen = 2489;
-		vrLoc = 3269;
-	};
 	CB4813651181113A005A881C /* RolloverButton.h */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {1296, 1001}}";
@@ -524,6 +504,26 @@
 			sepNavSelRange = "{989, 0}";
 			sepNavVisRange = "{1423, 478}";
 		};
+	};
+	CB8FCB1F11872D21009514B4 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 77C8280C06725ACE000B614F /* CoruscationDelegate.m */;
+		name = "CoruscationDelegate.m: 104";
+		rLen = 0;
+		rLoc = 3497;
+		rType = 0;
+		vrLen = 2489;
+		vrLoc = 3269;
+	};
+	CB8FCB2011872D21009514B4 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 77C8280C06725ACE000B614F /* CoruscationDelegate.m */;
+		name = "CoruscationDelegate.m: 106";
+		rLen = 0;
+		rLoc = 3585;
+		rType = 0;
+		vrLen = 2489;
+		vrLoc = 3269;
 	};
 	CBA28A2710C9751F005BCEC1 /* License.txt */ = {
 		uiCtxt = {
@@ -592,15 +592,15 @@
 	CBFE71AB10C17BE5007DF3BB /* appcast.xml */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {1296, 1001}}";
-			sepNavSelRange = "{634, 4}";
+			sepNavSelRange = "{584, 0}";
 			sepNavVisRange = "{0, 830}";
 		};
 	};
 	CBFE71AC10C17BE5007DF3BB /* relnotes.html */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {1296, 1197}}";
-			sepNavSelRange = "{925, 0}";
-			sepNavVisRange = "{0, 2022}";
+			sepNavSelRange = "{825, 0}";
+			sepNavVisRange = "{0, 2020}";
 		};
 	};
 }
