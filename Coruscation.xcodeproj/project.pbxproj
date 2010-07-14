@@ -46,6 +46,7 @@
 		CBB7E44A10C4A2C100094536 /* Coruscation Help in Resources */ = {isa = PBXBuildFile; fileRef = CBB7E44910C4A2C100094536 /* Coruscation Help */; };
 		CBB7FC58108D2575003E062A /* CheckAppUpdateOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = CBB7FC57108D2575003E062A /* CheckAppUpdateOperation.m */; };
 		CBCA61FE10D1A07D003D9E3F /* CoruscationAgent.app in Copy Executables */ = {isa = PBXBuildFile; fileRef = CB05D5E410D1892A00AECB32 /* CoruscationAgent.app */; };
+		CBEB7BF311ED393700D5657C /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
 		CBF233B8108D629600D2A5FF /* CoruscationCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = CBF233B7108D629600D2A5FF /* CoruscationCollectionView.m */; };
 		CBF3A61910C9784A004EDC7F /* License.txt in Resources */ = {isa = PBXBuildFile; fileRef = CBA28A2710C9751F005BCEC1 /* License.txt */; };
 /* End PBXBuildFile section */
@@ -219,6 +220,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CB05D62810D18A7600AECB32 /* Sparkle.framework in Frameworks */,
+				CBEB7BF311ED393700D5657C /* Cocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -8,7 +8,7 @@
 		<item>
 			<title>Version 2.0 (17)</title>
 			<sparkle:releaseNotesLink>https://bitbucket.org/kolpanic/coruscation/downloads/relnotes.html</sparkle:releaseNotesLink>
-			<pubDate>Tue, 11 May 2010 09:00:00 -0500</pubDate>
+			<pubDate>Tue, 20 July 2010 09:00:00 -0500</pubDate>
 			<enclosure url="https://bitbucket.org/kolpanic/coruscation/downloads/Coruscation.zip"
 				sparkle:version="17" sparkle:shortVersionString="2.0 (17)" type="application/octet-stream" />
 		</item>
