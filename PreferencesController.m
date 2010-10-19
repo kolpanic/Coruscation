@@ -2,28 +2,12 @@
 #import <ServiceManagement/ServiceManagement.h>
 #import "asl.h"
 
+const NSInteger weeklyStartInterval = 604800;
+const NSInteger monthlyStartInterval = 2592000;
+
 @implementation PreferencesController
 
 - (IBAction) configureAutomaticUpdates:(id)sender {
-	NSDictionary *intervalDict = nil;
-	NSInteger tag = [sender tag];
-	if (tag == 1 || tag == 2) {
-		NSDateComponents *components = [[NSCalendar currentCalendar] components:NSWeekdayCalendarUnit | NSDayCalendarUnit | NSHourCalendarUnit | NSMinuteCalendarUnit
-																	   fromDate:[NSDate date]];
-		if (tag == 1) {
-			intervalDict = [NSDictionary dictionaryWithObjectsAndKeys:
-							[NSNumber numberWithInt:([components weekday] - 1)], @"Weekday",
-							[NSNumber numberWithInt:[components hour]], @"Hour",
-							[NSNumber numberWithInt:[components minute]], @"Minute",
-							nil];
-		} else if (tag == 2) {
-			intervalDict = [NSDictionary dictionaryWithObjectsAndKeys:
-							[NSNumber numberWithInt:MIN(28, [components day])], @"Day",
-							[NSNumber numberWithInt:[components hour]], @"Hour",
-							[NSNumber numberWithInt:[components minute]], @"Minute",
-							nil];
-		}
-	}
 	CFDictionaryRef launchInfo = SMJobCopyDictionary(kSMDomainUserLaunchd, (CFStringRef)self.agentIdentifier);
 	if (launchInfo != NULL) {
 		CFRelease(launchInfo);
@@ -36,36 +20,39 @@
 	}
 
 	BOOL errorOccurred = NO;
-	if (intervalDict != nil) {
+	NSInteger startInterval = 0;
+	NSInteger tag = [sender tag];
+	if (tag == 1)
+		startInterval = weeklyStartInterval;
+	else if (tag == 2)
+		startInterval = monthlyStartInterval;
+	if (startInterval > 0) {
 		NSMutableDictionary *plist = [NSMutableDictionary dictionary];
 		[plist setObject:self.agentIdentifier forKey:@"Label"];
-		[plist setObject:intervalDict forKey:@"StartCalendarInterval"];
+		[plist setObject:[NSNumber numberWithInteger:startInterval] forKey:@"StartInterval"];
 		[plist setObject:[NSNumber numberWithBool:YES] forKey:@"RunAtLoad"];
 		[plist setObject:self.agentExecutable forKey:@"Program"];
+		[plist writeToFile:self.plistPath atomically:YES];
 
-		;
-		CFErrorRef *outError = NULL;
-		if (SMJobSubmit(kSMDomainUserLaunchd, (CFDictionaryRef)plist, NULL, outError))
-			[plist writeToFile:self.plistPath atomically:YES];
-		else {
+		CFErrorRef *smError = NULL;
+		if (!SMJobSubmit(kSMDomainUserLaunchd, (CFDictionaryRef)plist, NULL, smError)) {
 			errorOccurred = YES;
-			if (outError != NULL) {
-				NSLog(@"Error in SMJobSubmit: %@", (NSError *)outError);
-				CFRelease(outError);
-			} else
-				NSLog(@"Error in SMJobSubmit without details. Check /var/db/launchd.db/com.apple.launchd.peruser.NNN/overrides.plist for CoruscationAgent set to disabled.");
+			if (smError != NULL)
+				NSLog(@"Error in SMJobSubmit: %@", (NSError *)smError);
+			else
+				NSLog(@"Error in SMJobSubmit without details. Check /var/db/launchd.db/com.apple.launchd.peruser.NNN/overrides.plist for %@ set to disabled.", self.agentIdentifier);
 			self.selectedAutomaticUpdatesTag = 0;
 			[self.intervalPopUpButton selectItemWithTag:0];
-			intervalDict = nil;
 		}
-	}
-	[self updateScheduleDescriptionForIntervalDict:intervalDict];
 
+		if (smError != NULL)
+			CFRelease(smError);
+	}
 	if (errorOccurred) {
 		NSString *informativeText = NSLocalizedString(@"An error occurred when attempting to configure scheduled update checks.", @"message informative text");
 		NSAlert *alert = [NSAlert alertWithMessageText:NSLocalizedString(@"Scheduling Error", @"message text")
 										 defaultButton:nil
-									   alternateButton:NSLocalizedString(@"View Log…", @"button title")
+									   alternateButton:NSLocalizedString(@"View Console…", @"button title")
 										   otherButton:nil
 							 informativeTextWithFormat:informativeText];
 		[alert beginSheetModalForWindow:self.window
@@ -80,10 +67,10 @@
 		NSArray *appSupport = NSSearchPathForDirectoriesInDomains(NSApplicationSupportDirectory, NSUserDomainMask, YES);
 		NSString *queryPath = [[[[[appSupport objectAtIndex:0] stringByAppendingPathComponent:@"Console"] stringByAppendingPathComponent:@"ASLQueries"] stringByAppendingPathComponent:@"Coruscation"] stringByAppendingPathExtension:@"aslquery"];
 		NSArray *aslQuery = [NSArray arrayWithObject:[NSDictionary dictionaryWithObjectsAndKeys:
-													  [NSString stringWithUTF8String:ASL_KEY_MSG], @"key",
-													  [NSNumber numberWithInt:ASL_QUERY_OP_EQUAL | ASL_QUERY_OP_PREFIX | ASL_QUERY_OP_SUFFIX], @"op",
-													  @"Coruscation", @"value",
-													  nil]];
+		                                              [NSString stringWithUTF8String:ASL_KEY_MSG], @"key",
+		                                              [NSNumber numberWithInt:ASL_QUERY_OP_EQUAL | ASL_QUERY_OP_PREFIX | ASL_QUERY_OP_SUFFIX], @"op",
+		                                              @"Coruscation", @"value",
+		                                              nil]];
 		[aslQuery writeToFile:queryPath atomically:YES];
 		[[NSWorkspace sharedWorkspace] openFile:queryPath withApplication:@"Console"];
 	}
@@ -107,85 +94,23 @@
 			CFRelease(launchInfo);
 			if (plistExists) {
 				NSDictionary *plist = [NSDictionary dictionaryWithContentsOfFile:i_plistPath];
-				NSDictionary *intervalDict = [plist objectForKey:@"StartCalendarInterval"];
-				NSNumber *weekday = [intervalDict objectForKey:@"Weekday"];
-				NSNumber *day = [intervalDict objectForKey:@"Day"];
-				if (weekday != nil)
+				NSInteger startInterval = [[plist objectForKey:@"StartInterval"] integerValue];
+				if (startInterval == weeklyStartInterval)
 					i_selectedAutomaticUpdatesTag = 1;
-				else if (day != nil)
+				else if (startInterval == monthlyStartInterval)
 					i_selectedAutomaticUpdatesTag = 2;
 				else
 					i_selectedAutomaticUpdatesTag = 0;
-				[self updateScheduleDescriptionForIntervalDict:intervalDict];
-			} else {
+
+			} else
 				i_selectedAutomaticUpdatesTag = 0;
-				[self updateScheduleDescriptionForIntervalDict:nil];
-			}
 		} else {
 			i_selectedAutomaticUpdatesTag = 0;
 			if (plistExists)
 				[i_fileManager removeItemAtPath:i_plistPath error:nil];
-			[self updateScheduleDescriptionForIntervalDict:nil];
 		}
 	}
 	return self;
-}
-
-- (void) updateScheduleDescriptionForIntervalDict:(NSDictionary *)dict {
-	self.scheduleDescription = NSLocalizedString(@"Manually", @"schedule description");
-	if (dict) {
-		NSNumber *weekday = [dict objectForKey:@"Weekday"];
-		NSNumber *day = [dict objectForKey:@"Day"];
-		if (day != nil) {
-			NSUInteger remainder = [day unsignedIntegerValue] % 10;
-			NSString *suffix = nil;
-			switch (remainder) {
-				case 1:
-					suffix = NSLocalizedString(@"st", @"ordinal suffix");
-					break;
-				case 2:
-					suffix = NSLocalizedString(@"nd", @"ordinal suffix");
-					break;
-				case 3:
-					suffix = NSLocalizedString(@"rd", @"ordinal suffix");
-					break;
-				default:
-					suffix = NSLocalizedString(@"th", @"ordinal suffix");
-					break;
-			}
-			self.scheduleDescription = [NSString stringWithFormat:NSLocalizedString(@"Every month on the %@%@", @"schedule description"), day, suffix];
-		} else if (weekday != nil) {
-			NSString *dayString = nil;
-			switch ([weekday unsignedIntegerValue] + 1) {
-				case 1:
-					dayString = NSLocalizedString(@"Sunday", @"day of week");
-					break;
-				case 2:
-					dayString = NSLocalizedString(@"Monday", @"day of week");
-					break;
-				case 3:
-					dayString = NSLocalizedString(@"Tuesday", @"day of week");
-					break;
-				case 4:
-					dayString = NSLocalizedString(@"Wednesday", @"day of week");
-					break;
-				case 5:
-					dayString = NSLocalizedString(@"Thursday", @"day of week");
-					break;
-				case 6:
-					dayString = NSLocalizedString(@"Friday", @"day of week");
-					break;
-				case 7:
-					dayString = NSLocalizedString(@"Saturday", @"day of week");
-					break;
-				default:
-					dayString = nil;
-					break;
-			}
-			if (dayString != nil)
-				self.scheduleDescription = [NSString stringWithFormat:NSLocalizedString(@"Every week on %@", @"schedule description"), dayString];
-		}
-	}
 }
 
 - (void) awakeFromNib {
@@ -231,7 +156,6 @@
 @synthesize agentIdentifier = i_agentIdentifier;
 @synthesize plistPath = i_plistPath;
 @synthesize selectedAutomaticUpdatesTag = i_selectedAutomaticUpdatesTag;
-@synthesize scheduleDescription = i_scheduleDescription;
 @synthesize intervalPopUpButton = i_intervalPopUpButton;
 
 @end

@@ -341,16 +341,12 @@
 								<string>29B97314FDCFA39411CA2CEA</string>
 								<string>CB05DB9A10D18E0F00AECB32</string>
 								<string>080E96DDFE201D6D7F000001</string>
-								<string>29B97317FDCFA39411CA2CEA</string>
-								<string>CB05D60010D1899300AECB32</string>
-								<string>CB05DB9B10D18E3700AECB32</string>
-								<string>29B97323FDCFA39411CA2CEA</string>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>27</integer>
-									<integer>25</integer>
+									<integer>19</integer>
+									<integer>7</integer>
 									<integer>5</integer>
 									<integer>0</integer>
 								</array>
@@ -391,7 +387,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>CB3742AB106A5CEF00AED801</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>CoruscationAgentAppDelegate.m</string>
+								<string>PreferencesController.m</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -399,15 +395,14 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>CB3742AC106A5CEF00AED801</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>CoruscationAgentAppDelegate.m</string>
+										<string>PreferencesController.m</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>CB547CA611ED39B700D8B789</string>
+										<string>CBBE4C0D126E1FF500CD2470</string>
 										<key>history</key>
 										<array>
-											<string>CBEB7BCC11ED389200D5657C</string>
-											<string>CBEB7C0311ED396A00D5657C</string>
+											<string>CBBE4C0C126E1FF500CD2470</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -447,8 +442,6 @@
 									<dict>
 										<key>Frame</key>
 										<string>{{10, 27}, {1357, -27}}</string>
-										<key>RubberWindowFrame</key>
-										<string>75 100 1701 1064 0 0 1920 1178 </string>
 									</dict>
 									<key>Module</key>
 									<string>XCDetailModule</string>
@@ -502,7 +495,9 @@
 									<key>GeometryConfiguration</key>
 									<dict>
 										<key>Frame</key>
-										<string>{{0, 0}, {568, 405}}</string>
+										<string>{{10, 27}, {1357, -27}}</string>
+										<key>RubberWindowFrame</key>
+										<string>75 100 1701 1064 0 0 1920 1178 </string>
 									</dict>
 									<key>Module</key>
 									<string>PBXBuildResultsModule</string>
@@ -530,11 +525,11 @@
 			</array>
 			<key>TableOfContents</key>
 			<array>
-				<string>CB547CA711ED39B700D8B789</string>
+				<string>CBBE4C0E126E1FF500CD2470</string>
 				<string>1CA23ED40692098700951B8B</string>
-				<string>CB547CA811ED39B700D8B789</string>
+				<string>CBBE4C0F126E1FF500CD2470</string>
 				<string>CB3742AB106A5CEF00AED801</string>
-				<string>CB547CA911ED39B700D8B789</string>
+				<string>CBBE4C10126E1FF500CD2470</string>
 				<string>1CA23EDF0692099D00951B8B</string>
 				<string>1CA23EE00692099D00951B8B</string>
 				<string>1CA23EE10692099D00951B8B</string>
@@ -683,13 +678,13 @@
 			</array>
 			<key>TableOfContents</key>
 			<array>
-				<string>CBEB7BDC11ED38B500D5657C</string>
+				<string>CB05CA94126E1D62007EEDB6</string>
 				<string>1CCC7628064C1048000F2A68</string>
 				<string>1CCC7629064C1048000F2A68</string>
-				<string>CBEB7BDD11ED38B500D5657C</string>
-				<string>CBEB7BDE11ED38B500D5657C</string>
-				<string>CBEB7BDF11ED38B500D5657C</string>
-				<string>CBEB7BE011ED38B500D5657C</string>
+				<string>CB05CA95126E1D62007EEDB6</string>
+				<string>CB05CA96126E1D62007EEDB6</string>
+				<string>CB05CA97126E1D62007EEDB6</string>
+				<string>CB05CA98126E1D62007EEDB6</string>
 				<string>CB3742AB106A5CEF00AED801</string>
 			</array>
 			<key>ToolbarConfigUserDefaultsMinorVersion</key>
@@ -707,7 +702,7 @@
 	<key>StatusbarIsVisible</key>
 	<true/>
 	<key>TimeStamp</key>
-	<real>300759479.015544</real>
+	<real>309207029.22524601</real>
 	<key>ToolbarConfigUserDefaultsMinorVersion</key>
 	<string>2</string>
 	<key>ToolbarDisplayMode</key>
