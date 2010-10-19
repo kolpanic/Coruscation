@@ -47,13 +47,9 @@
 }
 
 - (void) applicationDidFinishLaunching:(NSNotification *)aNotification {
-	if ([self coruscationAlreadyRunning])
-		[NSApp terminate:nil];
-
 	NSDate *lastRunDate = [[NSUserDefaults standardUserDefaults] objectForKey:@"LastRunDate"];
-	NSDate *lastScheduledRunDate = nil;
-	NSDate *now = [NSDate date];
-
+	NSTimeInterval intervalSinceLastRun = [[NSDate date] timeIntervalSinceDate:lastRunDate];
+	NSTimeInterval minInterval = 604800;
 	NSString *bundleIdentifier = [[NSBundle mainBundle] bundleIdentifier];
 	NSArray *searchPaths = NSSearchPathForDirectoriesInDomains(NSLibraryDirectory, NSUserDomainMask, YES);
 	NSString *agentsFolder = [[searchPaths objectAtIndex:0] stringByAppendingPathComponent:@"LaunchAgents"];
@@ -61,35 +57,18 @@
 	if ([[NSFileManager defaultManager] fileExistsAtPath:plistPath]) {
 		NSDictionary *plist = [NSDictionary dictionaryWithContentsOfFile:plistPath];
 		NSDictionary *intervalDict = [plist objectForKey:@"StartCalendarInterval"];
-		NSUInteger weekday = [[intervalDict objectForKey:@"Weekday"] unsignedIntegerValue];
-		NSUInteger day = [[intervalDict objectForKey:@"Day"] unsignedIntegerValue];
-
-		NSDateComponents *nowComponents = [[NSCalendar currentCalendar] components:NSYearCalendarUnit | NSMonthCalendarUnit | NSWeekdayCalendarUnit | NSDayCalendarUnit fromDate:now];
-		[nowComponents setHour:[[intervalDict objectForKey:@"Hour"] unsignedIntegerValue]];
-		[nowComponents setMinute:[[intervalDict objectForKey:@"Minute"] unsignedIntegerValue]];
-
-		if (weekday > 0)
-			lastScheduledRunDate = [[[NSCalendar currentCalendar] dateFromComponents:nowComponents] dateByAddingTimeInterval:(8 - [nowComponents weekday]) * -86400.0];
-		else if (day > 0) {
-			[nowComponents setDay:day];
-			if (day < [nowComponents day]) {
-				NSUInteger month = [nowComponents month] - 1;
-				if (month < 1) {
-					month = 12;
-					[nowComponents setYear:[nowComponents year] - 1];
-				}
-				[nowComponents setMonth:month];
-			}
-			lastScheduledRunDate = [[NSCalendar currentCalendar] dateFromComponents:nowComponents];
-		}
+		NSNumber *weekday = [intervalDict objectForKey:@"Weekday"];
+		if (weekday == nil)
+			minInterval = 2592000;
 	}
-
-	if ([lastRunDate compare:lastScheduledRunDate] == NSOrderedDescending) {
-		NSLog(@"Terminating before checking for updates");
+	if (intervalSinceLastRun < minInterval) {
+		NSLog(@"Terminating before checking for updates - run before scheduled (e.g. at login)");
 		[NSApp terminate:nil];
 	}
 
-	[[NSUserDefaults standardUserDefaults] setObject:now forKey:@"LastRunDate"];
+	[[NSUserDefaults standardUserDefaults] setObject:[NSDate date] forKey:@"LastRunDate"];
+	if ([self coruscationAlreadyRunning])
+		[NSApp terminate:nil];
 	NSLog(@"Checking for updates...");
 	FindSparkleBundlesOperation *op = [FindSparkleBundlesOperation new];
 	[self.operationQueue addOperation:op];

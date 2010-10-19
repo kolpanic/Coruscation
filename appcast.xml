@@ -6,11 +6,10 @@
 		<description>Most recent changes with links to updates.</description>
 		<language>en</language>
 		<item>
-			<title>Version 2.0 (18)</title>
+			<title>Version 2.0 (19)</title>
 			<sparkle:releaseNotesLink>https://bitbucket.org/kolpanic/coruscation/downloads/relnotes.html</sparkle:releaseNotesLink>
-			<pubDate>Tue, 19 July 2010 09:00:00 -0500</pubDate>
-			<enclosure url="https://bitbucket.org/kolpanic/coruscation/downloads/Coruscation.zip"
-				sparkle:version="18" sparkle:shortVersionString="2.0 (18)" type="application/octet-stream" />
+			<pubDate>Tue, 19 October 2010 09:00:00 -0500</pubDate>
+			<enclosure url="https://bitbucket.org/kolpanic/coruscation/downloads/Coruscation.zip" sparkle:version="19" sparkle:shortVersionString="2.0 (19)" type="application/octet-stream" />
 		</item>
 	</channel>
 </rss>

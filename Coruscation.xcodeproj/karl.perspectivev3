@@ -300,8 +300,6 @@
 			<key>Layout</key>
 			<array>
 				<dict>
-					<key>BecomeActive</key>
-					<true/>
 					<key>ContentConfiguration</key>
 					<dict>
 						<key>PBXBottomSmartGroupGIDs</key>
@@ -345,9 +343,7 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>19</integer>
-									<integer>7</integer>
-									<integer>5</integer>
+									<integer>4</integer>
 									<integer>0</integer>
 								</array>
 							</array>
@@ -382,12 +378,14 @@
 					<key>Dock</key>
 					<array>
 						<dict>
+							<key>BecomeActive</key>
+							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
 								<string>CB3742AB106A5CEF00AED801</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>PreferencesController.m</string>
+								<string>appcast.xml</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -395,14 +393,14 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>CB3742AC106A5CEF00AED801</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>PreferencesController.m</string>
+										<string>appcast.xml</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>CBBE4C0D126E1FF500CD2470</string>
+										<string>CB3DB0DF126E245D00718E0C</string>
 										<key>history</key>
 										<array>
-											<string>CBBE4C0C126E1FF500CD2470</string>
+											<string>CB3DB0D6126E244500718E0C</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -525,11 +523,11 @@
 			</array>
 			<key>TableOfContents</key>
 			<array>
-				<string>CBBE4C0E126E1FF500CD2470</string>
+				<string>CB3DB0D8126E244B00718E0C</string>
 				<string>1CA23ED40692098700951B8B</string>
-				<string>CBBE4C0F126E1FF500CD2470</string>
+				<string>CB3DB0D9126E244B00718E0C</string>
 				<string>CB3742AB106A5CEF00AED801</string>
-				<string>CBBE4C10126E1FF500CD2470</string>
+				<string>CB3DB0DA126E244B00718E0C</string>
 				<string>1CA23EDF0692099D00951B8B</string>
 				<string>1CA23EE00692099D00951B8B</string>
 				<string>1CA23EE10692099D00951B8B</string>
@@ -702,7 +700,7 @@
 	<key>StatusbarIsVisible</key>
 	<true/>
 	<key>TimeStamp</key>
-	<real>309207029.22524601</real>
+	<real>309208157.87580198</real>
 	<key>ToolbarConfigUserDefaultsMinorVersion</key>
 	<string>2</string>
 	<key>ToolbarDisplayMode</key>
