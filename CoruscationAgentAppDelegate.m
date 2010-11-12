@@ -56,10 +56,7 @@
 	NSString *plistPath = [[agentsFolder stringByAppendingPathComponent:bundleIdentifier] stringByAppendingPathExtension:@"plist"];
 	if ([[NSFileManager defaultManager] fileExistsAtPath:plistPath]) {
 		NSDictionary *plist = [NSDictionary dictionaryWithContentsOfFile:plistPath];
-		NSDictionary *intervalDict = [plist objectForKey:@"StartCalendarInterval"];
-		NSNumber *weekday = [intervalDict objectForKey:@"Weekday"];
-		if (weekday == nil)
-			minInterval = 2592000;
+		minInterval = [[plist objectForKey:@"StartInterval"] integerValue];
 	}
 	if (intervalSinceLastRun < minInterval) {
 		NSLog(@"Terminating before checking for updates - run before scheduled (e.g. at login)");

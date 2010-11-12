@@ -339,6 +339,8 @@
 								<string>29B97314FDCFA39411CA2CEA</string>
 								<string>CB05DB9A10D18E0F00AECB32</string>
 								<string>080E96DDFE201D6D7F000001</string>
+								<string>CB05D60010D1899300AECB32</string>
+								<string>CB05DB9B10D18E3700AECB32</string>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
@@ -385,7 +387,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>CB3742AB106A5CEF00AED801</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>appcast.xml</string>
+								<string>CoruscationDelegate.m</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -393,14 +395,14 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>CB3742AC106A5CEF00AED801</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>appcast.xml</string>
+										<string>CoruscationDelegate.m</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>CB19143B126F424600714211</string>
+										<string>CBF1C723128CBE2A00A89FF8</string>
 										<key>history</key>
 										<array>
-											<string>CB19143A126F424600714211</string>
+											<string>CBF1C704128CBD9300A89FF8</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -440,6 +442,8 @@
 									<dict>
 										<key>Frame</key>
 										<string>{{10, 27}, {1357, -27}}</string>
+										<key>RubberWindowFrame</key>
+										<string>75 100 1701 1064 0 0 1920 1178 </string>
 									</dict>
 									<key>Module</key>
 									<string>XCDetailModule</string>
@@ -493,9 +497,7 @@
 									<key>GeometryConfiguration</key>
 									<dict>
 										<key>Frame</key>
-										<string>{{10, 27}, {1357, -27}}</string>
-										<key>RubberWindowFrame</key>
-										<string>75 100 1701 1064 0 0 1920 1178 </string>
+										<string>{{0, 0}, {568, 405}}</string>
 									</dict>
 									<key>Module</key>
 									<string>PBXBuildResultsModule</string>
@@ -523,11 +525,11 @@
 			</array>
 			<key>TableOfContents</key>
 			<array>
-				<string>CB191433126F421900714211</string>
+				<string>CBF1C724128CBE2A00A89FF8</string>
 				<string>1CA23ED40692098700951B8B</string>
-				<string>CB191434126F421900714211</string>
+				<string>CBF1C725128CBE2A00A89FF8</string>
 				<string>CB3742AB106A5CEF00AED801</string>
-				<string>CB191435126F421900714211</string>
+				<string>CBF1C726128CBE2A00A89FF8</string>
 				<string>1CA23EDF0692099D00951B8B</string>
 				<string>1CA23EE00692099D00951B8B</string>
 				<string>1CA23EE10692099D00951B8B</string>
@@ -676,13 +678,13 @@
 			</array>
 			<key>TableOfContents</key>
 			<array>
-				<string>CBA06819126F41A400D45FBB</string>
+				<string>CBF1C6D0128CBB6200A89FF8</string>
 				<string>1CCC7628064C1048000F2A68</string>
 				<string>1CCC7629064C1048000F2A68</string>
-				<string>CBA0681A126F41A400D45FBB</string>
-				<string>CBA0681B126F41A400D45FBB</string>
-				<string>CBA0681C126F41A400D45FBB</string>
-				<string>CBA0681D126F41A400D45FBB</string>
+				<string>CBF1C6D1128CBB6200A89FF8</string>
+				<string>CBF1C6D2128CBB6200A89FF8</string>
+				<string>CBF1C6D3128CBB6200A89FF8</string>
+				<string>CBF1C6D4128CBB6200A89FF8</string>
 				<string>CB3742AB106A5CEF00AED801</string>
 			</array>
 			<key>ToolbarConfigUserDefaultsMinorVersion</key>
@@ -700,7 +702,7 @@
 	<key>StatusbarIsVisible</key>
 	<true/>
 	<key>TimeStamp</key>
-	<real>309281350.79943299</real>
+	<real>311213610.46718901</real>
 	<key>ToolbarConfigUserDefaultsMinorVersion</key>
 	<string>2</string>
 	<key>ToolbarDisplayMode</key>
