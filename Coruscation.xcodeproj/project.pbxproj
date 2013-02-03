@@ -21,7 +21,7 @@
 		CB05D62810D18A7600AECB32 /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB7094C9108B95DE0008D104 /* Sparkle.framework */; };
 		CB05D62910D18A7B00AECB32 /* Sparkle.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = CB7094C9108B95DE0008D104 /* Sparkle.framework */; };
 		CB23E88E1088FA23001C5740 /* Sparkle.icns in Resources */ = {isa = PBXBuildFile; fileRef = CB23E88D1088FA23001C5740 /* Sparkle.icns */; };
-		CB34956210DBC795001E7640 /* ServiceManagement.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB34956110DBC795001E7640 /* ServiceManagement.framework */; };
+		CB27609B16BEC832005726DA /* ServiceManagement.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB27609A16BEC832005726DA /* ServiceManagement.framework */; };
 		CB48133411810F80005A881C /* BtnRevealPressed.pdf in Resources */ = {isa = PBXBuildFile; fileRef = CB48133111810F80005A881C /* BtnRevealPressed.pdf */; };
 		CB48133511810F80005A881C /* BtnRevealRollover.pdf in Resources */ = {isa = PBXBuildFile; fileRef = CB48133211810F80005A881C /* BtnRevealRollover.pdf */; };
 		CB48133611810F80005A881C /* BtnReveal.pdf in Resources */ = {isa = PBXBuildFile; fileRef = CB48133311810F80005A881C /* BtnReveal.pdf */; };
@@ -59,6 +59,13 @@
 			remoteGlobalIDString = 8DC2EF4F0486A6940098B216;
 			remoteInfo = Sparkle;
 		};
+		CB27609816BEC81E005726DA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CB7094C1108B95DE0008D104 /* Sparkle.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 55C14BB7136EEF1500649790;
+			remoteInfo = finish_installation;
+		};
 		CB7094C8108B95DE0008D104 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = CB7094C1108B95DE0008D104 /* Sparkle.xcodeproj */;
@@ -72,13 +79,6 @@
 			proxyType = 2;
 			remoteGlobalIDString = 61B5F90209C4CEE200B25A18;
 			remoteInfo = "Sparkle Test App";
-		};
-		CB7094CC108B95DE0008D104 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = CB7094C1108B95DE0008D104 /* Sparkle.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = DAAEFC960DA571DF0051E0D0;
-			remoteInfo = "relaunch tool";
 		};
 		CB7094CE108B95DE0008D104 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -166,7 +166,7 @@
 		CB05D5FB10D1898C00AECB32 /* CoruscationAgentMain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoruscationAgentMain.m; sourceTree = "<group>"; };
 		CB05D5FC10D1898C00AECB32 /* CoruscationAgentMainMenu.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CoruscationAgentMainMenu.xib; sourceTree = "<group>"; };
 		CB23E88D1088FA23001C5740 /* Sparkle.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = Sparkle.icns; sourceTree = "<group>"; };
-		CB34956110DBC795001E7640 /* ServiceManagement.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ServiceManagement.framework; path = System/Library/Frameworks/ServiceManagement.framework; sourceTree = SDKROOT; };
+		CB27609A16BEC832005726DA /* ServiceManagement.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ServiceManagement.framework; path = ../../../../../System/Library/Frameworks/ServiceManagement.framework; sourceTree = "<group>"; };
 		CB48133111810F80005A881C /* BtnRevealPressed.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = BtnRevealPressed.pdf; sourceTree = "<group>"; };
 		CB48133211810F80005A881C /* BtnRevealRollover.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = BtnRevealRollover.pdf; sourceTree = "<group>"; };
 		CB48133311810F80005A881C /* BtnReveal.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = BtnReveal.pdf; sourceTree = "<group>"; };
@@ -211,7 +211,7 @@
 			files = (
 				8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */,
 				CB709522108B98190008D104 /* Sparkle.framework in Frameworks */,
-				CB34956210DBC795001E7640 /* ServiceManagement.framework in Frameworks */,
+				CB27609B16BEC832005726DA /* ServiceManagement.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -301,8 +301,8 @@
 		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				CB27609A16BEC832005726DA /* ServiceManagement.framework */,
 				1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */,
-				CB34956110DBC795001E7640 /* ServiceManagement.framework */,
 				CB7094C1108B95DE0008D104 /* Sparkle.xcodeproj */,
 			);
 			name = Frameworks;
@@ -386,9 +386,9 @@
 			children = (
 				CB7094C9108B95DE0008D104 /* Sparkle.framework */,
 				CB7094CB108B95DE0008D104 /* Sparkle Test App.app */,
-				CB7094CD108B95DE0008D104 /* relaunch */,
 				CB7094CF108B95DE0008D104 /* Sparkle Unit Tests.octest */,
 				CBE3E79D116A43070051D183 /* BinaryDelta */,
+				CB27609916BEC81E005726DA /* finish_installation.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -453,6 +453,9 @@
 /* Begin PBXProject section */
 		29B97313FDCFA39411CA2CEA /* Project object */ = {
 			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0460;
+			};
 			buildConfigurationList = 26FC0A880875C7B200E6366F /* Build configuration list for PBXProject "Coruscation" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
@@ -480,6 +483,13 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
+		CB27609916BEC81E005726DA /* finish_installation.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = finish_installation.app;
+			remoteRef = CB27609816BEC81E005726DA /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 		CB7094C9108B95DE0008D104 /* Sparkle.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
@@ -492,13 +502,6 @@
 			fileType = wrapper.application;
 			path = "Sparkle Test App.app";
 			remoteRef = CB7094CA108B95DE0008D104 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		CB7094CD108B95DE0008D104 /* relaunch */ = {
-			isa = PBXReferenceProxy;
-			fileType = "compiled.mach-o.executable";
-			path = relaunch;
-			remoteRef = CB7094CC108B95DE0008D104 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 		CB7094CF108B95DE0008D104 /* Sparkle Unit Tests.octest */ = {
@@ -643,9 +646,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_ENABLE_FIX_AND_CONTINUE = YES;
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
 				GCC_MODEL_TUNING = G5;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -654,6 +657,7 @@
 				INFOPLIST_FILE = "Coruscation-Info.plist";
 				INSTALL_PATH = "$(HOME)/Applications";
 				PRODUCT_NAME = Coruscation;
+				SDKROOT = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -661,6 +665,7 @@
 		26FC0A860875C7B200E6366F /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
 				GCC_MODEL_TUNING = G5;
@@ -669,6 +674,7 @@
 				INFOPLIST_FILE = "Coruscation-Info.plist";
 				INSTALL_PATH = "$(HOME)/Applications";
 				PRODUCT_NAME = Coruscation;
+				SDKROOT = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -683,8 +689,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				PREBINDING = NO;
-				SDKROOT = macosx10.6;
+				SDKROOT = macosx;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Debug;
@@ -698,8 +703,7 @@
 				GCC_ENABLE_OBJC_GC = required;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				PREBINDING = NO;
-				SDKROOT = macosx10.6;
+				SDKROOT = macosx;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Release;
@@ -708,9 +712,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_ENABLE_FIX_AND_CONTINUE = YES;
 				GCC_MODEL_TUNING = G5;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -723,8 +727,8 @@
 					"-framework",
 					AppKit,
 				);
-				PREBINDING = NO;
 				PRODUCT_NAME = CoruscationAgent;
+				SDKROOT = "";
 			};
 			name = Debug;
 		};
@@ -732,9 +736,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				GCC_ENABLE_FIX_AND_CONTINUE = NO;
 				GCC_MODEL_TUNING = G5;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = CoruscationAgent_Prefix.pch;
@@ -746,8 +750,8 @@
 					"-framework",
 					AppKit,
 				);
-				PREBINDING = NO;
 				PRODUCT_NAME = CoruscationAgent;
+				SDKROOT = "";
 				ZERO_LINK = NO;
 			};
 			name = Release;
