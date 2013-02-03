@@ -49,12 +49,11 @@ const NSInteger monthlyStartInterval = 2592000;
 			CFRelease(smError);
 	}
 	if (errorOccurred) {
-		NSString *informativeText = NSLocalizedString(@"An error occurred when attempting to configure scheduled update checks.", @"message informative text");
 		NSAlert *alert = [NSAlert alertWithMessageText:NSLocalizedString(@"Scheduling Error", @"message text")
 										 defaultButton:nil
 									   alternateButton:NSLocalizedString(@"View Console…", @"button title")
 										   otherButton:nil
-							 informativeTextWithFormat:informativeText];
+							 informativeTextWithFormat:NSLocalizedString(@"An error occurred when attempting to configure scheduled update checks.", @"message informative text")];
 		[alert beginSheetModalForWindow:self.window
 						  modalDelegate:self
 						 didEndSelector:@selector(errorAlertDidEnd:returnCode:contextInfo:)
