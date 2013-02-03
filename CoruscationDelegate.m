@@ -56,7 +56,7 @@
 		NSManagedObjectModel *mom = self.managedObjectModel;
 		if (!mom) {
 			NSAssert(NO, @"Managed object model is nil");
-			NSLog(@"%@:%s No model to generate a store from", [self class], _cmd);
+			NSLog(@"%@:%@ No model to generate a store from", [self class], NSStringFromSelector(_cmd));
 			return nil;
 		}
 		NSError *error;
@@ -111,7 +111,7 @@
 	sparkleBundle.fileURL = [[userInfo objectForKey:@"fileURL"] absoluteString];
 	sparkleBundle.itemDescription = [userInfo objectForKey:@"itemDescription"];
 	if ([moc save:nil])
-		[[NSApplication sharedApplication] dockTile].badgeLabel = [NSString stringWithFormat:@"%u", ++self.count];
+		[[NSApplication sharedApplication] dockTile].badgeLabel = [NSString stringWithFormat:@"%ld", ++self.count];
 }
 
 #pragma mark -
