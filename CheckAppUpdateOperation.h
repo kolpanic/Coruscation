@@ -1,5 +1,5 @@
 #import <Foundation/Foundation.h>
-#import <Sparkle/Sparkle.h>
+#import "Sparkle/Sparkle.h"
 
 @interface CheckAppUpdateOperation : NSOperation {
 @private
