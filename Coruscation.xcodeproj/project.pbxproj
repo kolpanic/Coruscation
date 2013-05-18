@@ -171,7 +171,6 @@
 		CB4813661181113A005A881C /* RolloverButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RolloverButton.m; sourceTree = "<group>"; };
 		CB4D772E11092ABC000EF799 /* NSFileManager+CoruscationAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSFileManager+CoruscationAdditions.h"; sourceTree = "<group>"; };
 		CB4D772F11092ABC000EF799 /* NSFileManager+CoruscationAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSFileManager+CoruscationAdditions.m"; sourceTree = "<group>"; };
-		CB53B270108FBE78004EAFF2 /* Read Me.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Read Me.txt"; sourceTree = "<group>"; };
 		CB5F0D1911811D7F00172587 /* BtnRelNotesPressed.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = BtnRelNotesPressed.pdf; sourceTree = "<group>"; };
 		CB5F0D1A11811D7F00172587 /* BtnRelNotesRollover.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = BtnRelNotesRollover.pdf; sourceTree = "<group>"; };
 		CB5F0D1B11811D7F00172587 /* BtnRelNotes.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = BtnRelNotes.pdf; sourceTree = "<group>"; };
@@ -259,7 +258,6 @@
 			isa = PBXGroup;
 			children = (
 				CBA28A2710C9751F005BCEC1 /* License.txt */,
-				CB53B270108FBE78004EAFF2 /* Read Me.txt */,
 				CBFE71AC10C17BE5007DF3BB /* relnotes.html */,
 				CBFE71AB10C17BE5007DF3BB /* appcast.xml */,
 				CB05DB9A10D18E0F00AECB32 /* Coruscation */,
