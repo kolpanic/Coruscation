@@ -79,11 +79,7 @@
 		}
 		NSError *error;
 		_persistentStoreCoordinator = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:mom];
-		if (![_persistentStoreCoordinator addPersistentStoreWithType:NSInMemoryStoreType
-													   configuration:nil
-																 URL:nil
-															 options:nil
-															   error:&error]) {
+		if (![_persistentStoreCoordinator addPersistentStoreWithType:NSInMemoryStoreType configuration:nil URL:nil options:nil error:&error]) {
 			[[NSApplication sharedApplication] presentError:error];
 			_persistentStoreCoordinator = nil;
 		}
@@ -98,7 +94,7 @@
 			NSMutableDictionary *dict = [NSMutableDictionary dictionary];
 			[dict setValue:@"Failed to initialize the store" forKey:NSLocalizedDescriptionKey];
 			[dict setValue:@"There was an error building up the data file." forKey:NSLocalizedFailureReasonErrorKey];
-			NSError *error = [NSError errorWithDomain:@"YOUR_ERROR_DOMAIN" code:9999 userInfo:dict];
+			NSError *error = [NSError errorWithDomain:@"com.voodooergonomics.Coruscation.ErrorDomain" code:9999 userInfo:dict];
 			[[NSApplication sharedApplication] presentError:error];
 			return nil;
 		}
@@ -121,14 +117,13 @@
 
 - (void) addSparkleBundleWithUserInfo:(NSDictionary *)userInfo {
 	NSURL *url = userInfo[@"url"];
-	NSManagedObjectContext *moc = [self managedObjectContext];
-	SparkleBundle *sparkleBundle = [SparkleBundle insertInManagedObjectContext:moc];
+	SparkleBundle *sparkleBundle = [SparkleBundle insertInManagedObjectContext:[self managedObjectContext]];
 	sparkleBundle.bundlePath = [url path];
 	sparkleBundle.availableUpdateVersion = userInfo[@"availableUpdateVersion"];
 	sparkleBundle.releaseNotesURL = [userInfo[@"releaseNotesURL"] absoluteString];
 	sparkleBundle.fileURL = [userInfo[@"fileURL"] absoluteString];
 	sparkleBundle.itemDescription = userInfo[@"itemDescription"];
-	if ([moc save:nil]) {
+	if ([[self managedObjectContext] save:nil]) {
 		[[NSApplication sharedApplication] dockTile].badgeLabel = [NSString stringWithFormat:@"%ld", ++self.count];
 	}
 }
@@ -137,18 +132,27 @@
 #pragma mark IB Actions
 
 - (IBAction) rebuildLSDB:(id)sender {
-	NSString *key = @"SuppressRebuildAlert";
-	BOOL doRebuild = YES;
-	NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-	if (![defaults boolForKey:key]) {
-		NSAlert *alert = [NSAlert alertWithMessageText:NSLocalizedString(@"Rebuild Launch Services Database", @"message text") defaultButton:NSLocalizedString(@"Yes", @"button text") alternateButton:NSLocalizedString(@"No", @"button text") otherButton:nil informativeTextWithFormat:NSLocalizedString(@"If you've installed and removed many applications recently, Coruscation may show applications repeatedly. Rebuilding your Launch Services database should remedy this. Do you wish to do so?", @"message text")];
-		[alert setShowsSuppressionButton:YES];
-		doRebuild = (NSOKButton == [alert runModal]);
-		[defaults setBool:(NSOnState == [[alert suppressionButton] state]) forKey:key];
-	}
-	if (doRebuild) {
-		[NSTask launchedTaskWithLaunchPath:@"/System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister" arguments:@[@"-kill", @"-r", @"-domain", @"local", @"-domain", @"system", @"-domain", @"user"]];
-	}
+	static NSString* const key = @"SuppressRebuildAlert";
+	if (![[NSUserDefaults standardUserDefaults] boolForKey:key]) {
+		NSAlert *alert = [NSAlert new]; {
+			alert.messageText = NSLocalizedString(@"Rebuild Launch Services Database", @"message text");
+			alert.informativeText = NSLocalizedString(@"If you've installed and removed many applications recently, Coruscation may show applications repeatedly. Rebuilding your Launch Services database should remedy this. Do you wish to do so?", @"message text");
+			[[alert addButtonWithTitle:NSLocalizedString(@"Yes", @"button text")] setKeyEquivalent:@"\r"];
+			[[alert addButtonWithTitle:NSLocalizedString(@"No", @"button text")] setKeyEquivalent:@"\E"];
+			[alert setShowsSuppressionButton:YES];
+		}
+        [alert beginSheetModalForWindow:self.window completionHandler:^(NSModalResponse returnCode) {
+            [[NSUserDefaults standardUserDefaults] setBool:(NSOnState == [[alert suppressionButton] state]) forKey:key];
+            if (NSOKButton == returnCode) {
+                [self doRebuildLSDB];
+            }
+        }];
+	} else {
+        [self doRebuildLSDB];
+    }
+}
+- (void) doRebuildLSDB {
+    [NSTask launchedTaskWithLaunchPath:@"/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/LaunchServices.framework/Versions/A/Support/lsregister" arguments:@[@"-kill", @"-seed", @"-r"]];
 }
 
 - (IBAction) refresh:(id)sender {
@@ -170,10 +174,7 @@
 		if ([updateURL isEqual:bundleURL]) {
 			[[SUUpdater sharedUpdater] checkForUpdates:nil];
 		} else {
-			[[NSWorkspace sharedWorkspace] launchApplicationAtURL:updateURL
-														  options:NSWorkspaceLaunchWithoutActivation
-													configuration:nil
-															error:nil];
+			[[NSWorkspace sharedWorkspace] launchApplicationAtURL:updateURL options:NSWorkspaceLaunchWithoutActivation configuration:nil error:nil];
 		}
 	}
 }

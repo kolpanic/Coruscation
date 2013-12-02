@@ -65,10 +65,7 @@
             
 			[self.updater checkForUpdateInformation];
             
-			self.timeOutTimer = [NSTimer scheduledTimerWithTimeInterval:[[NSUserDefaults standardUserDefaults] doubleForKey:@"UpdateCheckTimeOutInterval"]
-																 target:self selector:@selector(timedOut:)
-															   userInfo:nil
-																repeats:NO];
+			self.timeOutTimer = [NSTimer scheduledTimerWithTimeInterval:[[NSUserDefaults standardUserDefaults] doubleForKey:@"UpdateCheckTimeOutInterval"] target:self selector:@selector(timedOut:) userInfo:nil repeats:NO];
 		}
 	}
 	if (!self.isExecuting) {

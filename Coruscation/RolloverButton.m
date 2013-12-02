@@ -8,6 +8,13 @@
 
 #import "RolloverButton.h"
 
+@interface RolloverButton ()
+
+@property (strong, nonatomic) NSTrackingArea *trackingArea;
+@property (copy, nonatomic) NSString *originalImageName;
+
+@end
+
 @implementation RolloverButton
 
 - (void) updateTrackingAreas {

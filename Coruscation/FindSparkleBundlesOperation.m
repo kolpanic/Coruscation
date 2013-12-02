@@ -48,17 +48,13 @@ extern void _LSCopyAllApplicationURLs(NSArray **);
 	}
     
 	// check all the found bundles & apps to see if they're Sparkle-enabled, ignoring Mac App Store purchases (in case the developer didn't clean up Info.plist)
-	if ([bundleURLs count] > 0) {
-		for (NSURL *bundleURL in bundleURLs) {
-			NSBundle *bundle = [NSBundle bundleWithURL:bundleURL];
-			NSString *masReceiptPath = [[[bundleURL path] stringByAppendingPathComponent:@"Contents"] stringByAppendingPathComponent:@"_MASReceipt"];
-			if (![fm fileExistsAtPath:masReceiptPath]) {
-				NSString *suFeedURL = [bundle infoDictionary][@"SUFeedURL"];
-				if (suFeedURL && [[NSApp delegate] respondsToSelector:@selector(checkAppUpdateForBundleURL:)]) {
-					[[NSApp delegate] performSelectorOnMainThread:@selector(checkAppUpdateForBundleURL:)
-													   withObject:bundleURL
-													waitUntilDone:NO];
-				}
+	for (NSURL *bundleURL in bundleURLs) {
+		NSBundle *bundle = [NSBundle bundleWithURL:bundleURL];
+		NSString *masReceiptPath = [[[bundleURL path] stringByAppendingPathComponent:@"Contents"] stringByAppendingPathComponent:@"_MASReceipt"];
+		if (![fm fileExistsAtPath:masReceiptPath]) {
+			NSString *suFeedURL = [bundle infoDictionary][@"SUFeedURL"];
+			if (suFeedURL && [[NSApp delegate] respondsToSelector:@selector(checkAppUpdateForBundleURL:)]) {
+				[[NSApp delegate] performSelectorOnMainThread:@selector(checkAppUpdateForBundleURL:) withObject:bundleURL waitUntilDone:NO];
 			}
 		}
 	}

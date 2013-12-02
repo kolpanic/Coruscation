@@ -10,7 +10,4 @@
 
 @interface RolloverButton : NSButton 
 
-@property (strong, nonatomic) NSTrackingArea *trackingArea;
-@property (copy, nonatomic) NSString *originalImageName;
-
 @end

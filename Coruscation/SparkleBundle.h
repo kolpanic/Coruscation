@@ -10,6 +10,7 @@
 
 @interface SparkleBundle : _SparkleBundle
 
+@property (nonatomic, copy, readonly) NSString *displayVersion;
 @property (nonatomic, strong, readonly) NSBundle *bundle;
 @property (nonatomic, strong, readonly) NSImage *icon;
 
