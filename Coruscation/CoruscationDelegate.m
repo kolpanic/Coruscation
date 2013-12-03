@@ -24,6 +24,8 @@
 
 @property (nonatomic, strong) NSOperationQueue *operationQueue;
 @property (nonatomic, strong) NSArray *sorter;
+@property (nonatomic, strong) NSPredicate *filter;
+@property (nonatomic, strong) NSPredicate *onlyUpdatesFilter;
 @property (nonatomic, assign) NSUInteger count;
 
 @end
@@ -34,7 +36,6 @@
 #pragma mark Setup
 
 - (void) applicationDidFinishLaunching:(NSNotification *)aNotification {
-	self.sorter = @[[[NSSortDescriptor alloc] initWithKey:@"displayName" ascending:YES]];
 	[self refresh:nil];
 }
 
@@ -44,6 +45,7 @@
 }
 
 - (void) awakeFromNib {
+    [self toggleShowOnlyUpdates:nil];
 	self.collectionView.maxNumberOfColumns = 1;
 	self.collectionView.minItemSize = NSMakeSize(0.0, 68.0);
 	self.collectionView.maxItemSize = NSMakeSize(10000.0, 68.0);
@@ -51,7 +53,8 @@
 
 + (void) initialize {
 	if (self == [CoruscationDelegate class]) {
-		NSDictionary *defaults = @{@"UpdateCheckTimeOutInterval": @10.0};
+		NSDictionary *defaults = @{@"UpdateCheckTimeOutInterval": @10.0,
+                                   @"showOnlyUpdates" : @(YES)};
 		[[NSUserDefaults standardUserDefaults] registerDefaults:defaults];
 		[NSValueTransformer setValueTransformer:[UpdateCountTransformer new] forName:@"UpdateCountTransformer"];
 	}
@@ -111,10 +114,6 @@
 #pragma mark -
 #pragma mark Convenience
 
-- (void) checkAppUpdateForBundleURL:(NSURL *)url {
-	[self.operationQueue addOperation:[[CheckAppUpdateOperation alloc] initWithBundleURL:url]];
-}
-
 - (void) addSparkleBundleWithUserInfo:(NSDictionary *)userInfo {
 	NSURL *url = userInfo[@"url"];
 	SparkleBundle *sparkleBundle = [SparkleBundle insertInManagedObjectContext:[self managedObjectContext]];
@@ -123,6 +122,7 @@
 	sparkleBundle.releaseNotesURL = [userInfo[@"releaseNotesURL"] absoluteString];
 	sparkleBundle.fileURL = [userInfo[@"fileURL"] absoluteString];
 	sparkleBundle.itemDescription = userInfo[@"itemDescription"];
+	sparkleBundle.isUpdateAvailable = userInfo[@"isUpdateAvailable"];
 	if ([[self managedObjectContext] save:nil]) {
 		[[NSApplication sharedApplication] dockTile].badgeLabel = [NSString stringWithFormat:@"%ld", ++self.count];
 	}
@@ -132,7 +132,7 @@
 #pragma mark IB Actions
 
 - (IBAction) rebuildLSDB:(id)sender {
-	static NSString* const key = @"SuppressRebuildAlert";
+	static NSString *const key = @"SuppressRebuildAlert";
 	if (![[NSUserDefaults standardUserDefaults] boolForKey:key]) {
 		NSAlert *alert = [NSAlert new]; {
 			alert.messageText = NSLocalizedString(@"Rebuild Launch Services Database", @"message text");
@@ -141,18 +141,18 @@
 			[[alert addButtonWithTitle:NSLocalizedString(@"No", @"button text")] setKeyEquivalent:@"\E"];
 			[alert setShowsSuppressionButton:YES];
 		}
-        [alert beginSheetModalForWindow:self.window completionHandler:^(NSModalResponse returnCode) {
-            [[NSUserDefaults standardUserDefaults] setBool:(NSOnState == [[alert suppressionButton] state]) forKey:key];
-            if (NSOKButton == returnCode) {
-                [self doRebuildLSDB];
-            }
-        }];
+		[alert beginSheetModalForWindow:self.window completionHandler:^(NSModalResponse returnCode) {
+			[[NSUserDefaults standardUserDefaults] setBool:(NSOnState == [[alert suppressionButton] state]) forKey:key];
+			if (NSOKButton == returnCode) {
+				[self doRebuildLSDB];
+			}
+		}];
 	} else {
-        [self doRebuildLSDB];
-    }
+		[self doRebuildLSDB];
+	}
 }
 - (void) doRebuildLSDB {
-    [NSTask launchedTaskWithLaunchPath:@"/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/LaunchServices.framework/Versions/A/Support/lsregister" arguments:@[@"-kill", @"-seed", @"-r"]];
+	[NSTask launchedTaskWithLaunchPath:@"/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/LaunchServices.framework/Versions/A/Support/lsregister" arguments:@[@"-kill", @"-seed", @"-r"]];
 }
 
 - (IBAction) refresh:(id)sender {
@@ -165,6 +165,10 @@
     
 	FindSparkleBundlesOperation *op = [FindSparkleBundlesOperation new];
 	[self.operationQueue addOperation:op];
+}
+
+- (IBAction) toggleShowOnlyUpdates:(id)sender {
+	self.filter = [[NSUserDefaults standardUserDefaults] boolForKey:@"showOnlyUpdates"] ? self.onlyUpdatesFilter : nil;
 }
 
 - (IBAction) openSelected:(id)sender {
@@ -231,6 +235,14 @@
 
 - (NSOperationQueue *) operationQueue {
 	return _operationQueue ? : (_operationQueue = [NSOperationQueue new]);
+}
+
+- (NSArray *) sorter {
+	return _sorter ? : (_sorter = @[[[NSSortDescriptor alloc] initWithKey:@"displayName" ascending:YES]]);
+}
+
+- (NSPredicate *) onlyUpdatesFilter {
+    return _onlyUpdatesFilter ? : (_onlyUpdatesFilter = [NSPredicate predicateWithFormat:@"isUpdateAvailable = 1"]);
 }
 
 @end

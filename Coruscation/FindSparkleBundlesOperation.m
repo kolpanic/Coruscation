@@ -8,6 +8,7 @@
 
 #import "FindSparkleBundlesOperation.h"
 #import "NSFileManager+CoruscationAdditions.h"
+#import "CheckAppUpdateOperation.h"
 
 // private LaunchServices function
 extern void _LSCopyAllApplicationURLs(NSArray **);
@@ -53,8 +54,8 @@ extern void _LSCopyAllApplicationURLs(NSArray **);
 		NSString *masReceiptPath = [[[bundleURL path] stringByAppendingPathComponent:@"Contents"] stringByAppendingPathComponent:@"_MASReceipt"];
 		if (![fm fileExistsAtPath:masReceiptPath]) {
 			NSString *suFeedURL = [bundle infoDictionary][@"SUFeedURL"];
-			if (suFeedURL && [[NSApp delegate] respondsToSelector:@selector(checkAppUpdateForBundleURL:)]) {
-				[[NSApp delegate] performSelectorOnMainThread:@selector(checkAppUpdateForBundleURL:) withObject:bundleURL waitUntilDone:NO];
+			if (suFeedURL) {
+				[[NSOperationQueue currentQueue] addOperation:[[CheckAppUpdateOperation alloc] initWithBundleURL:bundleURL]];
 			}
 		}
 	}

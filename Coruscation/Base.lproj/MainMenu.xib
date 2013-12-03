@@ -15,37 +15,22 @@
         <window title="Coruscation" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" wantsToBeColor="NO" frameAutosaveName="MainWindow" animationBehavior="default" id="21" userLabel="Window">
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES" texturedBackground="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-            <rect key="contentRect" x="104" y="820" width="363" height="265"/>
+            <rect key="contentRect" x="104" y="820" width="405" height="341"/>
             <rect key="screenRect" x="0.0" y="0.0" width="1920" height="1178"/>
             <value key="minSize" type="size" width="379" height="302"/>
             <view key="contentView" id="2">
-                <rect key="frame" x="0.0" y="0.0" width="363" height="265"/>
+                <rect key="frame" x="0.0" y="0.0" width="405" height="341"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <button toolTip="Refresh" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="809">
-                        <rect key="frame" x="311" y="17" width="32" height="28"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
-                        <constraints>
-                            <constraint firstAttribute="width" constant="32" id="481-U1-HfU"/>
-                        </constraints>
-                        <buttonCell key="cell" type="squareTextured" bezelStyle="texturedSquare" image="NSRefreshTemplate" imagePosition="only" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="810">
-                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                            <font key="font" metaFont="system"/>
-                        </buttonCell>
-                        <connections>
-                            <action selector="refresh:" target="205" id="811"/>
-                            <binding destination="205" name="hidden" keyPath="operationQueue.operationCount" id="BWX-KU-qxc"/>
-                        </connections>
-                    </button>
                     <scrollView focusRingType="none" autohidesScrollers="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="584">
-                        <rect key="frame" x="-1" y="52" width="365" height="213"/>
+                        <rect key="frame" x="-1" y="46" width="407" height="296"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <clipView key="contentView" id="FIo-is-X3s">
-                            <rect key="frame" x="1" y="1" width="363" height="211"/>
+                            <rect key="frame" x="1" y="1" width="405" height="294"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             <subviews>
                                 <collectionView selectable="YES" allowsMultipleSelection="YES" maxNumberOfColumns="1" id="587">
-                                    <rect key="frame" x="0.0" y="0.0" width="363" height="211"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="405" height="294"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <color key="primaryBackgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                                     <color key="secondaryBackgroundColor" name="controlAlternatingRowColor" catalog="System" colorSpace="catalog"/>
@@ -66,52 +51,38 @@
                             <autoresizingMask key="autoresizingMask"/>
                         </scroller>
                     </scrollView>
-                    <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="751">
-                        <rect key="frame" x="115" y="24" width="134" height="14"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="999 updates available" id="752">
-                            <font key="font" metaFont="smallSystem"/>
-                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
-                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                        </textFieldCell>
-                        <connections>
-                            <binding destination="534" name="value" keyPath="arrangedObjects.@count" id="802">
-                                <dictionary key="options">
-                                    <string key="NSValueTransformerName">UpdateCountTransformer</string>
-                                </dictionary>
-                            </binding>
-                            <binding destination="205" name="hidden" keyPath="operationQueue.operationCount" id="797">
-                                <dictionary key="options">
-                                    <integer key="NSNotApplicablePlaceholder" value="-1"/>
-                                    <integer key="NSNoSelectionPlaceholder" value="-1"/>
-                                    <integer key="NSMultipleValuesPlaceholder" value="-1"/>
-                                    <integer key="NSNullPlaceholder" value="-1"/>
-                                </dictionary>
-                            </binding>
-                        </connections>
-                    </textField>
                     <progressIndicator horizontalHuggingPriority="750" verticalHuggingPriority="750" maxValue="100" displayedWhenStopped="NO" bezeled="NO" indeterminate="YES" controlSize="small" style="spinning" translatesAutoresizingMaskIntoConstraints="NO" id="wAJ-xi-nYB">
-                        <rect key="frame" x="319" y="23" width="16" height="16"/>
+                        <rect key="frame" x="369" y="21" width="16" height="16"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <connections>
                             <binding destination="205" name="animate" keyPath="operationQueue.operationCount" id="6fn-5z-lBd"/>
                         </connections>
                     </progressIndicator>
+                    <segmentedControl verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="nzl-74-e4u">
+                        <rect key="frame" x="141" y="19" width="122" height="19"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <segmentedCell key="cell" controlSize="small" alignment="left" style="texturedSquare" trackingMode="selectOne" id="QW2-Xd-ISq">
+                            <font key="font" metaFont="smallSystem"/>
+                            <segments>
+                                <segment label="All Apps"/>
+                                <segment label="Updates" selected="YES" tag="1"/>
+                            </segments>
+                        </segmentedCell>
+                        <connections>
+                            <action selector="toggleShowOnlyUpdates:" target="205" id="Ns1-ps-nWd"/>
+                            <binding destination="jNv-HO-eyZ" name="selectedIndex" keyPath="values.showOnlyUpdates" id="hGO-7z-9AN"/>
+                        </connections>
+                    </segmentedControl>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="751" firstAttribute="top" secondItem="584" secondAttribute="bottom" constant="14" id="DNs-Fd-4dJ"/>
-                    <constraint firstItem="584" firstAttribute="centerX" secondItem="751" secondAttribute="centerX" id="GFE-65-4uA"/>
-                    <constraint firstItem="809" firstAttribute="top" secondItem="584" secondAttribute="bottom" constant="8" symbolic="YES" id="Hcj-4s-osB"/>
-                    <constraint firstItem="584" firstAttribute="leading" secondItem="2" secondAttribute="leading" constant="-1" id="Nee-R6-zMB"/>
-                    <constraint firstItem="809" firstAttribute="centerY" secondItem="wAJ-xi-nYB" secondAttribute="centerY" id="VJL-rp-7rU"/>
-                    <constraint firstItem="wAJ-xi-nYB" firstAttribute="top" secondItem="584" secondAttribute="bottom" constant="13" id="W3t-MK-ziZ"/>
-                    <constraint firstItem="809" firstAttribute="centerX" secondItem="wAJ-xi-nYB" secondAttribute="centerX" id="Z2n-xb-6bc"/>
-                    <constraint firstAttribute="trailing" secondItem="809" secondAttribute="trailing" constant="20" symbolic="YES" id="Zfg-T7-mnS"/>
-                    <constraint firstAttribute="trailing" secondItem="584" secondAttribute="trailing" constant="-1" id="ciL-Yf-Ptd"/>
-                    <constraint firstItem="584" firstAttribute="top" secondItem="2" secondAttribute="top" id="hH3-tm-Ac2"/>
-                    <constraint firstAttribute="bottom" secondItem="809" secondAttribute="bottom" constant="19" id="k8z-9r-WgB"/>
-                    <constraint firstItem="751" firstAttribute="centerY" secondItem="wAJ-xi-nYB" secondAttribute="centerY" id="mfq-9X-0Uw"/>
-                    <constraint firstItem="809" firstAttribute="leading" secondItem="751" secondAttribute="trailing" constant="64" id="nqW-fT-eDz"/>
+                    <constraint firstItem="584" firstAttribute="leading" secondItem="2" secondAttribute="leading" constant="-1" id="AnN-Kn-bAA"/>
+                    <constraint firstAttribute="trailing" secondItem="wAJ-xi-nYB" secondAttribute="trailing" constant="20" symbolic="YES" id="Ijo-QU-wPd"/>
+                    <constraint firstItem="wAJ-xi-nYB" firstAttribute="centerY" secondItem="nzl-74-e4u" secondAttribute="centerY" id="JqX-GP-Jwo"/>
+                    <constraint firstAttribute="trailing" secondItem="584" secondAttribute="trailing" constant="-1" id="WpT-Iy-7dv"/>
+                    <constraint firstItem="nzl-74-e4u" firstAttribute="top" secondItem="584" secondAttribute="bottom" constant="8" symbolic="YES" id="jiQ-Kz-H3p"/>
+                    <constraint firstAttribute="bottom" secondItem="nzl-74-e4u" secondAttribute="bottom" constant="20" symbolic="YES" id="sjg-Cz-Xvm"/>
+                    <constraint firstItem="584" firstAttribute="top" secondItem="2" secondAttribute="top" constant="-1" id="xJc-oE-v8n"/>
+                    <constraint firstItem="nzl-74-e4u" firstAttribute="centerX" secondItem="584" secondAttribute="centerX" id="yLr-AI-XsE"/>
                 </constraints>
             </view>
             <connections>
@@ -127,6 +98,12 @@
                                 <modifierMask key="keyEquivalentModifierMask"/>
                                 <connections>
                                     <action selector="orderFrontStandardAboutPanel:" target="-2" id="142"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Check Coruscation for Updates…" id="fp7-hD-gnQ">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="checkForUpdates:" target="788" id="Rxz-um-dKq"/>
                                 </connections>
                             </menuItem>
                             <menuItem isSeparatorItem="YES" id="196">
@@ -281,7 +258,7 @@
                 <outlet property="window" destination="21" id="208"/>
             </connections>
         </customObject>
-        <arrayController mode="entity" entityName="SparkleBundle" editable="NO" automaticallyPreparesContent="YES" avoidsEmptySelection="NO" automaticallyRearrangesObjects="YES" id="534" userLabel="Update Items">
+        <arrayController mode="entity" entityName="SparkleBundle" editable="NO" automaticallyPreparesContent="YES" avoidsEmptySelection="NO" automaticallyRearrangesObjects="YES" id="534" userLabel="Sparkle Apps">
             <declaredKeys>
                 <string>bundlePath</string>
                 <string>availableUpdateVersion</string>
@@ -291,8 +268,9 @@
                 <string>@count</string>
             </declaredKeys>
             <connections>
+                <binding destination="205" name="filterPredicate" keyPath="filter" id="vfr-Tt-jRT"/>
                 <binding destination="205" name="managedObjectContext" keyPath="managedObjectContext" id="535"/>
-                <binding destination="205" name="sortDescriptors" keyPath="sorter" id="772"/>
+                <binding destination="205" name="sortDescriptors" keyPath="sorter" previousBinding="vfr-Tt-jRT" id="bBQ-9U-FJ0"/>
             </connections>
         </arrayController>
         <collectionViewItem id="588" customClass="CoruscationCollectionViewItem">
@@ -315,7 +293,7 @@
                                 <rect key="frame" x="4" y="6" width="48" height="48"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="48" id="Dvm-b9-fS4"/>
+                                    <constraint firstAttribute="width" constant="48" id="3bz-OH-X47"/>
                                 </constraints>
                                 <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyUpOrDown" image="NSApplicationIcon" id="645"/>
                                 <connections>
@@ -354,7 +332,7 @@
                                 <rect key="frame" x="57" y="6" width="188" height="14"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="14" id="sEJ-JA-CWb"/>
+                                    <constraint firstAttribute="height" constant="14" id="enn-2L-hJP"/>
                                 </constraints>
                                 <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="left" title="Newer version Y is available." id="684">
                                     <font key="font" metaFont="smallSystem"/>
@@ -367,13 +345,18 @@
                                             <string key="NSDisplayPattern">Newer version %{value1}@ is available.</string>
                                         </dictionary>
                                     </binding>
+                                    <binding destination="588" name="hidden" keyPath="representedObject.isUpdateAvailable" id="Wqj-GS-XgR">
+                                        <dictionary key="options">
+                                            <string key="NSValueTransformerName">NSNegateBoolean</string>
+                                        </dictionary>
+                                    </binding>
                                 </connections>
                             </textField>
                             <button toolTip="Reveal in Finder" translatesAutoresizingMaskIntoConstraints="NO" id="822" customClass="RolloverButton">
-                                <rect key="frame" x="188" y="34" width="16" height="22"/>
+                                <rect key="frame" x="227" y="34" width="16" height="22"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="16" id="fIR-OD-Ixf"/>
+                                    <constraint firstAttribute="width" constant="16" id="Xho-wO-J7n"/>
                                 </constraints>
                                 <buttonCell key="cell" type="bevel" bezelStyle="rounded" image="BtnReveal" imagePosition="only" alignment="center" alternateImage="BtnRevealPressed" imageScaling="proportionallyDown" inset="2" id="823">
                                     <behavior key="behavior" lightByContents="YES"/>
@@ -384,10 +367,10 @@
                                 </connections>
                             </button>
                             <button toolTip="Show release notes" translatesAutoresizingMaskIntoConstraints="NO" id="827" customClass="RolloverButton">
-                                <rect key="frame" x="208" y="34" width="16" height="22"/>
+                                <rect key="frame" x="183" y="34" width="16" height="22"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="16" id="Tzc-4Z-Yep"/>
+                                    <constraint firstAttribute="width" constant="16" id="zab-Le-p0Z"/>
                                 </constraints>
                                 <buttonCell key="cell" type="bevel" bezelStyle="rounded" image="BtnRelNotes" imagePosition="only" alignment="center" alternateImage="BtnRelNotesPressed" imageScaling="proportionallyDown" inset="2" id="828">
                                     <behavior key="behavior" lightByContents="YES"/>
@@ -395,13 +378,18 @@
                                 </buttonCell>
                                 <connections>
                                     <action selector="releaseNotes:" target="588" id="830"/>
+                                    <binding destination="588" name="hidden" keyPath="representedObject.isUpdateAvailable" id="2g6-aO-dws">
+                                        <dictionary key="options">
+                                            <string key="NSValueTransformerName">NSNegateBoolean</string>
+                                        </dictionary>
+                                    </binding>
                                 </connections>
                             </button>
                             <button toolTip="Download update" translatesAutoresizingMaskIntoConstraints="NO" id="831" customClass="RolloverButton">
-                                <rect key="frame" x="228" y="34" width="16" height="22"/>
+                                <rect key="frame" x="203" y="34" width="16" height="22"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="16" id="d5p-a8-PLc"/>
+                                    <constraint firstAttribute="width" constant="16" id="Uu0-yo-euv"/>
                                 </constraints>
                                 <buttonCell key="cell" type="bevel" bezelStyle="rounded" image="BtnDownload" imagePosition="only" alignment="center" alternateImage="BtnDownloadPressed" imageScaling="proportionallyDown" inset="2" id="832">
                                     <behavior key="behavior" lightByContents="YES"/>
@@ -409,35 +397,40 @@
                                 </buttonCell>
                                 <connections>
                                     <action selector="downloadUpdate:" target="588" id="834"/>
+                                    <binding destination="588" name="hidden" keyPath="representedObject.isUpdateAvailable" id="5rq-VT-osa">
+                                        <dictionary key="options">
+                                            <string key="NSValueTransformerName">NSNegateBoolean</string>
+                                        </dictionary>
+                                    </binding>
                                 </connections>
                             </button>
                         </subviews>
                     </view>
                     <constraints>
-                        <constraint firstItem="827" firstAttribute="leading" secondItem="822" secondAttribute="trailing" constant="4" id="0AI-PE-ENQ"/>
-                        <constraint firstItem="822" firstAttribute="bottom" secondItem="827" secondAttribute="bottom" id="3Pu-20-oOw"/>
-                        <constraint firstItem="642" firstAttribute="trailing" secondItem="683" secondAttribute="trailing" id="5YA-gS-i0c"/>
-                        <constraint firstItem="642" firstAttribute="centerY" secondItem="627" secondAttribute="centerY" id="5g7-ti-p0U"/>
-                        <constraint firstItem="640" firstAttribute="top" secondItem="627" secondAttribute="top" constant="8" id="Aff-ke-6S1"/>
-                        <constraint firstItem="822" firstAttribute="top" secondItem="627" secondAttribute="top" constant="6" id="BYO-hN-P9E"/>
-                        <constraint firstItem="640" firstAttribute="leading" secondItem="627" secondAttribute="leading" constant="6" id="GZZ-Wd-jrD"/>
-                        <constraint firstItem="831" firstAttribute="bottom" secondItem="827" secondAttribute="bottom" id="LiJ-jM-Xdx"/>
-                        <constraint firstItem="831" firstAttribute="leading" secondItem="827" secondAttribute="trailing" constant="4" id="OQV-nE-dci"/>
-                        <constraint firstItem="641" firstAttribute="top" secondItem="640" secondAttribute="top" id="OTa-gR-zVP"/>
-                        <constraint firstItem="641" firstAttribute="leading" secondItem="640" secondAttribute="trailing" constant="7" id="R17-dv-ovn"/>
-                        <constraint firstItem="642" firstAttribute="leading" secondItem="641" secondAttribute="leading" id="VcJ-iT-yGp"/>
-                        <constraint firstAttribute="trailing" secondItem="831" secondAttribute="trailing" constant="9" id="WvM-PX-M2x"/>
-                        <constraint firstItem="822" firstAttribute="centerY" secondItem="641" secondAttribute="centerY" id="Xh9-H3-VZI"/>
-                        <constraint firstAttribute="trailing" secondItem="642" secondAttribute="trailing" constant="10" id="YBo-qg-eeG"/>
-                        <constraint firstItem="640" firstAttribute="bottom" secondItem="683" secondAttribute="bottom" id="Zc5-Wg-aLx"/>
-                        <constraint firstItem="683" firstAttribute="top" secondItem="822" secondAttribute="bottom" constant="14" id="aPY-0e-xGQ"/>
-                        <constraint firstItem="642" firstAttribute="centerY" secondItem="640" secondAttribute="centerY" id="bu8-gh-ikx"/>
-                        <constraint firstItem="642" firstAttribute="top" secondItem="641" secondAttribute="bottom" id="edA-sz-q4Q"/>
-                        <constraint firstItem="683" firstAttribute="top" secondItem="642" secondAttribute="bottom" constant="3" id="j3U-48-Rin"/>
-                        <constraint firstItem="827" firstAttribute="top" secondItem="831" secondAttribute="top" id="jQi-mj-5iY"/>
-                        <constraint firstItem="822" firstAttribute="leading" secondItem="641" secondAttribute="trailing" constant="5" id="l9X-WK-dZb"/>
-                        <constraint firstItem="642" firstAttribute="leading" secondItem="683" secondAttribute="leading" id="obf-p5-Avr"/>
-                        <constraint firstItem="822" firstAttribute="top" secondItem="827" secondAttribute="top" id="xLF-6t-UBZ"/>
+                        <constraint firstItem="822" firstAttribute="top" secondItem="831" secondAttribute="top" id="2w4-Bl-iy5"/>
+                        <constraint firstItem="642" firstAttribute="leading" secondItem="641" secondAttribute="leading" id="3Fu-rk-wbB"/>
+                        <constraint firstItem="640" firstAttribute="top" secondItem="641" secondAttribute="top" id="6Ec-0I-BjW"/>
+                        <constraint firstItem="683" firstAttribute="leading" secondItem="642" secondAttribute="leading" id="DvX-Gs-vsW"/>
+                        <constraint firstItem="822" firstAttribute="leading" secondItem="831" secondAttribute="trailing" constant="8" symbolic="YES" id="Inr-Ib-0WH"/>
+                        <constraint firstItem="641" firstAttribute="centerY" secondItem="827" secondAttribute="centerY" id="Iqt-i9-wtT"/>
+                        <constraint firstItem="831" firstAttribute="bottom" secondItem="822" secondAttribute="bottom" id="JrX-MC-yS2"/>
+                        <constraint firstItem="640" firstAttribute="leading" secondItem="627" secondAttribute="leading" constant="6" id="KQf-1f-yck"/>
+                        <constraint firstItem="641" firstAttribute="leading" secondItem="640" secondAttribute="trailing" constant="7" id="LIi-sU-YaL"/>
+                        <constraint firstItem="642" firstAttribute="trailing" secondItem="822" secondAttribute="trailing" id="LOQ-At-Rc0"/>
+                        <constraint firstItem="827" firstAttribute="top" secondItem="627" secondAttribute="top" constant="6" id="OUz-nC-kCZ"/>
+                        <constraint firstAttribute="trailing" secondItem="822" secondAttribute="trailing" constant="10" id="Pa7-OC-Mg4"/>
+                        <constraint firstItem="640" firstAttribute="centerY" secondItem="642" secondAttribute="centerY" id="PhI-9b-06v"/>
+                        <constraint firstItem="640" firstAttribute="centerY" secondItem="627" secondAttribute="centerY" id="QNj-Th-o7z"/>
+                        <constraint firstItem="640" firstAttribute="bottom" secondItem="683" secondAttribute="bottom" id="Qcj-Tb-QFm"/>
+                        <constraint firstItem="683" firstAttribute="top" secondItem="827" secondAttribute="bottom" constant="14" id="U6L-H9-dVS"/>
+                        <constraint firstItem="640" firstAttribute="top" secondItem="627" secondAttribute="top" constant="8" id="eXo-eC-EkA"/>
+                        <constraint firstItem="831" firstAttribute="bottom" secondItem="827" secondAttribute="bottom" id="fYb-DF-lh0"/>
+                        <constraint firstItem="683" firstAttribute="trailing" secondItem="642" secondAttribute="trailing" id="gbS-jm-tEQ"/>
+                        <constraint firstItem="683" firstAttribute="top" secondItem="642" secondAttribute="bottom" constant="3" id="giE-v6-MNX"/>
+                        <constraint firstItem="642" firstAttribute="top" secondItem="641" secondAttribute="bottom" id="kaZ-Oz-sdI"/>
+                        <constraint firstItem="831" firstAttribute="leading" secondItem="827" secondAttribute="trailing" constant="4" id="old-Um-d0Z"/>
+                        <constraint firstItem="831" firstAttribute="top" secondItem="827" secondAttribute="top" id="pVn-54-Dfr"/>
+                        <constraint firstItem="827" firstAttribute="leading" secondItem="641" secondAttribute="trailing" id="xqR-go-Sne"/>
                     </constraints>
                     <color key="borderColor" name="alternateSelectedControlColor" catalog="System" colorSpace="catalog"/>
                     <color key="fillColor" name="selectedControlColor" catalog="System" colorSpace="catalog"/>
@@ -451,15 +444,16 @@
                 </box>
             </subviews>
             <constraints>
-                <constraint firstItem="627" firstAttribute="centerX" secondItem="659" secondAttribute="centerX" id="4gO-cD-Yre"/>
-                <constraint firstItem="627" firstAttribute="leading" secondItem="659" secondAttribute="leading" constant="1" id="M9p-jp-fL9"/>
-                <constraint firstItem="627" firstAttribute="centerY" secondItem="659" secondAttribute="centerY" id="cRw-WQ-i0U"/>
+                <constraint firstItem="627" firstAttribute="leading" secondItem="659" secondAttribute="leading" constant="1" id="CWB-mW-x4e"/>
+                <constraint firstItem="627" firstAttribute="centerY" secondItem="659" secondAttribute="centerY" id="XoZ-Nj-McW"/>
+                <constraint firstItem="627" firstAttribute="centerX" secondItem="659" secondAttribute="centerX" id="iw3-lQ-A6u"/>
             </constraints>
             <connections>
                 <outlet property="delegate" destination="205" id="704"/>
             </connections>
         </customView>
         <customObject id="788" customClass="SUUpdater"/>
+        <userDefaultsController representsSharedInstance="YES" id="jNv-HO-eyZ"/>
     </objects>
     <resources>
         <image name="BtnDownload" width="16" height="16"/>
@@ -469,6 +463,5 @@
         <image name="BtnReveal" width="16" height="16"/>
         <image name="BtnRevealPressed" width="16" height="16"/>
         <image name="NSApplicationIcon" width="128" height="128"/>
-        <image name="NSRefreshTemplate" width="10" height="12"/>
     </resources>
 </document>

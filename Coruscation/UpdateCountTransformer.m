@@ -23,13 +23,13 @@
 	NSString *transformedValue = nil;
 	switch (v) {
 		case 0:
-			transformedValue = NSLocalizedString(@"No available updates", @"status message");
+			transformedValue = NSLocalizedString(@"No Sparkle applications", @"status message");
 			break;
 		case 1:
-			transformedValue = NSLocalizedString(@"1 available update", @"status message");
+			transformedValue = NSLocalizedString(@"1 Sparkle application", @"status message");
 			break;
 		default:
-			transformedValue = [NSString stringWithFormat:NSLocalizedString(@"%u available updates", @"status message"), v];
+			transformedValue = [NSString stringWithFormat:NSLocalizedString(@"%u Sparkle applications", @"status message"), v];
 			break;
 	}
 	return transformedValue;

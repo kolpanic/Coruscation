@@ -25,7 +25,7 @@
 #pragma mark Setup
 
 - (id) initWithBundleURL:(NSURL *)url {
-	if ([super init]) {
+	if (self = [super init]) {
 		self.url = [url copy];
 		self.isExecuting = NO;
 		self.isFinished = NO;
@@ -99,7 +99,7 @@
 
 - (void) updater:(SUUpdater *)updater didFindValidUpdate:(SUAppcastItem *)updateItem {
 	if ([[NSApp delegate] respondsToSelector:@selector(addSparkleBundleWithUserInfo:) ]) {
-		NSMutableDictionary *userInfo = [NSMutableDictionary dictionaryWithCapacity:4];
+		NSMutableDictionary *userInfo = [NSMutableDictionary dictionary];
 		userInfo[@"url"] = self.url;
 		NSString *displayVersionString = [updateItem displayVersionString];
 		if (displayVersionString) {
@@ -117,12 +117,17 @@
 		if (itemDescription) {
 			userInfo[@"itemDescription"] = itemDescription;
 		}
+        userInfo[@"isUpdateAvailable"] = @(YES);
 		[[NSApp delegate] performSelectorOnMainThread:@selector(addSparkleBundleWithUserInfo:) withObject:userInfo waitUntilDone:NO];
 		[self finish];
 	}
 }
 
 - (void) updaterDidNotFindUpdate:(SUUpdater *)update {
+    NSMutableDictionary *userInfo = [NSMutableDictionary dictionary];
+    userInfo[@"url"] = self.url;
+    userInfo[@"isUpdateAvailable"] = @(NO);
+    [[NSApp delegate] performSelectorOnMainThread:@selector(addSparkleBundleWithUserInfo:) withObject:userInfo waitUntilDone:NO];
 	[self finish];
 }
 

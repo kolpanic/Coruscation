@@ -4,10 +4,11 @@
         <attribute name="availableUpdateVersion" attributeType="String" syncable="YES"/>
         <attribute name="bundlePath" attributeType="String" syncable="YES"/>
         <attribute name="fileURL" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="isUpdateAvailable" optional="YES" attributeType="Boolean" syncable="YES"/>
         <attribute name="itemDescription" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="releaseNotesURL" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <elements>
-        <element name="SparkleBundle" positionX="160" positionY="192" width="128" height="120"/>
+        <element name="SparkleBundle" positionX="0" positionY="0" width="128" height="133"/>
     </elements>
 </model>

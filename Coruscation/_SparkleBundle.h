@@ -44,6 +44,10 @@
 //- (BOOL)validateBundlePath:(id*)value_ error:(NSError**)error_;
 
 
+@property (nonatomic, strong) NSNumber *isUpdateAvailable;
+
+//- (BOOL)validateIsUpdateAvailable:(id*)value_ error:(NSError**)error_;
+
 
 
 @end

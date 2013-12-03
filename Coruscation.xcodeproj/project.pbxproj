@@ -89,6 +89,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		CB0FB142184D58500091B68F /* appcast.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = appcast.xml; path = Coruscation/appcast.xml; sourceTree = "<group>"; };
+		CB0FB143184D58500091B68F /* relnotes.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = relnotes.html; path = Coruscation/relnotes.html; sourceTree = "<group>"; };
 		CB659464184BFE480083F676 /* Coruscation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Coruscation.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB659467184BFE480083F676 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		CB65946F184BFE480083F676 /* Coruscation-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Coruscation-Info.plist"; sourceTree = "<group>"; };
@@ -139,6 +141,8 @@
 		CB65945B184BFE480083F676 = {
 			isa = PBXGroup;
 			children = (
+				CB0FB142184D58500091B68F /* appcast.xml */,
+				CB0FB143184D58500091B68F /* relnotes.html */,
 				CB65946D184BFE480083F676 /* Coruscation */,
 				CB659466184BFE480083F676 /* Frameworks */,
 				CB659465184BFE480083F676 /* Products */,
@@ -458,7 +462,7 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 24;
+				CURRENT_PROJECT_VERSION = 25;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
@@ -497,7 +501,7 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = YES;
-				CURRENT_PROJECT_VERSION = 24;
+				CURRENT_PROJECT_VERSION = 25;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
