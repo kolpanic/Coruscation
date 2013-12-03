@@ -89,8 +89,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		CB0FB142184D58500091B68F /* appcast.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = appcast.xml; path = Coruscation/appcast.xml; sourceTree = "<group>"; };
-		CB0FB143184D58500091B68F /* relnotes.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = relnotes.html; path = Coruscation/relnotes.html; sourceTree = "<group>"; };
+		CB0FB142184D58500091B68F /* appcast.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = appcast.xml; sourceTree = "<group>"; };
+		CB0FB143184D58500091B68F /* relnotes.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = relnotes.html; sourceTree = "<group>"; };
 		CB659464184BFE480083F676 /* Coruscation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Coruscation.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB659467184BFE480083F676 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		CB65946F184BFE480083F676 /* Coruscation-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Coruscation-Info.plist"; sourceTree = "<group>"; };
