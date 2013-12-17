@@ -6,6 +6,12 @@
 		<description>Most recent changes with links to updates.</description>
 		<language>en</language>
 		<item>
+			<title>Version 3.1 (26)</title>
+			<sparkle:releaseNotesLink>https://raw.github.com/kolpanic/Coruscation/master/relnotes.html</sparkle:releaseNotesLink>
+			<pubDate>Sat, 14 December 2013 09:00:00 -0500</pubDate>
+			<enclosure url="https://github.com/kolpanic/Coruscation/releases/download/V3.1.26/Coruscation.zip" sparkle:version="26" sparkle:shortVersionString="3.1 (26)" type="application/octet-stream" />
+		</item>
+		<item>
 			<title>Version 3.1 (25)</title>
 			<sparkle:releaseNotesLink>https://raw.github.com/kolpanic/Coruscation/master/relnotes.html</sparkle:releaseNotesLink>
 			<pubDate>Mon, 2 December 2013 09:00:00 -0500</pubDate>

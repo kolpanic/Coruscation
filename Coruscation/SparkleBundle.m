@@ -11,17 +11,20 @@
 @implementation SparkleBundle
 
 - (NSString *) displayName {
-	return [[NSFileManager defaultManager] displayNameAtPath:self.bundlePath];
+	return [NSString stringWithFormat:@"%@ %@",
+			[[NSFileManager defaultManager] displayNameAtPath:self.bundlePath],
+			[self displayVersion]];
 }
 
 - (NSString *) displayVersion {
 	NSString *displayVersion;
 	NSString *shortVersionString = [self.bundle objectForInfoDictionaryKey:@"CFBundleShortVersionString"];
 	NSString *bundleVersion = [self.bundle objectForInfoDictionaryKey:@"CFBundleVersion"];
-	if (shortVersionString && ![shortVersionString isEqualToString:bundleVersion])
+	if (shortVersionString && ![shortVersionString isEqualToString:bundleVersion]) {
 		displayVersion = [NSString stringWithFormat:@"%@ (%@)", shortVersionString, bundleVersion];
-	else
+	} else {
 		displayVersion = [NSString stringWithFormat:@"%@", bundleVersion];
+	}
 	return displayVersion;
 }
 

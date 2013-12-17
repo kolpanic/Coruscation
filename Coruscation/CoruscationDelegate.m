@@ -53,7 +53,7 @@
 
 + (void) initialize {
 	if (self == [CoruscationDelegate class]) {
-		NSDictionary *defaults = @{@"UpdateCheckTimeOutInterval": @10.0,
+		NSDictionary *defaults = @{@"UpdateCheckTimeOutInterval": @30.0,
                                    @"showOnlyUpdates" : @(YES)};
 		[[NSUserDefaults standardUserDefaults] registerDefaults:defaults];
 		[NSValueTransformer setValueTransformer:[UpdateCountTransformer new] forName:@"UpdateCountTransformer"];
