@@ -1,0 +1,33 @@
+Coruscation
+
+Changes in Version 3.1 (26) — December 14, 2013:
+- The tabs at the bottom of the window are now larger.
+- Other UI tweaks.
+
+
+Changes in Previous Versions:
+- Mavericks support.
+- Optionally show all installed Sparkle apps.
+- Remove the scheduled update checker agent, which never worked reliably anyway.
+- Ignore Mac App Store purchases (in case the developer didn't clean up the app).
+- Revert to use StartInterval for agent scheduling. You may have to reset your schedule preference.
+- Added a Rebuild Launch Services Database item under the application menu.
+- The reveal, release notes and downloads buttons are now next to each available update.
+- The last date the automatic check was run is now shown in the Preferences window.
+- The dock badge is now reset when refreshing the update list.
+- Add a download update option.
+- Rearrange the buttons.
+- Add a button to view release notes for available updates.
+- Scan typical locations for Sparkle-enabled bundles: Internet Plug-Ins/ and PreferencePanes/ in /Library. and ~/Library/.
+- Add an option to view Coruscation's logs in case of a scheduling problem.
+- Run the agent at login in case of missed runs (it'll terminate if it's too soon by the schedule).
+- More reliable scheduled operation.
+- Checks can be automatically run weekly or monthly.
+- Badge the dock icon with the number of available updates.
+- Show the available update count in the status message.
+- Fix a bug where Coruscation appears twice in the list.
+- Add application help.
+- Use better images in the button bar.
+- Add a button bar to the bottom of the window.
+- Enable the Reveal in Finder menu only when something is selected.
+- Initial Sparkle-enabled version.
