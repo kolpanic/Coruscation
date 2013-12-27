@@ -451,7 +451,11 @@
                 <outlet property="delegate" destination="205" id="704"/>
             </connections>
         </customView>
-        <customObject id="788" customClass="SUUpdater"/>
+        <customObject id="788" customClass="SUUpdater">
+            <connections>
+                <outlet property="delegate" destination="205" id="9Lw-Nm-lyp"/>
+            </connections>
+        </customObject>
         <userDefaultsController representsSharedInstance="YES" id="jNv-HO-eyZ"/>
     </objects>
     <resources>

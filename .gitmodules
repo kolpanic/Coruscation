@@ -4,3 +4,4 @@
 [submodule "Vendor/Sparkle"]
 	path = Vendor/Sparkle
 	url = git@github.com:kolpanic/Sparkle.git
+	master = master

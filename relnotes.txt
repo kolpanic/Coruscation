@@ -1,11 +1,11 @@
 Coruscation
 
-Changes in Version 3.1 (26) — December 14, 2013:
-- The tabs at the bottom of the window are now larger.
-- Other UI tweaks.
-
+Changes in Version 3.1 (27) — December 27, 2013:
+- Fix a crash when checking Coruscation itself for updates.
 
 Changes in Previous Versions:
+- The tabs at the bottom of the window are now larger.
+- Other UI tweaks.
 - Mavericks support.
 - Optionally show all installed Sparkle apps.
 - Remove the scheduled update checker agent, which never worked reliably anyway.

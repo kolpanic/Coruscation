@@ -83,6 +83,8 @@
 	self.isFinished = YES;
 	[self didChangeValueForKey:@"isExecuting"];
 	[self didChangeValueForKey:@"isFinished"];
+    
+    [self.updater setDelegate:nil];
 }
 
 - (void) timedOut:(NSTimer *)t {
