@@ -178,7 +178,7 @@
 		if ([updateURL isEqual:bundleURL]) {
 			[[SUUpdater sharedUpdater] checkForUpdates:nil];
 		} else {
-			[[NSWorkspace sharedWorkspace] launchApplicationAtURL:updateURL options:NSWorkspaceLaunchWithoutActivation configuration:nil error:nil];
+			[[NSWorkspace sharedWorkspace] launchApplicationAtURL:updateURL options:NSWorkspaceLaunchWithoutActivation configuration:[NSDictionary dictionary] error:nil];
 		}
 	}
 }

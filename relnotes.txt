@@ -1,9 +1,10 @@
 Coruscation
 
-Changes in Version 3.1 (27) — December 27, 2013:
-- Fix a crash when checking Coruscation itself for updates.
+Changes in Version 3.1 (28) — September 4, 2015
+- Update to the latest Sparkle
 
 Changes in Previous Versions:
+- Fix a crash when checking Coruscation itself for updates.
 - The tabs at the bottom of the window are now larger.
 - Other UI tweaks.
 - Mavericks support.

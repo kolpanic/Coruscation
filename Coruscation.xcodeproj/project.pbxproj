@@ -24,9 +24,9 @@
 		CB6594E2184C02E40083F676 /* Credits.html in Resources */ = {isa = PBXBuildFile; fileRef = CB6594D4184C02E40083F676 /* Credits.html */; };
 		CB6594EE184C03080083F676 /* Coruscation Help in Resources */ = {isa = PBXBuildFile; fileRef = CB6594ED184C03080083F676 /* Coruscation Help */; };
 		CB6594F1184C07F90083F676 /* ServiceManagement.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB6594F0184C07F90083F676 /* ServiceManagement.framework */; };
-		CB6D6355184C0A7F00283027 /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB6594A7184BFEDD0083F676 /* Sparkle.framework */; };
-		CB6D6357184C0A9D00283027 /* Sparkle.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = CB6594A7184BFEDD0083F676 /* Sparkle.framework */; };
 		CB7C3804184C0E2E007E703A /* Coruscation.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CB7C3802184C0E2E007E703A /* Coruscation.xcdatamodeld */; };
+		CB8FAB8A1B9A1DD500A93EBB /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB6594A7184BFEDD0083F676 /* Sparkle.framework */; };
+		CB8FAB8B1B9A1DD500A93EBB /* Sparkle.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CB6594A7184BFEDD0083F676 /* Sparkle.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,7 +65,7 @@
 			remoteGlobalIDString = 55C14BB7136EEF1500649790;
 			remoteInfo = finish_installation;
 		};
-		CB6D634E184C0A7000283027 /* PBXContainerItemProxy */ = {
+		CB8FAB8C1B9A1DD500A93EBB /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = CB65949E184BFEDD0083F676 /* Sparkle.xcodeproj */;
 			proxyType = 1;
@@ -75,15 +75,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		CB6D6356184C0A9400283027 /* Copy Frameworks */ = {
+		CB8FAB8E1B9A1DD500A93EBB /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				CB6D6357184C0A9D00283027 /* Sparkle.framework in Copy Frameworks */,
+				CB8FAB8B1B9A1DD500A93EBB /* Sparkle.framework in Embed Frameworks */,
 			);
-			name = "Copy Frameworks";
+			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
@@ -129,8 +129,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CB6D6355184C0A7F00283027 /* Sparkle.framework in Frameworks */,
 				CB6594F1184C07F90083F676 /* ServiceManagement.framework in Frameworks */,
+				CB8FAB8A1B9A1DD500A93EBB /* Sparkle.framework in Frameworks */,
 				CB659468184BFE480083F676 /* Cocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -200,9 +200,9 @@
 			children = (
 				CB6594A7184BFEDD0083F676 /* Sparkle.framework */,
 				CB6594A9184BFEDD0083F676 /* Sparkle Test App.app */,
-				CB6594AB184BFEDD0083F676 /* Sparkle Unit Tests.octest */,
+				CB6594AB184BFEDD0083F676 /* Sparkle Unit Tests.xctest */,
 				CB6594AD184BFEDD0083F676 /* BinaryDelta */,
-				CB6594AF184BFEDD0083F676 /* finish_installation.app */,
+				CB6594AF184BFEDD0083F676 /* Autoupdate.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -279,13 +279,12 @@
 				CB659460184BFE480083F676 /* Sources */,
 				CB659461184BFE480083F676 /* Frameworks */,
 				CB659462184BFE480083F676 /* Resources */,
-				CB6D6356184C0A9400283027 /* Copy Frameworks */,
-				CBE712CD184C230000B2E8D9 /* Codesign Frameworks */,
+				CB8FAB8E1B9A1DD500A93EBB /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				CB6D634F184C0A7000283027 /* PBXTargetDependency */,
+				CB8FAB8D1B9A1DD500A93EBB /* PBXTargetDependency */,
 			);
 			name = Coruscation;
 			productName = Coruscation;
@@ -299,7 +298,7 @@
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = COR;
-				LastUpgradeCheck = 0500;
+				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = "Karl Moskowski";
 			};
 			buildConfigurationList = CB65945F184BFE480083F676 /* Build configuration list for PBXProject "Coruscation" */;
@@ -341,10 +340,10 @@
 			remoteRef = CB6594A8184BFEDD0083F676 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		CB6594AB184BFEDD0083F676 /* Sparkle Unit Tests.octest */ = {
+		CB6594AB184BFEDD0083F676 /* Sparkle Unit Tests.xctest */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.cfbundle;
-			path = "Sparkle Unit Tests.octest";
+			path = "Sparkle Unit Tests.xctest";
 			remoteRef = CB6594AA184BFEDD0083F676 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
@@ -355,10 +354,10 @@
 			remoteRef = CB6594AC184BFEDD0083F676 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		CB6594AF184BFEDD0083F676 /* finish_installation.app */ = {
+		CB6594AF184BFEDD0083F676 /* Autoupdate.app */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.application;
-			path = finish_installation.app;
+			path = Autoupdate.app;
 			remoteRef = CB6594AE184BFEDD0083F676 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
@@ -378,23 +377,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		CBE712CD184C230000B2E8D9 /* Codesign Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Codesign Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "LOCATION=\"${BUILT_PRODUCTS_DIR}\"/\"${FRAMEWORKS_FOLDER_PATH}\"\nIDENTITY=\"Developer ID Application: Karl Moskowski\"\ncodesign --verbose --force --sign \"$IDENTITY\" \"$LOCATION/Sparkle.framework/Versions/A\"\n";
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		CB659460184BFE480083F676 /* Sources */ = {
@@ -418,10 +400,10 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		CB6D634F184C0A7000283027 /* PBXTargetDependency */ = {
+		CB8FAB8D1B9A1DD500A93EBB /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = Sparkle;
-			targetProxy = CB6D634E184C0A7000283027 /* PBXContainerItemProxy */;
+			targetProxy = CB8FAB8C1B9A1DD500A93EBB /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -463,6 +445,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 28;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
@@ -527,7 +510,9 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Coruscation/Coruscation-Prefix.pch";
 				INFOPLIST_FILE = "Coruscation/Coruscation-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.voodooergonomics.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -543,7 +528,9 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Coruscation/Coruscation-Prefix.pch";
 				INFOPLIST_FILE = "Coruscation/Coruscation-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.voodooergonomics.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};

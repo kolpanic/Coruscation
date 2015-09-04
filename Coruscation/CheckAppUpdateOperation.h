@@ -9,7 +9,7 @@
 @import Foundation;
 #import <Sparkle/Sparkle.h>
 
-@interface CheckAppUpdateOperation : NSOperation 
+@interface CheckAppUpdateOperation : NSOperation <SUUpdaterDelegate>
 
 - (id) initWithBundleURL:(NSURL *)url;
 

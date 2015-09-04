@@ -53,9 +53,12 @@ extern void _LSCopyAllApplicationURLs(NSArray **);
 		NSBundle *bundle = [NSBundle bundleWithURL:bundleURL];
 		NSString *masReceiptPath = [[[bundleURL path] stringByAppendingPathComponent:@"Contents"] stringByAppendingPathComponent:@"_MASReceipt"];
 		if (![fm fileExistsAtPath:masReceiptPath]) {
-			NSString *suFeedURL = [bundle infoDictionary][@"SUFeedURL"];
-			if (suFeedURL) {
-				[[NSOperationQueue currentQueue] addOperation:[[CheckAppUpdateOperation alloc] initWithBundleURL:bundleURL]];
+			NSString *suFeedURLString = [bundle infoDictionary][@"SUFeedURL"];
+			if (suFeedURLString) {
+                NSURL *suFeedURL = [NSURL URLWithString:suFeedURLString];
+                if ([suFeedURL scheme]) {
+                    [[NSOperationQueue currentQueue] addOperation:[[CheckAppUpdateOperation alloc] initWithBundleURL:bundleURL]];
+                }
 			}
 		}
 	}

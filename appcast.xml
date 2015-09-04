@@ -5,12 +5,18 @@
 		<link>https://raw.github.com/kolpanic/Coruscation/master/appcast.xml</link>
 		<description>Most recent changes with links to updates.</description>
 		<language>en</language>
-		<item>
-			<title>Version 3.1 (27)</title>
-			<sparkle:releaseNotesLink>https://raw.github.com/kolpanic/Coruscation/master/relnotes.txt</sparkle:releaseNotesLink>
-			<pubDate>Fri, 27 December 2013 09:00:00 -0500</pubDate>
-			<enclosure url="https://github.com/kolpanic/Coruscation/releases/download/V3.1.27/Coruscation.zip" sparkle:version="27" sparkle:shortVersionString="3.1 (27)" type="application/octet-stream" />
-		</item>
+        <item>
+            <title>Version 3.1 (28)</title>
+            <sparkle:releaseNotesLink>https://raw.github.com/kolpanic/Coruscation/master/relnotes.txt</sparkle:releaseNotesLink>
+            <pubDate>Fri, 4 September 2015 09:00:00 -0500</pubDate>
+            <enclosure url="https://github.com/kolpanic/Coruscation/releases/download/V3.1.28/Coruscation.zip" sparkle:version="28" sparkle:shortVersionString="3.1 (28)" type="application/octet-stream" />
+        </item>
+        <item>
+            <title>Version 3.1 (27)</title>
+            <sparkle:releaseNotesLink>https://raw.github.com/kolpanic/Coruscation/master/relnotes.txt</sparkle:releaseNotesLink>
+            <pubDate>Fri, 27 December 2013 09:00:00 -0500</pubDate>
+            <enclosure url="https://github.com/kolpanic/Coruscation/releases/download/V3.1.27/Coruscation.zip" sparkle:version="27" sparkle:shortVersionString="3.1 (27)" type="application/octet-stream" />
+        </item>
 		<item>
 			<title>Version 3.1 (26)</title>
 			<sparkle:releaseNotesLink>https://raw.github.com/kolpanic/Coruscation/master/relnotes.txt</sparkle:releaseNotesLink>
